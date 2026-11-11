@@ -64,6 +64,9 @@ function heartbeatFresh(dir) {
 // le runner GitHub directement dans sa copie du depot.
 function writePublicFiles(dir, { html, stamp, tunnel, heartbeat = false, host = 'pc', build = '' }) {
   writeFileSync(path.join(dir, 'index.html'), prepare(html, stamp, build));
+  // temoin de version : 40 octets que le telephone interroge chaque minute au lieu
+  // de recharger les 250 Ko de la page (et de consommer ses donnees mobiles).
+  writeFileSync(path.join(dir, 'build.txt'), (build || '') + '\n');
   writeFileSync(path.join(dir, '.nojekyll'), '');
   // adresse du tunnel du moment : la page publiee s'en sert pour synchroniser l'etat
   // quand le PC est joignable (sinon elle reste autonome).
@@ -158,6 +161,7 @@ function publishSurge({ log = () => {}, build = '' } = {}) {
   );
   const tunnel = readTunnel();
   if (tunnel) writeFileSync(path.join(SITE, 'tunnel.txt'), tunnel + '\n');
+  writeFileSync(path.join(SITE, 'build.txt'), (build || '') + '\n');
 
   const r = spawnSync('npx', ['--yes', 'surge', SITE, 'veille-logement-ludo.surge.sh'], {
     cwd: ROOT,
