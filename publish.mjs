@@ -209,10 +209,15 @@ export async function publish({ log = () => {}, force = false } = {}) {
 }
 
 if (process.argv[1] && process.argv[1].endsWith('publish.mjs')) {
-  publish({ log: console.log, force: process.argv.includes('--force') })
-    .then((r) => console.log(r.pushed ? `OK ${r.url}` : `deja a jour ${r.url}`))
-    .catch((e) => {
-      console.error('echec publication :', e.message);
-      process.exit(1);
-    });
+  // --surge : uniquement la copie de secours. Le VPS pousse le depot en git (Pages
+  // se deploie tout seul) mais doit aussi rafraichir l'adresse surge.sh.
+  const job = process.argv.includes('--surge')
+    ? Promise.resolve().then(() => console.log(publishSurge({ log: console.log })))
+    : publish({ log: console.log, force: process.argv.includes('--force') }).then((r) =>
+        console.log(r.pushed ? `OK ${r.url}` : `deja a jour ${r.url}`),
+      );
+  job.catch((e) => {
+    console.error('echec publication :', e.message);
+    process.exit(1);
+  });
 }

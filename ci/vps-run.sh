@@ -29,6 +29,8 @@ export NO_SERVER=1         # pas de serveur local : boutons vers la page publiee
 export PUBLISH_LOCAL=1     # ecrit index.html a la racine du depot
 export HEARTBEAT=1         # declare le VPS vivant pour le runner GitHub
 export HEARTBEAT_HOST=vps
+export OWN=vps             # je ne m'efface que devant le PC
+export DEFER_TO=pc
 export TZ=Europe/Paris
 
 git pull --rebase --autostash -q || git pull --rebase --autostash -q
@@ -43,6 +45,9 @@ echo "$(date -Is) collecte VPS"
 node run.mjs
 status=$?
 [ $status -ne 0 ] && { echo "collecte en echec ($status)"; exit $status; }
+
+# copie de secours hors GitHub (le PC et le runner ne tournent pas ici)
+node publish.mjs --surge 2>&1 | sed 's/^/  /' || echo "  surge indisponible ce tour"
 
 git add -A
 if git diff --cached --quiet; then
