@@ -109,6 +109,10 @@ function mirrorState(dir) {
 
 export function publishLocal({ log = () => {}, changed = true, signature = '' } = {}) {
   if (!existsSync(REPORT)) throw new Error('rapport.html absent');
+  const html = readFileSync(REPORT, 'utf8');
+  // sans signature fournie (publication a la main), on prend une empreinte du fichier :
+  // le telephone verra bien une nouvelle version et se rechargera une fois.
+  const build = signature || createHash('sha1').update(html).digest('hex').slice(0, 16);
   const stateDir = path.join(ROOT, process.env.STATE_DIR || '.cache');
   const stateFile = path.join(stateDir, 'publish.json');
   const flag = path.join(stateDir, 'publish-skip.flag');
@@ -137,12 +141,12 @@ export function publishLocal({ log = () => {}, changed = true, signature = '' } 
   const beat = process.env.HEARTBEAT === '1';
   if (beat) mirrorState(ROOT);
   writePublicFiles(ROOT, {
-    html: readFileSync(REPORT, 'utf8'),
+    html,
     stamp,
     tunnel: readTunnel(),
     heartbeat: beat,
     host: process.env.HEARTBEAT_HOST || 'pc',
-    build: signature,
+    build,
   });
   mkdirSync(stateDir, { recursive: true });
   writeFileSync(stateFile, JSON.stringify({ sig: signature, at: new Date().toISOString() }));
@@ -195,8 +199,9 @@ export async function publish({ log = () => {}, force = false, changed = true, s
   }
 
   // adresse de secours d'abord : elle ne depend ni de GitHub ni d'un build.
+  const build = signature || hash;
   try {
-    publishSurge({ log, build: signature });
+    publishSurge({ log, build });
   } catch (e) {
     log(`  surge indisponible : ${e.message.slice(0, 120)}`);
   }
@@ -219,7 +224,7 @@ export async function publish({ log = () => {}, force = false, changed = true, s
       // le clone est superficiel : il faut rapatrier explicitement la reference distante
       git(['fetch', 'origin', 'main:refs/remotes/origin/main', '--force']);
       git(['reset', '--hard', 'origin/main']);
-      writePublicFiles(DIR, { html, stamp, tunnel, heartbeat: true, host: 'pc', build: signature });
+      writePublicFiles(DIR, { html, stamp, tunnel, heartbeat: true, host: 'pc', build });
       mirrorState(DIR);
       git(['add', '-A']);
       if (!git(['status', '--porcelain']).trim()) {
