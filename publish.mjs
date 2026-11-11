@@ -59,7 +59,7 @@ function heartbeatFresh(dir) {
 
 // Ecrit les fichiers publics dans un dossier. Le PC les pousse depuis son clone,
 // le runner GitHub directement dans sa copie du depot.
-function writePublicFiles(dir, { html, stamp, tunnel, heartbeat = false }) {
+function writePublicFiles(dir, { html, stamp, tunnel, heartbeat = false, host = 'pc' }) {
   writeFileSync(path.join(dir, 'index.html'), prepare(html, stamp));
   writeFileSync(path.join(dir, '.nojekyll'), '');
   // adresse du tunnel du moment : la page publiee s'en sert pour synchroniser l'etat
@@ -68,7 +68,7 @@ function writePublicFiles(dir, { html, stamp, tunnel, heartbeat = false }) {
   // marqueur de vie du PC : le runner GitHub ne prend le relais que si le PC est muet.
   // Le runner ne doit surtout pas l'ecrire, sinon il se croirait lui-meme vivant.
   if (heartbeat) {
-    writeFileSync(path.join(dir, 'heartbeat.json'), JSON.stringify({ at: new Date().toISOString(), host: 'pc' }) + '\n');
+    writeFileSync(path.join(dir, 'heartbeat.json'), JSON.stringify({ at: new Date().toISOString(), host }) + '\n');
   }
   mkdirSync(path.join(dir, '.github', 'workflows'), { recursive: true });
   try {
@@ -81,11 +81,42 @@ function writePublicFiles(dir, { html, stamp, tunnel, heartbeat = false }) {
 
 // Mode runner GitHub : on ecrit index.html a la racine du depot et on s'arrete la.
 // C'est le workflow qui commite (il a le droit de pousser, pas besoin de clone).
+// Le depot porte une memoire partagee (.state/store.json) : le PC y ecrit la sienne
+// et y recupere les notifications deja faites par le VPS ou le runner. Sans ca, une
+// meme annonce repartirait sur le telephone a chaque changement de collecteur.
+function mirrorState(dir) {
+  try {
+    const src = path.join(ROOT, process.env.STATE_DIR || '.cache', 'store.json');
+    const dst = path.join(dir, '.state', 'store.json');
+    const mine = JSON.parse(readFileSync(src, 'utf8'));
+    let theirs = {};
+    try { theirs = JSON.parse(readFileSync(dst, 'utf8')); } catch {}
+    const out = { ...theirs };
+    for (const [id, a] of Object.entries(mine)) {
+      const o = out[id] || {};
+      out[id] = { ...a, notified: !!(a.notified || o.notified), asked: !!(a.asked || o.asked) };
+    }
+    mkdirSync(path.join(dir, '.state'), { recursive: true });
+    writeFileSync(dst, JSON.stringify(out));
+  } catch {}
+}
+
 export function publishLocal({ log = () => {} } = {}) {
   if (!existsSync(REPORT)) throw new Error('rapport.html absent');
   const stamp = new Date().toLocaleString('fr-FR');
-  writePublicFiles(ROOT, { html: readFileSync(REPORT, 'utf8'), stamp, tunnel: readTunnel() });
-  log(`  index.html ecrit a la racine (${stamp})`);
+  // HEARTBEAT=1 : cette machine declare qu'elle collecte (VPS). Le runner GitHub
+  // et les autres collecteurs s'effacent tant qu'elle publie. Le runner, lui,
+  // ne doit jamais l'ecrire, sinon il se croirait vivant.
+  const beat = process.env.HEARTBEAT === '1';
+  if (beat) mirrorState(ROOT);
+  writePublicFiles(ROOT, {
+    html: readFileSync(REPORT, 'utf8'),
+    stamp,
+    tunnel: readTunnel(),
+    heartbeat: beat,
+    host: process.env.HEARTBEAT_HOST || 'pc',
+  });
+  log(`  index.html ecrit a la racine (${stamp})${beat ? ' + marqueur de vie' : ''}`);
   return { stamp };
 }
 
@@ -149,9 +180,11 @@ export async function publish({ log = () => {}, force = false } = {}) {
   // on reecrit nos fichiers par-dessus. Reessai : le runner peut pousser en meme temps.
   for (let essai = 1; essai <= 3; essai++) {
     try {
-      git(['fetch', 'origin', 'main']);
+      // le clone est superficiel : il faut rapatrier explicitement la reference distante
+      git(['fetch', 'origin', 'main:refs/remotes/origin/main', '--force']);
       git(['reset', '--hard', 'origin/main']);
-      writePublicFiles(DIR, { html, stamp, tunnel, heartbeat: true });
+      writePublicFiles(DIR, { html, stamp, tunnel, heartbeat: true, host: 'pc' });
+      mirrorState(DIR);
       git(['add', '-A']);
       if (!git(['status', '--porcelain']).trim()) {
         writeFileSync(STATE, JSON.stringify({ hash, tunnel, at: new Date().toISOString() }));

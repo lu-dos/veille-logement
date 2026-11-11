@@ -8,6 +8,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { openTab, cdpAlive } from './lib/cdp.mjs';
+import { openPlaywrightTab } from './lib/pw.mjs';
 import { collect } from './lib/leboncoin.mjs';
 import { collectPap } from './lib/pap.mjs';
 import { collectBienici } from './lib/bienici.mjs';
@@ -16,6 +17,7 @@ import { hardFilter, scoreAd } from './lib/score.mjs';
 import { notify } from './lib/notify.mjs';
 import { serverBaseInfo, adActions, openUrl } from './lib/lan.mjs';
 import { renderReport } from './lib/report.mjs';
+import { buildLive } from './lib/live.mjs';
 import { publish, publishLocal, PAGES_URL } from './publish.mjs';
 
 const ROOT = import.meta.dirname;
@@ -33,6 +35,12 @@ const DRY = args.has('--dry');
 // JSON Bien'ici tourne. C'est le mode utilise sur un runner GitHub, PC eteint.
 const NO_BROWSER = args.has('--no-browser') || process.env.NO_BROWSER === '1';
 const NO_PUBLISH = args.has('--no-publish');
+// VPS : Chromium local (Playwright) au lieu du Brave du PC. PAP y repond, Leboncoin non.
+const PW = process.env.PW === '1';
+const NO_LEBONCOIN = process.env.NO_LEBONCOIN === '1';
+// Pas de serveur local joignable (VPS, runner) : les boutons des notifications
+// renvoient vers la page publiee au lieu d'une adresse du reseau local.
+const NO_SERVER = NO_BROWSER || process.env.NO_SERVER === '1';
 
 const strip = (s) => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 const log = (...a) => console.log(...a.map(strip));
@@ -101,7 +109,27 @@ async function run() {
   await loadCache();
   const store = await loadJson(STORE_FILE, {});
 
-  if (!NO_BROWSER && !(await cdpAlive())) {
+  // Sur le PC, la memoire publiee (VPS ou runner) complete la notre : une annonce
+  // deja notifiee ailleurs ne repart pas sur le telephone. On ne reprend que les
+  // drapeaux, jamais les annonces inconnues.
+  if (!process.env.STATE_DIR) {
+    const partage = path.join(ROOT, '.cache', 'pages', '.state', 'store.json');
+    if (existsSync(partage)) {
+      try {
+        const autre = JSON.parse(await readFile(partage, 'utf8'));
+        let n = 0;
+        for (const [id, a] of Object.entries(autre)) {
+          const mine = store[id];
+          if (!mine) continue;
+          if (a.notified && !mine.notified) { mine.notified = true; n++; }
+          if (a.asked && !mine.asked) { mine.asked = true; n++; }
+        }
+        if (n) log(`  ${n} drapeau(x) de notification repris de la memoire publiee`);
+      } catch {}
+    }
+  }
+
+  if (!NO_BROWSER && !PW && !(await cdpAlive())) {
     log('Brave sans CDP - relance avec restauration de session...');
     try {
       execFileSync('brave-cli', ['open', 'about:blank'], { stdio: 'ignore', shell: true, timeout: 90000 });
@@ -113,7 +141,7 @@ async function run() {
     }
   }
 
-  log(`coloc-hunter ${new Date().toLocaleString('fr-FR')}${NO_BROWSER ? ' (sans navigateur)' : ''}`);
+  log(`coloc-hunter ${new Date().toLocaleString('fr-FR')}${NO_BROWSER ? ' (sans navigateur)' : PW ? ' (Chromium local)' : ''}`);
   let ads = [];
 
   // Source 1 : Bien'ici, API JSON. Aucun navigateur, marche depuis n'importe quelle IP.
@@ -125,11 +153,14 @@ async function run() {
     }
   }
 
-  // Sources 2 et 3 : Leboncoin et PAP, qui exigent le vrai Brave du PC.
+  // Sources 2 et 3 : Leboncoin et PAP, qui exigent un vrai navigateur.
+  // Sur le PC c'est Brave (session reelle). Sur le VPS c'est Chromium + Playwright :
+  // PAP y repond, Leboncoin bloque l'IP (DataDome) donc on l'ignore la-bas.
   if (!NO_BROWSER) {
-    const tab = await openTab();
+    const tab = PW ? await openPlaywrightTab() : await openTab();
     try {
-      ads = ads.concat(await collect(tab, CFG.zones, log));
+      if (!NO_LEBONCOIN) ads = ads.concat(await collect(tab, CFG.zones, log));
+      else log('  Leboncoin ignore (IP datacenter refusee par le site)');
       // deuxieme source : PAP. Une source qui casse ne doit jamais tuer le tour.
       if (CFG.sources?.pap?.enabled !== false) {
         try {
@@ -262,9 +293,9 @@ async function run() {
     // Base des boutons : tunnel public si dispo (marche en 4G), sinon IP du LAN.
     // En mode sans navigateur (runner GitHub), il n'y a ni serveur ni tunnel :
     // le tap ouvre directement l'annonce, et un bouton ramene au rapport publie.
-    const { base, via } = NO_BROWSER ? { base: '', via: 'aucun (sans navigateur)' } : serverBaseInfo(CFG);
-    const click = (a) => (NO_BROWSER ? a.url : openUrl(base, a));
-    const actions = (a) => (NO_BROWSER ? [{ type: 'view', label: 'Voir les annonces', url: PAGES_URL }] : adActions(base, a));
+    const { base, via } = NO_SERVER ? { base: '', via: 'aucun (pas de serveur local)' } : serverBaseInfo(CFG);
+    const click = (a) => (NO_SERVER ? a.url : openUrl(base, a));
+    const actions = (a) => (NO_SERVER ? [{ type: 'view', label: 'Voir les annonces', url: PAGES_URL }] : adActions(base, a));
     log(`  boutons d'action via ${via}${base ? ' : ' + base : ''}`);
     for (const a of toAlert) {
       const title = `${a.score}/100 - ${a.price} EUR - ${a.city}`;
@@ -302,7 +333,15 @@ async function run() {
   );
   await writeFile(
     path.join(ROOT, 'rapport.html'),
-    renderReport({ cfg: CFG, matches, maybes, rejected, ranAt: new Date() }),
+    renderReport({
+      cfg: CFG,
+      matches,
+      maybes,
+      rejected,
+      ranAt: new Date(),
+      // donnees embarquees : le telephone interroge Bien'ici lui-meme
+      live: buildLive({ cfg: CFG, ads: results }),
+    }),
   );
 
   log(`\n${matches.length} retenus | ${maybes.length} en hesitation | ${rejected.length} ecartes -> rapport.html`);

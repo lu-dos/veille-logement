@@ -13,6 +13,6 @@ const age = at ? Math.round((Date.now() - at) / 60000) : null;
 const manuel = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch';
 const skip = !manuel && at > 0 && age < 40;
 
-const raison = manuel ? 'lancement manuel' : age == null ? 'heartbeat absent' : `PC vu il y a ${age} min`;
-console.error(`${raison} -> ${skip ? 'PC actif, runner en veille' : 'le runner prend le relais'}`);
+const raison = manuel ? 'lancement manuel' : age == null ? 'heartbeat absent' : `dernier collecteur vu il y a ${age} min`;
+console.error(`${raison} -> ${skip ? 'collecteur actif, on laisse la main' : 'on prend le relais'}`);
 console.log(`skip=${skip}`);
