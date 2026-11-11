@@ -46,6 +46,17 @@ function readTunnel() {
   try { return readFileSync(path.join(ROOT, '.cache', 'tunnel-url.txt'), 'utf8').trim(); } catch { return ''; }
 }
 
+// Le PC doit rafraichir son marqueur de vie a chaque run, meme quand le rapport
+// n'a pas change : sinon le runner GitHub croit le PC eteint et prend le relais.
+function heartbeatFresh(dir) {
+  try {
+    const h = JSON.parse(readFileSync(path.join(dir, 'heartbeat.json'), 'utf8'));
+    return Date.now() - new Date(h.at).getTime() < 10 * 60 * 1000;
+  } catch {
+    return false;
+  }
+}
+
 // Ecrit les fichiers publics dans un dossier. Le PC les pousse depuis son clone,
 // le runner GitHub directement dans sa copie du depot.
 function writePublicFiles(dir, { html, stamp, tunnel, heartbeat = false }) {
@@ -111,7 +122,7 @@ export async function publish({ log = () => {}, force = false } = {}) {
 
   let last = {};
   try { last = JSON.parse(readFileSync(STATE, 'utf8')); } catch {}
-  if (!force && last.hash === hash && last.tunnel === tunnel) {
+  if (!force && last.hash === hash && last.tunnel === tunnel && heartbeatFresh(DIR)) {
     log('  pages : deja a jour');
     return { url: PAGES_URL, pushed: false };
   }

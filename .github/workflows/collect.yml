@@ -3,6 +3,8 @@ name: collect
 # Collecte sans le PC : elle tourne sur le runner GitHub, qui n'a pas de navigateur
 # mais a acces a l'API JSON de Bien'ici. Tant que le PC publie (heartbeat recent),
 # le runner ne fait rien : c'est le PC qui collecte, avec plus de sources.
+# Le runner deploie Pages lui-meme : un push fait avec GITHUB_TOKEN ne declenche
+# pas le workflow "pages" (protection anti-recursion de GitHub).
 on:
   schedule:
     - cron: '*/15 * * * *'
@@ -10,15 +12,20 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: collect
+  group: pages
   cancel-in-progress: false
 
 jobs:
   collect:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -40,7 +47,7 @@ jobs:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: node run.mjs
 
-      - name: Publier le resultat
+      - name: Enregistrer le resultat
         if: steps.hb.outputs.skip == 'false'
         run: |
           git config user.email "runner@veille-logement.invalid"
@@ -61,3 +68,27 @@ jobs:
           done
           echo "echec du push apres 3 essais"
           exit 1
+
+      - name: Preparer le dossier public
+        if: steps.hb.outputs.skip == 'false'
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp .nojekyll _site/ 2>/dev/null || true
+          cp tunnel.txt _site/ 2>/dev/null || true
+          ls -la _site
+
+      - name: Preparer Pages
+        if: steps.hb.outputs.skip == 'false'
+        uses: actions/configure-pages@v5
+
+      - name: Empaqueter le site
+        if: steps.hb.outputs.skip == 'false'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deployer
+        id: deployment
+        if: steps.hb.outputs.skip == 'false'
+        uses: actions/deploy-pages@v4
