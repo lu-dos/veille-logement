@@ -61,7 +61,7 @@
     },
     "pap": {
       "enabled": true,
-      "maxPages": 2,
+      "maxPages": 1,
       "_note": "PAP n'expose pas d'API : recherche POST + lecture des cartes dans le vrai Brave. Filtre sur les codes postaux de zones."
     },
     "bienici": {
