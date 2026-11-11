@@ -1,0 +1,41 @@
+name: pages
+
+# Publie le rapport statique (index.html + tunnel.txt) sur GitHub Pages.
+# Le build "legacy" de Pages echouait sans message exploitable ; ce workflow
+# deploie le dossier tel quel et donne des logs lisibles en cas de probleme.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Recuperer le site
+        uses: actions/checkout@v4
+
+      - name: Preparer Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empaqueter le site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deployer
+        id: deployment
+        uses: actions/deploy-pages@v4
