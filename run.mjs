@@ -185,17 +185,43 @@ async function run() {
   for (const a of ads) if (a?.id) byId.set(a.id, { ...(byId.get(a.id) || {}), ...a });
   const collected = [...byId.values()];
 
-  // PAP ne fournit pas de coordonnees : on geocode la commune (BAN, gratuit).
+  // PAP ne fournit pas de coordonnees. L'API d'adresses de l'Etat tombe souvent
+  // (503) : on apprend donc les coordonnees des communes sur Bien'ici, qui les
+  // donne toujours, et on garde cette table d'un tour a l'autre. L'API ne sert
+  // plus que pour une commune encore inconnue.
+  const CITY_GEO = path.join(STATE_DIR, 'city-geo.json');
+  let cityGeo = await loadJson(CITY_GEO, {});
+  let appris = 0;
+  for (const a of collected) {
+    if (a.lat == null || a.lon == null || !a.zip) continue;
+    const connu = cityGeo[a.zip];
+    if (connu && connu.lat === a.lat && connu.lon === a.lon) continue;
+    cityGeo[a.zip] = { lat: a.lat, lon: a.lon, city: a.city || connu?.city || '' };
+    appris++;
+  }
+  if (appris) await writeFile(CITY_GEO, JSON.stringify(cityGeo));
+
   const noGeo = collected.filter((a) => (a.lat == null || a.lon == null) && a.zip);
   if (noGeo.length) {
     const spots = await pool(noGeo, 3, async (a) => {
+      const local = cityGeo[a.zip];
+      if (local) {
+        a.lat = local.lat;
+        a.lon = local.lon;
+        return a;
+      }
       try {
         const g = await geocode(a.city || a.zip, a.zip);
-        if (g) { a.lat = g.lat; a.lon = g.lon; }
+        if (g) {
+          a.lat = g.lat;
+          a.lon = g.lon;
+          cityGeo[a.zip] = { lat: g.lat, lon: g.lon, city: a.city || '' };
+        }
       } catch {}
       return a;
     });
-    log(`  ${spots.filter((a) => a.lat != null).length}/${noGeo.length} annonces geocodees`);
+    const ok = spots.filter((a) => a.lat != null).length;
+    log(`  ${ok}/${noGeo.length} annonces geocodees (${Object.keys(cityGeo).length} communes connues)`);
   }
 
   // meme logement sur deux sites : on fusionne (prix + code postal + surface).
