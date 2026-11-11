@@ -1,8 +1,9 @@
 name: pages
 
-# Publie le rapport statique (index.html + tunnel.txt) sur GitHub Pages.
+# Publie le rapport statique sur GitHub Pages.
+# Seuls les fichiers publics sont deployes (pas le code ni l'etat de collecte).
 # Le build "legacy" de Pages echouait sans message exploitable ; ce workflow
-# deploie le dossier tel quel et donne des logs lisibles en cas de probleme.
+# deploie un dossier prepare et donne des logs lisibles en cas de probleme.
 
 on:
   push:
@@ -28,13 +29,21 @@ jobs:
       - name: Recuperer le site
         uses: actions/checkout@v4
 
+      - name: Preparer le dossier public
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp .nojekyll _site/ 2>/dev/null || true
+          cp tunnel.txt _site/ 2>/dev/null || true
+          ls -la _site
+
       - name: Preparer Pages
         uses: actions/configure-pages@v5
 
       - name: Empaqueter le site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deployer
         id: deployment

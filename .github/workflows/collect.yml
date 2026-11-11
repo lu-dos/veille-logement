@@ -1,0 +1,63 @@
+name: collect
+
+# Collecte sans le PC : elle tourne sur le runner GitHub, qui n'a pas de navigateur
+# mais a acces a l'API JSON de Bien'ici. Tant que le PC publie (heartbeat recent),
+# le runner ne fait rien : c'est le PC qui collecte, avec plus de sources.
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Le PC est-il encore la ?
+        id: hb
+        run: |
+          node ci/skip.mjs >> "$GITHUB_OUTPUT"
+
+      - name: Collecte + rapport + notification
+        if: steps.hb.outputs.skip == 'false'
+        env:
+          NO_BROWSER: '1'
+          PUBLISH_LOCAL: '1'
+          STATE_DIR: .state
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: node run.mjs
+
+      - name: Publier le resultat
+        if: steps.hb.outputs.skip == 'false'
+        run: |
+          git config user.email "runner@veille-logement.invalid"
+          git config user.name "veille-logement runner"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "rien de neuf"
+            exit 0
+          fi
+          git commit -m "collecte sans PC $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "pousse"
+              exit 0
+            fi
+            git pull --rebase --autostash origin main || git rebase --abort || true
+            sleep 5
+          done
+          echo "echec du push apres 3 essais"
+          exit 1

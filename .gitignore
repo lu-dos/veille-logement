@@ -1,0 +1,6 @@
+.cache/
+logs/
+node_modules/
+rapport.html
+*.png
+*.log

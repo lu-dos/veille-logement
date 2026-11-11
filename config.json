@@ -1,0 +1,143 @@
+{
+  "budget": {
+    "max_total_eur": 1200,
+    "target_total_eur": 1100,
+    "persons": 2
+  },
+  "requirements": {
+    "min_bedrooms": 2,
+    "min_rooms": 3,
+    "min_surface_m2": 45
+  },
+  "anchors": {
+    "pasteur": {
+      "label": "40 rue du Docteur Roux, 75015 Paris",
+      "lat": 48.839799,
+      "lon": 2.309836,
+      "max_min": 50,
+      "ideal_min": 30
+    },
+    "orsay": {
+      "label": "1 Parvis de l'Hopital, 91400 Orsay (GHNE / Paris-Saclay)",
+      "lat": 48.716345,
+      "lon": 2.190724,
+      "max_min": 75,
+      "ideal_min": 45
+    }
+  },
+  "car_anchor": {
+    "label": "Etrechy (91580)",
+    "lat": 48.49003,
+    "lon": 2.182131,
+    "ideal_min": 45,
+    "weight": 8,
+    "optional": true
+  },
+  "notify": {
+    "provider": "ntfy",
+    "topic": "",
+    "priority": 4,
+    "_note": "Le topic reel arrive par la variable d'environnement NTFY_TOPIC (secret GitHub)."
+  },
+  "scoring": {
+    "notify_threshold": 55,
+    "maybe_gap": 20,
+    "max_alerts_per_run": 8,
+    "max_maybe_alerts_per_run": 3,
+    "notify_maybe": true
+  },
+  "tolerances": {
+    "price_over_pct": 10,
+    "surface_min_hard": 35,
+    "_note": "Au-dela du plafond +10% ou sous 35 m2, l'annonce est ecartee pour de bon. Entre les deux, elle part en hesitation."
+  },
+  "scam": {
+    "min_eur_per_m2": 12,
+    "_note": "Sous ce seuil en IDF, un logement entier n'existe pas : c'est une coloc au detail ou une arnaque. Vrais T3 observes : 14-23 EUR/m2."
+  },
+  "sources": {
+    "leboncoin": {
+      "enabled": true
+    },
+    "pap": {
+      "enabled": true,
+      "maxPages": 2,
+      "_note": "PAP n'expose pas d'API : recherche POST + lecture des cartes dans le vrai Brave. Filtre sur les codes postaux de zones."
+    },
+    "bienici": {
+      "enabled": true,
+      "maxPages": 6,
+      "_note": "API JSON publique, sans navigateur ni compte : c'est la source qui tourne sur le runner GitHub quand le PC est eteint."
+    }
+  },
+  "options": {
+    "keepAwake": true,
+    "_note": "Empeche la mise en veille automatique du PC tant que le service tourne (l'ecran peut s'eteindre). Mettre false pour rendre la main a Windows."
+  },
+  "zones": [
+    {
+      "name": "RER B sud (meilleur compromis)",
+      "maxPages": 2,
+      "locations": [
+        "Massy_91300",
+        "Palaiseau_91120",
+        "Orsay_91400",
+        "Bures-sur-Yvette_91440",
+        "Gif-sur-Yvette_91190",
+        "Antony_92160",
+        "Bourg-la-Reine_92340",
+        "Cachan_94230",
+        "Arcueil_94110",
+        "Gentilly_94250"
+      ]
+    },
+    {
+      "name": "Sud parisien / proche 15e",
+      "maxPages": 2,
+      "locations": [
+        "Montrouge_92120",
+        "Malakoff_92240",
+        "Vanves_92170",
+        "Clamart_92140",
+        "Chatillon_92320",
+        "Bagneux_92220",
+        "Le Kremlin-Bicetre_94270",
+        "Villejuif_94800",
+        "Issy-les-Moulineaux_92130",
+        "Paris_75014"
+      ]
+    },
+    {
+      "name": "Vallee de la Bievre / proche Orsay",
+      "maxPages": 2,
+      "locations": [
+        "Longjumeau_91160",
+        "Chilly-Mazarin_91380",
+        "Igny_91430",
+        "Vauhallan_91430",
+        "Saclay_91400",
+        "Bievres_91570",
+        "Verrieres-le-Buisson_91370",
+        "Wissous_91320",
+        "Fresnes_94260",
+        "Jouy-en-Josas_78350"
+      ]
+    },
+    {
+      "name": "Paris 15e et proche",
+      "maxPages": 2,
+      "locations": [
+        "Paris_75015",
+        "Paris_75013",
+        "Boulogne-Billancourt_92100",
+        "Sevres_92310",
+        "Meudon_92190",
+        "Chaville_92370",
+        "Ville-d-Avray_92410",
+        "Saint-Cloud_92210",
+        "Garches_92380",
+        "Viroflay_78220"
+      ]
+    }
+  ]
+}
