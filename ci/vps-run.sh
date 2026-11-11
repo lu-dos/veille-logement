@@ -9,7 +9,17 @@
 # Bien'ici (API JSON). Leboncoin refuse l'IP du VPS (DataDome), il reste PC-only.
 set -u
 
+# cron demarre avec un PATH minimal : node/npm vivent dans /usr/bin ici
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export HOME="${HOME:-/home/ludo}"
+
 cd "$(dirname "$0")/.." || exit 1
+
+# le journal ne doit pas grossir sans fin (cron y ecrit tout)
+LOG="$HOME/veille-logement.log"
+if [ -f "$LOG" ] && [ "$(wc -c < "$LOG")" -gt 2000000 ]; then
+  tail -n 500 "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
+fi
 
 # un seul tour a la fois
 exec 9> /tmp/veille-logement.lock
