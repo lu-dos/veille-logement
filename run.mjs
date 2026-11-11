@@ -320,8 +320,18 @@ async function run() {
     // En mode sans navigateur (runner GitHub), il n'y a ni serveur ni tunnel :
     // le tap ouvre directement l'annonce, et un bouton ramene au rapport publie.
     const { base, via } = NO_SERVER ? { base: '', via: 'aucun (pas de serveur local)' } : serverBaseInfo(CFG);
-    const click = (a) => (NO_SERVER ? a.url : openUrl(base, a));
-    const actions = (a) => (NO_SERVER ? [{ type: 'view', label: 'Voir les annonces', url: PAGES_URL }] : adActions(base, a));
+    // Sans serveur local (VPS, runner), taper la notification n'ouvre plus le site
+    // source mais LA CARTE du rapport : carrousel, prix au m2, trajets, vu/postule.
+    // C'est la meme fiche que sur le site, ouverte en un tap depuis le telephone.
+    const carteDe = (a) => PAGES_URL + '#a-' + encodeURIComponent(a.id);
+    const click = (a) => (NO_SERVER ? carteDe(a) : openUrl(base, a));
+    const actions = (a) =>
+      NO_SERVER
+        ? [
+            { type: 'view', label: "Voir l'annonce", url: a.url },
+            { type: 'view', label: 'Rapport', url: PAGES_URL },
+          ]
+        : adActions(base, a);
     log(`  boutons d'action via ${via}${base ? ' : ' + base : ''}`);
     for (const a of toAlert) {
       const title = `${a.score}/100 - ${a.price} EUR - ${a.city}`;
