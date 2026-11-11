@@ -44,6 +44,9 @@ export HEARTBEAT=1         # declare le VPS vivant pour le runner GitHub
 export HEARTBEAT_HOST=vps
 export OWN=vps             # je ne m'efface que devant le PC
 export DEFER_TO=pc
+# Le PC rafraichit son marqueur de vie au moins toutes les 12 min : au-dela de
+# 15 min sans nouvelle, on considere qu'il est eteint et on prend le relais.
+export WINDOW_MIN=15
 export TZ=Europe/Paris
 
 git fetch -q origin main
