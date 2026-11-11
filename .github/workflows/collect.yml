@@ -78,6 +78,14 @@ jobs:
           cp tunnel.txt _site/ 2>/dev/null || true
           ls -la _site
 
+      - name: Copie de secours (surge.sh)
+        if: steps.hb.outputs.skip == 'false'
+        continue-on-error: true
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: npx --yes surge _site veille-logement-ludo.surge.sh
+
       - name: Preparer Pages
         if: steps.hb.outputs.skip == 'false'
         uses: actions/configure-pages@v5
