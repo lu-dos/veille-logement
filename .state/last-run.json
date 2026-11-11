@@ -1,6 +1,6 @@
 {
-  "ranAt": "2026-11-11T23:30:10.353Z",
-  "total": 353,
+  "ranAt": "2026-11-11T23:34:18.935Z",
+  "total": 354,
   "kept": 45,
   "matches": 16,
   "maybes": 39,
@@ -1917,6 +1917,8 @@
       "agency": "agence",
       "charges": 143.66,
       "source": "bienici",
+      "primarySource": "bienici",
+      "otherSource": null,
       "otherUrl": null,
       "rejectedBecause": [
         "1 pièces < 3",
@@ -2704,7 +2706,7 @@
       "id": "bc-ag941161-557952098",
       "subject": "Appartement 1 pièce(s) 38 m2",
       "url": "https://www.bienici.com/annonce/location/boulogne-billancourt/appartement/1piece/ag941161-557952098",
-      "price": 1170,
+      "price": 975,
       "city": "Boulogne-Billancourt",
       "zip": "92100",
       "zone": "Paris 15e et proche",
@@ -3313,6 +3315,8 @@
       "agency": "particulier",
       "charges": 100,
       "source": "bienici",
+      "primarySource": "bienici",
+      "otherSource": null,
       "otherUrl": null,
       "rejectedBecause": [
         "1 pièces < 3",
@@ -7580,7 +7584,7 @@
       "lat": 48.826637445843446,
       "lon": 2.372648346973934,
       "kind": "logement-entier",
-      "description": "L'agence Nous Gérons vous propose ce studio d'une surface de 14,52 m², intégralement meublé. L'appartement se situe au 4ᵉ étage d'un immeuble sécurisé, situé rue de Patay dans le 13ᵉ arrondissement de Paris. L'appartement se compose d'un séjour (canapé, rangements, télévision, table, chaise), d'une cuisine ouverte équipée et aménagée (plaque de cuisson, hotte, réfrigérateur, machine à laver), d'une chambre et d'une salle d'eau avec WC. Caractéristiques du bien : - Surface : 14,52 m² - Studio - 4ème étage - Chauffage individuel électrique - Eau chaude individuelle électrique À noter : - Appartement disponible immédiatement - Quartier avec commerces, restaurants et commodités à proximité - Proximité du métro 14 et du RER C Bibliothèque François Mitterrand Conditions de location : - Loyer de base : 819,80€ - Forfait de charges : 50 € - Loyer charges comprises : 869,80€ - Dépôt de garantie : 870€ - Honoraires à la charge du locataire : 220,45€ TTC Détail des honoraires : – Constitution du dossier, visite, rédaction du bail : 14,57 m² × 12,10 € = 176,30€ TTC – État des lieux : 14,57m² × 3,03 € = 44,15€ TTC – Total honoraires : 220,45€ TTC – Disponibilité : Immédiate – Chauffage / eau chaude : Individuels électriques – à la charge du locataire Encadrement des loyers – Zone soumise à réglementation : – Loyer de référence : 33,7 €/m² – Loyer de référence majoré : 40,4 €/m² 40,4 €/m² × 14,57 m² = 588,63 € – Complément de loyer : 231,18 € – Justification du complément de loyer : Meubles sur-mesure Espaces optimisés Barème des honoraires de location : - Zone très tendue : 12,10 €/m² TTC - Zone tendue : 10,09 €/m² TTC - Zone non tendue : 8,07 €/m² TTC - État des lieux : 3,03 €/m² TTC Mentions légales agence : SARL MRZ Carte professionnelle n° : CPI75012015000000390 Délivrée par : CCI de Paris Île-de-France Organisme garant : SOCAF, 26 avenue de Suffren, 75015 PARIS Mis à jour le 11/11/2026 Updated on 11/11/2026",
+      "description": "L'agence Nous Gérons vous propose ce studio d'une surface de 14,52 m², intégralement meublé. L'appartement se situe au 4ᵉ étage d'un immeuble sécurisé, situé rue de Patay dans le 13ᵉ arrondissement de Paris. L'appartement se compose d'un séjour (canapé, rangements, télévision, table, chaise), d'une cuisine ouverte équipée et aménagée (plaque de cuisson, hotte, réfrigérateur, machine à laver), d'une chambre et d'une salle d'eau avec WC. Caractéristiques du bien : - Surface : 14,52 m² - Studio - 4ème étage - Chauffage individuel électrique - Eau chaude individuelle électrique À noter : - Appartement disponible immédiatement - Quartier avec commerces, restaurants et commodités à proximité - Proximité du métro 14 et du RER C Bibliothèque François Mitterrand Conditions de location : - Loyer de base : 819,80€ - Forfait de charges : 50 € - Loyer charges comprises : 869,80€ - Dépôt de garantie : 870€ - Honoraires à la charge du locataire : 220,45€ TTC Détail des honoraires : – Constitution du dossier, visite, rédaction du bail : 14,57 m² × 12,10 € = 176,30€ TTC – État des lieux : 14,57m² × 3,03 € = 44,15€ TTC – Total honoraires : 220,45€ TTC – Disponibilité : Immédiate – Chauffage / eau chaude : Individuels électriques – à la charge du locataire Encadrement des loyers – Zone soumise à réglementation : – Loyer de référence : 33,7 €/m² – Loyer de référence majoré : 40,4 €/m² 40,4 €/m² × 14,57 m² = 588,63 € – Complément de loyer : 231,18 € – Justification du complément de loyer : Meubles sur-mesure Espaces optimisés Barème des honoraires de location : - Zone très tendue : 12,10 €/m² TTC - Zone tendue : 10,09 €/m² TTC - Zone non tendue : 8,07 €/m² TTC - État des lieux : 3,03 €/m² TTC Mentions légales agence : SARL MRZ Carte professionnelle n° : CPI75012015000000390 Délivrée par : CCI de Paris Île-de-France Organisme garant : SOCAF, 26 avenue de Suffren, 75015 PARIS Mis à jour le 12/11/2026 Updated on 12/11/2026",
       "agency": "particulier",
       "charges": 50,
       "source": "bienici",
@@ -9534,6 +9538,8 @@
       "agency": "particulier",
       "charges": null,
       "source": "bienici",
+      "primarySource": "bienici",
+      "otherSource": null,
       "otherUrl": null,
       "rejectedBecause": [
         "1 pièces < 3",
@@ -9995,6 +10001,8 @@
       "agency": "agence",
       "charges": 156.8,
       "source": "bienici",
+      "primarySource": "bienici",
+      "otherSource": null,
       "otherUrl": null,
       "rejectedBecause": [
         "1 pièces < 3",
@@ -10437,7 +10445,7 @@
       "lat": 48.826637445843446,
       "lon": 2.372648346973934,
       "kind": "logement-entier",
-      "description": "Nous vous proposons cet appartement T2 de 14,57 m², situé au 64 Rue de Patay dans le 13ème arrondissement de Paris. Situé au 4ème étage, cet appartement bénéficie d'une surface fonctionnelle de 14,57 m² et d'une localisation pratique dans le 13ème arrondissement. Caractéristiques du bien : - Surface : 14,57 m² - T2 - 4ème étage - Chauffage individuel électrique - Eau chaude individuelle électrique Transports à proximité : - Métro : ligne 14 – station Olympiades - RER : ligne C – station Bibliothèque François Mitterrand - Bus : ligne 27 – arrêt Patay-Tolbiac - Bus : ligne 62 – arrêt Patay-Tolbiac - Bus : ligne 64 – arrêt Patay-Tolbiac - Bus : ligne 132 – arrêt Patay-Tolbiac - Plusieurs lignes de bus à proximité. À noter : - Appartement disponible de suite - Quartier avec commerces, restaurants et commodités à proximité - Bonne desserte par les transports en commun - Logement situé au 4ème étage Conditions de location : - Loyer de base : 808,32 € - Provision pour charges : 50,00 € - Loyer charges comprises : 858,32 € - Dépôt de garantie : 858,32 € - Honoraires à la charge du locataire : 220,45 € TTC Détail des honoraires : - Constitution du dossier, visite, rédaction du bail : 14,57 m² × 12,10 € = 176,30 € TTC - État des lieux : 14,57 m² × 3,03 € = 44,15 € TTC - Total honoraires : 220,45 € TTC - Disponibilité : de suite - Chauffage / eau chaude : Individuels électriques – à la charge du locataire Encadrement des loyers - Zone soumise à réglementation : - Loyer de référence : 33,70 €/m² - Loyer de référence majoré : 40,40 €/m² - Loyer de référence majoré : 40,40 €/m² × 14,57 m² = 588,63 € - Loyer de base initial : 808,32 € € - Complément de loyer : 219,69 € Justificatif de complément de loyer : Situé au 4ᵉ étage, ce logement bénéficie d'une isolation renforcée et de fenêtres à double vitrage, offrant ainsi un confort thermique agréable et une protection contre les bruits extérieurs. Barème des honoraires de location : - Zone très tendue : 12,10 €/m² TTC - Zone tendue : 10,09 €/m² TTC - Zone non tendue : 8,07 €/m² TTC - État des lieux : 3,03 €/m² TTC Mentions légales agence : SARL MRZ Carte professionnelle n° : CPI75012015000000390 Délivrée par : CCI de Paris Île-de-France Organisme garant : SOCAF, 26 avenue de Suffren, 75015 PARIS Mis à jour le 11/11/2026 Updated on 11/11/2026",
+      "description": "Nous vous proposons cet appartement T2 de 14,57 m², situé au 64 Rue de Patay dans le 13ème arrondissement de Paris. Situé au 4ème étage, cet appartement bénéficie d'une surface fonctionnelle de 14,57 m² et d'une localisation pratique dans le 13ème arrondissement. Caractéristiques du bien : - Surface : 14,57 m² - T2 - 4ème étage - Chauffage individuel électrique - Eau chaude individuelle électrique Transports à proximité : - Métro : ligne 14 – station Olympiades - RER : ligne C – station Bibliothèque François Mitterrand - Bus : ligne 27 – arrêt Patay-Tolbiac - Bus : ligne 62 – arrêt Patay-Tolbiac - Bus : ligne 64 – arrêt Patay-Tolbiac - Bus : ligne 132 – arrêt Patay-Tolbiac - Plusieurs lignes de bus à proximité. À noter : - Appartement disponible de suite - Quartier avec commerces, restaurants et commodités à proximité - Bonne desserte par les transports en commun - Logement situé au 4ème étage Conditions de location : - Loyer de base : 808,32 € - Provision pour charges : 50,00 € - Loyer charges comprises : 858,32 € - Dépôt de garantie : 858,32 € - Honoraires à la charge du locataire : 220,45 € TTC Détail des honoraires : - Constitution du dossier, visite, rédaction du bail : 14,57 m² × 12,10 € = 176,30 € TTC - État des lieux : 14,57 m² × 3,03 € = 44,15 € TTC - Total honoraires : 220,45 € TTC - Disponibilité : de suite - Chauffage / eau chaude : Individuels électriques – à la charge du locataire Encadrement des loyers - Zone soumise à réglementation : - Loyer de référence : 33,70 €/m² - Loyer de référence majoré : 40,40 €/m² - Loyer de référence majoré : 40,40 €/m² × 14,57 m² = 588,63 € - Loyer de base initial : 808,32 € € - Complément de loyer : 219,69 € Justificatif de complément de loyer : Situé au 4ᵉ étage, ce logement bénéficie d'une isolation renforcée et de fenêtres à double vitrage, offrant ainsi un confort thermique agréable et une protection contre les bruits extérieurs. Barème des honoraires de location : - Zone très tendue : 12,10 €/m² TTC - Zone tendue : 10,09 €/m² TTC - Zone non tendue : 8,07 €/m² TTC - État des lieux : 3,03 €/m² TTC Mentions légales agence : SARL MRZ Carte professionnelle n° : CPI75012015000000390 Délivrée par : CCI de Paris Île-de-France Organisme garant : SOCAF, 26 avenue de Suffren, 75015 PARIS Mis à jour le 12/11/2026 Updated on 12/11/2026",
       "agency": "particulier",
       "charges": 50,
       "source": "bienici",
@@ -11390,6 +11398,45 @@
         "1 pièces < 3",
         "1 ch. < 2",
         "11.61 m² < 35"
+      ]
+    },
+    {
+      "id": "pap-442700448",
+      "url": "https://www.pap.fr/annonces/appartement-chaville-92370-r442700448",
+      "price": 695,
+      "zip": "92370",
+      "city": "Chaville",
+      "rooms": 3,
+      "beds": "1",
+      "surf": "50",
+      "images": [
+        "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
+        "https://cdn.pap.fr/photos/pap/4b/17/4b17aaa597f8e64db52b38d54d3d230f/4-p2.webp",
+        "https://cdn.pap.fr/photos/pap/bc/7a/bc7a588c2840cc010342b4dc059378f2/b-p2.webp",
+        "https://cdn.pap.fr/photos/pap/a4/98/a4984c5e10875ed3ea11c4edaa519ed7/a-p2.webp",
+        "https://cdn.pap.fr/photos/pap/c5/1c/c51cea0439fbd4bf027edff31ea83892/c-p2.webp",
+        "https://cdn.pap.fr/photos/pap/be/c6/bec6144404368a0a9061af0d61540f77/b-p2.webp",
+        "https://cdn.pap.fr/photos/pap/89/9c/899c79efe5794c7d4ce1a271dce2f39d/8-p2.webp"
+      ],
+      "text": "695 € Chaville (92370) 3 pièces 1 chambre 50 m² Chambre disponible immédiatement dans une colocation cosy et calme de seulement 2 personnes. Appartement T3 de 50 m², récemment rénové avec prestations de qualité, situé au 2ème étage avec ascenseur...",
+      "subject": "Chambre disponible immédiatement dans une colocation cosy et calme de",
+      "surface": 50,
+      "bedrooms": 1,
+      "lat": 48.81049455389592,
+      "lon": 2.1927819997939535,
+      "realEstateType": "appartement",
+      "owner": "particulier",
+      "publishedAt": null,
+      "body": "695 € Chaville (92370) 3 pièces 1 chambre 50 m² Chambre disponible immédiatement dans une colocation cosy et calme de seulement 2 personnes. Appartement T3 de 50 m², récemment rénové avec prestations de qualité, situé au 2ème étage avec ascenseur...",
+      "image": "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
+      "imageLarge": "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
+      "nbImages": 7,
+      "kind": "appartement",
+      "totalRent": 695,
+      "source": "pap",
+      "zone": "Paris 15e et proche",
+      "rejectedBecause": [
+        "1 ch. < 2"
       ]
     }
   ]
