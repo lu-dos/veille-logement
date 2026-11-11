@@ -62,7 +62,8 @@
     "pap": {
       "enabled": true,
       "maxPages": 1,
-      "_note": "PAP n'expose pas d'API : recherche POST + lecture des cartes dans le vrai Brave. Filtre sur les codes postaux de zones."
+      "groups": 4,
+      "_note": "PAP n'expose pas d'API : recherche POST + lecture des cartes dans le vrai Brave. Filtre sur les codes postaux de zones. Une seule page par tour (Cloudflare) : les 40 communes sont donc vues par groupes de 10 qui tournent d'un tour a l'autre."
     },
     "bienici": {
       "enabled": true,

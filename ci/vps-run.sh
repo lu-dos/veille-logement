@@ -1,9 +1,12 @@
 #!/bin/bash
-# Collecte depuis le VPS (cron, toutes les 10 min).
+# Collecte depuis le VPS (cron, toutes les 3 min).
 #
 # Pourquoi : le planificateur GitHub ne livre quasiment aucun run et le PC doit
 # rester allume. Le VPS, lui, tourne en permanence. Il ne collecte que lorsque le
 # PC ne publie plus (heartbeat de plus de 40 min), pour ne jamais doubler.
+#
+# Cadence : toutes les 3 min pour reperer une annonce presque tout de suite, mais
+# publication seulement quand le contenu change (voir .state/publish-skip.flag).
 #
 # Ce qu'il sait faire : PAP (Chromium Playwright : accepte depuis cette IP) et
 # Bien'ici (API JSON). Leboncoin refuse l'IP du VPS (DataDome), il reste PC-only.
@@ -43,7 +46,12 @@ export OWN=vps             # je ne m'efface que devant le PC
 export DEFER_TO=pc
 export TZ=Europe/Paris
 
-git pull --rebase --autostash -q || git pull --rebase --autostash -q
+git fetch -q origin main
+# On repart toujours de l'etat du depot. Un tour precedent peut s'etre arrete sans
+# pousser (contenu identique) : sans ça, un arbre de travail modifie ferait echouer
+# le pull suivant. Les fichiers de travail (.state/publish.json, pap-group.txt,
+# signature.txt) ne sont pas suivis par git, ils survivent au reset.
+git reset --hard -q origin/main
 
 skip=$(node ci/skip.mjs 2>/dev/null | sed -n 's/^skip=//p')
 if [ "$skip" = "true" ]; then
@@ -55,6 +63,15 @@ echo "$(date -Is) collecte VPS"
 node run.mjs
 status=$?
 [ $status -ne 0 ] && { echo "collecte en echec ($status)"; exit $status; }
+
+# Contenu identique au dernier envoi : run.mjs a laisse ce drapeau. Rien a pousser
+# (le marqueur de vie repart seul toutes les 12 min). C'est ce qui permet de
+# collecter toutes les 3 minutes sans 480 deploiements par jour.
+if [ -f .state/publish-skip.flag ]; then
+  rm -f .state/publish-skip.flag
+  echo "$(date -Is) rien de neuf, pas de publication"
+  exit 0
+fi
 
 # copie de secours hors GitHub (le PC et le runner ne tournent pas ici)
 node publish.mjs --surge 2>&1 | sed 's/^/  /' || echo "  surge indisponible ce tour"

@@ -7,7 +7,7 @@
 // les builds GitHub.
 
 import { execFileSync, spawnSync } from 'node:child_process';
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 
@@ -29,10 +29,13 @@ const SURGE_TOKEN =
 const git = (args, opts = {}) =>
   execFileSync('git', args, { cwd: DIR, stdio: 'pipe', encoding: 'utf8', ...opts });
 
-function prepare(html, stamp) {
+function prepare(html, stamp, build = '') {
   // page publique : on demande aux moteurs de ne pas l'indexer
   const noindex = '<meta name="robots" content="noindex,nofollow">';
-  let out = html.replace(/<head>/i, `<head>${noindex}`);
+  // empreinte du contenu : le telephone la lit toutes les minutes et se recharge
+  // quand elle change (voir le script du rapport). Identique = page inchangee.
+  const tag = build ? `<meta name="veille-build" content="${build}">` : '';
+  let out = html.replace(/<head>/i, `<head>${noindex}${tag}`);
   out = out.replace(
     '</body>',
     `<div style="text-align:center;color:#4d5666;font-size:11px;padding:22px 0 8px">
@@ -59,8 +62,8 @@ function heartbeatFresh(dir) {
 
 // Ecrit les fichiers publics dans un dossier. Le PC les pousse depuis son clone,
 // le runner GitHub directement dans sa copie du depot.
-function writePublicFiles(dir, { html, stamp, tunnel, heartbeat = false, host = 'pc' }) {
-  writeFileSync(path.join(dir, 'index.html'), prepare(html, stamp));
+function writePublicFiles(dir, { html, stamp, tunnel, heartbeat = false, host = 'pc', build = '' }) {
+  writeFileSync(path.join(dir, 'index.html'), prepare(html, stamp, build));
   writeFileSync(path.join(dir, '.nojekyll'), '');
   // adresse du tunnel du moment : la page publiee s'en sert pour synchroniser l'etat
   // quand le PC est joignable (sinon elle reste autonome).
@@ -101,8 +104,29 @@ function mirrorState(dir) {
   } catch {}
 }
 
-export function publishLocal({ log = () => {} } = {}) {
+export function publishLocal({ log = () => {}, changed = true, signature = '' } = {}) {
   if (!existsSync(REPORT)) throw new Error('rapport.html absent');
+  const stateDir = path.join(ROOT, process.env.STATE_DIR || '.cache');
+  const stateFile = path.join(stateDir, 'publish.json');
+  const flag = path.join(stateDir, 'publish-skip.flag');
+  let last = {};
+  try { last = JSON.parse(readFileSync(stateFile, 'utf8')); } catch {}
+  const ageMin = last.at ? (Date.now() - new Date(last.at).getTime()) / 60000 : Infinity;
+
+  // Contenu identique et dernier envoi recent : on n'ecrit rien, on ne pousse rien.
+  // C'est ce qui permet de collecter toutes les 3 minutes sans 480 deploiements
+  // par jour. Un marqueur de vie repart quand meme toutes les 12 minutes : c'est
+  // lui qui dit au runner GitHub que cette machine collecte toujours.
+  if (!changed && ageMin < 12) {
+    try {
+      mkdirSync(stateDir, { recursive: true });
+      writeFileSync(flag, new Date().toISOString());
+    } catch {}
+    log(`  publication sautee (contenu identique, dernier envoi il y a ${Math.round(ageMin)} min)`);
+    return { skipped: true };
+  }
+  try { rmSync(flag, { force: true }); } catch {}
+
   const stamp = new Date().toLocaleString('fr-FR');
   // HEARTBEAT=1 : cette machine declare qu'elle collecte (VPS). Le runner GitHub
   // et les autres collecteurs s'effacent tant qu'elle publie. Le runner, lui,
@@ -115,19 +139,22 @@ export function publishLocal({ log = () => {} } = {}) {
     tunnel: readTunnel(),
     heartbeat: beat,
     host: process.env.HEARTBEAT_HOST || 'pc',
+    build: signature,
   });
+  mkdirSync(stateDir, { recursive: true });
+  writeFileSync(stateFile, JSON.stringify({ sig: signature, at: new Date().toISOString() }));
   log(`  index.html ecrit a la racine (${stamp})${beat ? ' + marqueur de vie' : ''}`);
-  return { stamp };
+  return { stamp, skipped: false };
 }
 
 // Deuxieme adresse, volontairement hors GitHub : si Pages tombe (panne du 11/11),
 // le telephone garde un lien qui rend le HTML et execute le JavaScript.
-function publishSurge({ log = () => {} } = {}) {
+function publishSurge({ log = () => {}, build = '' } = {}) {
   const SITE = path.join(ROOT, '.cache', 'surge-site');
   mkdirSync(SITE, { recursive: true });
   writeFileSync(
     path.join(SITE, 'index.html'),
-    prepare(readFileSync(REPORT, 'utf8'), new Date().toLocaleString('fr-FR')),
+    prepare(readFileSync(REPORT, 'utf8'), new Date().toLocaleString('fr-FR'), build),
   );
   const tunnel = readTunnel();
   if (tunnel) writeFileSync(path.join(SITE, 'tunnel.txt'), tunnel + '\n');
@@ -144,7 +171,7 @@ function publishSurge({ log = () => {} } = {}) {
   return SURGE_URL;
 }
 
-export async function publish({ log = () => {}, force = false } = {}) {
+export async function publish({ log = () => {}, force = false, changed = true, signature = '' } = {}) {
   if (!existsSync(REPORT)) throw new Error('rapport.html absent');
 
   const html = readFileSync(REPORT, 'utf8');
@@ -153,6 +180,11 @@ export async function publish({ log = () => {}, force = false } = {}) {
 
   let last = {};
   try { last = JSON.parse(readFileSync(STATE, 'utf8')); } catch {}
+  const ageMin = last.at ? (Date.now() - new Date(last.at).getTime()) / 60000 : Infinity;
+  if (!force && !changed && ageMin < 12) {
+    log(`  pages : contenu identique, publication sautee (dernier envoi il y a ${Math.round(ageMin)} min)`);
+    return { url: PAGES_URL, pushed: false, skipped: true };
+  }
   if (!force && last.hash === hash && last.tunnel === tunnel && heartbeatFresh(DIR)) {
     log('  pages : deja a jour');
     return { url: PAGES_URL, pushed: false };
@@ -160,7 +192,7 @@ export async function publish({ log = () => {}, force = false } = {}) {
 
   // adresse de secours d'abord : elle ne depend ni de GitHub ni d'un build.
   try {
-    publishSurge({ log });
+    publishSurge({ log, build: signature });
   } catch (e) {
     log(`  surge indisponible : ${e.message.slice(0, 120)}`);
   }
@@ -183,7 +215,7 @@ export async function publish({ log = () => {}, force = false } = {}) {
       // le clone est superficiel : il faut rapatrier explicitement la reference distante
       git(['fetch', 'origin', 'main:refs/remotes/origin/main', '--force']);
       git(['reset', '--hard', 'origin/main']);
-      writePublicFiles(DIR, { html, stamp, tunnel, heartbeat: true, host: 'pc' });
+      writePublicFiles(DIR, { html, stamp, tunnel, heartbeat: true, host: 'pc', build: signature });
       mirrorState(DIR);
       git(['add', '-A']);
       if (!git(['status', '--porcelain']).trim()) {

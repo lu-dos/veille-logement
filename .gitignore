@@ -4,3 +4,7 @@ node_modules/
 rapport.html
 *.png
 *.log
+.state/publish.json
+.state/publish-skip.flag
+.state/signature.txt
+.state/pap-group.txt

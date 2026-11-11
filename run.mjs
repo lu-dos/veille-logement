@@ -7,6 +7,7 @@ import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { openTab, cdpAlive } from './lib/cdp.mjs';
 import { openPlaywrightTab } from './lib/pw.mjs';
 import { collect } from './lib/leboncoin.mjs';
@@ -70,6 +71,10 @@ const fmtTravel = (t) =>
 
 function buildMessage(a, prefix) {
   const eurM2 = a.surface ? (a.price / a.surface).toFixed(1) : '?';
+  const nomSite = { leboncoin: 'Leboncoin', pap: 'PAP', bienici: "Bien'ici" };
+  const principal = a.primarySource || (a.source === 'les deux' ? 'leboncoin' : a.source) || 'leboncoin';
+  const sites = [nomSite[principal] || principal];
+  if (a.otherSource && a.otherSource !== principal) sites.push(nomSite[a.otherSource] || a.otherSource);
   const lines = [
     `${prefix}${a.subject}`,
     '',
@@ -77,6 +82,7 @@ function buildMessage(a, prefix) {
     `${a.rooms ?? '?'} pieces, ${a.bedrooms ?? '?'} chambres`,
     fmtTravel(a.travel),
     `zone: ${a.zone}`,
+    `site: ${sites.join(' + ')}`,
   ];
   if (a.flags?.length) {
     lines.push('', 'A verifier :');
@@ -164,9 +170,22 @@ async function run() {
       // deuxieme source : PAP. Une source qui casse ne doit jamais tuer le tour.
       if (CFG.sources?.pap?.enabled !== false) {
         try {
+          // PAP ne rend qu'une page par tour : on fait tourner les communes par
+          // groupes, sinon les memes 15 annonces reviennent et le reste est invisible.
+          const groupes = Math.max(1, CFG.sources?.pap?.groups ?? 4);
+          const turnFile = path.join(STATE_DIR, 'pap-group.txt');
+          const precedent = Number((await readFile(turnFile, 'utf8').catch(() => '0')).trim()) || 0;
+          const groupe = ((precedent % groupes) + groupes) % groupes;
+          await writeFile(turnFile, String((groupe + 1) % groupes));
           const pap = await collectPap(
             tab,
-            { zones: CFG.zones, maxPrice: CFG.budget.max_total_eur, maxPages: CFG.sources?.pap?.maxPages ?? 2 },
+            {
+              zones: CFG.zones,
+              maxPrice: CFG.budget.max_total_eur,
+              maxPages: CFG.sources?.pap?.maxPages ?? 2,
+              group: groupe,
+              groups: groupes,
+            },
             log,
           );
           ads = ads.concat(pap);
@@ -233,13 +252,18 @@ async function run() {
     if (!prev) { merged.set(key, a); continue; }
     const patch = {};
     for (const [k, v] of Object.entries(a)) if (v != null && v !== '') patch[k] = v;
+    const memeSite = String(prev.source) === String(a.source);
     merged.set(key, {
       ...prev,
       ...patch,
       id: prev.id,
       url: prev.url,
-      source: String(prev.source) === String(a.source) ? a.source : 'les deux',
-      otherUrl: prev.otherUrl || (String(prev.source) === String(a.source) ? null : a.url),
+      source: memeSite ? a.source : 'les deux',
+      // deux sites pour le meme logement : on garde lequel porte l'annonce et
+      // lequel la complete, pour afficher les deux badges cote a cote.
+      primarySource: prev.primarySource || prev.source || 'leboncoin',
+      otherSource: prev.otherSource || (memeSite ? null : a.source),
+      otherUrl: prev.otherUrl || (memeSite ? null : a.url),
     });
   }
   const deduped = [...merged.values()];
@@ -309,6 +333,26 @@ async function run() {
 
   const matches = results.filter((a) => a.bucket === 'match');
   const maybes = results.filter((a) => a.bucket === 'maybe');
+
+  // Signature du contenu publie : elle ne bouge que si une annonce apparait,
+  // disparait ou change. Sans elle, l'horodatage du rapport suffirait a republier
+  // la meme page tous les quarts d'heure et a saturer GitHub Pages.
+  const signature = createHash('sha1')
+    .update(
+      JSON.stringify(
+        results.map((a) => [
+          a.id, a.price, a.surface, a.bucket, a.score, a.source,
+          a.primarySource || '', a.otherSource || '', a.subject,
+          (a.images || []).length, a.image || '', a.publishedAt,
+        ]),
+      ) + '|' + rejected.length,
+    )
+    .digest('hex')
+    .slice(0, 16);
+  const sigFile = path.join(STATE_DIR, 'signature.txt');
+  const signaturePrecedente = (await readFile(sigFile, 'utf8').catch(() => '')).trim();
+  const changed = signaturePrecedente !== signature;
+  log(changed ? '  contenu : nouveau par rapport a la derniere publication' : '  contenu : identique, rien a republier');
 
   const toAlert = matches.filter((a) => !store[a.id].notified).slice(0, CFG.scoring.max_alerts_per_run);
   const toAsk = CFG.scoring.notify_maybe
@@ -395,9 +439,11 @@ async function run() {
     try {
       if (process.env.PUBLISH_LOCAL === '1') {
         // runner GitHub : le workflow commite lui-meme
-        publishLocal({ log });
+        const r = publishLocal({ log, changed, signature });
+        if (!r.skipped) await writeFile(sigFile, signature);
       } else {
-        const pub = await publish({ log });
+        const pub = await publish({ log, changed, signature });
+        if (!pub.skipped) await writeFile(sigFile, signature);
         if (pub.pushed) log(`  adresse fixe a jour : ${PAGES_URL}`);
       }
     } catch (e) {
