@@ -1,0 +1,162 @@
+{
+ "Massy_91300": {
+  "id": "-29251",
+  "nom": "Massy"
+ },
+ "Palaiseau_91120": {
+  "id": "-33504",
+  "nom": "Palaiseau"
+ },
+ "Orsay_91400": {
+  "id": "-33505",
+  "nom": "Orsay"
+ },
+ "Bures-sur-Yvette_91440": {
+  "id": "-53801",
+  "nom": "Bures-sur-Yvette"
+ },
+ "Gif-sur-Yvette_91190": {
+  "id": "-53650",
+  "nom": "Gif-sur-Yvette"
+ },
+ "Antony_92160": {
+  "id": "-57750",
+  "nom": "Antony"
+ },
+ "Bourg-la-Reine_92340": {
+  "id": "-37041",
+  "nom": "Bourg-la-Reine"
+ },
+ "Cachan_94230": {
+  "id": "-48862",
+  "nom": "Cachan"
+ },
+ "Arcueil_94110": {
+  "id": "-103967",
+  "nom": "Arcueil"
+ },
+ "Gentilly_94250": {
+  "id": "-104479",
+  "nom": "Gentilly"
+ },
+ "Montrouge_92120": {
+  "id": "-37026",
+  "nom": "Montrouge"
+ },
+ "Malakoff_92240": {
+  "id": "-37027",
+  "nom": "Malakoff"
+ },
+ "Vanves_92170": {
+  "id": "-59321",
+  "nom": "Vanves"
+ },
+ "Clamart_92140": {
+  "id": "-29036",
+  "nom": "Clamart"
+ },
+ "Chatillon_92320": {
+  "id": "-37020",
+  "nom": "Châtillon"
+ },
+ "Bagneux_92220": {
+  "id": "-37025",
+  "nom": "Bagneux"
+ },
+ "Le Kremlin-Bicetre_94270": {
+  "id": "-105122",
+  "nom": "Le Kremlin-Bicêtre"
+ },
+ "Villejuif_94800": {
+  "id": "-105146",
+  "nom": "Villejuif"
+ },
+ "Issy-les-Moulineaux_92130": {
+  "id": "-85527",
+  "nom": "Issy-les-Moulineaux"
+ },
+ "Paris_75014": {
+  "id": "-9522",
+  "nom": "Paris 14e"
+ },
+ "Longjumeau_91160": {
+  "id": "-395036",
+  "nom": "Longjumeau"
+ },
+ "Chilly-Mazarin_91380": {
+  "id": "-395443",
+  "nom": "Chilly-Mazarin"
+ },
+ "Igny_91430": {
+  "id": "-28036",
+  "nom": "Igny"
+ },
+ "Vauhallan_91430": {
+  "id": "-52770",
+  "nom": "Vauhallan"
+ },
+ "Saclay_91400": {
+  "id": "-23773",
+  "nom": "Saclay"
+ },
+ "Bievres_91570": {
+  "id": "-29244",
+  "nom": "Bièvres"
+ },
+ "Verrieres-le-Buisson_91370": {
+  "id": "-70355",
+  "nom": "Verrières-le-Buisson"
+ },
+ "Wissous_91320": {
+  "id": "-395488",
+  "nom": "Wissous"
+ },
+ "Fresnes_94260": {
+  "id": "-103395",
+  "nom": "Fresnes"
+ },
+ "Jouy-en-Josas_78350": {
+  "id": "-23772",
+  "nom": "Jouy-en-Josas"
+ },
+ "Paris_75015": {
+  "id": "-9520",
+  "nom": "Paris 15e"
+ },
+ "Paris_75013": {
+  "id": "-9530",
+  "nom": "Paris 13e"
+ },
+ "Boulogne-Billancourt_92100": {
+  "id": "-72020",
+  "nom": "Boulogne-Billancourt"
+ },
+ "Sevres_92310": {
+  "id": "-31340",
+  "nom": "Sèvres"
+ },
+ "Meudon_92190": {
+  "id": "-31341",
+  "nom": "Meudon"
+ },
+ "Chaville_92370": {
+  "id": "-31339",
+  "nom": "Chaville"
+ },
+ "Ville-d-Avray_92410": {
+  "id": "-31338",
+  "nom": "Ville-d'Avray"
+ },
+ "Saint-Cloud_92210": {
+  "id": "-72148",
+  "nom": "Saint-Cloud"
+ },
+ "Garches_92380": {
+  "id": "-72019",
+  "nom": "Garches"
+ },
+ "Viroflay_78220": {
+  "id": "-30294",
+  "nom": "Viroflay"
+ }
+}
