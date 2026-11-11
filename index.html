@@ -21,6 +21,12 @@
   .sortbar .lbl{margin-right:2px}
   .sortbar button{background:#11141a;border:1px solid var(--line);color:var(--mut);font:inherit;font-size:12px;padding:5px 11px;border-radius:999px;cursor:pointer}
   .sortbar button.on{background:#232a36;border-color:#39424f;color:var(--txt)}
+  .livebar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0 0}
+  .livebar button{font:inherit;font-size:12.5px;padding:7px 13px;border-radius:999px;border:1px solid rgba(77,171,247,.5);background:rgba(77,171,247,.12);color:#a9d6ff;cursor:pointer}
+  .livebar button:active{background:rgba(77,171,247,.26)}
+  .livebar .st{color:var(--mut);font-size:12px}
+  #live-list .card{border-left-color:#4dabf7}
+  #live-sec h2{color:#a9d6ff}
   .when{color:#67707f;font-size:12px;margin-top:5px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
   .when .new{background:rgba(62,207,142,.16);color:#8ff0c2;border:1px solid rgba(62,207,142,.45);border-radius:999px;padding:1px 7px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
   .when .src{color:#8b93a3}
@@ -78,7 +84,12 @@
 </style></head>
 <body><div class="wrap">
 <h1>Coloc hunter</h1>
-<div class="sub">Logements entiers uniquement (2 chambres min, 1 200 € max) · maj 11/11/2026 23:31:20</div>
+<div class="sub">Logements entiers uniquement (2 chambres min, 1 200 € max) · maj 11/11/2026 23:51:18</div>
+
+<div class="livebar">
+  <button id="live-refresh">Vérifier les nouvelles annonces</button>
+  <span class="st" id="live-state">…</span>
+</div>
 
 <div class="bar">
   <div class="progress"><b id="stat-seen">0</b> vus · <b id="stat-applied">0</b> postulés · <b id="stat-total">0</b> annonces</div>
@@ -94,6 +105,12 @@
   <button data-sort="score" class="on">Score</button>
   <button data-sort="date">Date de publication</button>
 </div>
+
+<section class="sec" id="live-sec" style="display:none">
+  <h2>Trouvées par ton téléphone <span class="count" id="live-count">0</span></h2>
+  <p class="sub">Publiées depuis le dernier passage, cherchées directement à l'ouverture de cette page — le PC peut rester éteint. Trajets estimés par code postal.</p>
+  <div id="live-list"></div>
+</section>
 
 <section class="sec">
     <h2>Retenus <span class="count">16</span></h2>
@@ -124,7 +141,7 @@
         <span class="chip ok"><b>Pasteur</b> 28 min</span>
         <span class="chip ok"><b>Orsay</b> 42 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 43 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
       <div class="actions">
@@ -229,7 +246,7 @@
         <span class="chip ok"><b>Pasteur</b> 40 min</span>
         <span class="chip ok"><b>Orsay</b> 36 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 38 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
       <div class="actions">
@@ -264,7 +281,7 @@
         <span class="chip ok"><b>Pasteur</b> 30 min</span>
         <span class="chip ok"><b>Orsay</b> 51 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 47 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Paris 15e et proche</span>
       </div>
       
       <div class="actions">
@@ -299,7 +316,7 @@
         <span class="chip ok"><b>Pasteur</b> 34 min</span>
         <span class="chip ok"><b>Orsay</b> 44 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 45 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
       
       <div class="actions">
@@ -404,7 +421,7 @@
         <span class="chip ok"><b>Pasteur</b> 48 min</span>
         <span class="chip ok"><b>Orsay</b> 46 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
       <div class="actions">
@@ -439,7 +456,7 @@
         <span class="chip ok"><b>Pasteur</b> 38 min</span>
         <span class="chip ok"><b>Orsay</b> 45 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 39 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
       <div class="actions">
@@ -474,7 +491,7 @@
         <span class="chip ok"><b>Pasteur</b> 45 min</span>
         <span class="chip ok"><b>Orsay</b> 48 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 45 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Paris 15e et proche</span>
       </div>
       
       <div class="actions">
@@ -759,7 +776,7 @@
         <span class="chip ok"><b>Pasteur</b> 31 min</span>
         <span class="chip ok"><b>Orsay</b> 37 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 40 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>1278.81 € : 78.80999999999995 € au-dessus du plafond</li></ul>
       <div class="actions">
@@ -794,7 +811,7 @@
         <span class="chip bad"><b>Pasteur</b> 52 min</span>
         <span class="chip ok"><b>Orsay</b> 30 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>Pasteur 52 min (limite 50)</li></ul>
       <div class="actions">
@@ -899,7 +916,7 @@
         <span class="chip bad"><b>Pasteur</b> 53 min</span>
         <span class="chip ok"><b>Orsay</b> 31 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>Pasteur 53 min (limite 50)</li></ul>
       <div class="actions">
@@ -934,7 +951,7 @@
         <span class="chip bad"><b>Pasteur</b> 56 min</span>
         <span class="chip ok"><b>Orsay</b> 30 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>Pasteur 56 min (limite 50)</li></ul>
       <div class="actions">
@@ -1039,7 +1056,7 @@
         <span class="chip ok"><b>Pasteur</b> 40 min</span>
         <span class="chip ok"><b>Orsay</b> 38 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li></ul>
       <div class="actions">
@@ -1074,7 +1091,7 @@
         <span class="chip bad"><b>Pasteur</b> 53 min</span>
         <span class="chip ok"><b>Orsay</b> 30 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>Pasteur 53 min (limite 50)</li></ul>
       <div class="actions">
@@ -1144,7 +1161,7 @@
         <span class="chip ok"><b>Pasteur</b> 43 min</span>
         <span class="chip ok"><b>Orsay</b> 43 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 37 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1293 € : 93 € au-dessus du plafond</li><li>37 m² : sous les 45 m² visés</li></ul>
       <div class="actions">
@@ -1179,7 +1196,7 @@
         <span class="chip bad"><b>Pasteur</b> 67 min</span>
         <span class="chip ok"><b>Orsay</b> 38 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 40 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1260 € : 60 € au-dessus du plafond</li><li>Pasteur 67 min (limite 50)</li></ul>
       <div class="actions">
@@ -1214,7 +1231,7 @@
         <span class="chip bad"><b>Pasteur</b> 55 min</span>
         <span class="chip ok"><b>Orsay</b> 44 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li></ul>
       <div class="actions">
@@ -1249,7 +1266,7 @@
         <span class="chip bad"><b>Pasteur</b> 56 min</span>
         <span class="chip ok"><b>Orsay</b> 30 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>1230 € : 30 € au-dessus du plafond</li><li>Pasteur 56 min (limite 50)</li></ul>
       <div class="actions">
@@ -1284,7 +1301,7 @@
         <span class="chip bad"><b>Pasteur</b> 51 min</span>
         <span class="chip ok"><b>Orsay</b> 32 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 51 min (limite 50)</li></ul>
       <div class="actions">
@@ -1319,7 +1336,7 @@
         <span class="chip ok"><b>Pasteur</b> 39 min</span>
         <span class="chip ok"><b>Orsay</b> 56 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 46 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Paris 15e et proche</span>
       </div>
       <ul class="flags"><li>1320 € : 120 € au-dessus du plafond</li></ul>
       <div class="actions">
@@ -1354,7 +1371,7 @@
         <span class="chip bad"><b>Pasteur</b> 57 min</span>
         <span class="chip ok"><b>Orsay</b> 36 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li><li>Pasteur 57 min (limite 50)</li></ul>
       <div class="actions">
@@ -1389,7 +1406,7 @@
         <span class="chip bad"><b>Pasteur</b> 58 min</span>
         <span class="chip ok"><b>Orsay</b> 15 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li><li>Pasteur 58 min (limite 50)</li></ul>
       <div class="actions">
@@ -1424,7 +1441,7 @@
         <span class="chip bad"><b>Pasteur</b> 54 min</span>
         <span class="chip ok"><b>Orsay</b> 21 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 31 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1280 € : 80 € au-dessus du plafond</li><li>Pasteur 54 min (limite 50)</li></ul>
       <div class="actions">
@@ -1459,7 +1476,7 @@
         <span class="chip bad"><b>Pasteur</b> 51 min</span>
         <span class="chip ok"><b>Orsay</b> 33 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
       <div class="actions">
@@ -1494,7 +1511,7 @@
         <span class="chip bad"><b>Pasteur</b> 69 min</span>
         <span class="chip ok"><b>Orsay</b> 48 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1250 € : 50 € au-dessus du plafond</li><li>Pasteur 69 min (limite 50)</li></ul>
       <div class="actions">
@@ -1529,7 +1546,7 @@
         <span class="chip bad"><b>Pasteur</b> 58 min</span>
         <span class="chip ok"><b>Orsay</b> 14 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1213 € : 13 € au-dessus du plafond</li><li>Pasteur 58 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1564,7 +1581,7 @@
         <span class="chip bad"><b>Pasteur</b> 55 min</span>
         <span class="chip ok"><b>Orsay</b> 26 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 33 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1599,7 +1616,7 @@
         <span class="chip bad"><b>Pasteur</b> 69 min</span>
         <span class="chip ok"><b>Orsay</b> 51 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1258 € : 58 € au-dessus du plafond</li><li>Pasteur 69 min (limite 50)</li><li>note 50/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1634,7 +1651,7 @@
         <span class="chip bad"><b>Pasteur</b> 55 min</span>
         <span class="chip ok"><b>Orsay</b> 52 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 37 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1250 € : 50 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li><li>note 49/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1669,7 +1686,7 @@
         <span class="chip bad"><b>Pasteur</b> 70 min</span>
         <span class="chip ok"><b>Orsay</b> 52 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1215 € : 15 € au-dessus du plafond</li><li>Pasteur 70 min (limite 50)</li><li>note 49/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1704,7 +1721,7 @@
         <span class="chip bad"><b>Pasteur</b> 68 min</span>
         <span class="chip ok"><b>Orsay</b> 54 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 68 min (limite 50)</li><li>note 48/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1739,7 +1756,7 @@
         <span class="chip bad"><b>Pasteur</b> 53 min</span>
         <span class="chip ok"><b>Orsay</b> 50 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 39 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       <ul class="flags"><li>1280 € : 80 € au-dessus du plafond</li><li>Pasteur 53 min (limite 50)</li><li>note 47/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1774,7 +1791,7 @@
         <span class="chip ok"><b>Pasteur</b> 30 min</span>
         <span class="chip bad"><b>Orsay</b> ?</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 43 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
       <ul class="flags"><li>trajet Orsay non calculé</li><li>note 46/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1844,7 +1861,7 @@
         <span class="chip ok"><b>Pasteur</b> 44 min</span>
         <span class="chip ok"><b>Orsay</b> 61 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 42 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
       <ul class="flags"><li>1269.26 € : 69.25999999999999 € au-dessus du plafond</li><li>note 44/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1879,7 +1896,7 @@
         <span class="chip ok"><b>Pasteur</b> 40 min</span>
         <span class="chip ok"><b>Orsay</b> 69 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 43 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
       <ul class="flags"><li>1320 € : 120 € au-dessus du plafond</li><li>note 41/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -1914,7 +1931,7 @@
         <span class="chip bad"><b>Pasteur</b> 70 min</span>
         <span class="chip ok"><b>Orsay</b> 60 min</span>
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
-        <span class="chip neutral"><b>zone</b> </span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 70 min (limite 50)</li><li>note 40/100 sous le seuil 55</li></ul>
       <div class="actions">
@@ -2000,15 +2017,50 @@
 <ul><li><b>Clamart</b> · 840 € · Studio / 18m² / Clamart (Ligne N) — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 370 € · Appartement Paris 2 pièce(s) 40.38 m2 — <i>1370 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Massy</b> · 705 € · appartement 1 pièces Massy — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 27 m² &lt; 35</i></li><li><b>Le Kremlin-Bicêtre</b> · 953 € · T2 meublé avec balcon - Le Kremlin-Bicêtre — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 790 € · Appartement - RDC - 17 m2 - 1 pièce - Meublé — <i>1 pièces &lt; 3, 17 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 890 € · Boulogne Billancourt - Princes Marmottan — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Villejuif</b> · 905 € · A LOUER 2 PIECES — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 29.54 m² &lt; 35</i></li><li><b>Chilly-Mazarin</b> · 725 € · Appartement meublé Chilly Mazarin 1 pièce(s) 31.76 m2 — <i>1 pièces &lt; 3, 31.76 m² &lt; 35</i></li><li><b>Fresnes</b> · 900 € · Appartement meublé Fresnes 2 pièce(s) 45.57 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 1 100 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 12.59 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 100 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.58 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 200 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.55 m² &lt; 35</i></li><li><b>Villejuif</b> · 1 180 € · F2 - VILLEJUIF - PROCHE MÉTRO LÉO LAGRANGE — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 100 € · Studio Refait neuf Boulogne Billancourt 1 pièce(s) 27.77 m2 — <i>1 pièces &lt; 3, 27.77 m² &lt; 35</i></li><li><b>Malakoff</b> · 1 225 € · APPARTEMENT T2 À MALAKOFF — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 33 m² &lt; 35</i></li><li><b>Longjumeau</b> · 820 € · Appartement Longjumeau 2 pièce(s) 43.58 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Gentilly</b> · 1 373 € · 3 pièces proche du centre-ville. — <i>1373 € &gt; 1320 €</i></li><li><b>Chaville</b> · 1 068 € · T2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 1 000 € · STUDIO - COMMERCES / CROIX NIVERT — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 27 m² &lt; 35</i></li><li><b>Montrouge</b> · 1 142 € · appartement 2 pièces Montrouge — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 712 € · A LOUER STUDIO MEUBLE ANTONY — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Ville-d'Avray</b> · 1 323 € · appartement 2 pièces Ville-d'Avray — <i>1323 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 14e</b> · 1 145 € · Appartement à louer Paris — <i>1 pièces &lt; 3, 29.48 m² &lt; 35</i></li><li><b>Malakoff</b> · 895 € · Studio confort*M13 Etienne Dolet — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 20 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 030 € · Studio immeuble avec piscine — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Villejuif</b> · 761 € · appartement 1 pièces Villejuif — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 30.16 m² &lt; 35</i></li><li><b>Fresnes</b> · 575 € · STUDIO — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 25 m² &lt; 35</i></li><li><b>Paris 15e</b> · 860 € · Location Studio 1 pièce — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 17 m² &lt; 35</i></li><li><b>Chaville</b> · 852 € · Appartement type 1 — <i>1 pièces &lt; 3, 33 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 200 € · Appartement à louer Paris — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 30 m² &lt; 35</i></li><li><b>Viroflay</b> · 1 240 € · Appartement 2/3 pièces proche gare rive gauche Viroflay — <i>1 ch. &lt; 2</i></li><li><b>Ville-d'Avray</b> · 893 € · appartement 1 pièces Ville-d'Avray — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 26 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 918 € · Appartement Issy Les Moulineaux 1 pièce(s) 28.75 m2 — <i>1 pièces &lt; 3, 28.75 m² &lt; 35</i></li><li><b>Châtillon</b> · 740 € · T2 de 28,44 m² à Châtillon — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Saint-Cloud</b> · 904 € · appartement 1 pièces Saint-Cloud — <i>1 pièces &lt; 3, 22.52 m² &lt; 35</i></li><li><b>Massy</b> · 811 € · Appartement Studio — <i>1 pièces &lt; 3, 27 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 250 € · Location Appartement - 2 pièces - 29 m² - Paris - (75) — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 29 m² &lt; 35</i></li><li><b>Villejuif</b> · 840 € · Location Appartement 1 pièce — <i>1 pièces &lt; 3, 17 m² &lt; 35</i></li><li><b>Chaville</b> · 650 € · Studio à louer à Chaville - Rive Droite, Les Vignes, proche commodités — <i>1 pièces &lt; 3, 12.97 m² &lt; 35</i></li><li><b>Montrouge</b> · 760 € · STUDIO - PORTE D ORLEANS - MONTROUGE — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 14.02 m² &lt; 35</i></li><li><b>Villejuif</b> · 950 € · PETITE MAISON MEUBLEÉ AVEC TERRASSE PROXIMITÉ GUSTAVE ROUSSY - — <i>1 pièces &lt; 3, 20.38 m² &lt; 35</i></li><li><b>Gentilly</b> · 1 228 € · Au cur d'un espace arboré et sécurisé, à proximité du RER B — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 806 € · PARC HELLER — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Massy</b> · 907 € · appartement 2 pièces Massy — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Viroflay</b> · 1 353 € · T3 VIROFLAY — <i>1353 € &gt; 1320 €</i></li><li><b>Saint-Cloud</b> · 1 242 € · Appartement 2 pièces 92210 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Palaiseau</b> · 671 € · STUDIO + PARKING EXTERIEUR — <i>1 pièces &lt; 3, 27.76 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 1 320 € · 2 PIECES ISSY LES MOULINEAUX — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Villejuif</b> · 750 € · Studio à louer — <i>1 pièces &lt; 3, 15.46 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 960 € · ISSY LES MOULINEAUX - Studio meublé avec Balcon - Place Jacq — <i>1 pièces &lt; 3, 24 m² &lt; 35</i></li><li><b>Palaiseau</b> · 815 € · Studio étudiant meublé de 18m² — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Saint-Cloud</b> · 1 265 € · Saint-Cloud / 2 pièces 37 m² / Val d'Or / Parking — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Boulogne-Billancourt</b> · 950 € · appartement 1 pièces Boulogne-Billancourt — <i>1 pièces &lt; 3, 13.2 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 950 € · appartement 1 pièces Boulogne-Billancourt — <i>1 pièces &lt; 3, 11.2 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 050 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.44 m² &lt; 35</i></li><li><b>Cachan</b> · 720 € · Bagneux — <i>1 ch. &lt; 2, 14 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 150 € · appartement 1 pièces Paris 14e — <i>1 pièces &lt; 3, 12.53 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 150 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 11.3 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 295 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 17.64 m² &lt; 35</i></li><li><b>Ville-d'Avray</b> · 1 369 € · appartement 2 pièces Ville-d'Avray — <i>1369 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Bures-sur-Yvette</b> · 692 € · appartement 1 pièces Bures-sur-Yvette — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Gif-sur-Yvette</b> · 920 € · appartement 2 pièces Gif-sur-Yvette — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 775 € · Appartement studio à PARIS 15ème — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 17 m² &lt; 35</i></li><li><b>Palaiseau</b> · 914 € · F2 en centre villle PALAISEAU - 2 pièce(s) - 51m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 1 250 € · Appartement Antony 2 pièce(s) 38.54 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Fresnes</b> · 984 € · Appartement 2 pièces 44m² FRESNES — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Viroflay</b> · 850 € · Appartement À Louer — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 23 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 970 € · Appartement Issy Les Moulineaux 2 pièce(s) 32.72 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 32.72 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 322 € · BOULOGNE RUE DU CHATEAU - appartement 3 pieces 49 m2 — <i>1322 € &gt; 1320 €</i></li><li><b>Clamart</b> · 1 350 € · Appartement Clamart 2 pièces 39.71 m2 — <i>1350 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Saint-Cloud</b> · 1 200 € · Studio vide, terrasse, parking, Saint Cloud — <i>1 pièces &lt; 3, 0 ch. &lt; 2</i></li><li><b>Bures-sur-Yvette</b> · 779 € · appartement 1 pièces Bures-sur-Yvette — <i>1 pièces &lt; 3, 0 ch. &lt; 2</i></li><li><b>Paris 13e</b> · 1 350 € · appartement 1 pièces Paris 13e — <i>1350 € &gt; 1320 €, 1 pièces &lt; 3, 0 ch. &lt; 2, 31.24 m² &lt; 35</i></li><li><b>Antony</b> · 650 € · Studio non meublé de 28,64 m² à Antony (92160) - DPE D — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 170 € · Appartement 1 pièce(s) 38 m2 — <i>1 pièces &lt; 3</i></li><li><b>Clamart</b> · 1 239 € · Appartement Clamart 2 pièces MEUBLÉ 42 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Palaiseau</b> · 680 € · STUDIO avec jardinet et Terrasse - cave + garage — <i>1 pièces &lt; 3, 24.31 m² &lt; 35</i></li><li><b>Palaiseau</b> · 725 € · STUDIO AVEC PARKING - PALAISEAU - RÉSIDENCE DE STANDING — <i>1 pièces &lt; 3, 26.63 m² &lt; 35</i></li><li><b>Chaville</b> · 835 € · CHAVILLE - Appartement meublé — <i>1 pièces &lt; 3, 22.05 m² &lt; 35</i></li><li><b>Châtillon</b> · 1 015 € · Appartement Chatillon 2 pièce(s) 44.52 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Fresnes</b> · 1 012 € · Appartement — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 713 € · Appartement 1 pièce à louer à Antony - Opportunité rare — <i>1 pièces &lt; 3, 20.93 m² &lt; 35</i></li><li><b>Antony</b> · 1 171 € · Appartement 2 pièces à louer à Antony - Proche commodités et écoles — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 14e</b> · 1 250 € · Studio meublé – Paris 14e (Bail mobilité de 1 à 9 mois) — <i>1 pièces &lt; 3</i></li><li><b>Paris 15e</b> · 1 050 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 9.8 m² &lt; 35</i></li><li><b>Massy</b> · 1 350 € · MASSY Appartement  4 pièce(s) avec Parking en sous-sol — <i>1350 € &gt; 1320 €</i></li><li><b>Paris 13e</b> · 990 € · 2ème étage : Une chambre Privative , 10,6m², Lit Double, Salle de bain — <i>prix suspect (6.7 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 050 € · 1er étage : Une chambre Privative, 16m², Lit Double, Salle de bain par — <i>prix suspect (7.1 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 090 € · 3ème étage : Une Chambre Privative 15,1m² Lit Double, Salle de bain N° — <i>prix suspect (7.4 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 190 € · 3ème étage : Un Duplex Privatif Lit Double, Salle de bain N°3 partagée — <i>prix suspect (8.0 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Chilly-Mazarin</b> · 680 € · Location Appartement 1 pièce — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 11 m² &lt; 35</i></li><li><b>Paris 13e</b> · 790 € · 1er étage : Une chambre Privative , 9m², Lit une place - Salle d'eau N — <i>prix suspect (5.3 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Boulogne-Billancourt</b> · 1 350 € · T2 — <i>1350 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Meudon</b> · 1 220 € · 2 Pièces Meublé — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Chaville</b> · 872 € · Chaville - 2 pièces de 35 m² — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Villejuif</b> · 990 € · 2 pièces Villejuif — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 31 m² &lt; 35</i></li><li><b>Bures-sur-Yvette</b> · 558 € · STUDIO BURES SUR YVETTE — <i>1 pièces &lt; 3, 17.02 m² &lt; 35</i></li><li><b>Orsay</b> · 837 € · Appartement Orsay 2 pièce(s) 34.20 m² — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 34.2 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 300 € · appartement 2 pièces Boulogne-Billancourt — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Saint-Cloud</b> · 1 200 € · Appartement  2 pièce(s) 30.09 m² — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 30.09 m² &lt; 35</i></li></ul>
 </details>
 </div>
+<script>window.__LIVE__ = {"api":"https://www.bienici.com/realEstateAds.json","pageSize":60,"pages":2,"target":1100,"maxPrice":1200,"priceCeil":1320,"minRooms":3,"minBedrooms":2,"minSurface":35,"minEurPerM2":12,"anchors":{"pasteur":{"ideal":30,"max":50},"orsay":{"ideal":45,"max":75},"car":{"ideal":45,"weight":8}},"zones":["-29251","-33504","-33505","-53801","-53650","-57750","-37041","-48862","-103967","-104479","-37026","-37027","-59321","-29036","-37020","-37025","-105122","-105146","-85527","-9522","-395036","-395443","-28036","-52770","-23773","-29244","-70355","-395488","-103395","-23772","-9520","-9530","-72020","-31340","-31341","-31339","-31338","-72148","-72019","-30294"],"zips":{"75013":[51,43,36,"Paris 15e et proche"],"75014":[51,43,36,"Sud parisien / proche 15e"],"75015":[51,43,36,"Paris 15e et proche"],"78220":[30,51,47,"Paris 15e et proche"],"78350":[51,43,36,"Vallee de la Bievre / proche Orsay"],"91120":[51,30,36,"RER B sud (meilleur compromis)"],"91160":[69,51,30,"Vallee de la Bievre / proche Orsay"],"91190":[61,35,39,"RER B sud (meilleur compromis)"],"91300":[53,31,35,"RER B sud (meilleur compromis)"],"91320":[55,52,37,"Vallee de la Bievre / proche Orsay"],"91370":[51,43,39,"Vallee de la Bievre / proche Orsay"],"91380":[69,56,35,"Vallee de la Bievre / proche Orsay"],"91400":[58,15,30,"Vallee de la Bievre / proche Orsay"],"91430":[67,38,40,"Vallee de la Bievre / proche Orsay"],"91440":[55,26,33,"RER B sud (meilleur compromis)"],"91570":[51,43,37,"Vallee de la Bievre / proche Orsay"],"92100":[51,43,36,"Paris 15e et proche"],"92120":[51,43,36,"Sud parisien / proche 15e"],"92130":[51,43,36,"Sud parisien / proche 15e"],"92140":[37,70,46,"Sud parisien / proche 15e"],"92160":[40,38,38,"RER B sud (meilleur compromis)"],"92170":[51,43,36,"Sud parisien / proche 15e"],"92190":[51,43,36,"Paris 15e et proche"],"92210":[54,67,50,"Paris 15e et proche"],"92220":[51,43,36,"Sud parisien / proche 15e"],"92240":[51,43,36,"Sud parisien / proche 15e"],"92310":[45,48,48,"Paris 15e et proche"],"92320":[34,44,45,"Sud parisien / proche 15e"],"92340":[31,37,40,"RER B sud (meilleur compromis)"],"92370":[49,82,46,"Paris 15e et proche"],"92380":[64,74,55,"Paris 15e et proche"],"92410":[51,43,36,"Paris 15e et proche"],"94110":[51,43,36,"RER B sud (meilleur compromis)"],"94230":[28,42,43,"RER B sud (meilleur compromis)"],"94250":[51,43,36,"RER B sud (meilleur compromis)"],"94260":[43,53,37,"Vallee de la Bievre / proche Orsay"],"94270":[51,43,36,"Sud parisien / proche 15e"],"94800":[40,69,43,"Sud parisien / proche 15e"]}};</script>
 <script>
 (function () {
+  // une erreur silencieuse sur un telephone est indiagnosticable : on la garde
+  // sous la main (visible dans la console et via window.__ERR__).
+  window.addEventListener('error', function (e) {
+    window.__ERR__ = String((e && e.message) || 'erreur') + ' @' + ((e && e.filename) || '') + ':' + ((e && e.lineno) || 0);
+  });
+
   var KEY = 'coloc-hunter-state';
   // Le serveur du PC injecte window.__COLOC_LIVE__ : la, l'etat vit cote serveur.
   // Sur la page publiee (GitHub Pages), l'etat vit dans le navigateur et se synchronise
   // avec le PC quand il est joignable (adresse du tunnel lue dans tunnel.txt).
   var USE_API = !!window.__COLOC_LIVE__;
+  // Donnees pour interroger Bien'ici depuis le telephone (construites par lib/live.mjs).
+  // L'API repond avec access-control-allow-origin: *, donc un fetch depuis cette page marche.
+  var LIVE = window.__LIVE__ || null;
   var remote = null;
   var state = {};
+  var cards = [];
+  var filterMode = 'all';
+  var sortMode = 'score';
+
+  // tri : score (defaut) ou date de publication. Au niveau du script (pas dans
+  // boot) parce que les cartes ajoutees par le telephone passent aussi par la.
+  function sortCards(mode) {
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.sec'));
+    sections.forEach(function (sec) {
+      var kids = Array.prototype.slice.call(sec.querySelectorAll('.card[data-id]'));
+      kids.sort(function (a, b) {
+        if (mode === 'date') {
+          var da = Number(a.dataset.pub || 0), db = Number(b.dataset.pub || 0);
+          if (da && db && da !== db) return db - da;
+          if (da && !db) return -1;
+          if (!da && db) return 1;
+        }
+        return Number(b.dataset.score || 0) - Number(a.dataset.score || 0);
+      });
+      // on garde chaque carte dans son conteneur (la liste du telephone a le sien)
+      var parent = kids.length ? kids[0].parentNode : null;
+      if (!parent) return;
+      kids.forEach(function (c) { parent.appendChild(c); });
+    });
+  }
 
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
@@ -2024,9 +2076,10 @@
     }
   }
 
-  function boot() {
-
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-id]'));
+  function refreshCards() {
+    cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-id]'));
+    return cards;
+  }
 
   function get(id) { return state[id] || (state[id] = {}); }
 
@@ -2036,14 +2089,20 @@
     c.classList.toggle('seen', !!s.seen);
     c.classList.toggle('applied', !!s.applied);
     var ab = c.querySelector('.applied-btn');
-    if (ab) { ab.textContent = s.applied ? 'Postulé' : "J'ai postulé"; ab.classList.toggle('on', !!s.applied); }
+    if (ab) {
+      ab.textContent = s.applied ? 'Postulé' : "J'ai postulé";
+      ab.classList.toggle('on', !!s.applied);
+    }
     var sb = c.querySelector('.seen-btn');
-    if (sb) { sb.textContent = s.seen ? 'Vu' : 'Marquer vu'; sb.classList.toggle('on', !!s.seen); }
+    if (sb) {
+      sb.textContent = s.seen ? 'Vu' : 'Marquer vu';
+      sb.classList.toggle('on', !!s.seen);
+    }
   }
 
   function counters() {
     var seen = 0, applied = 0;
-    cards.forEach(function (c) {
+    refreshCards().forEach(function (c) {
       var s = state[c.dataset.id] || {};
       if (s.seen) seen++;
       if (s.applied) applied++;
@@ -2064,40 +2123,17 @@
     if (c) { paint(c); counters(); }
   }
 
-  // 1. tout clic vers l'annonce marque la carte comme vue
-  cards.forEach(function (c) {
-    c.addEventListener('click', function (e) {
-      var link = e.target.closest('a[href]');
-      if (link) markSeen(c.dataset.id);
-    });
-  });
-
-  // 2. boutons vu / postulé
-  cards.forEach(function (c) {
-    var id = c.dataset.id;
-    var sb = c.querySelector('.seen-btn');
-    var ab = c.querySelector('.applied-btn');
-    if (sb) sb.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var s = get(id);
-      s.seen = s.seen ? 0 : Date.now();
-      save(); paint(c); counters();
-    });
-    if (ab) ab.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var s = get(id);
-      s.applied = !s.applied;
-      if (s.applied && !s.seen) s.seen = Date.now();
-      save(); paint(c); counters();
-    });
-  });
-
-  // 3. carrousel
-  Array.prototype.forEach.call(document.querySelectorAll('[data-gal]'), function (g) {
+  // Carrousel : fleches, glisser au doigt, compteur. Reutilise pour les cartes
+  // trouvees par le telephone, qui sont ajoutees apres le chargement.
+  function wireGallery(g) {
     var track = g.querySelector('.track');
+    if (!track) return;
     var n = track.children.length;
     if (n < 2) {
-      g.addEventListener('click', function () { window.open(g.dataset.url, '_blank'); markSeen(g.dataset.id); });
+      g.addEventListener('click', function () {
+        window.open(g.dataset.url, '_blank');
+        markSeen(g.dataset.id);
+      });
       return;
     }
     var pos = g.querySelector('.pos');
@@ -2126,61 +2162,369 @@
       window.open(g.dataset.url, '_blank');
       markSeen(g.dataset.id);
     });
-  });
+  }
 
-  // 4. filtres
-  var filters = document.querySelectorAll('.filters button');
-  Array.prototype.forEach.call(filters, function (b) {
-    b.addEventListener('click', function () {
-      Array.prototype.forEach.call(filters, function (x) { x.classList.remove('on'); });
-      b.classList.add('on');
-      var f = b.dataset.filter;
-      cards.forEach(function (c) {
-        var s = state[c.dataset.id] || {};
-        var show = f === 'all' ? true : f === 'todo' ? !s.seen : f === 'applied' ? !!s.applied : true;
-        c.classList.toggle('hide', !show);
+  function wireCards() {
+    refreshCards().forEach(function (c) {
+      if (c.dataset.wired) return;
+      c.dataset.wired = '1';
+      var id = c.dataset.id;
+      c.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href]');
+        if (link) markSeen(id);
       });
-    });
-  });
-
-  // 5. tri : score (defaut) ou date de publication
-  var SORT_KEY = KEY + '-sort';
-  var sortMode = 'score';
-  try { sortMode = localStorage.getItem(SORT_KEY) || 'score'; } catch (e) {}
-
-  function sortCards(mode) {
-    var sections = Array.prototype.slice.call(document.querySelectorAll('.sec'));
-    sections.forEach(function (sec) {
-      var kids = Array.prototype.slice.call(sec.querySelectorAll('.card[data-id]'));
-      kids.sort(function (a, b) {
-        if (mode === 'date') {
-          var da = Number(a.dataset.pub || 0), db = Number(b.dataset.pub || 0);
-          if (da && db && da !== db) return db - da;
-          if (da && !db) return -1;
-          if (!da && db) return 1;
-        }
-        return Number(b.dataset.score || 0) - Number(a.dataset.score || 0);
+      var sb = c.querySelector('.seen-btn');
+      var ab = c.querySelector('.applied-btn');
+      if (sb) sb.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var s = get(id);
+        s.seen = s.seen ? 0 : Date.now();
+        save(); paint(c); counters();
       });
-      kids.forEach(function (c) { sec.appendChild(c); });
+      if (ab) ab.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var s = get(id);
+        s.applied = !s.applied;
+        if (s.applied && !s.seen) s.seen = Date.now();
+        save(); paint(c); counters();
+      });
+      var g = c.querySelector('[data-gal]');
+      if (g) wireGallery(g);
     });
   }
 
-  var sortBtns = document.querySelectorAll('.sortbar button');
-  Array.prototype.forEach.call(sortBtns, function (b) {
-    b.classList.toggle('on', b.dataset.sort === sortMode);
-    b.addEventListener('click', function () {
-      sortMode = b.dataset.sort;
-      try { localStorage.setItem(SORT_KEY, sortMode); } catch (e) {}
-      Array.prototype.forEach.call(sortBtns, function (x) { x.classList.toggle('on', x === b); });
-      sortCards(sortMode);
+  function applyFilter() {
+    refreshCards().forEach(function (c) {
+      var s = state[c.dataset.id] || {};
+      var show = filterMode === 'all' ? true
+        : filterMode === 'todo' ? !s.seen
+        : filterMode === 'applied' ? !!s.applied
+        : true;
+      c.classList.toggle('hide', !show);
     });
-  });
-  if (sortMode === 'date') sortCards('date');
+  }
 
-  cards.forEach(paint);
-  counters();
-  // la synchro avec le PC peut arriver apres l'affichage : on repeint alors
-  window.__colocRepaint = function () { cards.forEach(paint); counters(); };
+  // ---------------------------------------------------------------------
+  // Rafraichissement depuis le telephone.
+  // Le telephone interroge lui-meme Bien'ici a l'ouverture de la page : les
+  // annonces publiees depuis le dernier passage arrivent sans PC et sans
+  // runner. Trajets estimes par code postal (voir lib/live.mjs).
+  // ---------------------------------------------------------------------
+  var LIVE_KEY = KEY + '-live';
+  var liveAds = [];
+  var liveAt = 0;
+  var liveBusy = false;
+
+  function h(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : '&quot;';
+    });
+  }
+
+  function euros(n) { return Math.round(Number(n) || 0).toLocaleString('fr-FR') + ' €'; }
+
+  function deaccent(s) {
+    var n = String(s || '').normalize('NFD');
+    var out = '';
+    for (var i = 0; i < n.length; i++) {
+      var c = n.charCodeAt(i);
+      if (c < 768 || c > 879) out += n.charAt(i);
+    }
+    return out;
+  }
+
+  function slug(s) {
+    return deaccent(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  }
+
+  function sized(u, w, hh) {
+    return u + (u.indexOf('?') >= 0 ? '&' : '?') + 'width=' + w + '&height=' + hh + '&fit=cover';
+  }
+
+  function loadLive() {
+    try {
+      var o = JSON.parse(localStorage.getItem(LIVE_KEY) || '{}');
+      liveAds = (o.ads || []).filter(function (a) {
+        return a && a.id && a.pubAt && Date.now() - a.pubAt < 21 * 24 * 3600 * 1000;
+      });
+      liveAt = o.at || 0;
+    } catch (e) { liveAds = []; liveAt = 0; }
+  }
+
+  function saveLive() {
+    try {
+      localStorage.setItem(LIVE_KEY, JSON.stringify({ at: liveAt, ads: liveAds.slice(0, 40) }));
+    } catch (e) {}
+  }
+
+  function liveStatus(txt) {
+    var el = document.getElementById('live-state');
+    if (el) el.textContent = txt;
+  }
+
+  function ago(ms) {
+    var m = Math.round((Date.now() - ms) / 60000);
+    if (m < 1) return "à l'instant";
+    if (m < 60) return 'il y a ' + m + ' min';
+    var hh = Math.round(m / 60);
+    if (hh < 24) return 'il y a ' + hh + ' h';
+    return 'il y a ' + Math.round(hh / 24) + ' j';
+  }
+
+  function liveCard(a) {
+    var imgs = a.images && a.images.length ? a.images : (a.image ? [a.image] : []);
+    var gal;
+    if (!imgs.length) {
+      gal = '<div class="gallery empty"><span>pas de photo</span></div>';
+    } else {
+      var slides = '';
+      for (var i = 0; i < imgs.length; i++) {
+        slides += '<img src="' + h(imgs[i]) + '" alt="" ' + (i ? 'loading="lazy" ' : '') + 'draggable="false">';
+      }
+      var nav = '';
+      if (imgs.length > 1) {
+        nav = '<button class="nav prev" aria-label="photo precedente">&#8249;</button>' +
+          '<button class="nav next" aria-label="photo suivante">&#8250;</button>' +
+          '<span class="pos">1/' + imgs.length + '</span>';
+      }
+      gal = '<div class="gallery" data-gal data-id="' + h(a.id) + '" data-url="' + h(a.url) + '">' +
+        nav + '<div class="track">' + slides + '</div></div>';
+    }
+
+    var t = a.travel || {};
+
+    function chip(label, value, tone) {
+      return '<span class="chip ' + tone + '"><b>' + h(label) + '</b> ' + h(value) + '</span>';
+    }
+
+    var flags = '';
+    if (a.flags && a.flags.length) {
+      flags = '<ul class="flags">';
+      for (var j = 0; j < a.flags.length; j++) flags += '<li>' + h(a.flags[j]) + '</li>';
+      flags += '</ul>';
+    }
+
+    var pubAt = a.pubAt || 0;
+    var mins = Math.round((Date.now() - pubAt) / 60000);
+    var age = !pubAt ? 'date inconnue'
+      : mins < 60 ? 'il y a ' + Math.max(1, mins) + ' min'
+      : mins < 1440 ? 'il y a ' + Math.round(mins / 60) + ' h'
+      : 'il y a ' + Math.round(mins / 1440) + ' j';
+    var eurM2 = a.surface ? (a.price / a.surface).toFixed(1) : '?';
+
+    return '<article class="card ' + (a.bucket === 'match' ? 'match' : 'maybe') + '" data-id="' + h(a.id) +
+      '" data-pub="' + pubAt + '" data-score="' + (a.score || 0) + '">' +
+      '<div class="ribbon">Postulé</div>' +
+      gal +
+      '<div class="body"><header>' +
+      '<div class="score">' + (a.score || 0) + '<small>/100</small></div>' +
+      '<div class="head">' +
+      '<h3><a href="' + h(a.url) + '" target="_blank" rel="noopener">' + h(a.subject) + '</a></h3>' +
+      '<div class="meta"><b>' + euros(a.price) + '</b>/mois · ' + h(a.surface == null ? '?' : a.surface) + ' m² · ' +
+      eurM2 + ' €/m² · ' + h(a.rooms == null ? '?' : a.rooms) + ' pièces · ' +
+      h(a.bedrooms == null ? '?' : a.bedrooms) + ' ch. · ' + h(a.city) + ' (' + h(a.zip) + ')</div>' +
+      '<div class="when"><span class="new">nouvelle</span> publiée ' + age +
+      ' · <span class="src">Bien’ici</span></div>' +
+      '</div></header>' +
+      '<div class="chips">' +
+      chip('Pasteur', t.pasteur == null ? '?' : t.pasteur + ' min', t.pasteur != null && t.pasteur <= LIVE.anchors.pasteur.max ? 'ok' : 'bad') +
+      chip('Orsay', t.orsay == null ? '?' : t.orsay + ' min', t.orsay != null && t.orsay <= LIVE.anchors.orsay.max ? 'ok' : 'bad') +
+      chip('Étréchy (voiture)', t.carEtrechy == null ? '?' : t.carEtrechy + ' min', 'neutral') +
+      chip('zone', a.zone || '', 'neutral') +
+      '</div>' + flags +
+      '<div class="actions"><button class="act seen-btn" data-act="seen">Marquer vu</button>' +
+      '<button class="act applied-btn" data-act="applied">J’ai postulé</button></div>' +
+      '</div></article>';
+  }
+
+  function paintLive() {
+    var sec = document.getElementById('live-sec');
+    if (!sec) return;
+    refreshCards();
+    // une annonce deja presente dans le rapport (construit par le PC) n'est pas repetee ici
+    var liste = [];
+    for (var i = 0; i < liveAds.length; i++) {
+      if (document.querySelector('.card[data-id="' + liveAds[i].id + '"]')) continue;
+      liste.push(liveAds[i]);
+    }
+    var host = document.getElementById('live-list');
+    if (host) host.innerHTML = liste.map(function (a) { return liveCard(a); }).join('');
+    sec.style.display = liste.length ? 'block' : 'none';
+    var n = document.getElementById('live-count');
+    if (n) n.textContent = liste.length;
+    wireCards();
+    applyFilter();
+    sortCards(sortMode);
+    refreshCards().forEach(paint);
+    counters();
+  }
+
+  function toLiveAd(a) {
+    if (!a || !a.id) return null;
+    var zip = a.postalCode ? String(a.postalCode) : '';
+    var ref = LIVE.zips[zip];
+    if (!ref) return null;
+
+    var price = Math.round(Number(a.price) || 0);
+    var surface = Math.round(Number(a.surfaceArea)) || null;
+    var rooms = a.roomsQuantity == null ? null : Number(a.roomsQuantity);
+    var beds = a.bedroomsQuantity == null ? null : Number(a.bedroomsQuantity);
+    var desc = String(a.description || '').replace(/<[^>]+>/g, ' ').toLowerCase();
+
+    if (!price || price > LIVE.priceCeil) return null;
+    if (rooms != null && rooms < LIVE.minRooms) return null;
+    if (beds != null && beds < LIVE.minBedrooms) return null;
+    if (surface && surface < LIVE.minSurface) return null;
+    if (surface && price / surface < LIVE.minEurPerM2) return null;
+    if (desc.indexOf('colocation') >= 0 || desc.indexOf('chambre chez') >= 0) return null;
+
+    var t = { pasteur: ref[0], orsay: ref[1], carEtrechy: ref[2] };
+
+    function ramp(x, ideal, max) {
+      if (x == null) return 1;
+      var r = (x - ideal) / Math.max(1, max - ideal);
+      return Math.max(0, Math.min(1, r));
+    }
+
+    var s = 100;
+    var over = (price - LIVE.target) / Math.max(1, LIVE.maxPrice - LIVE.target);
+    if (over > 0) s -= Math.min(1, over) * 18;
+    s -= ramp(t.pasteur, LIVE.anchors.pasteur.ideal, LIVE.anchors.pasteur.max) * 30;
+    s -= ramp(t.orsay, LIVE.anchors.orsay.ideal, LIVE.anchors.orsay.max) * 32;
+    if (t.pasteur == null) s -= 12;
+    if (t.orsay == null) s -= 12;
+    s -= ramp(t.carEtrechy, LIVE.anchors.car.ideal, LIVE.anchors.car.ideal + 40) * LIVE.anchors.car.weight;
+    if (surface >= 60) s += 4;
+    if (surface >= 70) s += 2;
+    s = Math.round(Math.max(0, Math.min(100, s)));
+
+    var flags = [];
+    if (beds == null) flags.push("nombre de chambres non précisé dans l'annonce");
+    if (surface == null) flags.push('surface non précisée');
+    if (price > LIVE.maxPrice) flags.push(price + ' € : ' + Math.round(price - LIVE.maxPrice) + ' € au-dessus du plafond');
+    if (surface && surface < 45) flags.push(surface + ' m² : étroit pour deux');
+    if (t.pasteur != null && t.pasteur > LIVE.anchors.pasteur.max) flags.push('Pasteur ' + t.pasteur + ' min (limite ' + LIVE.anchors.pasteur.max + ')');
+    if (t.orsay != null && t.orsay > LIVE.anchors.orsay.max) flags.push('Orsay ' + t.orsay + ' min (limite ' + LIVE.anchors.orsay.max + ')');
+
+    var dur = 0;
+    for (var f = 0; f < flags.length; f++) {
+      if (flags[f].indexOf('au-dessus du plafond') >= 0 || flags[f].indexOf('(limite') >= 0) dur++;
+    }
+
+    var typeFr = a.propertyType === 'house' ? 'maison' : 'appartement';
+    var pieces = rooms || 1;
+    var photos = [];
+    var src = a.photos || [];
+    for (var i = 0; i < src.length; i++) {
+      var u = src[i] && src[i].url;
+      if (u) photos.push(u);
+    }
+
+    return {
+      id: 'bc-' + a.id,
+      subject: a.title || (typeFr + ' ' + pieces + ' pièces ' + (a.city || '')),
+      url: 'https://www.bienici.com/annonce/location/' + slug(a.city || '') + '/' + typeFr + '/' +
+        pieces + 'piece' + (pieces > 1 ? 's' : '') + '/' + a.id,
+      price: price,
+      city: a.city || '',
+      zip: zip,
+      rooms: rooms,
+      bedrooms: beds,
+      surface: surface,
+      pubAt: a.publicationDate ? new Date(a.publicationDate).getTime() : 0,
+      images: photos.slice(0, 10).map(function (p) { return sized(p, 520, 390); }),
+      image: photos[0] ? sized(photos[0], 400, 300) : null,
+      score: s,
+      bucket: s >= 60 && !dur ? 'match' : 'maybe',
+      flags: flags,
+      travel: t,
+      zone: ref[3] || '',
+    };
+  }
+
+  function refreshLive(force) {
+    if (!LIVE || !LIVE.zones || !LIVE.zones.length || liveBusy) return;
+    if (!force && liveAt && Date.now() - liveAt < 3 * 60000) {
+      liveStatus('vérifié ' + ago(liveAt));
+      return;
+    }
+    liveBusy = true;
+    liveStatus('recherche des annonces publiées depuis…');
+
+    var ctl = new AbortController();
+    var stop = setTimeout(function () { ctl.abort(); }, 15000);
+
+    function page(p) {
+      var size = LIVE.pageSize || 60;
+      var f = {
+        size: size,
+        from: (p - 1) * size,
+        filterType: 'rent',
+        propertyType: ['flat', 'house'],
+        onTheMarket: [true],
+        maxPrice: LIVE.priceCeil,
+        minRooms: LIVE.minRooms,
+        page: p,
+        sortBy: 'publicationDate',
+        sortOrder: 'desc',
+        zoneIdsByTypes: { zoneIds: LIVE.zones },
+      };
+      var u = LIVE.api + '?filters=' + encodeURIComponent(JSON.stringify(f)) + '&extensionType=extended';
+      return fetch(u, { signal: ctl.signal, cache: 'no-store' })
+        .then(function (r) {
+          if (!r.ok) throw new Error('http ' + r.status);
+          return r.json();
+        })
+        .then(function (j) { return (j && j.realEstateAds) || []; });
+    }
+
+    function more(prev, p) {
+      return prev.then(function (acc) {
+        return page(p).then(function (l) { return acc.concat(l); }, function () { return acc; });
+      });
+    }
+
+    var total = Math.max(1, LIVE.pages || 2);
+    var chain = page(1);
+    for (var k = 2; k <= total; k++) chain = more(chain, k);
+
+    chain.then(function (list) {
+      clearTimeout(stop);
+      var connus = {};
+      var i;
+      for (i = 0; i < liveAds.length; i++) connus[liveAds[i].id] = 1;
+      for (i = 0; i < cards.length; i++) connus[cards[i].dataset.id] = 1;
+
+      // On ne garde que ce qui est paru depuis la derniere visite sur ce telephone
+      // (avec 12 h de marge la premiere fois, 7 jours sans historique). Sinon les
+      // annonces anciennes que le rapport n'a jamais affichees passeraient pour neuves.
+      var depuis = liveAt ? liveAt - 12 * 3600 * 1000 : Date.now() - 7 * 24 * 3600 * 1000;
+
+      var trouve = [];
+      for (i = 0; i < list.length; i++) {
+        var ad = toLiveAd(list[i]);
+        if (!ad || connus[ad.id]) continue;
+        if (!ad.pubAt || ad.pubAt < depuis) continue;
+        connus[ad.id] = 1;
+        trouve.push(ad);
+      }
+      trouve.sort(function (x, y) { return (y.pubAt || 0) - (x.pubAt || 0); });
+
+      liveAds = trouve.concat(liveAds).slice(0, 40);
+      liveAt = Date.now();
+      saveLive();
+      paintLive();
+      liveStatus(trouve.length
+        ? trouve.length + ' nouvelle(s) · vérifié ' + ago(liveAt)
+        : 'rien de nouveau · vérifié ' + ago(liveAt));
+      liveBusy = false;
+    }).catch(function () {
+      clearTimeout(stop);
+      liveBusy = false;
+      liveStatus('hors ligne — ' + (liveAt ? 'dernier essai ' + ago(liveAt) : 'jamais vérifié'));
+      var sec = document.getElementById('live-sec');
+      if (sec && liveAds.length) sec.style.display = 'block';
+    });
   }
 
   // etat local + tentative de synchronisation avec le PC (silencieuse, 3 s max)
@@ -2225,6 +2569,61 @@
       .catch(function () { remote = null; });
   }
 
+  function boot() {
+
+  // 1. cartes du rapport + etat deja memorise
+  refreshCards();
+  wireCards();
+
+  // 2. filtres
+  var filters = document.querySelectorAll('.filters button');
+  Array.prototype.forEach.call(filters, function (b) {
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(filters, function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      filterMode = b.dataset.filter;
+      applyFilter();
+    });
+  });
+
+  // 3. tri : score (defaut) ou date de publication
+  var SORT_KEY = KEY + '-sort';
+  try { sortMode = localStorage.getItem(SORT_KEY) || 'score'; } catch (e) {}
+
+  var sortBtns = document.querySelectorAll('.sortbar button');
+  Array.prototype.forEach.call(sortBtns, function (b) {
+    b.classList.toggle('on', b.dataset.sort === sortMode);
+    b.addEventListener('click', function () {
+      sortMode = b.dataset.sort;
+      try { localStorage.setItem(SORT_KEY, sortMode); } catch (e) {}
+      Array.prototype.forEach.call(sortBtns, function (x) { x.classList.toggle('on', x === b); });
+      sortCards(sortMode);
+    });
+  });
+  if (sortMode === 'date') sortCards('date');
+
+  // 4. annonces trouvees par le telephone
+  loadLive();
+  paintLive();
+  var liveBtn = document.getElementById('live-refresh');
+  if (liveBtn) liveBtn.addEventListener('click', function () { refreshLive(true); });
+  if (LIVE && LIVE.zones && LIVE.zones.length) {
+    liveStatus(liveAt ? 'vérifié ' + ago(liveAt) : 'jamais vérifié sur cet appareil');
+    refreshLive(false);
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden && (!liveAt || Date.now() - liveAt > 10 * 60000)) refreshLive(false);
+    });
+    setInterval(function () { if (!document.hidden) refreshLive(false); }, 5 * 60000);
+  } else if (liveBtn) {
+    liveBtn.style.display = 'none';
+  }
+
+  refreshCards().forEach(paint);
+  counters();
+  // la synchro avec le PC peut arriver apres l'affichage : on repeint alors
+  window.__colocRepaint = function () { refreshCards().forEach(paint); counters(); };
+  }
+
   if (USE_API) {
     fetch('/api/state')
       .then(function (r) { return r.json(); })
@@ -2239,5 +2638,5 @@
 })();
 </script>
 <div style="text-align:center;color:#4d5666;font-size:11px;padding:22px 0 8px">
-       version publiee le 11/11/2026 23:31:25 · adresse fixe, lisible PC eteint
+       version publiee le 11/11/2026 23:51:24 · adresse fixe, lisible PC eteint
      </div></body></html>
