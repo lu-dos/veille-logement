@@ -1,9 +1,9 @@
 {
-  "ranAt": "2026-11-11T23:07:27.080Z",
+  "ranAt": "2026-11-11T23:08:21.148Z",
   "total": 353,
-  "kept": 43,
+  "kept": 45,
   "matches": 16,
-  "maybes": 38,
+  "maybes": 39,
   "rejected": [
     {
       "id": "bc-ag754125-559365263",
@@ -11390,85 +11390,6 @@
         "1 pièces < 3",
         "1 ch. < 2",
         "11.61 m² < 35"
-      ]
-    },
-    {
-      "id": "pap-466002894",
-      "url": "https://www.pap.fr/annonces/appartement-gif-sur-yvette-91190-r466002894",
-      "price": 1157,
-      "zip": "91190",
-      "city": "Gif-sur-Yvette",
-      "rooms": 3,
-      "beds": "2",
-      "surf": "61",
-      "images": [
-        "https://cdn.pap.fr/photos/pap/eb/ea/ebead1ffac51f109ebf01982d8942b3c/e-p2.webp",
-        "https://cdn.pap.fr/photos/pap/83/e7/83e7a7c9cb178293f238acc64edea7d3/8-p2.webp",
-        "https://cdn.pap.fr/photos/pap/58/b9/58b9c1338a81871ee803ea2f764cc9a9/5-p2.webp",
-        "https://cdn.pap.fr/photos/pap/00/f0/00f0633ad623c4ffe41d23d88e32b7fb/0-p2.webp",
-        "https://cdn.pap.fr/photos/pap/7a/ab/7aab210d94c8de92a276cad35ce3f65b/7-p2.webp",
-        "https://cdn.pap.fr/photos/pap/39/7e/397e5f0d87ee724bfd8ca7f7424aed41/3-p2.webp",
-        "https://cdn.pap.fr/photos/pap/62/35/623521b95c10b7ffced30437584d93bd/6-p2.webp",
-        "https://cdn.pap.fr/photos/pap/06/15/0615281ac599295b068dc05bbb52c85d/0-p2.webp"
-      ],
-      "text": "1.157 € Gif-Sur-Yvette (91190) 3 pièces 2 chambres 61 m² Grand appartement dans résidence récente HQE (livrée en 2019), de type 3 pièces, situé sur le plateau de Saclay à proximité du pôle universitaire de Paris Saclay et des grandes écoles. 61 m² dont 2...",
-      "subject": "Grand appartement dans résidence récente HQE (livrée en 2019), de type 3",
-      "surface": 61,
-      "bedrooms": 2,
-      "lat": null,
-      "lon": null,
-      "realEstateType": "appartement",
-      "owner": "particulier",
-      "publishedAt": null,
-      "body": "1.157 € Gif-Sur-Yvette (91190) 3 pièces 2 chambres 61 m² Grand appartement dans résidence récente HQE (livrée en 2019), de type 3 pièces, situé sur le plateau de Saclay à proximité du pôle universitaire de Paris Saclay et des grandes écoles. 61 m² dont 2...",
-      "image": "https://cdn.pap.fr/photos/pap/eb/ea/ebead1ffac51f109ebf01982d8942b3c/e-p2.webp",
-      "imageLarge": "https://cdn.pap.fr/photos/pap/eb/ea/ebead1ffac51f109ebf01982d8942b3c/e-p2.webp",
-      "nbImages": 8,
-      "kind": "appartement",
-      "totalRent": 1157,
-      "source": "pap",
-      "zone": "RER B sud (meilleur compromis)",
-      "rejectedBecause": [
-        "pas de coordonnées"
-      ]
-    },
-    {
-      "id": "pap-466002446",
-      "url": "https://www.pap.fr/annonces/appartement-fresnes-94260-r466002446",
-      "price": 944,
-      "zip": "94260",
-      "city": "Fresnes",
-      "rooms": 3,
-      "beds": "2",
-      "surf": "52",
-      "images": [
-        "https://cdn.pap.fr/photos/pap/5d/14/5d14e7c4a481fe93447e8998203c4d65/5-p2.webp",
-        "https://cdn.pap.fr/photos/pap/cd/70/cd7025f19f7392c67274ce153911af53/c-p2.webp",
-        "https://cdn.pap.fr/photos/pap/68/f4/68f4e428fb5d1c6a168f24f5cffb3ebb/6-p2.webp",
-        "https://cdn.pap.fr/photos/pap/77/8c/778c611e6cdce91b28cad91c552f1143/7-p2.webp",
-        "https://cdn.pap.fr/photos/pap/96/fb/96fb33ed4e88cc586da6b1ba70782f66/9-p2.webp",
-        "https://cdn.pap.fr/photos/pap/a9/ab/a9ab97fe45b2961713657e5ae5c7e130/a-p2.webp",
-        "https://cdn.pap.fr/photos/pap/43/b5/43b5adfe4ffde288a4255181c13e87ed/4-p2.webp"
-      ],
-      "text": "Annonce Exclusive 944 € Fresnes (94260) 3 pièces 2 chambres 52 m² F3 Charmant à 15 min à pied de la gare de la Croix de Berny. Cadre calme avec des commerces, restaurants et parcs à proximité. Nous sommes à 40 min du centre de Paris en transport en communs et 15...",
-      "subject": "F3 Charmant à 15 min à pied de la gare de la Croix de Berny. Cadre calme avec",
-      "surface": 52,
-      "bedrooms": 2,
-      "lat": null,
-      "lon": null,
-      "realEstateType": "appartement",
-      "owner": "particulier",
-      "publishedAt": null,
-      "body": "Annonce Exclusive 944 € Fresnes (94260) 3 pièces 2 chambres 52 m² F3 Charmant à 15 min à pied de la gare de la Croix de Berny. Cadre calme avec des commerces, restaurants et parcs à proximité. Nous sommes à 40 min du centre de Paris en transport en communs et 15...",
-      "image": "https://cdn.pap.fr/photos/pap/5d/14/5d14e7c4a481fe93447e8998203c4d65/5-p2.webp",
-      "imageLarge": "https://cdn.pap.fr/photos/pap/5d/14/5d14e7c4a481fe93447e8998203c4d65/5-p2.webp",
-      "nbImages": 7,
-      "kind": "appartement",
-      "totalRent": 944,
-      "source": "pap",
-      "zone": "Vallee de la Bievre / proche Orsay",
-      "rejectedBecause": [
-        "pas de coordonnées"
       ]
     }
   ]
