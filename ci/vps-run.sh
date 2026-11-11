@@ -65,15 +65,28 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
-git -c user.email=vps@veille-logement.invalid -c user.name="veille-logement vps" \
-  commit -qm "collecte VPS $(date -u +%Y-%m-%dT%H:%MZ)"
+# Un seul commit VPS dans l'historique, reecrit a chaque tour (comme le PC) :
+# sinon 144 commits et 144 deploiements Pages par jour.
+auteur=$(git log -1 --format=%ce 2>/dev/null || echo '')
+if [ "$auteur" = "vps@veille-logement.invalid" ]; then
+  git -c user.email=vps@veille-logement.invalid -c user.name="veille-logement vps" \
+    commit -q --amend -m "collecte VPS $(date -u +%Y-%m-%dT%H:%MZ)"
+else
+  git -c user.email=vps@veille-logement.invalid -c user.name="veille-logement vps" \
+    commit -qm "collecte VPS $(date -u +%Y-%m-%dT%H:%MZ)"
+fi
 
 for i in 1 2 3; do
-  if git push -q origin HEAD:main; then
+  # notre commit reecrit : force-with-lease ne passe que si personne n'a pousse entre-temps
+  if git push -q --force-with-lease origin HEAD:main; then
     echo "pousse sur le depot"
     exit 0
   fi
   git pull --rebase --autostash -q origin main || git rebase --abort
+  if git push -q origin HEAD:main; then
+    echo "pousse sur le depot (apres rebase)"
+    exit 0
+  fi
   sleep 5
 done
 
