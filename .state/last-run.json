@@ -1,10 +1,118 @@
 {
-  "ranAt": "2026-11-12T11:45:10.610Z",
-  "total": 368,
-  "kept": 47,
+  "ranAt": "2026-11-12T12:03:13.029Z",
+  "total": 370,
+  "kept": 48,
   "matches": 17,
-  "maybes": 41,
+  "maybes": 42,
   "rejected": [
+    {
+      "id": "bc-ag920566-559572884",
+      "subject": "PAUL BERT",
+      "url": "https://www.bienici.com/annonce/location/antony/appartement/2pieces/ag920566-559572884",
+      "price": 1120,
+      "city": "Antony",
+      "zip": "92160",
+      "zone": "RER B sud (meilleur compromis)",
+      "rooms": 2,
+      "bedrooms": 1,
+      "surface": 45,
+      "publishedAt": "2026-11-12T11:57:05.742Z",
+      "image": "https://file.bienici.com/photo/ag920566-559572884_photos.ubiflow.net_920566_559572884_photos_1.jpg_INSOON_EB_5512801818_20261112120522?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/ag920566-559572884_photos.ubiflow.net_920566_559572884_photos_1.jpg_INSOON_EB_5512801818_20261112120522",
+      "nbImages": 6,
+      "images": [
+        "https://file.bienici.com/photo/ag920566-559572884_photos.ubiflow.net_920566_559572884_photos_1.jpg_INSOON_EB_5512801818_20261112120522?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag920566-559572884_photos.ubiflow.net_920566_559572884_photos_2.jpg_INSOON_EB_5512801818_20261112120522?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag920566-559572884_photos.ubiflow.net_920566_559572884_photos_3.jpg_INSOON_EB_5512801818_20261112120522?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag920566-559572884_photos.ubiflow.net_920566_559572884_photos_4.jpg_INSOON_EB_5512801818_20261112120522?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag920566-559572884_photos.ubiflow.net_920566_559572884_photos_5.jpg_INSOON_EB_5512801818_20261112120522?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag920566-559572884_photos.ubiflow.net_920566_559572884_photos_6.jpg_INSOON_EB_5512801818_20261112120522?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.753553988,
+      "lon": 2.29594232,
+      "kind": "logement-entier",
+      "description": "ANTONY F2 45M² CAVE PKG A 5 MIN A PIED DU RER B FONTAINE MICHALON, ECOLES PAUL BERT JUSTE A COTE, DANS UNE RESIDENCE EN PIERRE DE TAILLE, SITUE AU 7 EME ETAGE AVEC ASCENSEUR , BEL APPARTEMENT 2 PIECES RENOVE, D'UNE SURFACE HABITABLE DE 45.17 M², COMPRENANT : entrée avec placard, séjour avec accès balcon, 1 chambre, cuisine aménagée et semi-équipée (hotte et plaque chauffante vitrocéramique), 1 grande chambre avec placards de rangement, salle d'eau, wc indépendant. Cave au sous-sol parking extérieur privatif dans résidence fermée Chauffage, eau chaude, eau froide : collectif gaz Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr NOUS CONTACTER sur candidature.florian@yahoo.com Loyer : 1 120 Euros par mois, charges comprises dont 180 Euros de charges locatives (provision donnant lieu à régularisation) Dépot de garantie 896 Honoraires charges locataire 547 Euros TTC dont 95 Euros pour état des lieux - Montant estimé des dépenses annuelles d'énergie pour un usage standard : Entre 700 Euros et 1000 Euros par an. Prix moyens des énergies indexés au 1er janvier 2021 (abonnement compris)",
+      "agency": "agence",
+      "charges": null,
+      "source": "bienici",
+      "rejectedBecause": [
+        "2 pièces < 3",
+        "1 ch. < 2"
+      ]
+    },
+    {
+      "id": "bc-ladresse-1-adresse-14694695",
+      "subject": "Appartement Orsay 2 pièces 31 m2",
+      "url": "https://www.bienici.com/annonce/location/orsay/appartement/2pieces/ladresse-1-adresse-14694695",
+      "price": 910,
+      "city": "Orsay",
+      "zip": "91400",
+      "zone": "Vallee de la Bievre / proche Orsay",
+      "rooms": 2,
+      "bedrooms": 1,
+      "surface": 31,
+      "publishedAt": "2026-11-12T11:42:41.525Z",
+      "image": "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695a.jpg_DATEMAJ_10_11_2026-12_58_56?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695a.jpg_DATEMAJ_10_11_2026-12_58_56",
+      "nbImages": 8,
+      "images": [
+        "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695a.jpg_DATEMAJ_10_11_2026-12_58_56?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695b.jpg_DATEMAJ_10_11_2026-12_58_56?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695c.jpg_DATEMAJ_10_11_2026-12_58_56?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695d.jpg_DATEMAJ_10_11_2026-12_58_56?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695e.jpg_DATEMAJ_10_11_2026-12_58_56?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695f.jpg_DATEMAJ_10_11_2026-12_58_56?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695g.jpg_DATEMAJ_10_11_2026-12_58_56?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ladresse-1-adresse-14694695_media.immo-facile.com_office21_ladresseorsay_250625_catalog_images_pr_web_1_4_6_9_4_6_9_5_14694695h.jpg_DATEMAJ_10_11_2026-12_58_56?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.69608826464901,
+      "lon": 2.186328779344184,
+      "kind": "logement-entier",
+      "description": "ORSAY CENTRE - APPARTEMENT F2 AVEC MEZZANINE ET PARKING PRIVÉ Idéalement situé en centre-ville d'Orsay, à proximité des commerces, des commodités et de la gare RER B, cet appartement de type F2 se trouve au 2ème et dernier étage d'un petit bâtiment. D'une superficie de 31 m² Carrez et 40 m² au sol, l'appartement se compose d'une pièce de vie avec espace cuisine, d'une chambre en mezzanine et d'une salle d'eau avec WC. Il bénéficie également d'une place de stationnement privative. L'électricité et la production d'eau chaude sont individuelles. Un emplacement pratique et recherché, permettant de profiter des commerces et des transports accessibles à proximité, tout en bénéficiant du charme d'un appartement en dernier étage avec mezzanine. À visiter !",
+      "agency": "agence",
+      "charges": 95,
+      "source": "bienici",
+      "rejectedBecause": [
+        "2 pièces < 3",
+        "1 ch. < 2",
+        "31 m² < 35"
+      ]
+    },
+    {
+      "id": "bc-hektor-alvimmo_91-1403",
+      "subject": "Appartement 2 Pièces + cave + parking sous-sol",
+      "url": "https://www.bienici.com/annonce/location/orsay/appartement/2pieces/hektor-alvimmo_91-1403",
+      "price": 825,
+      "city": "Orsay",
+      "zip": "91400",
+      "zone": "Vallee de la Bievre / proche Orsay",
+      "rooms": 2,
+      "bedrooms": 1,
+      "surface": 45.47,
+      "publishedAt": "2026-11-12T11:36:13.607Z",
+      "image": "https://file.bienici.com/photo/hektor-alvimmo_91-1403_alvimmo.staticlbi.com_original_images_biens_1_7207cc49aa823ca90c015aacf4e9c161_photo_6c661315d4630f7d28f30d1096c96e30.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/hektor-alvimmo_91-1403_alvimmo.staticlbi.com_original_images_biens_1_7207cc49aa823ca90c015aacf4e9c161_photo_6c661315d4630f7d28f30d1096c96e30.jpg",
+      "nbImages": 6,
+      "images": [
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1403_alvimmo.staticlbi.com_original_images_biens_1_7207cc49aa823ca90c015aacf4e9c161_photo_6c661315d4630f7d28f30d1096c96e30.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1403_alvimmo.staticlbi.com_original_images_biens_1_7207cc49aa823ca90c015aacf4e9c161_photo_c9c41ae3d7c4ccc9e79a212001312d09.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1403_alvimmo.staticlbi.com_original_images_biens_1_7207cc49aa823ca90c015aacf4e9c161_photo_b1a17cff6c8d97397272630fa458efae.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1403_alvimmo.staticlbi.com_original_images_biens_1_7207cc49aa823ca90c015aacf4e9c161_photo_88436936a5dae6114af0f44a38626650.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1403_alvimmo.staticlbi.com_original_images_biens_1_7207cc49aa823ca90c015aacf4e9c161_photo_63c8eb6bb4851d14ffd479865fb8f946.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1403_alvimmo.staticlbi.com_original_images_biens_1_7207cc49aa823ca90c015aacf4e9c161_photo_bc93eda751bfa3f9e140b1ba4178015b.jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.69614222327226,
+      "lon": 2.1925855524511055,
+      "kind": "logement-entier",
+      "description": "10' RER, Proche centre ville, Résidence récente, Appartement 2 Pièces comprenant coin-cuisine, séjour, balcon, chambre, salle d'eau, rangements. Cave Parking en sous-sol. 825 EUR C.C D.G : 750 EUR / F.A : 596.57 EUR Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
+      "agency": "agence",
+      "charges": 75,
+      "source": "bienici",
+      "rejectedBecause": [
+        "2 pièces < 3",
+        "1 ch. < 2"
+      ]
+    },
     {
       "id": "bc-hektor-alvimmo_91-1386",
       "subject": "Appartement 2 Pièces + parking sous-sol",
@@ -1002,41 +1110,6 @@
         "1 pièces < 3",
         "0 ch. < 2",
         "25 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-iad-france-2155898",
-      "subject": "Location Studio 1 pièce",
-      "url": "https://www.bienici.com/annonce/location/paris-15e/appartement/1piece/iad-france-2155898",
-      "price": 860,
-      "city": "Paris 15e",
-      "zip": "75015",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": 0,
-      "surface": 17,
-      "publishedAt": "2026-11-09T18:59:17.063Z",
-      "image": "https://file.bienici.com/photo/iad-france-2155898_passerelle.static.iadfrance.com_photos_realestate_2026-11_product-2224131-1.jpg_bridge_bienici_ts_202611091550?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/iad-france-2155898_passerelle.static.iadfrance.com_photos_realestate_2026-11_product-2224131-1.jpg_bridge_bienici_ts_202611091550",
-      "nbImages": 5,
-      "images": [
-        "https://file.bienici.com/photo/iad-france-2155898_passerelle.static.iadfrance.com_photos_realestate_2026-11_product-2224131-1.jpg_bridge_bienici_ts_202611091550?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/iad-france-2155898_passerelle.static.iadfrance.com_photos_realestate_2026-11_product-2224131-2.jpg_bridge_bienici_ts_202611091550?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/iad-france-2155898_passerelle.static.iadfrance.com_photos_realestate_2026-11_product-2224131-3.jpg_bridge_bienici_ts_202611091550?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/iad-france-2155898_passerelle.static.iadfrance.com_photos_realestate_2026-11_product-2224131-4.jpg_bridge_bienici_ts_202611091550?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/iad-france-2155898_passerelle.static.iadfrance.com_photos_realestate_2026-11_product-2224131-5.jpg_bridge_bienici_ts_202611091550?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.84864496841345,
-      "lon": 2.2904991381150217,
-      "kind": "logement-entier",
-      "description": "iad France - Johnny Videira ( 06 52 02 72 09 ) vous propose : A Paris dans le 15ème arrondissement, proche du centre commercial de Beaugrenelle, rue de Lourmel, à 5 mn à pied environ de la station de métro 'Dupleix' ligne 6 et de celle de 'Charles Michels' ligne 10, se trouve au 6ème étage sans ascenseur, ce charmant studio bien agencé. Il se compose d’une entrée qui dessert une pièce de vie avec une kitchenette , une salle de bains avec toilettes et une panderie. Venez succomber à ce lieu paisible et lumineux. Disponible immédiatement. BIEN LOUÉ MEUBLE À 860€ PAR MOIS CHARGES COMPRISES Loyer de base : 742,61€ Loyer de référence majoré (loyer de base à ne pas dépasser) : 742,61€ Complément de loyer : 57,39€ Provision charges locatives : 60€ Dépôt de garantie : 1600€ Honoraires charge locataire : 260,10€ En sus des honoraires de location, une prestation d’état des lieux d'entrée sera réalisée et facturée au locataire par Homepilot à hauteur de 3€TTC/m². Information d'affichage énergétique sur ce bien : classe ENERGIE C indice 153 et classe CLIMAT C indice 28. Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr. La présente annonce immobilière a été rédigée sous la responsabilité éditoriale de M. Johnny Videira EI (ID 35312), mandataire indépendant en immobilier (sans détention de fonds), agent commercial de la SAS I@D France immatriculé au RSAC de PARIS sous le numéro 844976977, titulaire de la carte de démarchage immobilier pour le compte de la société I@D France SAS. Location meublée. Charges locatives : 60 euros / mois. Dépôt de garantie : 1600 euros. Honoraires TTC à la charge du locataire: 260 euros (soit 15.29 euros / m²). Le présent bien est commercialisé dans le cadre d'une délégation de mandat. Retrouvez tous nos biens sur notre site internet. www.iadfrance.fr",
-      "agency": "particulier",
-      "charges": 60,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3",
-        "0 ch. < 2",
-        "17 m² < 35"
       ]
     },
     {
@@ -7444,18 +7517,18 @@
       "bedrooms": 1,
       "surface": 39.27,
       "publishedAt": "2026-10-17T10:46:35.785Z",
-      "image": "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_d37d57ff88a084c303216063a733d8d6.jpg?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_d37d57ff88a084c303216063a733d8d6.jpg",
+      "image": "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_3139dbd10b0392331a97c73fa60bc61e.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_3139dbd10b0392331a97c73fa60bc61e.jpg",
       "nbImages": 8,
       "images": [
-        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_d37d57ff88a084c303216063a733d8d6.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_412eaee146ed05d137d00964f948b670.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_3139dbd10b0392331a97c73fa60bc61e.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_2471e1758ae718121c8f6fe3a49d1912.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_927e83b70c356a2f66b4ae2d9d33f72f.jpg?width=520&height=390&fit=cover",
         "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_5ac310eeece8fe8ba8805648bbee9c74.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_915e9012b79846dc7a4cd270c83be517.jpg?width=520&height=390&fit=cover",
         "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_3cd9c705e2ca54d7f69bbe125eb09ba0.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_84af2264f988ce6564018f342e9b77d7.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_8c39c411a76328a547cf9e35a3900a4c.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_7d2c1b8f0b73c81fcdd1da65e730c174.jpg?width=520&height=390&fit=cover"
+        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_2bcf4fc8276c2f889593c571e1fb105e.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_ed91ce172257ec5cc306f802192bc3cc.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-2102_alvimmo.staticlbi.com_original_images_biens_1_0570fdaa71d5815ca3b28d731316399e_photo_f14125f41d545bce0bcb969dc7ca934d.jpg?width=520&height=390&fit=cover"
       ],
       "lat": 48.715418802433945,
       "lon": 2.249779281090052,
@@ -7622,42 +7695,6 @@
       "rejectedBecause": [
         "1 pièces < 3",
         "29.5 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-ag754025-554481305",
-      "subject": "Studio",
-      "url": "https://www.bienici.com/annonce/location/paris-13e/appartement/1piece/ag754025-554481305",
-      "price": 869,
-      "city": "Paris 13e",
-      "zip": "75013",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": 0,
-      "surface": 14,
-      "publishedAt": "2026-10-16T14:31:18.152Z",
-      "image": "https://file.bienici.com/photo/ag754025-554481305_photos.ubiflow.net_754025_554481305_photos_1.jpg_INSOON_EB_5512801818_20261016160719?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/ag754025-554481305_photos.ubiflow.net_754025_554481305_photos_1.jpg_INSOON_EB_5512801818_20261016160719",
-      "nbImages": 6,
-      "images": [
-        "https://file.bienici.com/photo/ag754025-554481305_photos.ubiflow.net_754025_554481305_photos_1.jpg_INSOON_EB_5512801818_20261016160719?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-554481305_photos.ubiflow.net_754025_554481305_photos_2.jpg_INSOON_EB_5512801818_20261016160719?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-554481305_photos.ubiflow.net_754025_554481305_photos_3.jpg_INSOON_EB_5512801818_20261016160719?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-554481305_photos.ubiflow.net_754025_554481305_photos_4.jpg_INSOON_EB_5512801818_20261016160719?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-554481305_photos.ubiflow.net_754025_554481305_photos_5.jpg_INSOON_EB_5512801818_20261016160719?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-554481305_photos.ubiflow.net_754025_554481305_photos_6.jpg_INSOON_EB_5512801818_20261016160719?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.826637445843446,
-      "lon": 2.372648346973934,
-      "kind": "logement-entier",
-      "description": "L'agence Nous Gérons vous propose ce studio d'une surface de 14,52 m², intégralement meublé. L'appartement se situe au 4ᵉ étage d'un immeuble sécurisé, situé rue de Patay dans le 13ᵉ arrondissement de Paris. L'appartement se compose d'un séjour (canapé, rangements, télévision, table, chaise), d'une cuisine ouverte équipée et aménagée (plaque de cuisson, hotte, réfrigérateur, machine à laver), d'une chambre et d'une salle d'eau avec WC. Caractéristiques du bien : - Surface : 14,52 m² - Studio - 4ème étage - Chauffage individuel électrique - Eau chaude individuelle électrique À noter : - Appartement disponible immédiatement - Quartier avec commerces, restaurants et commodités à proximité - Proximité du métro 14 et du RER C Bibliothèque François Mitterrand Conditions de location : - Loyer de base : 819,80€ - Forfait de charges : 50 € - Loyer charges comprises : 869,80€ - Dépôt de garantie : 870€ - Honoraires à la charge du locataire : 220,45€ TTC Détail des honoraires : – Constitution du dossier, visite, rédaction du bail : 14,57 m² × 12,10 € = 176,30€ TTC – État des lieux : 14,57m² × 3,03 € = 44,15€ TTC – Total honoraires : 220,45€ TTC – Disponibilité : Immédiate – Chauffage / eau chaude : Individuels électriques – à la charge du locataire Encadrement des loyers – Zone soumise à réglementation : – Loyer de référence : 33,7 €/m² – Loyer de référence majoré : 40,4 €/m² 40,4 €/m² × 14,57 m² = 588,63 € – Complément de loyer : 231,18 € – Justification du complément de loyer : Meubles sur-mesure Espaces optimisés Barème des honoraires de location : - Zone très tendue : 12,10 €/m² TTC - Zone tendue : 10,09 €/m² TTC - Zone non tendue : 8,07 €/m² TTC - État des lieux : 3,03 €/m² TTC Mentions légales agence : SARL MRZ Carte professionnelle n° : CPI75012015000000390 Délivrée par : CCI de Paris Île-de-France Organisme garant : SOCAF, 26 avenue de Suffren, 75015 PARIS Mis à jour le 12/11/2026 Updated on 12/11/2026",
-      "agency": "particulier",
-      "charges": 50,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3",
-        "0 ch. < 2",
-        "14 m² < 35"
       ]
     },
     {
@@ -8440,7 +8477,7 @@
       "lat": 48.797879555558964,
       "lon": 2.350429244096984,
       "kind": "logement-entier",
-      "description": "À louer : Studio de 25 m2, situé au 1er étage d'une résidence sécurisée, dans un environnement calme et agréable, à une petite dizaine de minutes à pied de la station de métro IGR (ligne 14) et du centre-ville. Le logement bénéficie d'un emplacement pratique, à proximité des commerces et des commodités. Loyer mensuel : 865 EURuros charges comprises (dont 105 EURuros de charges mensuelles) Dépôt de garantie : 760 EURuros Frais d'agence : 385 EURuros Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
+      "description": "À louer : Studio de 25 m2, situé au 1er étage d'une résidence sécurisée, dans un environnement calme et agréable, à une petite dizaine de minutes à pied de la station de métro IGR (ligne 14) et du centre-ville. Le logement bénéficie d'un emplacement pratique, à proximité des commerces et des commodités. Ce bien est complété par une place de stationnement extérieure ainsi qu'une cave Loyer mensuel : 865 EURuros charges comprises (dont 105 EURuros de charges mensuelles) Dépôt de garantie : 760 EURuros Frais d'agence : 385 EURuros Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
       "agency": "agence",
       "charges": 105,
       "source": "bienici",
@@ -10418,76 +10455,6 @@
       ]
     },
     {
-      "id": "bc-ag754025-550732949",
-      "subject": "Studio",
-      "url": "https://www.bienici.com/annonce/location/paris-13e/appartement/1piece/ag754025-550732949",
-      "price": 858,
-      "city": "Paris 13e",
-      "zip": "75013",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": 0,
-      "surface": 15,
-      "publishedAt": "2026-09-21T12:51:54.205Z",
-      "image": "https://file.bienici.com/photo/ag754025-550732949_photos.ubiflow.net_754025_550732949_photos_1.jpg_INSOON_EB_5512801818_20260921130734?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/ag754025-550732949_photos.ubiflow.net_754025_550732949_photos_1.jpg_INSOON_EB_5512801818_20260921130734",
-      "nbImages": 5,
-      "images": [
-        "https://file.bienici.com/photo/ag754025-550732949_photos.ubiflow.net_754025_550732949_photos_1.jpg_INSOON_EB_5512801818_20260921130734?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-550732949_photos.ubiflow.net_754025_550732949_photos_2.jpg_INSOON_EB_5512801818_20260921130734?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-550732949_photos.ubiflow.net_754025_550732949_photos_3.jpg_INSOON_EB_5512801818_20260921130734?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-550732949_photos.ubiflow.net_754025_550732949_photos_4.jpg_INSOON_EB_5512801818_20260921130734?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag754025-550732949_photos.ubiflow.net_754025_550732949_photos_5.jpg_INSOON_EB_5512801818_20260921130734?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.826637445843446,
-      "lon": 2.372648346973934,
-      "kind": "logement-entier",
-      "description": "Nous vous proposons cet appartement T2 de 14,57 m², situé au 64 Rue de Patay dans le 13ème arrondissement de Paris. Situé au 4ème étage, cet appartement bénéficie d'une surface fonctionnelle de 14,57 m² et d'une localisation pratique dans le 13ème arrondissement. Caractéristiques du bien : - Surface : 14,57 m² - T2 - 4ème étage - Chauffage individuel électrique - Eau chaude individuelle électrique Transports à proximité : - Métro : ligne 14 – station Olympiades - RER : ligne C – station Bibliothèque François Mitterrand - Bus : ligne 27 – arrêt Patay-Tolbiac - Bus : ligne 62 – arrêt Patay-Tolbiac - Bus : ligne 64 – arrêt Patay-Tolbiac - Bus : ligne 132 – arrêt Patay-Tolbiac - Plusieurs lignes de bus à proximité. À noter : - Appartement disponible de suite - Quartier avec commerces, restaurants et commodités à proximité - Bonne desserte par les transports en commun - Logement situé au 4ème étage Conditions de location : - Loyer de base : 808,32 € - Provision pour charges : 50,00 € - Loyer charges comprises : 858,32 € - Dépôt de garantie : 858,32 € - Honoraires à la charge du locataire : 220,45 € TTC Détail des honoraires : - Constitution du dossier, visite, rédaction du bail : 14,57 m² × 12,10 € = 176,30 € TTC - État des lieux : 14,57 m² × 3,03 € = 44,15 € TTC - Total honoraires : 220,45 € TTC - Disponibilité : de suite - Chauffage / eau chaude : Individuels électriques – à la charge du locataire Encadrement des loyers - Zone soumise à réglementation : - Loyer de référence : 33,70 €/m² - Loyer de référence majoré : 40,40 €/m² - Loyer de référence majoré : 40,40 €/m² × 14,57 m² = 588,63 € - Loyer de base initial : 808,32 € € - Complément de loyer : 219,69 € Justificatif de complément de loyer : Situé au 4ᵉ étage, ce logement bénéficie d'une isolation renforcée et de fenêtres à double vitrage, offrant ainsi un confort thermique agréable et une protection contre les bruits extérieurs. Barème des honoraires de location : - Zone très tendue : 12,10 €/m² TTC - Zone tendue : 10,09 €/m² TTC - Zone non tendue : 8,07 €/m² TTC - État des lieux : 3,03 €/m² TTC Mentions légales agence : SARL MRZ Carte professionnelle n° : CPI75012015000000390 Délivrée par : CCI de Paris Île-de-France Organisme garant : SOCAF, 26 avenue de Suffren, 75015 PARIS Mis à jour le 12/11/2026 Updated on 12/11/2026",
-      "agency": "particulier",
-      "charges": 50,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3",
-        "0 ch. < 2",
-        "15 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-nestenn-1-99937651005",
-      "subject": "STUDIO MEUBLEE-QUARTIER ATLANTIS",
-      "url": "https://www.bienici.com/annonce/location/massy/appartement/1piece/nestenn-1-99937651005",
-      "price": 693,
-      "city": "Massy",
-      "zip": "91300",
-      "zone": "RER B sud (meilleur compromis)",
-      "rooms": 1,
-      "bedrooms": 1,
-      "surface": 21.1,
-      "publishedAt": "2026-09-17T14:13:46.622Z",
-      "image": "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005a.jpg_DATEMAJ_05_11_2026-15_30_11?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005a.jpg_DATEMAJ_05_11_2026-15_30_11",
-      "nbImages": 5,
-      "images": [
-        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005a.jpg_DATEMAJ_05_11_2026-15_30_11?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005b.jpg_DATEMAJ_05_11_2026-15_30_11?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005c.jpg_DATEMAJ_05_11_2026-15_30_12?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005d.jpg_DATEMAJ_05_11_2026-15_30_12?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005e.jpg_DATEMAJ_05_11_2026-15_30_12?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.728231696,
-      "lon": 2.273597806,
-      "kind": "logement-entier",
-      "description": "Merci de déposer votre dossier de candidature sur le site ZELOK.fr (gratuit) afin que nous puissions l'étudier et vous rappeler si il convient. Appartement MEUBLE dans une résidence étudiante proche des commerces et à 10mn à pied de la gare Massy-Palaiseau RER comprenant une pièce principale ouverte sur une cuisine aménagée et équipée d'une plaques; micro-onde/ et réfrigérateur, salle d'eau avec WC et d'une place de parking Loyer : 693.11€/cc dont (30€ de charges comprenant eau froide ,entretiens des parties communes). Disponible le 02/10/2026",
-      "agency": "agence",
-      "charges": 30,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3",
-        "1 ch. < 2",
-        "21.1 m² < 35"
-      ]
-    },
-    {
       "id": "bc-ag920566-549734231",
       "subject": "CENTRE",
       "url": "https://www.bienici.com/annonce/location/antony/appartement/2pieces/ag920566-549734231",
@@ -11365,6 +11332,82 @@
       "source": "bienici",
       "rejectedBecause": [
         "prix suspect (6.0 €/m² < 12) : coloc déguisée ou arnaque"
+      ]
+    },
+    {
+      "id": "bc-century-21-202_2414_10067",
+      "subject": "appartement 1 pièces Massy",
+      "url": "https://www.bienici.com/annonce/location/massy/appartement/1piece/century-21-202_2414_10067",
+      "price": 550,
+      "city": "Massy",
+      "zip": "91300",
+      "zone": "RER B sud (meilleur compromis)",
+      "rooms": 1,
+      "bedrooms": 1,
+      "surface": 11.61,
+      "publishedAt": "1970-01-01T00:00:00.000Z",
+      "image": "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_7A5EFED3-5136-4C7B-A39E-2FC5F4B73C5D.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_7A5EFED3-5136-4C7B-A39E-2FC5F4B73C5D.jpg",
+      "nbImages": 7,
+      "images": [
+        "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_7A5EFED3-5136-4C7B-A39E-2FC5F4B73C5D.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_26134A14-141E-4021-9D7B-4B4D537177E7.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_42D2A9C1-A3DF-4ED0-86D1-3721431AD630.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_6D2EE0E3-643A-41B1-8CAF-C95F6DB8F3CC.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_A17C5748-8171-47D1-A967-680CDDB1374D.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_8F9DD6AA-F3E8-4BB6-BDF6-4C1E5379AEE3.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/century-21-202_2414_10067_images.century21.fr_202_2414_c21_202_2414_10067_1_0AA0C875-E81A-48A5-9EA7-8DFF5570BD51.jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.73474663470916,
+      "lon": 2.259812124586874,
+      "kind": "logement-entier",
+      "description": "Chambre meublée de 11,61 m² en colocation Appartement rénové ! CENTURY 21 Eureka vous propose une chambre meublée de 11,61 m² au sein d'une colocation de 5 chambres, dans un appartement de 89,13 m², entièrement rénové et équipé. Situé au 9 étage avec ascenseur, ce logement offre un cadre de vie agréable et fonctionnel. La chambre est entièrement meublée avec un lit simple, un bureau et des rangements, prête à vous accueillir : il ne vous reste plus qu'à poser vos valises. Les espaces communs comprennent : Une cuisine aménagée et entièrement équipée (lave-vaisselle, four, plaques de cuisson, micro-ondes, réfrigérateur/congélateur et vaisselle complète) ; Deux salles d'eau (une machine à laver) ; Des WC séparés ; Un balcon. Les charges incluent l'eau froide, l'eau chaude, l'électricité, le chauffage ainsi que l'entretien des parties communes. Un emplacement pratique et bien desservi Située dans un quartier résidentiel de Massy (91), la résidence bénéficie d'un environnement agréable, à proximité des commerces, des services et des espaces verts. Son emplacement permet de rejoindre facilement les principaux pôles d'activités ainsi que Paris grâce à un réseau de transports performant. Transports à proximité : Arrêts de bus accessibles en quelques minutes à pied Gare Massy - Palaiseau (RER B, RER C et TGV) facilement accessible en bus, offrant des liaisons rapides vers Paris et les principaux bassins d'emploi (10 min à pied) Accès rapide aux grands axes routiers (A6, A10, N20), idéal pour les déplacements en voiture. Une colocation conviviale Vous rejoindrez une colocation mixte composée de jeunes actifs et d'étudiants, dans une ambiance calme, respectueuse et propice à une vie en communauté harmonieuse. Pour toute information complémentaire ou pour organiser une visite, n'hésitez pas à nous contacter. Montant estimé des dépenses annuelles d'énergie pour un usage standard entre 1520.0 € et 2110.0 € indexées aux années 2021, 2022, 2023 (abonnements compris).",
+      "agency": "agence",
+      "charges": 49,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 pièces < 3",
+        "1 ch. < 2",
+        "11.61 m² < 35"
+      ]
+    },
+    {
+      "id": "pap-442700448",
+      "url": "https://www.pap.fr/annonces/appartement-chaville-92370-r442700448",
+      "price": 695,
+      "zip": "92370",
+      "city": "Chaville",
+      "rooms": 3,
+      "beds": "1",
+      "surf": "50",
+      "images": [
+        "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
+        "https://cdn.pap.fr/photos/pap/4b/17/4b17aaa597f8e64db52b38d54d3d230f/4-p2.webp",
+        "https://cdn.pap.fr/photos/pap/bc/7a/bc7a588c2840cc010342b4dc059378f2/b-p2.webp",
+        "https://cdn.pap.fr/photos/pap/a4/98/a4984c5e10875ed3ea11c4edaa519ed7/a-p2.webp",
+        "https://cdn.pap.fr/photos/pap/c5/1c/c51cea0439fbd4bf027edff31ea83892/c-p2.webp",
+        "https://cdn.pap.fr/photos/pap/be/c6/bec6144404368a0a9061af0d61540f77/b-p2.webp",
+        "https://cdn.pap.fr/photos/pap/89/9c/899c79efe5794c7d4ce1a271dce2f39d/8-p2.webp"
+      ],
+      "text": "695 € Chaville (92370) 3 pièces 1 chambre 50 m² Chambre disponible immédiatement dans une colocation cosy et calme de seulement 2 personnes. Appartement T3 de 50 m², récemment rénové avec prestations de qualité, situé au 2ème étage avec ascenseur...",
+      "subject": "Chambre disponible immédiatement dans une colocation cosy et calme de",
+      "surface": 50,
+      "bedrooms": 1,
+      "lat": 48.80479,
+      "lon": 2.181078,
+      "realEstateType": "appartement",
+      "owner": "particulier",
+      "publishedAt": null,
+      "body": "695 € Chaville (92370) 3 pièces 1 chambre 50 m² Chambre disponible immédiatement dans une colocation cosy et calme de seulement 2 personnes. Appartement T3 de 50 m², récemment rénové avec prestations de qualité, situé au 2ème étage avec ascenseur...",
+      "image": "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
+      "imageLarge": "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
+      "nbImages": 7,
+      "kind": "appartement",
+      "totalRent": 695,
+      "source": "pap",
+      "zone": "Paris 15e et proche",
+      "rejectedBecause": [
+        "1 ch. < 2"
       ]
     },
     {
