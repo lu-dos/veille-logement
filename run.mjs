@@ -12,6 +12,7 @@ import { openTab, cdpAlive } from './lib/cdp.mjs';
 import { openPlaywrightTab } from './lib/pw.mjs';
 import { collect } from './lib/leboncoin.mjs';
 import { collectPap } from './lib/pap.mjs';
+import { collectCitya } from './lib/agences.mjs';
 import { collectBienici } from './lib/bienici.mjs';
 import { loadCache, saveCache, geocode } from './lib/geo.mjs';
 import { hardFilter, scoreAd } from './lib/score.mjs';
@@ -71,7 +72,7 @@ const fmtTravel = (t) =>
 
 function buildMessage(a, prefix) {
   const eurM2 = a.surface ? (a.price / a.surface).toFixed(1) : '?';
-  const nomSite = { leboncoin: 'Leboncoin', pap: 'PAP', bienici: "Bien'ici" };
+  const nomSite = { leboncoin: 'Leboncoin', pap: 'PAP', bienici: "Bien'ici", citya: 'Citya' };
   const principal = a.primarySource || (a.source === 'les deux' ? 'leboncoin' : a.source) || 'leboncoin';
   const sites = [nomSite[principal] || principal];
   if (a.otherSource && a.otherSource !== principal) sites.push(nomSite[a.otherSource] || a.otherSource);
@@ -191,6 +192,25 @@ async function run() {
           ads = ads.concat(pap);
         } catch (e) {
           log(`  PAP indisponible ce tour : ${e.message}`);
+        }
+      }
+      // troisieme source : les reseaux d'agences (Citya). Le sitemap donne les
+      // annonces, la fiche donne prix / surface / photos. Une source qui casse
+      // ne doit jamais tuer le tour.
+      if (CFG.sources?.citya?.enabled !== false) {
+        try {
+          const citya = await collectCitya(
+            tab,
+            {
+              zones: CFG.zones,
+              maxNew: CFG.sources?.citya?.maxNew ?? 6,
+              cacheFile: path.join(STATE_DIR, 'citya-cache.json'),
+            },
+            log,
+          );
+          ads = ads.concat(citya);
+        } catch (e) {
+          log(`  Citya indisponible ce tour : ${e.message}`);
         }
       }
     } finally {

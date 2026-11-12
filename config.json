@@ -69,6 +69,11 @@
       "enabled": true,
       "maxPages": 6,
       "_note": "API JSON publique, sans navigateur ni compte : c'est la source qui tourne sur le runner GitHub quand le PC est eteint."
+    },
+    "citya": {
+      "enabled": true,
+      "maxNew": 6,
+      "_note": "Reseau d'agences. sitemap.location.xml donne les annonces du corridor, chaque fiche expose un JSON-LD complet (prix, pieces, surface, GPS, photos). Une fiche n'est telechargee qu'une fois (cache .state/citya-cache.json). Sitemap mis a jour par Citya : source de complement, pas de temps reel."
     }
   },
   "options": {
