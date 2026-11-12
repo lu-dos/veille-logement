@@ -19,6 +19,7 @@ import { hardFilter, scoreAd } from './lib/score.mjs';
 import { notify } from './lib/notify.mjs';
 import { serverBaseInfo, adActions, openUrl } from './lib/lan.mjs';
 import { renderReport } from './lib/report.mjs';
+import { taillesChambres, resumeChambres } from './lib/chambres.mjs';
 import { buildLive } from './lib/live.mjs';
 import { publish, publishLocal, PAGES_URL } from './publish.mjs';
 
@@ -81,6 +82,9 @@ function buildMessage(a, prefix) {
     '',
     `Logement entier : ${a.price} EUR/mois (${a.surface ?? '?'} m2, ${eurM2} EUR/m2)`,
     `${a.rooms ?? '?'} pieces, ${a.bedrooms ?? '?'} chambres`,
+    ...(resumeChambres(taillesChambres(a.description || a.body), a.bedrooms)
+      ? [`chambres : ${resumeChambres(taillesChambres(a.description || a.body), a.bedrooms)}`]
+      : []),
     fmtTravel(a.travel),
     `zone: ${a.zone}`,
     `site: ${sites.join(' + ')}`,
