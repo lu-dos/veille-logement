@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-11-12T14:00:10.570Z",
+  "ranAt": "2026-11-12T14:51:09.637Z",
   "total": 370,
   "kept": 45,
   "matches": 17,
@@ -1345,8 +1345,8 @@
         "https://file.bienici.com/photo/ag783893-558954650_photos.ubiflow.net_783893_558954650_photos_5.jpg_INSOON_EB_5512801818_20261109140011?width=520&height=390&fit=cover",
         "https://file.bienici.com/photo/ag783893-558954650_photos.ubiflow.net_783893_558954650_photos_6.jpg_INSOON_EB_5512801818_20261109140011?width=520&height=390&fit=cover"
       ],
-      "lat": 48.80054354892941,
-      "lon": 2.170887699026766,
+      "lat": 48.80067354892941,
+      "lon": 2.170737697551227,
       "kind": "logement-entier",
       "description": "Au coeur d'une copropriété de charme, agréable appartement 2/3 pièces bénéficiant d'un emplacement recherché, à deux pas des commerces et à 1 minute de la gare de Viroflay Rive Gauche. Situé au 3? étage, il dispose d'une cave et d'un local vélos. Exposé plein sud, il est particulièrement lumineux et offre un cadre de vie agréable, idéal pour profiter de la proximité immédiate des commodités et des transports. Honoraires de 790 € TTC à la charge du locataire comprenant 158 € TTC pour l'état des lieux. Loyer de base 1100 €/mois. 140 €/mois de charges forfaitaires. Dépôt de garantie 1 100 €. Classe énergie D, Classe climat D Montant moyen estimé des dépenses annuelles d'énergie pour un usage standard, établi à partir des prix de l'énergie de l'année 2021 : entre 570.00 et 820.00 €. Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr. Votre conseiller INNOVE IMMO - Viroflay : Anne Vinet Agent commercial (Entreprise individuelle) RSAC 895 205 466 00017 RCP VD 7.000.002/009687/ACI27507 . INNOVE IMMO, partenaire de vos projets de vie Nous vous informons que dans le cadre de l'article L561-5 du Code monétaire et financier, une pièce d'identité vous sera demandée avant chaque visite.",
       "agency": "agence",
@@ -2619,41 +2619,6 @@
       "description": "Coup de coeur assuré ! LA Moulin de la Bièvre - Au dernier étage d'une copropriété assez exceptionnel composée d'une bâtisse ancienne de 1730, classée, entièrement rénovée et de jardins intérieurs, superbe 2 Pièces situé au dernier étage et bénéficiant d'une superbe terrasse privative de 70 m2 ! Le bien comprend : entrée, séjour avec cuisine américaine aménagée et équipée, wc séparé, salle de bains, chambre avec placard. Très beaux volumes. Tout le charme de l'ancien dans un environnement calme et exceptionnel à deux pas du Parc Heller et à 10 minutes à pied du RER B Antony Centre. Appartement avec climatisation réversible. En dépendance, un emplacement de parking en sous-sol.",
       "agency": "agence",
       "charges": 100,
-      "source": "bienici",
-      "rejectedBecause": [
-        "2 pièces < 3",
-        "1 ch. < 2"
-      ]
-    },
-    {
-      "id": "bc-era-2-49595695",
-      "subject": "Appartement 2 pièces 44m² FRESNES",
-      "url": "https://www.bienici.com/annonce/location/fresnes/appartement/2pieces/era-2-49595695",
-      "price": 984,
-      "city": "Fresnes",
-      "zip": "94260",
-      "zone": "Vallee de la Bievre / proche Orsay",
-      "rooms": 2,
-      "bedrooms": 1,
-      "surface": 44,
-      "publishedAt": "2026-11-05T17:48:43.859Z",
-      "image": "https://file.bienici.com/photo/era-2-49595695_media.immo-facile.com_office2_erafresnes_catalog_images_pr_p_4_9_5_9_5_6_9_5_49595695a.jpg_DATEMAJ_16_03_2025-16_08_58?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/era-2-49595695_media.immo-facile.com_office2_erafresnes_catalog_images_pr_p_4_9_5_9_5_6_9_5_49595695a.jpg_DATEMAJ_16_03_2025-16_08_58",
-      "nbImages": 6,
-      "images": [
-        "https://file.bienici.com/photo/era-2-49595695_media.immo-facile.com_office2_erafresnes_catalog_images_pr_p_4_9_5_9_5_6_9_5_49595695a.jpg_DATEMAJ_16_03_2025-16_08_58?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/era-2-49595695_media.immo-facile.com_office2_erafresnes_catalog_images_pr_p_4_9_5_9_5_6_9_5_49595695b.jpg_DATEMAJ_16_03_2025-16_08_59?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/era-2-49595695_media.immo-facile.com_office2_erafresnes_catalog_images_pr_p_4_9_5_9_5_6_9_5_49595695c.jpg_DATEMAJ_16_03_2025-16_08_59?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/era-2-49595695_media.immo-facile.com_office2_erafresnes_catalog_images_pr_p_4_9_5_9_5_6_9_5_49595695d.jpg_DATEMAJ_16_03_2025-16_09_00?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/era-2-49595695_media.immo-facile.com_office2_erafresnes_catalog_images_pr_p_4_9_5_9_5_6_9_5_49595695e.jpg_DATEMAJ_16_03_2025-16_09_00?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/era-2-49595695_media.immo-facile.com_office2_erafresnes_catalog_images_pr_p_4_9_5_9_5_6_9_5_49595695f.jpg_DATEMAJ_16_03_2025-16_09_00?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.760826662057696,
-      "lon": 2.314994651949403,
-      "kind": "logement-entier",
-      "description": "A proximité immédiate des transports (RER Croix de Berny à 900m), des commerces (Intermarché à 2 min à pieds) et des écoles. L'agence ERA Immobilier de Fresnes vous propose en exclusivité cet appartement lumineux de 2 pièces de 44 m² comprenant : une entrée, un séjour donnant sur le Balcon sans vis-à-vis, une cuisine aménagée et équipée, une grande chambre et une salle de bains avec wc. Une cave et une place de parking viennent compléter ce bien. Appartement entièrement rénové. A visiter sans tarder. Copropriété de 100 lots (Pas de procédure en cours).",
-      "agency": "agence",
-      "charges": 160,
       "source": "bienici",
       "rejectedBecause": [
         "2 pièces < 3",
@@ -7908,7 +7873,7 @@
       "id": "bc-immo-facile-61623113",
       "subject": "APPARTEMENT F2-3 - BALCON - PALAISEAU",
       "url": "https://www.bienici.com/annonce/location/palaiseau/appartement/3pieces/immo-facile-61623113",
-      "price": 1150,
+      "price": 1090,
       "city": "Palaiseau",
       "zip": "91120",
       "zone": "RER B sud (meilleur compromis)",
@@ -7934,7 +7899,7 @@
       "kind": "logement-entier",
       "description": "L'agence Marie Morgane vous propose cet appartement de type F2/3 d'environ 62m² situé à Palaiseau. Il est composé d'une entrée avec placard de rangements, un séjour double lumineux avec partie pouvant faire office d'une seconde chambre, une cuisine à aménager, un balcon, un WC, une salle de bain ainsi qu'une chambre. L'appartement vient également avec une place de parking en extérieur ainsi qu'une grande cave. Il a été rénové récemment. DPE E Libre de suite !",
       "agency": "agence",
-      "charges": 270,
+      "charges": 240,
       "source": "bienici",
       "rejectedBecause": [
         "1 ch. < 2"
@@ -11473,6 +11438,46 @@
       "source": "bienici",
       "rejectedBecause": [
         "1370 € > 1320 €"
+      ]
+    },
+    {
+      "id": "bc-mgc-ancien-280C052-4199-84555",
+      "subject": "appartement 1 pièces Paris 15e",
+      "url": "https://www.bienici.com/annonce/location/paris-15e/appartement/1piece/mgc-ancien-280C052-4199-84555",
+      "price": 1150,
+      "city": "Paris 15e",
+      "zip": "75015",
+      "zone": "Paris 15e et proche",
+      "rooms": 1,
+      "bedrooms": null,
+      "surface": 16,
+      "publishedAt": "1970-01-01T00:00:00.000Z",
+      "image": "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2026-11-hono-offerts-2-jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2026-11-hono-offerts-2-jpg",
+      "nbImages": 11,
+      "images": [
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2026-11-hono-offerts-2-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-2-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-3-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-4-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-5-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-6-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-7-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-8-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-9-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-10-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-280C052-4199-84555_sites-default-files-2025-11-location-meuble-1-piece-paris-15-280-3052-1-jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.84020816061347,
+      "lon": 2.280141249643216,
+      "kind": "logement-entier",
+      "description": "OFFRE DU MOMENT : HONORAIRES OFFERTS !! Rue Saint Charles. Agréable studio meublé, calme sur jardin, situé à deux pas du Parc André Citroën au cœur d'un quartier vivant et commerçant. Posez vos valises dans votre nouveau chez vous au 199, rue St Charles à Paris 15 : un appartement moderne et chaleureux, entièrement meublé et équipé*. A l'extérieur, un jardin tranquille. A l'intérieur, un studio refait à neuf de 16m² au 1er étage. Une entrée, donnant accès à la pièce de vie, moderne et lumineuse avec une cuisine ouverte équipée (Nespresso, réfrigérateur, plaque de cuisson), et avec un coin repas. Une salle d'eau avec toilette complète ce bien. Parquet, double vitrage, accès fibre. *Appartement meublé tout équipé : lit gigogne (couchage de 90x190), table à manger avec 2 chaises, réfrigérateur, Nespresso, accessoires de cuisine, vaisselle, accessoires pour le ménage et l'entretien. Ce logement est situé dans une résidence gérée, offrant des services à la carte. Il se trouve au sein d'une petite résidence calme et sécurisée, disposant d'un agréable jardin intérieur et d'une bibliothèque à partager, et de la présence au quotidien de personnel disponible pour répondre à vos attentes. La résidence est équipée de la fibre optique, d'ascenseurs, d'un local vélos et dispose d'emplacements de parkings intérieurs, voitures et motos. Idéalement situé dans la rue Saint Charles, à proximité de la rue de la Convention, ce quartier très commerçant et recherché accueille de nombreux marchés locaux et les commerces du centre Beaugrenelle. A quelques pas, vous disposez de la station de métro Lourmel (ligne 8), vous permettant des déplacements rapides dans Paris. Dossiers étudiés pour des revenus qui représentent au moins 2 fois le montant du loyer. Honoraires à la charge du locataire (prix maximum) : 242,08€ TTC, dont 48,48€ pour l'état des lieux",
+      "agency": "agence",
+      "charges": 80,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 pièces < 3",
+        "16 m² < 35"
       ]
     },
     {
