@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="fr"><head><meta name="robots" content="noindex,nofollow"><meta name="veille-build" content="ac56e5033146b5ae"><meta charset="utf-8">
+<html lang="fr"><head><meta name="robots" content="noindex,nofollow"><meta name="veille-build" content="ec66c2fe908f4f1e"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Coloc hunter — 17 retenus, 39 hésitations</title>
+<title>Coloc hunter — 17 retenus, 40 hésitations</title>
 <style>
   :root{--bg:#0f1115;--card:#171a21;--line:#252a34;--txt:#e8eaef;--mut:#9aa3b2;--ok:#3ecf8e;--bad:#ff6b6b;--acc:#ffd166}
   *{box-sizing:border-box}
@@ -27,6 +27,8 @@
   .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;padding:0 0 13px}
   .fgrid label{display:flex;flex-direction:column;gap:4px;font-size:11.5px;color:var(--mut)}
   .fgrid select{font:inherit;font-size:12.5px;background:#0f1115;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 8px}
+  .fgrid .wide{grid-column:1/-1}
+  .fgrid input[type=search]{font:inherit;font-size:12.5px;background:#0f1115;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
   .fgrid .chk{flex-direction:row;align-items:center;gap:7px;font-size:12.5px;color:var(--txt);padding-top:16px}
   .fgrid .chk input{accent-color:#4dabf7;width:16px;height:16px}
   .fgrid .reset{grid-column:1/-1;font:inherit;font-size:12px;padding:7px 12px;border-radius:999px;background:#171a21;border:1px solid var(--line);color:var(--mut);cursor:pointer}
@@ -92,6 +94,8 @@
   .chip b{color:var(--txt);font-weight:600}
   .chip.ok{border-color:rgba(62,207,142,.45)}
   .chip.bad{border-color:rgba(255,107,107,.45)}
+  .chbed{margin:10px 0 0;font-size:12.5px;color:var(--mut)}
+  .chbed b{color:var(--acc);font-weight:600}
   .flags{margin:12px 0 0;padding:10px 12px 10px 28px;background:rgba(255,209,102,.06);border:1px solid rgba(255,209,102,.22);border-radius:10px;font-size:13px;color:#e6d5a8}
   .flags li{margin:2px 0}
   .actions{display:flex;gap:8px;margin-top:13px}
@@ -111,7 +115,7 @@
 </style></head>
 <body><div class="wrap">
 <h1>Coloc hunter</h1>
-<div class="sub">Logements entiers uniquement (2 chambres min, 1 200 € max) · maj 12/11/2026 11:47:04 · <b>la page se met à jour toute seule</b> (collecte toutes les 3 min)</div>
+<div class="sub">Logements entiers uniquement (2 chambres min, 1 200 € max) · maj 12/11/2026 12:02:04 · <b>la page se met à jour toute seule</b> (collecte toutes les 3 min)</div>
 
 <div class="livebar">
   <button id="live-refresh">Vérifier les nouvelles annonces</button>
@@ -131,6 +135,9 @@
 <details class="filterpanel" id="filterpanel">
   <summary>Filtres <span class="fstate" id="filter-state">aucun</span></summary>
   <div class="fgrid">
+    <label class="wide">Recherche (ville, titre, code postal)
+      <input type="search" id="f-q" placeholder="ex. Antony, maison, 91400" autocomplete="off">
+    </label>
     <label>Loyer max
       <select id="f-price">
         <option value="">tous</option>
@@ -232,7 +239,7 @@
   <article class="card match" data-id="bc-netty-company54028bva-appt-16902" data-pub="1793222645317" data-score="100"
     data-price="1100" data-rooms="3" data-beds="2"
     data-surface="53.88" data-p="28" data-o="42"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="cachan – appartement 2/3 pièces de 53,88 m² – au pied du r cachan 94230 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-company54028bva-appt-16902" data-url="https://www.bienici.com/annonce/location/cachan/appartement/3pieces/netty-company54028bva-appt-16902"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -259,6 +266,7 @@
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -270,7 +278,7 @@
   <article class="card match" data-id="3288982912" data-pub="1792083627000" data-score="96"
     data-price="1090" data-rooms="3" data-beds="2"
     data-surface="58" data-p="33" data-o="25"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="appartement 3 pièces 58 m² palaiseau 91120 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3288982912" data-url="https://www.leboncoin.fr/ad/locations/3288982912"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -297,6 +305,7 @@
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -308,7 +317,7 @@
   <article class="card match" data-id="3291039277" data-pub="1792367542000" data-score="88"
     data-price="1085" data-rooms="3" data-beds="2"
     data-surface="57.74" data-p="38" data-o="24"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="a louer, appartement 3 pièces 57,74 m² au 1er étage avec grand balcon dans immeuble récent de 2017 massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3291039277" data-url="https://www.leboncoin.fr/ad/locations/3291039277"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -335,6 +344,7 @@
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -346,7 +356,7 @@
   <article class="card match" data-id="bc-ag920566-547679711" data-pub="0" data-score="85"
     data-price="1090" data-rooms="3" data-beds="2"
     data-surface="58" data-p="40" data-o="36"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="parc heller antony 92160 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag920566-547679711" data-url="https://www.bienici.com/annonce/location/antony/appartement/3pieces/ag920566-547679711"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -373,6 +383,7 @@
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -384,7 +395,7 @@
   <article class="card match" data-id="citya-GES50290005-584" data-pub="1794478233752" data-score="85"
     data-price="960" data-rooms="3" data-beds="2"
     data-surface="48.02" data-p="40" data-o="34"
-    data-zone="RER B sud (meilleur compromis)" data-src="citya">
+    data-zone="RER B sud (meilleur compromis)" data-src="citya" data-q="appartement à louer 3 pièces 48.02m² - antony (92) antony 92160 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="citya-GES50290005-584" data-url="https://www.citya.com/annonces/location/appartement/antony-92160/GES50290005-584"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -399,7 +410,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 37 min
+            <span class="new">nouveau</span> repérée il y a 52 min
             <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES50290005-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -410,6 +421,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 37 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -422,7 +434,7 @@
   <article class="card match" data-id="bc-era-2-61709122" data-pub="1793864761720" data-score="81"
     data-price="1170" data-rooms="3" data-beds="2"
     data-surface="50.99" data-p="30" data-o="51"
-    data-zone="Paris 15e et proche" data-src="bienici">
+    data-zone="Paris 15e et proche" data-src="bienici" data-q="appartement viroflay 3 pièce(s) 51m2 viroflay 78220 paris 15e et proche">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-era-2-61709122" data-url="https://www.bienici.com/annonce/location/viroflay/appartement/3pieces/era-2-61709122"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -449,6 +461,7 @@
         <span class="chip neutral"><b>zone</b> Paris 15e et proche</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -460,7 +473,7 @@
   <article class="card match" data-id="bc-netty-company36905zuv-appt-14920" data-pub="1792236740150" data-score="77"
     data-price="1195" data-rooms="3" data-beds="2"
     data-surface="55.45" data-p="34" data-o="44"
-    data-zone="Sud parisien / proche 15e" data-src="bienici">
+    data-zone="Sud parisien / proche 15e" data-src="bienici" data-q="appartement à louer châtillon châtillon 92320 sud parisien / proche 15e">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-company36905zuv-appt-14920" data-url="https://www.bienici.com/annonce/location/chatillon/appartement/3pieces/netty-company36905zuv-appt-14920"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -487,6 +500,7 @@
         <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -498,7 +512,7 @@
   <article class="card match" data-id="3299430330" data-pub="1793465483000" data-score="76"
     data-price="1115" data-rooms="3" data-beds="2"
     data-surface="60" data-p="47" data-o="42"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="f3 meublé palaiseau 91120 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3299430330" data-url="https://www.leboncoin.fr/ad/locations/3299430330"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -525,6 +539,7 @@
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -536,7 +551,7 @@
   <article class="card match" data-id="3306296843" data-pub="1794317138000" data-score="75"
     data-price="1123" data-rooms="3" data-beds="2"
     data-surface="66" data-p="41" data-o="53"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement 3 pièces 66 m² fresnes 94260 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3306296843" data-url="https://www.leboncoin.fr/ad/locations/3306296843"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -563,6 +578,7 @@
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -574,7 +590,7 @@
   <article class="card match" data-id="bc-ag920722-557619131" data-pub="1793711117651" data-score="72"
     data-price="1010" data-rooms="3" data-beds="2"
     data-surface="52" data-p="48" data-o="46"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="t3 massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag920722-557619131" data-url="https://www.bienici.com/annonce/location/massy/appartement/3pieces/ag920722-557619131"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -601,6 +617,7 @@
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -612,7 +629,7 @@
   <article class="card match" data-id="bc-laforet-immo-facile-52991820" data-pub="1792673577948" data-score="70"
     data-price="1200" data-rooms="3" data-beds="2"
     data-surface="58.6" data-p="38" data-o="45"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement antony 3 pièces proche parc de sceaux antony 92160 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52991820" data-url="https://www.bienici.com/annonce/location/antony/appartement/3pieces/laforet-immo-facile-52991820"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -639,6 +656,7 @@
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -650,7 +668,7 @@
   <article class="card match" data-id="bc-ladresse-1-adresse-10677207" data-pub="1791195983091" data-score="59"
     data-price="1186" data-rooms="3" data-beds="2"
     data-surface="52.04" data-p="45" data-o="48"
-    data-zone="Paris 15e et proche" data-src="bienici">
+    data-zone="Paris 15e et proche" data-src="bienici" data-q="appartement meublé  2/3 pièces 52 m2 sèvres 92310 paris 15e et proche">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ladresse-1-adresse-10677207" data-url="https://www.bienici.com/annonce/location/sevres/appartement/3pieces/ladresse-1-adresse-10677207"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -677,6 +695,7 @@
         <span class="chip neutral"><b>zone</b> Paris 15e et proche</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -688,7 +707,7 @@
   <article class="card match" data-id="3299692552" data-pub="1793516076000" data-score="59"
     data-price="1200" data-rooms="3" data-beds="2"
     data-surface="65" data-p="48" data-o="41"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="à louer – bel appartement t3 de 65 m² avec parking et cave – proche gare &amp; paris longjumeau 91160 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3299692552" data-url="https://www.leboncoin.fr/ad/locations/3299692552"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -715,6 +734,7 @@
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -726,7 +746,7 @@
   <article class="card match" data-id="3306262376" data-pub="1794313973000" data-score="58"
     data-price="1125" data-rooms="3" data-beds="2"
     data-surface="68.9" data-p="50" data-o="56"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="vpr /vp28/appt a42 / ahlem chilly-mazarin 91380 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3306262376" data-url="https://www.leboncoin.fr/ad/locations/3306262376"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -753,6 +773,7 @@
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -764,7 +785,7 @@
   <article class="card match" data-id="3291144789" data-pub="1792398918000" data-score="58"
     data-price="1100" data-rooms="3" data-beds="2"
     data-surface="64" data-p="50" data-o="60"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement f3a louer chilly-mazarin 91380 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3291144789" data-url="https://www.leboncoin.fr/ad/locations/3291144789"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -791,6 +812,7 @@
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -802,7 +824,7 @@
   <article class="card match" data-id="3302651818" data-pub="1793874639000" data-score="57"
     data-price="1200" data-rooms="3" data-beds="2"
     data-surface="57" data-p="41" data-o="53"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement 3 pièces 57 m² fresnes 94260 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3302651818" data-url="https://www.leboncoin.fr/ad/locations/3302651818"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -829,6 +851,7 @@
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -840,7 +863,7 @@
   <article class="card match" data-id="3293078178" data-pub="1792672659000" data-score="56"
     data-price="1200" data-rooms="3" data-beds="2"
     data-surface="63.5" data-p="50" data-o="44"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement t3 meublé - wissous wissous 91320 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3293078178" data-url="https://www.leboncoin.fr/ad/locations/3293078178"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -867,6 +890,7 @@
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       
+      
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -877,13 +901,13 @@
   </section>
 
 <section class="sec">
-    <h2>Hésitation <span class="count">39</span></h2>
+    <h2>Hésitation <span class="count">40</span></h2>
     <p class="sub">Ça pourrait coller, mais un point bloque ou manque. À ouvrir avant d'écarter.</p>
     
   <article class="card maybe" data-id="3288640369" data-pub="1792049115000" data-score="94"
     data-price="1129" data-rooms="3" data-beds=""
     data-surface="61" data-p="33" data-o="25"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="apartment palaiseau 91120 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3288640369" data-url="https://www.leboncoin.fr/ad/locations/3288640369"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -909,6 +933,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -921,7 +946,7 @@
   <article class="card maybe" data-id="pap-431001874" data-pub="0" data-score="84"
     data-price="895" data-rooms="3" data-beds="2"
     data-surface="38" data-p="41" data-o="37"
-    data-zone="RER B sud (meilleur compromis)" data-src="pap">
+    data-zone="RER B sud (meilleur compromis)" data-src="pap" data-q="dans une jolie petite maison refaite à neuf en 2021 (isolation, double antony 92160 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="pap-431001874" data-url="https://www.pap.fr/annonces/appartement-antony-92160-r431001874"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -947,6 +972,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 37 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>38 m² : sous les 45 m² visés</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -959,7 +985,7 @@
   <article class="card maybe" data-id="bc-century-21-202_2433_11955" data-pub="1790900188252" data-score="81"
     data-price="1279" data-rooms="3" data-beds="2"
     data-surface="46.73" data-p="31" data-o="37"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement 3 pièces bourg-la-reine bourg-la-reine 92340 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_2433_11955" data-url="https://www.bienici.com/annonce/location/bourg-la-reine/appartement/3pieces/century-21-202_2433_11955"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -985,6 +1011,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 40 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>1278.81 € : 78.80999999999995 € au-dessus du plafond</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -997,7 +1024,7 @@
   <article class="card maybe" data-id="bc-hektor-alvimmo_91-91" data-pub="1792585129896" data-score="75"
     data-price="1108" data-rooms="4" data-beds="3"
     data-surface="73.6" data-p="52" data-o="30"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement 4 pièces + cave + 2 parkings extérieurs. palaiseau 91120 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-hektor-alvimmo_91-91" data-url="https://www.bienici.com/annonce/location/palaiseau/appartement/4pieces/hektor-alvimmo_91-91"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1023,6 +1050,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>Pasteur 52 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1035,7 +1063,7 @@
   <article class="card maybe" data-id="3301937988" data-pub="1793757930000" data-score="74"
     data-price="1090" data-rooms="3" data-beds=""
     data-surface="67" data-p="58" data-o="35"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="appartement 3 pièces 67 m² gif-sur-yvette 91190 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3301937988" data-url="https://www.leboncoin.fr/ad/locations/3301937988"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1061,6 +1089,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 41 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li><li>Pasteur 58 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1073,7 +1102,7 @@
   <article class="card maybe" data-id="3275036549" data-pub="1790149211000" data-score="74"
     data-price="1047" data-rooms="3" data-beds=""
     data-surface="61" data-p="60" data-o="14"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="apartment palaiseau 91120 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3275036549" data-url="https://www.leboncoin.fr/ad/locations/3275036549"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1099,6 +1128,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li><li>Pasteur 60 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1111,7 +1141,7 @@
   <article class="card maybe" data-id="bc-ag313862-553822859" data-pub="1791824321443" data-score="70"
     data-price="1089" data-rooms="3" data-beds="2"
     data-surface="59" data-p="53" data-o="31"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="t3 palaiseau 91120 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag313862-553822859" data-url="https://www.bienici.com/annonce/location/palaiseau/appartement/3pieces/ag313862-553822859"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1137,6 +1167,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>Pasteur 53 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1149,7 +1180,7 @@
   <article class="card maybe" data-id="bc-century-21-202_2880_9556" data-pub="1790162071671" data-score="70"
     data-price="1100" data-rooms="3" data-beds="2"
     data-surface="56.59" data-p="56" data-o="30"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement 3 pièces massy massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_2880_9556" data-url="https://www.bienici.com/annonce/location/massy/appartement/3pieces/century-21-202_2880_9556"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1175,6 +1206,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>Pasteur 56 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1187,7 +1219,7 @@
   <article class="card maybe" data-id="3300678779" data-pub="1793580443000" data-score="70"
     data-price="1039" data-rooms="3" data-beds="2"
     data-surface="59" data-p="51" data-o="28"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="appartement 3 pièces 59 m² gif-sur-yvette 91190 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3300678779" data-url="https://www.leboncoin.fr/ad/locations/3300678779"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1213,6 +1245,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 40 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1225,7 +1258,7 @@
   <article class="card maybe" data-id="3306343484" data-pub="1794321041000" data-score="70"
     data-price="1050" data-rooms="3" data-beds="2"
     data-surface="47" data-p="52" data-o="39"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement 3 pièces 47 m² longjumeau 91160 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3306343484" data-url="https://www.leboncoin.fr/ad/locations/3306343484"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1251,6 +1284,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>Pasteur 52 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1263,7 +1297,7 @@
   <article class="card maybe" data-id="bc-century-21-202_761_27765" data-pub="1791504846679" data-score="67"
     data-price="1290" data-rooms="3" data-beds="2"
     data-surface="57.3" data-p="40" data-o="38"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement 3 pièces antony antony 92160 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_761_27765" data-url="https://www.bienici.com/annonce/location/antony/appartement/3pieces/century-21-202_761_27765"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1289,6 +1323,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1301,7 +1336,7 @@
   <article class="card maybe" data-id="bc-netty-malocateam-appt-1973" data-pub="1794331863815" data-score="66"
     data-price="1145" data-rooms="3" data-beds="2"
     data-surface="63.1" data-p="53" data-o="30"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="apt neuf + pkg massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-malocateam-appt-1973" data-url="https://www.bienici.com/annonce/location/massy/appartement/3pieces/netty-malocateam-appt-1973"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1327,6 +1362,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>Pasteur 53 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1339,7 +1375,7 @@
   <article class="card maybe" data-id="3306705965" data-pub="1794382456000" data-score="66"
     data-price="1145" data-rooms="3" data-beds="2"
     data-surface="63" data-p="51" data-o="31"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="appartement 3 pièces 63 m² massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3306705965" data-url="https://www.leboncoin.fr/ad/locations/3306705965"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1365,6 +1401,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1377,7 +1414,7 @@
   <article class="card maybe" data-id="bc-ag210198-551948447" data-pub="1790703416918" data-score="63"
     data-price="1293" data-rooms="3" data-beds="2"
     data-surface="37" data-p="43" data-o="43"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement - 1er étage - 37.80 m2 - 3 pièces - meublé fresnes 94260 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag210198-551948447" data-url="https://www.bienici.com/annonce/location/fresnes/appartement/3pieces/ag210198-551948447"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1403,6 +1440,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 37 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1293 € : 93 € au-dessus du plafond</li><li>37 m² : sous les 45 m² visés</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1415,7 +1453,7 @@
   <article class="card maybe" data-id="bc-iad-france-2149437" data-pub="1793886949403" data-score="58"
     data-price="1260" data-rooms="5" data-beds="3"
     data-surface="78" data-p="67" data-o="38"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="location maison/villa 5 pièces vauhallan 91430 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-iad-france-2149437" data-url="https://www.bienici.com/annonce/location/vauhallan/maison/5pieces/iad-france-2149437"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1441,6 +1479,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 40 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      <div class="chbed">Chambres : <b>13 m² (1 sur 3)</b></div>
       <ul class="flags"><li>1260 € : 60 € au-dessus du plafond</li><li>Pasteur 67 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1453,7 +1492,7 @@
   <article class="card maybe" data-id="bc-century-21-202_119_9109" data-pub="1793410141137" data-score="58"
     data-price="1300" data-rooms="4" data-beds="2"
     data-surface="70.59" data-p="55" data-o="44"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement 4 pièces massy massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_119_9109" data-url="https://www.bienici.com/annonce/location/massy/appartement/4pieces/century-21-202_119_9109"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1479,6 +1518,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1491,7 +1531,7 @@
   <article class="card maybe" data-id="bc-laforet-immo-facile-52975460" data-pub="1793366058542" data-score="58"
     data-price="1230" data-rooms="4" data-beds="3"
     data-surface="89" data-p="56" data-o="30"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement massy 4 pièce(s) 90 m2 massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52975460" data-url="https://www.bienici.com/annonce/location/massy/appartement/4pieces/laforet-immo-facile-52975460"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1517,6 +1557,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>1230 € : 30 € au-dessus du plafond</li><li>Pasteur 56 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1529,7 +1570,7 @@
   <article class="card maybe" data-id="bc-immo-facile-60786871" data-pub="1792497765887" data-score="58"
     data-price="1300" data-rooms="4" data-beds="3"
     data-surface="77.17" data-p="51" data-o="32"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="palaiseau centre ville -  f4 de 77m² - balcon et parking palaiseau 91120 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-immo-facile-60786871" data-url="https://www.bienici.com/annonce/location/palaiseau/appartement/4pieces/immo-facile-60786871"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1555,6 +1596,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 51 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1567,7 +1609,7 @@
   <article class="card maybe" data-id="bc-netty-company51972wao-appt-23968" data-pub="1791805664328" data-score="57"
     data-price="1320" data-rooms="3" data-beds="2"
     data-surface="58.85" data-p="39" data-o="56"
-    data-zone="Paris 15e et proche" data-src="bienici">
+    data-zone="Paris 15e et proche" data-src="bienici" data-q="appartement chaville 3 pièces 58.85 m2 chaville 92370 paris 15e et proche">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-company51972wao-appt-23968" data-url="https://www.bienici.com/annonce/location/chaville/appartement/3pieces/netty-company51972wao-appt-23968"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1593,6 +1635,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 46 min</span>
         <span class="chip neutral"><b>zone</b> Paris 15e et proche</span>
       </div>
+      
       <ul class="flags"><li>1320 € : 120 € au-dessus du plafond</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1605,7 +1648,7 @@
   <article class="card maybe" data-id="bc-guy-hoquet-immo-facile-7810396" data-pub="1793033568510" data-score="56"
     data-price="1290" data-rooms="4" data-beds="2"
     data-surface="65" data-p="57" data-o="36"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="beau t4 à louer dans le vieux massy massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-guy-hoquet-immo-facile-7810396" data-url="https://www.bienici.com/annonce/location/massy/appartement/4pieces/guy-hoquet-immo-facile-7810396"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1631,6 +1674,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li><li>Pasteur 57 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1643,7 +1687,7 @@
   <article class="card maybe" data-id="bc-ladresse-1-adresse-14647316" data-pub="1792046018472" data-score="56"
     data-price="1290" data-rooms="4" data-beds="3"
     data-surface="67.5" data-p="58" data-o="15"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement orsay 4 pièces 67.50 m² orsay 91400 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ladresse-1-adresse-14647316" data-url="https://www.bienici.com/annonce/location/orsay/appartement/4pieces/ladresse-1-adresse-14647316"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1669,6 +1713,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li><li>Pasteur 58 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1681,7 +1726,7 @@
   <article class="card maybe" data-id="bc-century-21-202_25_81905" data-pub="1792023258788" data-score="56"
     data-price="1280" data-rooms="4" data-beds="2"
     data-surface="66.63" data-p="54" data-o="21"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement 4 pièces orsay orsay 91400 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_25_81905" data-url="https://www.bienici.com/annonce/location/orsay/appartement/4pieces/century-21-202_25_81905"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1707,6 +1752,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 31 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1280 € : 80 € au-dessus du plafond</li><li>Pasteur 54 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1719,7 +1765,7 @@
   <article class="card maybe" data-id="bc-hektor-alvimmo_91-2196" data-pub="1791902294461" data-score="56"
     data-price="1198" data-rooms="3" data-beds="2"
     data-surface="61.86" data-p="51" data-o="33"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement 3 pièces massy 91300 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-hektor-alvimmo_91-2196" data-url="https://www.bienici.com/annonce/location/massy/appartement/3pieces/hektor-alvimmo_91-2196"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1745,6 +1791,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1757,7 +1804,7 @@
   <article class="card maybe" data-id="bc-guy-hoquet-immo-facile-7804064" data-pub="1792425364705" data-score="55"
     data-price="1250" data-rooms="4" data-beds="2"
     data-surface="74.03" data-p="69" data-o="48"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="superbe t4 meuble a chilly mazarin chilly-mazarin 91380 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-guy-hoquet-immo-facile-7804064" data-url="https://www.bienici.com/annonce/location/chilly-mazarin/appartement/4pieces/guy-hoquet-immo-facile-7804064"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1783,7 +1830,47 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1250 € : 50 € au-dessus du plafond</li><li>Pasteur 69 min (limite 50)</li></ul>
+      <div class="actions">
+        <button class="act seen-btn" data-act="seen">Marquer vu</button>
+        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card maybe" data-id="bc-era-2-61065903" data-pub="1794477256013" data-score="52"
+    data-price="1200" data-rooms="3" data-beds="2"
+    data-surface="56.7" data-p="53" data-o="36"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement palaiseau 3 pièce(s) 57 m2 palaiseau 91120 rer b sud (meilleur compromis)">
+    <div class="ribbon">Postulé</div>
+    <div class="gallery" data-gal data-id="bc-era-2-61065903" data-url="https://www.bienici.com/annonce/location/palaiseau/appartement/3pieces/era-2-61065903"><button class="nav prev" aria-label="photo precedente">‹</button>
+         <button class="nav next" aria-label="photo suivante">›</button>
+         <span class="pos">1/6</span><div class="track"><img src="https://file.bienici.com/photo/era-2-61065903_media.immo-facile.com_office2_erapalaiseau_catalog_images_pr_p_6_1_0_6_5_9_0_3_61065903a.jpg_DATEMAJ_20_07_2026-12_24_10?width=520&amp;height=390&amp;fit=cover" alt=""  draggable="false"><img src="https://file.bienici.com/photo/era-2-61065903_media.immo-facile.com_office2_erapalaiseau_catalog_images_pr_p_6_1_0_6_5_9_0_3_61065903b.jpg_DATEMAJ_20_07_2026-12_24_10?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/era-2-61065903_media.immo-facile.com_office2_erapalaiseau_catalog_images_pr_p_6_1_0_6_5_9_0_3_61065903c.jpg_DATEMAJ_20_07_2026-12_24_10?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/era-2-61065903_media.immo-facile.com_office2_erapalaiseau_catalog_images_pr_p_6_1_0_6_5_9_0_3_61065903d.jpg_DATEMAJ_20_07_2026-12_24_10?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/era-2-61065903_media.immo-facile.com_office2_erapalaiseau_catalog_images_pr_p_6_1_0_6_5_9_0_3_61065903e.jpg_DATEMAJ_20_07_2026-12_24_10?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/era-2-61065903_media.immo-facile.com_office2_erapalaiseau_catalog_images_pr_p_6_1_0_6_5_9_0_3_61065903f.jpg_DATEMAJ_20_07_2026-12_24_10?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"></div></div>
+    <div class="body">
+      <header>
+        <div class="score">52<small>/100</small></div>
+        <div class="head">
+          <h3><a href="https://www.bienici.com/annonce/location/palaiseau/appartement/3pieces/era-2-61065903" target="_blank" rel="noopener">Appartement Palaiseau 3 pièce(s) 57 m2</a></h3>
+          <div class="meta">
+            <b>1 200 €</b>/mois · 56.7 m² · 21.2 €/m² ·
+            3 pièces · 2 ch. · Palaiseau (91120)
+          </div>
+          <div class="when">
+            <span class="new">nouveau</span> publiée il y a 1 h
+            <a class="srcbadge s-bienici" href="https://www.bienici.com/annonce/location/palaiseau/appartement/3pieces/era-2-61065903" target="_blank" rel="noopener">Bien’ici</a>
+          </div>
+        </div>
+      </header>
+      <div class="chips">
+        <span class="chip bad"><b>Pasteur</b> 53 min</span>
+        <span class="chip ok"><b>Orsay</b> 36 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
+      </div>
+      
+      <ul class="flags"><li>Pasteur 53 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
@@ -1795,7 +1882,7 @@
   <article class="card maybe" data-id="bc-laforet-immo-facile-52942677" data-pub="1793722077336" data-score="52"
     data-price="1213" data-rooms="3" data-beds="2"
     data-surface="58.98" data-p="58" data-o="14"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement orsay 3 pièce(s) 58.98 m² orsay 91400 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52942677" data-url="https://www.bienici.com/annonce/location/orsay/appartement/3pieces/laforet-immo-facile-52942677"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1821,6 +1908,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1213 € : 13 € au-dessus du plafond</li><li>Pasteur 58 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1833,7 +1921,7 @@
   <article class="card maybe" data-id="bc-laforet-immo-facile-52931549" data-pub="1793700812999" data-score="52"
     data-price="1300" data-rooms="3" data-beds="2"
     data-surface="58.26" data-p="55" data-o="26"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement bures sur yvette 3 pièce(s) 58.26 m² bures-sur-yvette 91440 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52931549" data-url="https://www.bienici.com/annonce/location/bures-sur-yvette/appartement/3pieces/laforet-immo-facile-52931549"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1859,6 +1947,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 33 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1871,7 +1960,7 @@
   <article class="card maybe" data-id="bc-ifsp6a-5479356" data-pub="1793897246103" data-score="50"
     data-price="1258" data-rooms="3" data-beds="2"
     data-surface="62.5" data-p="69" data-o="51"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement longjumeau 3 pièce(s) 62.50 m2 longjumeau 91160 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ifsp6a-5479356" data-url="https://www.bienici.com/annonce/location/longjumeau/appartement/3pieces/ifsp6a-5479356"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1897,6 +1986,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1258 € : 58 € au-dessus du plafond</li><li>Pasteur 69 min (limite 50)</li><li>note 50/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1909,7 +1999,7 @@
   <article class="card maybe" data-id="bc-century-21-202_2414_9842" data-pub="0" data-score="49"
     data-price="1250" data-rooms="3" data-beds="2"
     data-surface="61.2" data-p="55" data-o="52"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement 3 pièces wissous wissous 91320 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_2414_9842" data-url="https://www.bienici.com/annonce/location/wissous/appartement/3pieces/century-21-202_2414_9842"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1935,6 +2025,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 37 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1250 € : 50 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li><li>note 49/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1947,7 +2038,7 @@
   <article class="card maybe" data-id="bc-ag752485-544646906" data-pub="0" data-score="49"
     data-price="1215" data-rooms="3" data-beds="2"
     data-surface="61" data-p="70" data-o="52"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="t3 / 61m² / chilly mazarin (rer c) chilly-mazarin 91380 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag752485-544646906" data-url="https://www.bienici.com/annonce/location/chilly-mazarin/appartement/3pieces/ag752485-544646906"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1973,6 +2064,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1215 € : 15 € au-dessus du plafond</li><li>Pasteur 70 min (limite 50)</li><li>note 49/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -1985,7 +2077,7 @@
   <article class="card maybe" data-id="bc-ag752485-550143116" data-pub="1789627132222" data-score="48"
     data-price="1300" data-rooms="4" data-beds="3"
     data-surface="82" data-p="68" data-o="54"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="t4 / 82m² / chilly mazarin (rer c) chilly-mazarin 91380 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag752485-550143116" data-url="https://www.bienici.com/annonce/location/chilly-mazarin/appartement/4pieces/ag752485-550143116"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2011,6 +2103,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 68 min (limite 50)</li><li>note 48/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2023,7 +2116,7 @@
   <article class="card maybe" data-id="bc-citya-immobilier-01-GES02580109-584" data-pub="1794478233752" data-score="47"
     data-price="1280" data-rooms="3" data-beds="2"
     data-surface="51.39" data-p="53" data-o="50"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici citya">
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici citya" data-q="appartement à louer 3 pièces 51.39m² - antony (92) antony 92160 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-citya-immobilier-01-GES02580109-584" data-url="https://www.bienici.com/annonce/location/antony/appartement/3pieces/citya-immobilier-01-GES02580109-584"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2038,7 +2131,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 37 min
+            <span class="new">nouveau</span> repérée il y a 52 min
             <a class="srcbadge s-bienici" href="https://www.bienici.com/annonce/location/antony/appartement/3pieces/citya-immobilier-01-GES02580109-584" target="_blank" rel="noopener">Bien’ici</a> <span class="also">+</span> <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES02580109-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -2049,6 +2142,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 39 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>1280 € : 80 € au-dessus du plafond</li><li>Pasteur 53 min (limite 50)</li><li>note 47/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2061,7 +2155,7 @@
   <article class="card maybe" data-id="bc-ag752345-559035836" data-pub="1794254333641" data-score="46"
     data-price="1179" data-rooms="3" data-beds="2"
     data-surface="61" data-p="30" data-o=""
-    data-zone="Sud parisien / proche 15e" data-src="bienici">
+    data-zone="Sud parisien / proche 15e" data-src="bienici" data-q="villejuif-paul vaillant couturier (hôpital paul brousse) villejuif 94800 sud parisien / proche 15e">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag752345-559035836" data-url="https://www.bienici.com/annonce/location/villejuif/appartement/3pieces/ag752345-559035836"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2087,6 +2181,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 43 min</span>
         <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
+      
       <ul class="flags"><li>trajet Orsay non calculé</li><li>note 46/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2099,7 +2194,7 @@
   <article class="card maybe" data-id="3268237195" data-pub="1794037883000" data-score="46"
     data-price="1200" data-rooms="3" data-beds=""
     data-surface="53" data-p="36" data-o="70"
-    data-zone="Sud parisien / proche 15e" data-src="leboncoin">
+    data-zone="Sud parisien / proche 15e" data-src="leboncoin" data-q="apartment clamart 92140 sud parisien / proche 15e">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3268237195" data-url="https://www.leboncoin.fr/ad/locations/3268237195"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2125,6 +2220,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 46 min</span>
         <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
+      
       <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li><li>note 46/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2137,7 +2233,7 @@
   <article class="card maybe" data-id="bc-guy-hoquet-18-GT0418-948" data-pub="1790161016102" data-score="44"
     data-price="1269" data-rooms="3" data-beds="2"
     data-surface="49.57" data-p="44" data-o="61"
-    data-zone="Sud parisien / proche 15e" data-src="bienici">
+    data-zone="Sud parisien / proche 15e" data-src="bienici" data-q="appartement villejuif 94800 sud parisien / proche 15e">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-guy-hoquet-18-GT0418-948" data-url="https://www.bienici.com/annonce/location/villejuif/appartement/3pieces/guy-hoquet-18-GT0418-948"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2163,6 +2259,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 42 min</span>
         <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
+      
       <ul class="flags"><li>1269.26 € : 69.25999999999999 € au-dessus du plafond</li><li>note 44/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2175,7 +2272,7 @@
   <article class="card maybe" data-id="bc-netty-company55012mub-appt-10348" data-pub="1793883618972" data-score="41"
     data-price="1320" data-rooms="3" data-beds="2"
     data-surface="50.25" data-p="40" data-o="69"
-    data-zone="Sud parisien / proche 15e" data-src="bienici">
+    data-zone="Sud parisien / proche 15e" data-src="bienici" data-q="3 pièces entièrement meublé, en excellent état, au sein d'un villejuif 94800 sud parisien / proche 15e">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-company55012mub-appt-10348" data-url="https://www.bienici.com/annonce/location/villejuif/appartement/3pieces/netty-company55012mub-appt-10348"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2201,6 +2298,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 43 min</span>
         <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
       </div>
+      
       <ul class="flags"><li>1320 € : 120 € au-dessus du plafond</li><li>note 41/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2213,7 +2311,7 @@
   <article class="card maybe" data-id="bc-immo-facile-61626289" data-pub="1791568954863" data-score="40"
     data-price="1300" data-rooms="3" data-beds="2"
     data-surface="64.45" data-p="70" data-o="60"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement chilly mazarin 3 pièce(s) 64.45 m2 chilly-mazarin 91380 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-immo-facile-61626289" data-url="https://www.bienici.com/annonce/location/chilly-mazarin/appartement/3pieces/immo-facile-61626289"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2239,6 +2337,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 35 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 70 min (limite 50)</li><li>note 40/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2251,7 +2350,7 @@
   <article class="card maybe" data-id="bc-safti-1-1692026" data-pub="1793882222000" data-score="38"
     data-price="1100" data-rooms="3" data-beds="2"
     data-surface="42" data-p="56" data-o="74"
-    data-zone="Paris 15e et proche" data-src="bienici leboncoin">
+    data-zone="Paris 15e et proche" data-src="bienici leboncoin" data-q="appartement 3 pièces 42 m² garches 92380 paris 15e et proche">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-safti-1-1692026" data-url="https://www.bienici.com/annonce/location/garches/appartement/3pieces/safti-1-1692026"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2277,6 +2376,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 51 min</span>
         <span class="chip neutral"><b>zone</b> Paris 15e et proche</span>
       </div>
+      
       <ul class="flags"><li>42 m² : sous les 45 m² visés</li><li>Pasteur 56 min (limite 50)</li><li>note 38/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2289,7 +2389,7 @@
   <article class="card maybe" data-id="pap-466002446" data-pub="0" data-score="37"
     data-price="944" data-rooms="3" data-beds="2"
     data-surface="52" data-p="43" data-o=""
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="pap">
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="pap" data-q="f3 charmant à 15 min à pied de la gare de la croix de berny. cadre calme avec fresnes 94260 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="pap-466002446" data-url="https://www.pap.fr/annonces/appartement-fresnes-94260-r466002446"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2315,6 +2415,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 37 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
+      
       <ul class="flags"><li>trajet Orsay non calculé</li><li>note 37/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2327,7 +2428,7 @@
   <article class="card maybe" data-id="citya-GES01070007-584" data-pub="1794478233752" data-score="35"
     data-price="1180" data-rooms="3" data-beds="2"
     data-surface="58.58" data-p="" data-o="53"
-    data-zone="RER B sud (meilleur compromis)" data-src="citya">
+    data-zone="RER B sud (meilleur compromis)" data-src="citya" data-q="appartement à louer 3 pièces 58.58m² - antony (92) antony 92160 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="citya-GES01070007-584" data-url="https://www.citya.com/annonces/location/appartement/antony-92160/GES01070007-584"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2342,7 +2443,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 37 min
+            <span class="new">nouveau</span> repérée il y a 52 min
             <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES01070007-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -2353,6 +2454,7 @@
         <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
+      
       <ul class="flags"><li>trajet Pasteur non calculé</li><li>note 35/100 sous le seuil 55</li></ul>
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
@@ -2363,12 +2465,60 @@
   </article>
   </section>
 
-<details><summary>343 annonce(s) écartée(s) — dont 31 colocation(s) / prix suspects</summary>
+<details><summary>341 annonce(s) écartée(s) — dont 31 colocation(s) / prix suspects</summary>
 <p class="sub">Colocations et prix sous 12 €/m² : ce ne sont pas des logements entiers, écartés volontairement.</p>
-<ul><li><b>Clamart</b> · 840 € · Studio / 18m² / Clamart (Ligne N) — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 370 € · Appartement Paris 2 pièce(s) 40.38 m2 — <i>1370 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Massy</b> · 705 € · appartement 1 pièces Massy — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 27 m² &lt; 35</i></li><li><b>Le Kremlin-Bicêtre</b> · 953 € · T2 meublé avec balcon - Le Kremlin-Bicêtre — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 790 € · Appartement - RDC - 17 m2 - 1 pièce - Meublé — <i>1 pièces &lt; 3, 17 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 890 € · Boulogne Billancourt - Princes Marmottan — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Villejuif</b> · 905 € · A LOUER 2 PIECES — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 29.54 m² &lt; 35</i></li><li><b>Chilly-Mazarin</b> · 725 € · Appartement meublé Chilly Mazarin 1 pièce(s) 31.76 m2 — <i>1 pièces &lt; 3, 31.76 m² &lt; 35</i></li><li><b>Fresnes</b> · 900 € · Appartement meublé Fresnes 2 pièce(s) 45.57 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 1 100 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 12.59 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 100 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.58 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 200 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.55 m² &lt; 35</i></li><li><b>Villejuif</b> · 1 180 € · F2 - VILLEJUIF - PROCHE MÉTRO LÉO LAGRANGE — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 100 € · Studio Refait neuf Boulogne Billancourt 1 pièce(s) 27.77 m2 — <i>1 pièces &lt; 3, 27.77 m² &lt; 35</i></li><li><b>Malakoff</b> · 1 225 € · APPARTEMENT T2 À MALAKOFF — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 33 m² &lt; 35</i></li><li><b>Longjumeau</b> · 820 € · Appartement Longjumeau 2 pièce(s) 43.58 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Gentilly</b> · 1 373 € · 3 pièces proche du centre-ville. — <i>1373 € &gt; 1320 €</i></li><li><b>Chaville</b> · 1 068 € · T2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 1 000 € · STUDIO - COMMERCES / CROIX NIVERT — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 27 m² &lt; 35</i></li><li><b>Montrouge</b> · 1 142 € · appartement 2 pièces Montrouge — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 712 € · A LOUER STUDIO MEUBLE ANTONY — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Ville-d'Avray</b> · 1 323 € · appartement 2 pièces Ville-d'Avray — <i>1323 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 14e</b> · 1 145 € · Appartement à louer Paris — <i>1 pièces &lt; 3, 29.48 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 030 € · Studio immeuble avec piscine — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Villejuif</b> · 761 € · Appartement à louer 1 pièce 30.16m² - Villejuif (94) — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 30.16 m² &lt; 35</i></li><li><b>Fresnes</b> · 575 € · STUDIO — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 25 m² &lt; 35</i></li><li><b>Paris 15e</b> · 860 € · Location Studio 1 pièce — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 17 m² &lt; 35</i></li><li><b>Chaville</b> · 852 € · Appartement type 1 — <i>1 pièces &lt; 3, 33 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 200 € · Appartement à louer Paris — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 30 m² &lt; 35</i></li><li><b>Viroflay</b> · 1 240 € · Appartement 2/3 pièces proche gare rive gauche Viroflay — <i>1 ch. &lt; 2</i></li><li><b>Ville-d'Avray</b> · 893 € · appartement 1 pièces Ville-d'Avray — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 26 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 918 € · Appartement Issy Les Moulineaux 1 pièce(s) 28.75 m2 — <i>1 pièces &lt; 3, 28.75 m² &lt; 35</i></li><li><b>Châtillon</b> · 740 € · T2 de 28,44 m² à Châtillon — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Saint-Cloud</b> · 904 € · appartement 1 pièces Saint-Cloud — <i>1 pièces &lt; 3, 22.52 m² &lt; 35</i></li><li><b>Massy</b> · 811 € · Appartement Studio — <i>1 pièces &lt; 3, 27 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 250 € · Location Appartement - 2 pièces - 29 m² - Paris - (75) — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 29 m² &lt; 35</i></li><li><b>Villejuif</b> · 840 € · Location Appartement 1 pièce — <i>1 pièces &lt; 3, 17 m² &lt; 35</i></li><li><b>Chaville</b> · 650 € · Studio à louer à Chaville - Rive Droite, Les Vignes, proche commodités — <i>1 pièces &lt; 3, 12.97 m² &lt; 35</i></li><li><b>Montrouge</b> · 760 € · STUDIO - PORTE D ORLEANS - MONTROUGE — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 14.02 m² &lt; 35</i></li><li><b>Villejuif</b> · 950 € · PETITE MAISON MEUBLEÉ AVEC TERRASSE PROXIMITÉ GUSTAVE ROUSSY - — <i>1 pièces &lt; 3, 20.38 m² &lt; 35</i></li><li><b>Gentilly</b> · 1 228 € · Au cur d'un espace arboré et sécurisé, à proximité du RER B — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 806 € · PARC HELLER — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Massy</b> · 907 € · appartement 2 pièces Massy — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Viroflay</b> · 1 353 € · T3 VIROFLAY — <i>1353 € &gt; 1320 €</i></li><li><b>Saint-Cloud</b> · 1 242 € · Appartement 2 pièces 92210 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Palaiseau</b> · 671 € · STUDIO + PARKING EXTERIEUR — <i>1 pièces &lt; 3, 27.76 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 1 320 € · 2 PIECES ISSY LES MOULINEAUX — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Villejuif</b> · 750 € · Studio à louer — <i>1 pièces &lt; 3, 15.46 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 960 € · ISSY LES MOULINEAUX - Studio meublé avec Balcon - Place Jacq — <i>1 pièces &lt; 3, 24 m² &lt; 35</i></li><li><b>Palaiseau</b> · 815 € · Studio étudiant meublé de 18m² — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Saint-Cloud</b> · 1 265 € · Saint-Cloud / 2 pièces 37 m² / Val d'Or / Parking — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Boulogne-Billancourt</b> · 950 € · appartement 1 pièces Boulogne-Billancourt — <i>1 pièces &lt; 3, 13.2 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 950 € · appartement 1 pièces Boulogne-Billancourt — <i>1 pièces &lt; 3, 11.2 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 050 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.44 m² &lt; 35</i></li><li><b>Cachan</b> · 720 € · Bagneux — <i>1 ch. &lt; 2, 14 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 150 € · appartement 1 pièces Paris 14e — <i>1 pièces &lt; 3, 12.53 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 150 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 11.3 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 295 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 17.64 m² &lt; 35</i></li><li><b>Ville-d'Avray</b> · 1 369 € · appartement 2 pièces Ville-d'Avray — <i>1369 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Bures-sur-Yvette</b> · 692 € · appartement 1 pièces Bures-sur-Yvette — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Gif-sur-Yvette</b> · 920 € · appartement 2 pièces Gif-sur-Yvette — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 775 € · Appartement studio à PARIS 15ème — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 17 m² &lt; 35</i></li><li><b>Palaiseau</b> · 914 € · F2 en centre villle PALAISEAU - 2 pièce(s) - 51m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 1 250 € · Appartement Antony 2 pièce(s) 38.54 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Fresnes</b> · 984 € · Appartement 2 pièces 44m² FRESNES — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Viroflay</b> · 850 € · Appartement À Louer — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 23 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 970 € · Appartement Issy Les Moulineaux 2 pièce(s) 32.72 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 32.72 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 322 € · BOULOGNE RUE DU CHATEAU - appartement 3 pieces 49 m2 — <i>1322 € &gt; 1320 €</i></li><li><b>Clamart</b> · 1 350 € · Appartement Clamart 2 pièces 39.71 m2 — <i>1350 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Saint-Cloud</b> · 1 200 € · Studio vide, terrasse, parking, Saint Cloud — <i>1 pièces &lt; 3, 0 ch. &lt; 2</i></li><li><b>Bures-sur-Yvette</b> · 779 € · appartement 1 pièces Bures-sur-Yvette — <i>1 pièces &lt; 3, 0 ch. &lt; 2</i></li><li><b>Paris 13e</b> · 1 350 € · appartement 1 pièces Paris 13e — <i>1350 € &gt; 1320 €, 1 pièces &lt; 3, 0 ch. &lt; 2, 31.24 m² &lt; 35</i></li><li><b>Antony</b> · 650 € · Studio non meublé de 28,64 m² à Antony (92160) - DPE D — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 975 € · Appartement 1 pièce(s) 38 m2 — <i>1 pièces &lt; 3</i></li><li><b>Clamart</b> · 1 239 € · Appartement Clamart 2 pièces MEUBLÉ 42 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Palaiseau</b> · 680 € · STUDIO avec jardinet et Terrasse - cave + garage — <i>1 pièces &lt; 3, 24.31 m² &lt; 35</i></li><li><b>Palaiseau</b> · 725 € · STUDIO AVEC PARKING - PALAISEAU - RÉSIDENCE DE STANDING — <i>1 pièces &lt; 3, 26.63 m² &lt; 35</i></li><li><b>Chaville</b> · 835 € · CHAVILLE - Appartement meublé — <i>1 pièces &lt; 3, 22.05 m² &lt; 35</i></li><li><b>Châtillon</b> · 1 015 € · Appartement Chatillon 2 pièce(s) 44.52 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Fresnes</b> · 1 012 € · Appartement — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 713 € · Appartement 1 pièce à louer à Antony - Opportunité rare — <i>1 pièces &lt; 3, 20.93 m² &lt; 35</i></li><li><b>Antony</b> · 1 171 € · Appartement 2 pièces à louer à Antony - Proche commodités et écoles — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 14e</b> · 1 250 € · Studio meublé – Paris 14e (Bail mobilité de 1 à 9 mois) — <i>1 pièces &lt; 3</i></li><li><b>Paris 15e</b> · 1 050 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 9.8 m² &lt; 35</i></li><li><b>Massy</b> · 1 350 € · MASSY Appartement  4 pièce(s) avec Parking en sous-sol — <i>1350 € &gt; 1320 €</i></li><li><b>Paris 13e</b> · 990 € · 2ème étage : Une chambre Privative , 10,6m², Lit Double, Salle de bain — <i>prix suspect (6.7 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 050 € · 1er étage : Une chambre Privative, 16m², Lit Double, Salle de bain par — <i>prix suspect (7.1 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 090 € · 3ème étage : Une Chambre Privative 15,1m² Lit Double, Salle de bain N° — <i>prix suspect (7.4 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 190 € · 3ème étage : Un Duplex Privatif Lit Double, Salle de bain N°3 partagée — <i>prix suspect (8.0 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Chilly-Mazarin</b> · 680 € · Location Appartement 1 pièce — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 11 m² &lt; 35</i></li><li><b>Paris 13e</b> · 790 € · 1er étage : Une chambre Privative , 9m², Lit une place - Salle d'eau N — <i>prix suspect (5.3 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Boulogne-Billancourt</b> · 1 350 € · T2 — <i>1350 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Paris 15e</b> · 930 € · SEVRES LECOURBE  - STUDIO DE 21.7M2 REFAIT  NEUF — <i>1 pièces &lt; 3, 21.7 m² &lt; 35</i></li><li><b>Meudon</b> · 1 220 € · 2 Pièces Meublé — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Chaville</b> · 872 € · Chaville - 2 pièces de 35 m² — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Villejuif</b> · 990 € · 2 pièces Villejuif — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 31 m² &lt; 35</i></li><li><b>Bures-sur-Yvette</b> · 558 € · STUDIO BURES SUR YVETTE — <i>1 pièces &lt; 3, 17.02 m² &lt; 35</i></li><li><b>Orsay</b> · 837 € · Appartement Orsay 2 pièce(s) 34.20 m² — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 34.2 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 300 € · appartement 2 pièces Boulogne-Billancourt — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Saint-Cloud</b> · 1 200 € · Appartement  2 pièce(s) 30.09 m² — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 30.09 m² &lt; 35</i></li></ul>
+<ul><li><b>Palaiseau</b> · 813 € · Appartement 2 Pièces + parking sous-sol — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Boulogne-Billancourt</b> · 963 € · Location studio vide - Boulogne-Billancourt — <i>1 pièces &lt; 3, 29.95 m² &lt; 35</i></li><li><b>Clamart</b> · 840 € · Studio / 18m² / Clamart (Ligne N) — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 370 € · Appartement Paris 2 pièce(s) 40.38 m2 — <i>1370 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Massy</b> · 705 € · appartement 1 pièces Massy — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 27 m² &lt; 35</i></li><li><b>Le Kremlin-Bicêtre</b> · 953 € · T2 meublé avec balcon - Le Kremlin-Bicêtre — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Boulogne-Billancourt</b> · 890 € · Boulogne Billancourt - Princes Marmottan — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Villejuif</b> · 905 € · A LOUER 2 PIECES — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 29.54 m² &lt; 35</i></li><li><b>Chilly-Mazarin</b> · 725 € · Appartement meublé Chilly Mazarin 1 pièce(s) 31.76 m2 — <i>1 pièces &lt; 3, 31.76 m² &lt; 35</i></li><li><b>Fresnes</b> · 900 € · Appartement meublé Fresnes 2 pièce(s) 45.57 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 1 100 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 12.59 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 100 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.58 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 200 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.55 m² &lt; 35</i></li><li><b>Villejuif</b> · 1 180 € · F2 - VILLEJUIF - PROCHE MÉTRO LÉO LAGRANGE — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 100 € · Studio Refait neuf Boulogne Billancourt 1 pièce(s) 27.77 m2 — <i>1 pièces &lt; 3, 27.77 m² &lt; 35</i></li><li><b>Malakoff</b> · 1 225 € · APPARTEMENT T2 À MALAKOFF — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 33 m² &lt; 35</i></li><li><b>Longjumeau</b> · 820 € · Appartement Longjumeau 2 pièce(s) 43.58 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Gentilly</b> · 1 373 € · 3 pièces proche du centre-ville. — <i>1373 € &gt; 1320 €</i></li><li><b>Chaville</b> · 1 068 € · T2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 1 000 € · STUDIO - COMMERCES / CROIX NIVERT — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 27 m² &lt; 35</i></li><li><b>Montrouge</b> · 1 142 € · appartement 2 pièces Montrouge — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 712 € · A LOUER STUDIO MEUBLE ANTONY — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Ville-d'Avray</b> · 1 323 € · appartement 2 pièces Ville-d'Avray — <i>1323 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 14e</b> · 1 145 € · Appartement à louer Paris — <i>1 pièces &lt; 3, 29.48 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 030 € · Studio immeuble avec piscine — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Villejuif</b> · 761 € · Appartement à louer 1 pièce 30.16m² - Villejuif (94) — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 30.16 m² &lt; 35</i></li><li><b>Fresnes</b> · 575 € · STUDIO — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 25 m² &lt; 35</i></li><li><b>Paris 15e</b> · 860 € · Location Studio 1 pièce — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 17 m² &lt; 35</i></li><li><b>Chaville</b> · 852 € · Appartement type 1 — <i>1 pièces &lt; 3, 33 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 200 € · Appartement à louer Paris — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 30 m² &lt; 35</i></li><li><b>Viroflay</b> · 1 240 € · Appartement 2/3 pièces proche gare rive gauche Viroflay — <i>1 ch. &lt; 2</i></li><li><b>Ville-d'Avray</b> · 893 € · appartement 1 pièces Ville-d'Avray — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 26 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 918 € · Appartement Issy Les Moulineaux 1 pièce(s) 28.75 m2 — <i>1 pièces &lt; 3, 28.75 m² &lt; 35</i></li><li><b>Châtillon</b> · 740 € · T2 de 28,44 m² à Châtillon — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Saint-Cloud</b> · 904 € · appartement 1 pièces Saint-Cloud — <i>1 pièces &lt; 3, 22.52 m² &lt; 35</i></li><li><b>Massy</b> · 811 € · Appartement Studio — <i>1 pièces &lt; 3, 27 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 250 € · Location Appartement - 2 pièces - 29 m² - Paris - (75) — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 29 m² &lt; 35</i></li><li><b>Villejuif</b> · 840 € · Location Appartement 1 pièce — <i>1 pièces &lt; 3, 17 m² &lt; 35</i></li><li><b>Chaville</b> · 650 € · Studio à louer à Chaville - Rive Droite, Les Vignes, proche commodités — <i>1 pièces &lt; 3, 12.97 m² &lt; 35</i></li><li><b>Montrouge</b> · 760 € · STUDIO - PORTE D ORLEANS - MONTROUGE — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 14.02 m² &lt; 35</i></li><li><b>Villejuif</b> · 950 € · PETITE MAISON MEUBLEÉ AVEC TERRASSE PROXIMITÉ GUSTAVE ROUSSY - — <i>1 pièces &lt; 3, 20.38 m² &lt; 35</i></li><li><b>Gentilly</b> · 1 228 € · Au cur d'un espace arboré et sécurisé, à proximité du RER B — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 806 € · PARC HELLER — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Massy</b> · 907 € · appartement 2 pièces Massy — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Viroflay</b> · 1 353 € · T3 VIROFLAY — <i>1353 € &gt; 1320 €</i></li><li><b>Saint-Cloud</b> · 1 242 € · Appartement 2 pièces 92210 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Palaiseau</b> · 671 € · STUDIO + PARKING EXTERIEUR — <i>1 pièces &lt; 3, 27.76 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 1 320 € · 2 PIECES ISSY LES MOULINEAUX — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Villejuif</b> · 750 € · Studio à louer — <i>1 pièces &lt; 3, 15.46 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 960 € · ISSY LES MOULINEAUX - Studio meublé avec Balcon - Place Jacq — <i>1 pièces &lt; 3, 24 m² &lt; 35</i></li><li><b>Palaiseau</b> · 815 € · Studio étudiant meublé de 18m² — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 18 m² &lt; 35</i></li><li><b>Saint-Cloud</b> · 1 265 € · Saint-Cloud / 2 pièces 37 m² / Val d'Or / Parking — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Boulogne-Billancourt</b> · 950 € · appartement 1 pièces Boulogne-Billancourt — <i>1 pièces &lt; 3, 13.2 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 950 € · appartement 1 pièces Boulogne-Billancourt — <i>1 pièces &lt; 3, 11.2 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 050 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 10.44 m² &lt; 35</i></li><li><b>Cachan</b> · 720 € · Bagneux — <i>1 ch. &lt; 2, 14 m² &lt; 35</i></li><li><b>Paris 14e</b> · 1 150 € · appartement 1 pièces Paris 14e — <i>1 pièces &lt; 3, 12.53 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 150 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 11.3 m² &lt; 35</i></li><li><b>Paris 15e</b> · 1 295 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 17.64 m² &lt; 35</i></li><li><b>Ville-d'Avray</b> · 1 369 € · appartement 2 pièces Ville-d'Avray — <i>1369 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Bures-sur-Yvette</b> · 692 € · appartement 1 pièces Bures-sur-Yvette — <i>1 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Gif-sur-Yvette</b> · 920 € · appartement 2 pièces Gif-sur-Yvette — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 15e</b> · 775 € · Appartement studio à PARIS 15ème — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 17 m² &lt; 35</i></li><li><b>Palaiseau</b> · 914 € · F2 en centre villle PALAISEAU - 2 pièce(s) - 51m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 1 250 € · Appartement Antony 2 pièce(s) 38.54 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Fresnes</b> · 984 € · Appartement 2 pièces 44m² FRESNES — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Viroflay</b> · 850 € · Appartement À Louer — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 23 m² &lt; 35</i></li><li><b>Issy-les-Moulineaux</b> · 970 € · Appartement Issy Les Moulineaux 2 pièce(s) 32.72 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 32.72 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 322 € · BOULOGNE RUE DU CHATEAU - appartement 3 pieces 49 m2 — <i>1322 € &gt; 1320 €</i></li><li><b>Clamart</b> · 1 350 € · Appartement Clamart 2 pièces 39.71 m2 — <i>1350 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Saint-Cloud</b> · 1 200 € · Studio vide, terrasse, parking, Saint Cloud — <i>1 pièces &lt; 3, 0 ch. &lt; 2</i></li><li><b>Bures-sur-Yvette</b> · 779 € · appartement 1 pièces Bures-sur-Yvette — <i>1 pièces &lt; 3, 0 ch. &lt; 2</i></li><li><b>Paris 13e</b> · 1 350 € · appartement 1 pièces Paris 13e — <i>1350 € &gt; 1320 €, 1 pièces &lt; 3, 0 ch. &lt; 2, 31.24 m² &lt; 35</i></li><li><b>Antony</b> · 650 € · Studio non meublé de 28,64 m² à Antony (92160) - DPE D — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 28 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 975 € · Appartement 1 pièce(s) 38 m2 — <i>1 pièces &lt; 3</i></li><li><b>Clamart</b> · 1 239 € · Appartement Clamart 2 pièces MEUBLÉ 42 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Palaiseau</b> · 680 € · STUDIO avec jardinet et Terrasse - cave + garage — <i>1 pièces &lt; 3, 24.31 m² &lt; 35</i></li><li><b>Palaiseau</b> · 725 € · STUDIO AVEC PARKING - PALAISEAU - RÉSIDENCE DE STANDING — <i>1 pièces &lt; 3, 26.63 m² &lt; 35</i></li><li><b>Chaville</b> · 835 € · CHAVILLE - Appartement meublé — <i>1 pièces &lt; 3, 22.05 m² &lt; 35</i></li><li><b>Châtillon</b> · 1 015 € · Appartement Chatillon 2 pièce(s) 44.52 m2 — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Fresnes</b> · 1 012 € · Appartement — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Antony</b> · 713 € · Appartement 1 pièce à louer à Antony - Opportunité rare — <i>1 pièces &lt; 3, 20.93 m² &lt; 35</i></li><li><b>Antony</b> · 1 171 € · Appartement 2 pièces à louer à Antony - Proche commodités et écoles — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Paris 14e</b> · 1 250 € · Studio meublé – Paris 14e (Bail mobilité de 1 à 9 mois) — <i>1 pièces &lt; 3</i></li><li><b>Paris 15e</b> · 1 050 € · appartement 1 pièces Paris 15e — <i>1 pièces &lt; 3, 9.8 m² &lt; 35</i></li><li><b>Massy</b> · 1 350 € · MASSY Appartement  4 pièce(s) avec Parking en sous-sol — <i>1350 € &gt; 1320 €</i></li><li><b>Paris 13e</b> · 990 € · 2ème étage : Une chambre Privative , 10,6m², Lit Double, Salle de bain — <i>prix suspect (6.7 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 050 € · 1er étage : Une chambre Privative, 16m², Lit Double, Salle de bain par — <i>prix suspect (7.1 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 090 € · 3ème étage : Une Chambre Privative 15,1m² Lit Double, Salle de bain N° — <i>prix suspect (7.4 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Paris 13e</b> · 1 190 € · 3ème étage : Un Duplex Privatif Lit Double, Salle de bain N°3 partagée — <i>prix suspect (8.0 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Chilly-Mazarin</b> · 680 € · Location Appartement 1 pièce — <i>1 pièces &lt; 3, 0 ch. &lt; 2, 11 m² &lt; 35</i></li><li><b>Paris 13e</b> · 790 € · 1er étage : Une chambre Privative , 9m², Lit une place - Salle d'eau N — <i>prix suspect (5.3 €/m² &lt; 12) : coloc déguisée ou arnaque</i></li><li><b>Boulogne-Billancourt</b> · 1 350 € · T2 — <i>1350 € &gt; 1320 €, 2 pièces &lt; 3, 1 ch. &lt; 2, 34 m² &lt; 35</i></li><li><b>Paris 15e</b> · 930 € · SEVRES LECOURBE  - STUDIO DE 21.7M2 REFAIT  NEUF — <i>1 pièces &lt; 3, 21.7 m² &lt; 35</i></li><li><b>Meudon</b> · 1 220 € · 2 Pièces Meublé — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Chaville</b> · 872 € · Chaville - 2 pièces de 35 m² — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li><li><b>Villejuif</b> · 990 € · 2 pièces Villejuif — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 31 m² &lt; 35</i></li><li><b>Bures-sur-Yvette</b> · 558 € · STUDIO BURES SUR YVETTE — <i>1 pièces &lt; 3, 17.02 m² &lt; 35</i></li><li><b>Orsay</b> · 837 € · Appartement Orsay 2 pièce(s) 34.20 m² — <i>2 pièces &lt; 3, 1 ch. &lt; 2, 34.2 m² &lt; 35</i></li><li><b>Boulogne-Billancourt</b> · 1 300 € · appartement 2 pièces Boulogne-Billancourt — <i>2 pièces &lt; 3, 1 ch. &lt; 2</i></li></ul>
 </details>
 </div>
-<script>window.__LIVE__ = {"api":"https://www.bienici.com/realEstateAds.json","pageSize":60,"pages":2,"target":1100,"maxPrice":1200,"priceCeil":1320,"minRooms":3,"minBedrooms":2,"minSurface":35,"minEurPerM2":12,"anchors":{"pasteur":{"ideal":30,"max":50},"orsay":{"ideal":45,"max":75},"car":{"ideal":45,"weight":8}},"zones":["-29251","-33504","-33505","-53801","-53650","-57750","-37041","-48862","-103967","-104479","-37026","-37027","-59321","-29036","-37020","-37025","-105122","-105146","-85527","-9522","-395036","-395443","-28036","-52770","-23773","-29244","-70355","-395488","-103395","-23772","-9520","-9530","-72020","-31340","-31341","-31339","-31338","-72148","-72019","-30294"],"zips":{"75013":[51,44,36,"Paris 15e et proche"],"75014":[51,44,36,"Sud parisien / proche 15e"],"75015":[51,44,36,"Paris 15e et proche"],"78220":[30,51,47,"Paris 15e et proche"],"78350":[51,44,36,"Vallee de la Bievre / proche Orsay"],"91120":[51,30,36,"RER B sud (meilleur compromis)"],"91160":[69,51,30,"Vallee de la Bievre / proche Orsay"],"91190":[61,35,39,"RER B sud (meilleur compromis)"],"91300":[53,31,35,"RER B sud (meilleur compromis)"],"91320":[55,52,37,"Vallee de la Bievre / proche Orsay"],"91370":[51,44,39,"Vallee de la Bievre / proche Orsay"],"91380":[69,56,35,"Vallee de la Bievre / proche Orsay"],"91400":[58,15,30,"Vallee de la Bievre / proche Orsay"],"91430":[67,38,40,"Vallee de la Bievre / proche Orsay"],"91440":[55,26,33,"RER B sud (meilleur compromis)"],"91570":[51,44,37,"Vallee de la Bievre / proche Orsay"],"92100":[51,44,36,"Paris 15e et proche"],"92120":[51,44,36,"Sud parisien / proche 15e"],"92130":[51,44,36,"Sud parisien / proche 15e"],"92140":[37,70,46,"Sud parisien / proche 15e"],"92160":[40,38,37,"RER B sud (meilleur compromis)"],"92170":[51,44,36,"Sud parisien / proche 15e"],"92190":[51,44,36,"Paris 15e et proche"],"92210":[54,67,50,"Paris 15e et proche"],"92220":[51,44,36,"Sud parisien / proche 15e"],"92240":[51,44,36,"Sud parisien / proche 15e"],"92310":[45,48,48,"Paris 15e et proche"],"92320":[34,44,45,"Sud parisien / proche 15e"],"92340":[31,37,40,"RER B sud (meilleur compromis)"],"92370":[49,82,46,"Paris 15e et proche"],"92380":[64,74,55,"Paris 15e et proche"],"92410":[51,44,36,"Paris 15e et proche"],"94110":[51,44,36,"RER B sud (meilleur compromis)"],"94230":[28,42,43,"RER B sud (meilleur compromis)"],"94250":[51,44,36,"RER B sud (meilleur compromis)"],"94260":[43,53,37,"Vallee de la Bievre / proche Orsay"],"94270":[51,44,36,"Sud parisien / proche 15e"],"94800":[40,69,43,"Sud parisien / proche 15e"]}};</script>
+<script>window.__LIVE__ = {"api":"https://www.bienici.com/realEstateAds.json","pageSize":60,"pages":2,"target":1100,"maxPrice":1200,"priceCeil":1320,"minRooms":3,"minBedrooms":2,"minSurface":35,"minEurPerM2":12,"anchors":{"pasteur":{"ideal":30,"max":50},"orsay":{"ideal":45,"max":75},"car":{"ideal":45,"weight":8}},"zones":["-29251","-33504","-33505","-53801","-53650","-57750","-37041","-48862","-103967","-104479","-37026","-37027","-59321","-29036","-37020","-37025","-105122","-105146","-85527","-9522","-395036","-395443","-28036","-52770","-23773","-29244","-70355","-395488","-103395","-23772","-9520","-9530","-72020","-31340","-31341","-31339","-31338","-72148","-72019","-30294"],"zips":{"75013":[51,43,36,"Paris 15e et proche"],"75014":[51,43,36,"Sud parisien / proche 15e"],"75015":[51,43,36,"Paris 15e et proche"],"78220":[30,51,47,"Paris 15e et proche"],"78350":[51,43,36,"Vallee de la Bievre / proche Orsay"],"91120":[52,31,36,"RER B sud (meilleur compromis)"],"91160":[69,51,30,"Vallee de la Bievre / proche Orsay"],"91190":[61,35,39,"RER B sud (meilleur compromis)"],"91300":[53,31,35,"RER B sud (meilleur compromis)"],"91320":[55,52,37,"Vallee de la Bievre / proche Orsay"],"91370":[51,43,39,"Vallee de la Bievre / proche Orsay"],"91380":[69,56,35,"Vallee de la Bievre / proche Orsay"],"91400":[58,15,30,"Vallee de la Bievre / proche Orsay"],"91430":[67,38,40,"Vallee de la Bievre / proche Orsay"],"91440":[55,26,33,"RER B sud (meilleur compromis)"],"91570":[51,43,37,"Vallee de la Bievre / proche Orsay"],"92100":[51,43,36,"Paris 15e et proche"],"92120":[51,43,36,"Sud parisien / proche 15e"],"92130":[51,43,36,"Sud parisien / proche 15e"],"92140":[37,70,46,"Sud parisien / proche 15e"],"92160":[40,38,37,"RER B sud (meilleur compromis)"],"92170":[51,43,36,"Sud parisien / proche 15e"],"92190":[51,43,36,"Paris 15e et proche"],"92210":[54,67,50,"Paris 15e et proche"],"92220":[51,43,36,"Sud parisien / proche 15e"],"92240":[51,43,36,"Sud parisien / proche 15e"],"92310":[45,48,48,"Paris 15e et proche"],"92320":[34,44,45,"Sud parisien / proche 15e"],"92340":[31,37,40,"RER B sud (meilleur compromis)"],"92370":[49,82,46,"Paris 15e et proche"],"92380":[64,74,55,"Paris 15e et proche"],"92410":[51,43,36,"Paris 15e et proche"],"94110":[51,43,36,"RER B sud (meilleur compromis)"],"94230":[28,42,43,"RER B sud (meilleur compromis)"],"94250":[51,43,36,"RER B sud (meilleur compromis)"],"94260":[43,53,37,"Vallee de la Bievre / proche Orsay"],"94270":[51,43,36,"Sud parisien / proche 15e"],"94800":[40,69,43,"Sud parisien / proche 15e"]}};</script>
+<script>function taillesChambres(texte) {
+  const t = String(texte || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/m\s*(?:2|\u00b2)/g, 'm2')
+    .replace(/metres?\s+carres?/g, 'm2')
+    .replace(/\u00a0/g, ' ')
+    .replace(/\s+/g, ' ');
+
+  const COUPES = /[.;!?\u2022\u00b7|\n]|\s[-/]\s/;
+  const AUTRE_PIECE =
+    /sejour|salon|cuisine|salle de bain|salle d eau|sdb|entree|terrasse|balcon|garage|cellier|placard|bureau|wc|toilettes|dressing|couloir/;
+  // mot de liaison obligatoire entre "chambre(s)" et le premier chiffre :
+  // sans lui ("2 chambres 52 m2"), le chiffre est la surface du logement.
+  const LIEN = /^(?:[^0-9]{0,24})?(?:[0-9]{1,2}\s*)?(?:de|d'|:|n\u00b0|\u00b0|-|\u2013|environ|taille|font|fait|mesure|\()/;
+
+  const out = [];
+  for (const clause of t.split(COUPES)) {
+    const m = /chambres?/.exec(clause);
+    if (!m) continue;
+    // on part de la premiere occurrence de "chambre" et on s'arrete a la piece suivante
+    let suite = clause.slice(m.index + m[0].length);
+    const stop = AUTRE_PIECE.exec(suite);
+    if (stop) suite = suite.slice(0, stop.index);
+    if (!/m2/.test(suite)) continue;
+    if (!LIEN.test(suite)) continue;
+    const nombres = suite.match(/[0-9]{1,2}(?:[.,][0-9])?/g) || [];
+    for (const brut of nombres) {
+      const v = Math.round(parseFloat(brut.replace(',', '.')));
+      if (v >= 4 && v <= 45) out.push(v);
+    }
+  }
+  // une meme phrase recopiee deux fois par le site ne doit pas doubler la ligne
+  const garde = [];
+  for (const v of out) if (garde[garde.length - 1] !== v) garde.push(v);
+  return garde.slice(0, 6);
+}
+function resumeChambres(tailles, nb) {
+  const t = (tailles || []).filter((v) => Number(v) > 0);
+  if (!t.length) return '';
+  const total = Number(nb) || 0;
+  const liste = t.map((v) => v + ' m²').join(' · ');
+  // plusieurs chambres annoncees mais une seule dimension donnee : on le dit,
+  // plutot que de laisser croire que toutes les chambres font cette taille.
+  if (total > t.length) return liste + ' (' + t.length + ' sur ' + total + ')';
+  return liste;
+}</script>
 <script>
 (function () {
   // une erreur silencieuse sur un telephone est indiagnosticable : on la garde
@@ -2394,7 +2544,7 @@
   // Filtres cumulables, memorises sur le telephone : loyer max, pieces, chambres,
   // surface, temps de trajet, site, zone, fraicheur, photo. Un champ vide = pas de
   // contrainte. Une valeur inconnue dans l'annonce ne la fait pas disparaitre.
-  var filt = { price: 0, rooms: 0, beds: 0, surface: 0, p: 0, o: 0, src: '', zone: '', nw: false, photo: false };
+  var filt = { q: '', price: 0, rooms: 0, beds: 0, surface: 0, p: 0, o: 0, src: '', zone: '', nw: false, photo: false };
   var FILT_KEY = KEY + '-filtres';
 
   function passe(c) {
@@ -2413,6 +2563,14 @@
     if (filt.o && v != null && v > filt.o) return false;
     if (filt.src && String(d.src || '').indexOf(filt.src) < 0) return false;
     if (filt.zone && d.zone !== filt.zone) return false;
+    // recherche libre : plusieurs mots, chacun doit se retrouver dans la fiche
+    if (filt.q) {
+      var texte = deaccent(String(d.q || ''));
+      var mots = deaccent(filt.q).split(/s+/).filter(Boolean);
+      for (var i = 0; i < mots.length; i++) {
+        if (texte.indexOf(mots[i]) < 0) return false;
+      }
+    }
     if (filt.nw) {
       var pub = Number(d.pub || 0);
       if (!pub || Date.now() - pub > 86400000) return false;
@@ -2747,7 +2905,8 @@
       ' data-price="' + (a.price || 0) + '" data-rooms="' + (a.rooms == null ? '' : a.rooms) + '"' +
       ' data-beds="' + (a.bedrooms == null ? '' : a.bedrooms) + '" data-surface="' + (a.surface == null ? '' : a.surface) + '"' +
       ' data-p="' + (t.pasteur == null ? '' : t.pasteur) + '" data-o="' + (t.orsay == null ? '' : t.orsay) + '"' +
-      ' data-zone="' + h(a.zone || '') + '" data-src="bienici">' +
+      ' data-zone="' + h(a.zone || '') + '" data-src="bienici"' +
+      ' data-q="' + h([a.subject, a.city, a.zip, a.zone].filter(Boolean).join(' ').toLowerCase()) + '">' +
       '<div class="ribbon">Postulé</div>' +
       gal +
       '<div class="body"><header>' +
@@ -2765,7 +2924,9 @@
       chip('Orsay', t.orsay == null ? '?' : t.orsay + ' min', t.orsay != null && t.orsay <= LIVE.anchors.orsay.max ? 'ok' : 'bad') +
       chip('Étréchy (voiture)', t.carEtrechy == null ? '?' : t.carEtrechy + ' min', 'neutral') +
       chip('zone', a.zone || '', 'neutral') +
-      '</div>' + flags +
+      '</div>' +
+      (a.ch ? '<div class="chbed">Chambres : <b>' + h(a.ch) + '</b></div>' : '') +
+      flags +
       '<div class="actions"><button class="act seen-btn" data-act="seen">Marquer vu</button>' +
       '<button class="act applied-btn" data-act="applied">J’ai postulé</button>' +
       '<button class="act skip-btn" data-act="skip">Ça m’intéresse pas</button></div>' +
@@ -3032,6 +3193,8 @@
 
   function resumeFilt() {
     var n = 0;
+    var q = document.getElementById('f-q');
+    if (q) { q.value = filt.q || ''; if (filt.q) n++; }
     Object.keys(FILT_IDS).forEach(function (k) {
       var el = document.getElementById(FILT_IDS[k]);
       if (!el) return;
@@ -3044,11 +3207,16 @@
     if (cp) { cp.checked = !!filt.photo; if (filt.photo) n++; }
     var st = document.getElementById('filter-state');
     if (st) st.textContent = n ? n + ' actif(s)' : 'aucun';
+    // filtres deja actifs au chargement : on ouvre le panneau pour qu'ils se voient
+    var panel = document.getElementById('filterpanel');
+    if (panel && n && !panel.dataset.vu) panel.open = true;
+    if (panel) panel.dataset.vu = '1';
   }
 
   try {
     var garde = JSON.parse(localStorage.getItem(FILT_KEY) || '{}');
     if (garde && typeof garde === 'object') {
+      filt.q = garde.q ? String(garde.q) : '';
       filt.price = Number(garde.price) || 0;
       filt.rooms = Number(garde.rooms) || 0;
       filt.beds = Number(garde.beds) || 0;
@@ -3084,9 +3252,25 @@
     });
   });
 
+  var qField = document.getElementById('f-q');
+  if (qField) qField.addEventListener('input', function () {
+    filt.q = qField.value.trim();
+    saveFilt();
+    var st = document.getElementById('filter-state');
+    if (st) {
+      var n = 0;
+      if (filt.q) n++;
+      Object.keys(FILT_IDS).forEach(function (k) { if (filt[k]) n++; });
+      if (filt.nw) n++;
+      if (filt.photo) n++;
+      st.textContent = n ? n + ' actif(s)' : 'aucun';
+    }
+    applyFilter();
+  });
+
   var resetBtn = document.getElementById('f-reset');
   if (resetBtn) resetBtn.addEventListener('click', function () {
-    filt = { price: 0, rooms: 0, beds: 0, surface: 0, p: 0, o: 0, src: '', zone: '', nw: false, photo: false };
+    filt = { q: '', price: 0, rooms: 0, beds: 0, surface: 0, p: 0, o: 0, src: '', zone: '', nw: false, photo: false };
     saveFilt();
     resumeFilt();
     applyFilter();
@@ -3189,5 +3373,5 @@
 })();
 </script>
 <div style="text-align:center;color:#4d5666;font-size:11px;padding:22px 0 8px">
-       version publiee le 12/11/2026 11:47:13 · adresse fixe, lisible PC eteint
+       version publiee le 12/11/2026 12:02:12 · adresse fixe, lisible PC eteint
      </div></body></html>
