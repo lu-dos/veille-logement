@@ -14,10 +14,23 @@
   .bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0 4px}
   .progress{color:var(--mut);font-size:12.5px}
   .progress b{color:var(--txt)}
-  .filters{display:flex;gap:6px;margin-left:auto}
+  .filters{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
   .filters button{background:#11141a;border:1px solid var(--line);color:var(--mut);font:inherit;font-size:12px;padding:5px 11px;border-radius:999px;cursor:pointer}
   .filters button.on{background:#232a36;border-color:#39424f;color:var(--txt)}
-  .sortbar{display:flex;align-items:center;gap:6px;margin:10px 0 0;font-size:12px;color:var(--mut)}
+  /* panneau de filtres : replie par defaut, une ligne par critere, lisible au pouce */
+  .filterpanel{margin:12px 0 0;border:1px solid var(--line);border-radius:12px;background:#11141a;padding:0 12px}
+  .filterpanel summary{cursor:pointer;font-size:12.5px;color:var(--mut);padding:10px 0;list-style:none}
+  .filterpanel summary::-webkit-details-marker{display:none}
+  .filterpanel summary::before{content:"⚙ ";}
+  .filterpanel[open] summary{border-bottom:1px solid var(--line);margin-bottom:11px}
+  .filterpanel .fstate{color:var(--acc);font-size:11.5px}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;padding:0 0 13px}
+  .fgrid label{display:flex;flex-direction:column;gap:4px;font-size:11.5px;color:var(--mut)}
+  .fgrid select{font:inherit;font-size:12.5px;background:#0f1115;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 8px}
+  .fgrid .chk{flex-direction:row;align-items:center;gap:7px;font-size:12.5px;color:var(--txt);padding-top:16px}
+  .fgrid .chk input{accent-color:#4dabf7;width:16px;height:16px}
+  .fgrid .reset{grid-column:1/-1;font:inherit;font-size:12px;padding:7px 12px;border-radius:999px;background:#171a21;border:1px solid var(--line);color:var(--mut);cursor:pointer}
+  .sortbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0;font-size:12px;color:var(--mut)}
   .sortbar .lbl{margin-right:2px}
   .sortbar button{background:#11141a;border:1px solid var(--line);color:var(--mut);font:inherit;font-size:12px;padding:5px 11px;border-radius:999px;cursor:pointer}
   .sortbar button.on{background:#232a36;border-color:#39424f;color:var(--txt)}
@@ -46,6 +59,10 @@
   .card.flash{box-shadow:0 0 0 2px var(--acc),0 0 26px rgba(255,209,102,.28)}
   .card.hide{display:none}
   .card.applied{border-left-color:#7c5cff;background:#1a1a2b}
+  .card.skipped{opacity:.55;border-left-color:#3a3f4a}
+  .card.skipped .gallery{filter:grayscale(1) brightness(.62)}
+  .card.skipped .score{color:#67707f}
+  .skip-btn.on{background:#2a1c1c;border-color:rgba(255,107,107,.45);color:#ffb3b3}
   .card.seen .gallery{filter:grayscale(.55) brightness(.7)}
   .card.seen .gallery::after{content:"Vu";position:absolute;inset:0;display:grid;place-items:center;font-size:13px;font-weight:700;letter-spacing:.12em;color:#fff;background:rgba(0,0,0,.42);text-transform:uppercase}
   .ribbon{display:none;position:absolute;top:-1px;right:-1px;background:#7c5cff;color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:0 13px 0 10px;z-index:3}
@@ -94,7 +111,7 @@
 </style></head>
 <body><div class="wrap">
 <h1>Coloc hunter</h1>
-<div class="sub">Logements entiers uniquement (2 chambres min, 1 200 € max) · maj 12/11/2026 11:13:53 · <b>la page se met à jour toute seule</b> (collecte toutes les 3 min)</div>
+<div class="sub">Logements entiers uniquement (2 chambres min, 1 200 € max) · maj 12/11/2026 11:42:05 · <b>la page se met à jour toute seule</b> (collecte toutes les 3 min)</div>
 
 <div class="livebar">
   <button id="live-refresh">Vérifier les nouvelles annonces</button>
@@ -126,7 +143,10 @@
     <h2>Retenus <span class="count">17</span></h2>
     <p class="sub">Tous les critères passent, aucun doute. C'est là qu'il faut appeler.</p>
     
-  <article class="card match" data-id="bc-netty-company54028bva-appt-16902" data-pub="1793222645317" data-score="100">
+  <article class="card match" data-id="bc-netty-company54028bva-appt-16902" data-pub="1793222645317" data-score="100"
+    data-price="1100" data-rooms="3" data-beds="2"
+    data-surface="53.88" data-p="28" data-o="42"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-company54028bva-appt-16902" data-url="https://www.bienici.com/annonce/location/cachan/appartement/3pieces/netty-company54028bva-appt-16902"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -156,11 +176,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3288982912" data-pub="1792083627000" data-score="96">
+  <article class="card match" data-id="3288982912" data-pub="1792083627000" data-score="96"
+    data-price="1090" data-rooms="3" data-beds="2"
+    data-surface="58" data-p="33" data-o="25"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3288982912" data-url="https://www.leboncoin.fr/ad/locations/3288982912"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -190,11 +214,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3291039277" data-pub="1792367542000" data-score="88">
+  <article class="card match" data-id="3291039277" data-pub="1792367542000" data-score="88"
+    data-price="1085" data-rooms="3" data-beds="2"
+    data-surface="57.74" data-p="38" data-o="24"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3291039277" data-url="https://www.leboncoin.fr/ad/locations/3291039277"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -224,11 +252,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="bc-ag920566-547679711" data-pub="0" data-score="85">
+  <article class="card match" data-id="bc-ag920566-547679711" data-pub="0" data-score="85"
+    data-price="1090" data-rooms="3" data-beds="2"
+    data-surface="58" data-p="40" data-o="36"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag920566-547679711" data-url="https://www.bienici.com/annonce/location/antony/appartement/3pieces/ag920566-547679711"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -258,11 +290,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="citya-GES50290005-584" data-pub="1794478233752" data-score="85">
+  <article class="card match" data-id="citya-GES50290005-584" data-pub="1794478233752" data-score="85"
+    data-price="960" data-rooms="3" data-beds="2"
+    data-surface="48.02" data-p="40" data-o="34"
+    data-zone="RER B sud (meilleur compromis)" data-src="citya">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="citya-GES50290005-584" data-url="https://www.citya.com/annonces/location/appartement/antony-92160/GES50290005-584"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -277,7 +313,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 3 min
+            <span class="new">nouveau</span> repérée il y a 32 min
             <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES50290005-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -292,11 +328,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="bc-era-2-61709122" data-pub="1793864761720" data-score="81">
+  <article class="card match" data-id="bc-era-2-61709122" data-pub="1793864761720" data-score="81"
+    data-price="1170" data-rooms="3" data-beds="2"
+    data-surface="50.99" data-p="30" data-o="51"
+    data-zone="Paris 15e et proche" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-era-2-61709122" data-url="https://www.bienici.com/annonce/location/viroflay/appartement/3pieces/era-2-61709122"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -326,11 +366,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="bc-netty-company36905zuv-appt-14920" data-pub="1792236740150" data-score="77">
+  <article class="card match" data-id="bc-netty-company36905zuv-appt-14920" data-pub="1792236740150" data-score="77"
+    data-price="1195" data-rooms="3" data-beds="2"
+    data-surface="55.45" data-p="34" data-o="44"
+    data-zone="Sud parisien / proche 15e" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-company36905zuv-appt-14920" data-url="https://www.bienici.com/annonce/location/chatillon/appartement/3pieces/netty-company36905zuv-appt-14920"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -360,11 +404,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3299430330" data-pub="1793465483000" data-score="76">
+  <article class="card match" data-id="3299430330" data-pub="1793465483000" data-score="76"
+    data-price="1115" data-rooms="3" data-beds="2"
+    data-surface="60" data-p="47" data-o="42"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3299430330" data-url="https://www.leboncoin.fr/ad/locations/3299430330"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -394,11 +442,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3306296843" data-pub="1794317138000" data-score="75">
+  <article class="card match" data-id="3306296843" data-pub="1794317138000" data-score="75"
+    data-price="1123" data-rooms="3" data-beds="2"
+    data-surface="66" data-p="41" data-o="53"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3306296843" data-url="https://www.leboncoin.fr/ad/locations/3306296843"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -428,11 +480,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="bc-ag920722-557619131" data-pub="1793711117651" data-score="72">
+  <article class="card match" data-id="bc-ag920722-557619131" data-pub="1793711117651" data-score="72"
+    data-price="1010" data-rooms="3" data-beds="2"
+    data-surface="52" data-p="48" data-o="46"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag920722-557619131" data-url="https://www.bienici.com/annonce/location/massy/appartement/3pieces/ag920722-557619131"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -462,11 +518,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="bc-laforet-immo-facile-52991820" data-pub="1792673577948" data-score="70">
+  <article class="card match" data-id="bc-laforet-immo-facile-52991820" data-pub="1792673577948" data-score="70"
+    data-price="1200" data-rooms="3" data-beds="2"
+    data-surface="58.6" data-p="38" data-o="45"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52991820" data-url="https://www.bienici.com/annonce/location/antony/appartement/3pieces/laforet-immo-facile-52991820"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -496,11 +556,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="bc-ladresse-1-adresse-10677207" data-pub="1791195983091" data-score="59">
+  <article class="card match" data-id="bc-ladresse-1-adresse-10677207" data-pub="1791195983091" data-score="59"
+    data-price="1186" data-rooms="3" data-beds="2"
+    data-surface="52.04" data-p="45" data-o="48"
+    data-zone="Paris 15e et proche" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ladresse-1-adresse-10677207" data-url="https://www.bienici.com/annonce/location/sevres/appartement/3pieces/ladresse-1-adresse-10677207"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -530,11 +594,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3299692552" data-pub="1793516076000" data-score="59">
+  <article class="card match" data-id="3299692552" data-pub="1793516076000" data-score="59"
+    data-price="1200" data-rooms="3" data-beds="2"
+    data-surface="65" data-p="48" data-o="41"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3299692552" data-url="https://www.leboncoin.fr/ad/locations/3299692552"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -564,11 +632,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3306262376" data-pub="1794313973000" data-score="58">
+  <article class="card match" data-id="3306262376" data-pub="1794313973000" data-score="58"
+    data-price="1125" data-rooms="3" data-beds="2"
+    data-surface="68.9" data-p="50" data-o="56"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3306262376" data-url="https://www.leboncoin.fr/ad/locations/3306262376"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -598,11 +670,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3291144789" data-pub="1792398918000" data-score="58">
+  <article class="card match" data-id="3291144789" data-pub="1792398918000" data-score="58"
+    data-price="1100" data-rooms="3" data-beds="2"
+    data-surface="64" data-p="50" data-o="60"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3291144789" data-url="https://www.leboncoin.fr/ad/locations/3291144789"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -632,11 +708,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3302651818" data-pub="1793874639000" data-score="57">
+  <article class="card match" data-id="3302651818" data-pub="1793874639000" data-score="57"
+    data-price="1200" data-rooms="3" data-beds="2"
+    data-surface="57" data-p="41" data-o="53"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3302651818" data-url="https://www.leboncoin.fr/ad/locations/3302651818"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -666,11 +746,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card match" data-id="3293078178" data-pub="1792672659000" data-score="56">
+  <article class="card match" data-id="3293078178" data-pub="1792672659000" data-score="56"
+    data-price="1200" data-rooms="3" data-beds="2"
+    data-surface="63.5" data-p="50" data-o="44"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3293078178" data-url="https://www.leboncoin.fr/ad/locations/3293078178"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -700,6 +784,7 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
@@ -709,7 +794,10 @@
     <h2>Hésitation <span class="count">39</span></h2>
     <p class="sub">Ça pourrait coller, mais un point bloque ou manque. À ouvrir avant d'écarter.</p>
     
-  <article class="card maybe" data-id="3288640369" data-pub="1792049115000" data-score="94">
+  <article class="card maybe" data-id="3288640369" data-pub="1792049115000" data-score="94"
+    data-price="1129" data-rooms="3" data-beds=""
+    data-surface="61" data-p="33" data-o="25"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3288640369" data-url="https://www.leboncoin.fr/ad/locations/3288640369"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -739,11 +827,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="pap-431001874" data-pub="0" data-score="84">
+  <article class="card maybe" data-id="pap-431001874" data-pub="0" data-score="84"
+    data-price="895" data-rooms="3" data-beds="2"
+    data-surface="38" data-p="41" data-o="37"
+    data-zone="RER B sud (meilleur compromis)" data-src="pap">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="pap-431001874" data-url="https://www.pap.fr/annonces/appartement-antony-92160-r431001874"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -773,11 +865,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-century-21-202_2433_11955" data-pub="1790900188252" data-score="81">
+  <article class="card maybe" data-id="bc-century-21-202_2433_11955" data-pub="1790900188252" data-score="81"
+    data-price="1279" data-rooms="3" data-beds="2"
+    data-surface="46.73" data-p="31" data-o="37"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_2433_11955" data-url="https://www.bienici.com/annonce/location/bourg-la-reine/appartement/3pieces/century-21-202_2433_11955"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -807,11 +903,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-hektor-alvimmo_91-91" data-pub="1792585129896" data-score="75">
+  <article class="card maybe" data-id="bc-hektor-alvimmo_91-91" data-pub="1792585129896" data-score="75"
+    data-price="1108" data-rooms="4" data-beds="3"
+    data-surface="73.6" data-p="52" data-o="30"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-hektor-alvimmo_91-91" data-url="https://www.bienici.com/annonce/location/palaiseau/appartement/4pieces/hektor-alvimmo_91-91"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -841,11 +941,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="3301937988" data-pub="1793757930000" data-score="74">
+  <article class="card maybe" data-id="3301937988" data-pub="1793757930000" data-score="74"
+    data-price="1090" data-rooms="3" data-beds=""
+    data-surface="67" data-p="58" data-o="35"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3301937988" data-url="https://www.leboncoin.fr/ad/locations/3301937988"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -875,11 +979,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="3275036549" data-pub="1790149211000" data-score="74">
+  <article class="card maybe" data-id="3275036549" data-pub="1790149211000" data-score="74"
+    data-price="1047" data-rooms="3" data-beds=""
+    data-surface="61" data-p="60" data-o="14"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3275036549" data-url="https://www.leboncoin.fr/ad/locations/3275036549"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -909,11 +1017,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-ag313862-553822859" data-pub="1791824321443" data-score="70">
+  <article class="card maybe" data-id="bc-ag313862-553822859" data-pub="1791824321443" data-score="70"
+    data-price="1089" data-rooms="3" data-beds="2"
+    data-surface="59" data-p="53" data-o="31"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag313862-553822859" data-url="https://www.bienici.com/annonce/location/palaiseau/appartement/3pieces/ag313862-553822859"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -943,11 +1055,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-century-21-202_2880_9556" data-pub="1790162071671" data-score="70">
+  <article class="card maybe" data-id="bc-century-21-202_2880_9556" data-pub="1790162071671" data-score="70"
+    data-price="1100" data-rooms="3" data-beds="2"
+    data-surface="56.59" data-p="56" data-o="30"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_2880_9556" data-url="https://www.bienici.com/annonce/location/massy/appartement/3pieces/century-21-202_2880_9556"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -977,11 +1093,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="3300678779" data-pub="1793580443000" data-score="70">
+  <article class="card maybe" data-id="3300678779" data-pub="1793580443000" data-score="70"
+    data-price="1039" data-rooms="3" data-beds="2"
+    data-surface="59" data-p="51" data-o="28"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3300678779" data-url="https://www.leboncoin.fr/ad/locations/3300678779"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1011,11 +1131,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="3306343484" data-pub="1794321041000" data-score="70">
+  <article class="card maybe" data-id="3306343484" data-pub="1794321041000" data-score="70"
+    data-price="1050" data-rooms="3" data-beds="2"
+    data-surface="47" data-p="52" data-o="39"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3306343484" data-url="https://www.leboncoin.fr/ad/locations/3306343484"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1045,11 +1169,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-century-21-202_761_27765" data-pub="1791504846679" data-score="67">
+  <article class="card maybe" data-id="bc-century-21-202_761_27765" data-pub="1791504846679" data-score="67"
+    data-price="1290" data-rooms="3" data-beds="2"
+    data-surface="57.3" data-p="40" data-o="38"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_761_27765" data-url="https://www.bienici.com/annonce/location/antony/appartement/3pieces/century-21-202_761_27765"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1079,11 +1207,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-netty-malocateam-appt-1973" data-pub="1794331863815" data-score="66">
+  <article class="card maybe" data-id="bc-netty-malocateam-appt-1973" data-pub="1794331863815" data-score="66"
+    data-price="1145" data-rooms="3" data-beds="2"
+    data-surface="63.1" data-p="53" data-o="30"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-malocateam-appt-1973" data-url="https://www.bienici.com/annonce/location/massy/appartement/3pieces/netty-malocateam-appt-1973"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1113,11 +1245,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="3306705965" data-pub="1794382456000" data-score="66">
+  <article class="card maybe" data-id="3306705965" data-pub="1794382456000" data-score="66"
+    data-price="1145" data-rooms="3" data-beds="2"
+    data-surface="63" data-p="51" data-o="31"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3306705965" data-url="https://www.leboncoin.fr/ad/locations/3306705965"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1147,11 +1283,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-ag210198-551948447" data-pub="1790703416918" data-score="63">
+  <article class="card maybe" data-id="bc-ag210198-551948447" data-pub="1790703416918" data-score="63"
+    data-price="1293" data-rooms="3" data-beds="2"
+    data-surface="37" data-p="43" data-o="43"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag210198-551948447" data-url="https://www.bienici.com/annonce/location/fresnes/appartement/3pieces/ag210198-551948447"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1181,11 +1321,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-iad-france-2149437" data-pub="1793886949403" data-score="58">
+  <article class="card maybe" data-id="bc-iad-france-2149437" data-pub="1793886949403" data-score="58"
+    data-price="1260" data-rooms="5" data-beds="3"
+    data-surface="78" data-p="67" data-o="38"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-iad-france-2149437" data-url="https://www.bienici.com/annonce/location/vauhallan/maison/5pieces/iad-france-2149437"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1215,11 +1359,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-century-21-202_119_9109" data-pub="1793410141137" data-score="58">
+  <article class="card maybe" data-id="bc-century-21-202_119_9109" data-pub="1793410141137" data-score="58"
+    data-price="1300" data-rooms="4" data-beds="2"
+    data-surface="70.59" data-p="55" data-o="44"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_119_9109" data-url="https://www.bienici.com/annonce/location/massy/appartement/4pieces/century-21-202_119_9109"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1249,11 +1397,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-laforet-immo-facile-52975460" data-pub="1793366058542" data-score="58">
+  <article class="card maybe" data-id="bc-laforet-immo-facile-52975460" data-pub="1793366058542" data-score="58"
+    data-price="1230" data-rooms="4" data-beds="3"
+    data-surface="89" data-p="56" data-o="30"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52975460" data-url="https://www.bienici.com/annonce/location/massy/appartement/4pieces/laforet-immo-facile-52975460"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1283,11 +1435,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-immo-facile-60786871" data-pub="1792497765887" data-score="58">
+  <article class="card maybe" data-id="bc-immo-facile-60786871" data-pub="1792497765887" data-score="58"
+    data-price="1300" data-rooms="4" data-beds="3"
+    data-surface="77.17" data-p="51" data-o="32"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-immo-facile-60786871" data-url="https://www.bienici.com/annonce/location/palaiseau/appartement/4pieces/immo-facile-60786871"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1317,11 +1473,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-netty-company51972wao-appt-23968" data-pub="1791805664328" data-score="57">
+  <article class="card maybe" data-id="bc-netty-company51972wao-appt-23968" data-pub="1791805664328" data-score="57"
+    data-price="1320" data-rooms="3" data-beds="2"
+    data-surface="58.85" data-p="39" data-o="56"
+    data-zone="Paris 15e et proche" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-company51972wao-appt-23968" data-url="https://www.bienici.com/annonce/location/chaville/appartement/3pieces/netty-company51972wao-appt-23968"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1351,11 +1511,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-guy-hoquet-immo-facile-7810396" data-pub="1793033568510" data-score="56">
+  <article class="card maybe" data-id="bc-guy-hoquet-immo-facile-7810396" data-pub="1793033568510" data-score="56"
+    data-price="1290" data-rooms="4" data-beds="2"
+    data-surface="65" data-p="57" data-o="36"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-guy-hoquet-immo-facile-7810396" data-url="https://www.bienici.com/annonce/location/massy/appartement/4pieces/guy-hoquet-immo-facile-7810396"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1385,11 +1549,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-ladresse-1-adresse-14647316" data-pub="1792046018472" data-score="56">
+  <article class="card maybe" data-id="bc-ladresse-1-adresse-14647316" data-pub="1792046018472" data-score="56"
+    data-price="1290" data-rooms="4" data-beds="3"
+    data-surface="67.5" data-p="58" data-o="15"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ladresse-1-adresse-14647316" data-url="https://www.bienici.com/annonce/location/orsay/appartement/4pieces/ladresse-1-adresse-14647316"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1419,11 +1587,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-century-21-202_25_81905" data-pub="1792023258788" data-score="56">
+  <article class="card maybe" data-id="bc-century-21-202_25_81905" data-pub="1792023258788" data-score="56"
+    data-price="1280" data-rooms="4" data-beds="2"
+    data-surface="66.63" data-p="54" data-o="21"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_25_81905" data-url="https://www.bienici.com/annonce/location/orsay/appartement/4pieces/century-21-202_25_81905"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1453,11 +1625,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-hektor-alvimmo_91-2196" data-pub="1791902294461" data-score="56">
+  <article class="card maybe" data-id="bc-hektor-alvimmo_91-2196" data-pub="1791902294461" data-score="56"
+    data-price="1198" data-rooms="3" data-beds="2"
+    data-surface="61.86" data-p="51" data-o="33"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-hektor-alvimmo_91-2196" data-url="https://www.bienici.com/annonce/location/massy/appartement/3pieces/hektor-alvimmo_91-2196"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1487,11 +1663,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-guy-hoquet-immo-facile-7804064" data-pub="1792425364705" data-score="55">
+  <article class="card maybe" data-id="bc-guy-hoquet-immo-facile-7804064" data-pub="1792425364705" data-score="55"
+    data-price="1250" data-rooms="4" data-beds="2"
+    data-surface="74.03" data-p="69" data-o="48"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-guy-hoquet-immo-facile-7804064" data-url="https://www.bienici.com/annonce/location/chilly-mazarin/appartement/4pieces/guy-hoquet-immo-facile-7804064"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1521,11 +1701,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-laforet-immo-facile-52942677" data-pub="1793722077336" data-score="52">
+  <article class="card maybe" data-id="bc-laforet-immo-facile-52942677" data-pub="1793722077336" data-score="52"
+    data-price="1213" data-rooms="3" data-beds="2"
+    data-surface="58.98" data-p="58" data-o="14"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52942677" data-url="https://www.bienici.com/annonce/location/orsay/appartement/3pieces/laforet-immo-facile-52942677"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1555,11 +1739,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-laforet-immo-facile-52931549" data-pub="1793700812999" data-score="52">
+  <article class="card maybe" data-id="bc-laforet-immo-facile-52931549" data-pub="1793700812999" data-score="52"
+    data-price="1300" data-rooms="3" data-beds="2"
+    data-surface="58.26" data-p="55" data-o="26"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52931549" data-url="https://www.bienici.com/annonce/location/bures-sur-yvette/appartement/3pieces/laforet-immo-facile-52931549"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1589,11 +1777,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-ifsp6a-5479356" data-pub="1793897246103" data-score="50">
+  <article class="card maybe" data-id="bc-ifsp6a-5479356" data-pub="1793897246103" data-score="50"
+    data-price="1258" data-rooms="3" data-beds="2"
+    data-surface="62.5" data-p="69" data-o="51"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ifsp6a-5479356" data-url="https://www.bienici.com/annonce/location/longjumeau/appartement/3pieces/ifsp6a-5479356"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1623,11 +1815,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-century-21-202_2414_9842" data-pub="0" data-score="49">
+  <article class="card maybe" data-id="bc-century-21-202_2414_9842" data-pub="0" data-score="49"
+    data-price="1250" data-rooms="3" data-beds="2"
+    data-surface="61.2" data-p="55" data-o="52"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-century-21-202_2414_9842" data-url="https://www.bienici.com/annonce/location/wissous/appartement/3pieces/century-21-202_2414_9842"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1657,11 +1853,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-ag752485-544646906" data-pub="0" data-score="49">
+  <article class="card maybe" data-id="bc-ag752485-544646906" data-pub="0" data-score="49"
+    data-price="1215" data-rooms="3" data-beds="2"
+    data-surface="61" data-p="70" data-o="52"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag752485-544646906" data-url="https://www.bienici.com/annonce/location/chilly-mazarin/appartement/3pieces/ag752485-544646906"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1691,11 +1891,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-ag752485-550143116" data-pub="1789627132222" data-score="48">
+  <article class="card maybe" data-id="bc-ag752485-550143116" data-pub="1789627132222" data-score="48"
+    data-price="1300" data-rooms="4" data-beds="3"
+    data-surface="82" data-p="68" data-o="54"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag752485-550143116" data-url="https://www.bienici.com/annonce/location/chilly-mazarin/appartement/4pieces/ag752485-550143116"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1725,11 +1929,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-citya-immobilier-01-GES02580109-584" data-pub="1794478233752" data-score="47">
+  <article class="card maybe" data-id="bc-citya-immobilier-01-GES02580109-584" data-pub="1794478233752" data-score="47"
+    data-price="1280" data-rooms="3" data-beds="2"
+    data-surface="51.39" data-p="53" data-o="50"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici citya">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-citya-immobilier-01-GES02580109-584" data-url="https://www.bienici.com/annonce/location/antony/appartement/3pieces/citya-immobilier-01-GES02580109-584"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1744,7 +1952,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 3 min
+            <span class="new">nouveau</span> repérée il y a 32 min
             <a class="srcbadge s-bienici" href="https://www.bienici.com/annonce/location/antony/appartement/3pieces/citya-immobilier-01-GES02580109-584" target="_blank" rel="noopener">Bien’ici</a> <span class="also">+</span> <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES02580109-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -1759,11 +1967,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-ag752345-559035836" data-pub="1794254333641" data-score="46">
+  <article class="card maybe" data-id="bc-ag752345-559035836" data-pub="1794254333641" data-score="46"
+    data-price="1179" data-rooms="3" data-beds="2"
+    data-surface="61" data-p="30" data-o=""
+    data-zone="Sud parisien / proche 15e" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-ag752345-559035836" data-url="https://www.bienici.com/annonce/location/villejuif/appartement/3pieces/ag752345-559035836"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1793,11 +2005,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="3268237195" data-pub="1794037883000" data-score="46">
+  <article class="card maybe" data-id="3268237195" data-pub="1794037883000" data-score="46"
+    data-price="1200" data-rooms="3" data-beds=""
+    data-surface="53" data-p="36" data-o="70"
+    data-zone="Sud parisien / proche 15e" data-src="leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="3268237195" data-url="https://www.leboncoin.fr/ad/locations/3268237195"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1827,11 +2043,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-guy-hoquet-18-GT0418-948" data-pub="1790161016102" data-score="44">
+  <article class="card maybe" data-id="bc-guy-hoquet-18-GT0418-948" data-pub="1790161016102" data-score="44"
+    data-price="1269" data-rooms="3" data-beds="2"
+    data-surface="49.57" data-p="44" data-o="61"
+    data-zone="Sud parisien / proche 15e" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-guy-hoquet-18-GT0418-948" data-url="https://www.bienici.com/annonce/location/villejuif/appartement/3pieces/guy-hoquet-18-GT0418-948"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1861,11 +2081,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-netty-company55012mub-appt-10348" data-pub="1793883618972" data-score="41">
+  <article class="card maybe" data-id="bc-netty-company55012mub-appt-10348" data-pub="1793883618972" data-score="41"
+    data-price="1320" data-rooms="3" data-beds="2"
+    data-surface="50.25" data-p="40" data-o="69"
+    data-zone="Sud parisien / proche 15e" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-netty-company55012mub-appt-10348" data-url="https://www.bienici.com/annonce/location/villejuif/appartement/3pieces/netty-company55012mub-appt-10348"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1895,11 +2119,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-immo-facile-61626289" data-pub="1791568954863" data-score="40">
+  <article class="card maybe" data-id="bc-immo-facile-61626289" data-pub="1791568954863" data-score="40"
+    data-price="1300" data-rooms="3" data-beds="2"
+    data-surface="64.45" data-p="70" data-o="60"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-immo-facile-61626289" data-url="https://www.bienici.com/annonce/location/chilly-mazarin/appartement/3pieces/immo-facile-61626289"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1929,11 +2157,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="bc-safti-1-1692026" data-pub="1793882222000" data-score="38">
+  <article class="card maybe" data-id="bc-safti-1-1692026" data-pub="1793882222000" data-score="38"
+    data-price="1100" data-rooms="3" data-beds="2"
+    data-surface="42" data-p="56" data-o="74"
+    data-zone="Paris 15e et proche" data-src="bienici leboncoin">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="bc-safti-1-1692026" data-url="https://www.bienici.com/annonce/location/garches/appartement/3pieces/safti-1-1692026"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1963,11 +2195,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="pap-466002446" data-pub="0" data-score="37">
+  <article class="card maybe" data-id="pap-466002446" data-pub="0" data-score="37"
+    data-price="944" data-rooms="3" data-beds="2"
+    data-surface="52" data-p="43" data-o=""
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="pap">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="pap-466002446" data-url="https://www.pap.fr/annonces/appartement-fresnes-94260-r466002446"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -1997,11 +2233,15 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
 
-  <article class="card maybe" data-id="citya-GES01070007-584" data-pub="1794478233752" data-score="35">
+  <article class="card maybe" data-id="citya-GES01070007-584" data-pub="1794478233752" data-score="35"
+    data-price="1180" data-rooms="3" data-beds="2"
+    data-surface="58.58" data-p="" data-o="53"
+    data-zone="RER B sud (meilleur compromis)" data-src="citya">
     <div class="ribbon">Postulé</div>
     <div class="gallery" data-gal data-id="citya-GES01070007-584" data-url="https://www.citya.com/annonces/location/appartement/antony-92160/GES01070007-584"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
@@ -2016,7 +2256,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 3 min
+            <span class="new">nouveau</span> repérée il y a 32 min
             <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES01070007-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -2031,6 +2271,7 @@
       <div class="actions">
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
       </div>
     </div>
   </article>
@@ -2706,5 +2947,5 @@
 })();
 </script>
 <div style="text-align:center;color:#4d5666;font-size:11px;padding:22px 0 8px">
-       version publiee le 12/11/2026 11:14:00 · adresse fixe, lisible PC eteint
+       version publiee le 12/11/2026 11:42:16 · adresse fixe, lisible PC eteint
      </div></body></html>
