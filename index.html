@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr"><head><meta name="robots" content="noindex,nofollow"><meta name="veille-build" content="cfabf3d7d43f370d"><meta charset="utf-8">
+<html lang="fr"><head><meta name="robots" content="noindex,nofollow"><meta name="veille-build" content="7183b266c22b782b"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Coloc hunter — 17 retenus, 40 hésitations</title>
 <style>
@@ -64,7 +64,8 @@
   .card.skipped{opacity:.55;border-left-color:#3a3f4a}
   .card.skipped .gallery{filter:grayscale(1) brightness(.62)}
   .card.skipped .score{color:#67707f}
-  .skip-btn.on{background:#2a1c1c;border-color:rgba(255,107,107,.45);color:#ffb3b3}
+  /* aimer : un liseré rose qui se voit sans ecraser la couleur du seau */
+  .card.liked{box-shadow:inset 0 0 0 1px rgba(255,92,138,.45)}
   .card.seen .gallery{filter:grayscale(.55) brightness(.7)}
   .card.seen .gallery::after{content:"Vu";position:absolute;inset:0;display:grid;place-items:center;font-size:13px;font-weight:700;letter-spacing:.12em;color:#fff;background:rgba(0,0,0,.42);text-transform:uppercase}
   .ribbon{display:none;position:absolute;top:-1px;right:-1px;background:#7c5cff;color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:0 13px 0 10px;z-index:3}
@@ -103,6 +104,8 @@
   .act:hover{border-color:#39424f;color:var(--txt)}
   .act.on{background:#1e2b24;border-color:rgba(62,207,142,.5);color:#9ff0c8}
   .applied-btn.on{background:#241f45;border-color:#7c5cff;color:#cfc2ff}
+  .skip-btn.on{background:#2a1c1c;border-color:rgba(255,107,107,.45);color:#ffb3b3}
+  .like-btn.on{background:#2a1620;border-color:rgba(255,92,138,.55);color:#ff9dbb}
   details{margin-top:34px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
   summary{cursor:pointer}
   li{margin:2px 0}
@@ -115,7 +118,7 @@
 </style></head>
 <body><div class="wrap">
 <h1>Coloc hunter</h1>
-<div class="sub">Logements entiers uniquement (2 chambres min, 1 200 € max) · maj 12/11/2026 12:02:46 · <b>la page se met à jour toute seule</b> (collecte toutes les 3 min)</div>
+<div class="sub">Logements entiers uniquement (2 chambres min, 1 200 € max) · maj 12/11/2026 12:07:03 · <b>la page se met à jour toute seule</b> (collecte toutes les 3 min)</div>
 
 <div class="livebar">
   <button id="live-refresh">Vérifier les nouvelles annonces</button>
@@ -123,10 +126,11 @@
 </div>
 
 <div class="bar">
-  <div class="progress"><b id="stat-total">0</b> annonces · <b id="stat-seen">0</b> vues · <b id="stat-applied">0</b> postulées · <b id="stat-skip">0</b> sans intérêt</div>
+  <div class="progress"><b id="stat-total">0</b> annonces · <b id="stat-like">0</b> aimées · <b id="stat-seen">0</b> vues · <b id="stat-applied">0</b> postulées · <b id="stat-skip">0</b> sans intérêt</div>
   <div class="filters">
     <button data-filter="all" class="on">Tout</button>
     <button data-filter="todo">Pas encore vues</button>
+    <button data-filter="liked">♥ Aimées</button>
     <button data-filter="applied">Postulées</button>
     <button data-filter="skipped">Sans intérêt</button>
   </div>
@@ -268,6 +272,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -307,6 +312,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -346,6 +352,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -385,6 +392,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -410,7 +418,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 52 min
+            <span class="new">nouveau</span> repérée il y a 57 min
             <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES50290005-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -424,6 +432,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -463,6 +472,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -502,6 +512,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -541,6 +552,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -580,6 +592,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -619,6 +632,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -658,45 +672,7 @@
       
       
       <div class="actions">
-        <button class="act seen-btn" data-act="seen">Marquer vu</button>
-        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
-        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
-      </div>
-    </div>
-  </article>
-
-  <article class="card match" data-id="3299692552" data-pub="1793516076000" data-score="59"
-    data-price="1200" data-rooms="3" data-beds="2"
-    data-surface="65" data-p="48" data-o="41"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="à louer – bel appartement t3 de 65 m² avec parking et cave – proche gare &amp; paris longjumeau 91160 vallee de la bievre / proche orsay">
-    <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="3299692552" data-url="https://www.leboncoin.fr/ad/locations/3299692552"><button class="nav prev" aria-label="photo precedente">‹</button>
-         <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/3</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/c5/b7/7d/c5b77d17085af56346546c7f906277ebc66c99eb.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/81/fb/55/81fb5582d7f35f3eb9175ccd69833a19b4906e09.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/fa/5d/df/fa5ddfd4bac83a0ef02a6ec2ec4b866b8db15fb8.jpg?rule=ad-large" alt="" loading="lazy" draggable="false"></div></div>
-    <div class="body">
-      <header>
-        <div class="score">59<small>/100</small></div>
-        <div class="head">
-          <h3><a href="https://www.leboncoin.fr/ad/locations/3299692552" target="_blank" rel="noopener">À louer – Bel appartement T3 de 65 m² avec parking et cave – Proche gare &amp; Paris</a></h3>
-          <div class="meta">
-            <b>1 200 €</b>/mois · 65 m² · 18.5 €/m² ·
-            3 pièces · 2 ch. · Longjumeau (91160)
-          </div>
-          <div class="when">
-            publiée il y a 11 j
-            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3299692552" target="_blank" rel="noopener">Leboncoin</a>
-          </div>
-        </div>
-      </header>
-      <div class="chips">
-        <span class="chip ok"><b>Pasteur</b> 48 min</span>
-        <span class="chip ok"><b>Orsay</b> 41 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 31 min</span>
-        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
-      </div>
-      
-      
-      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -736,6 +712,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -743,38 +720,39 @@
     </div>
   </article>
 
-  <article class="card match" data-id="3291144789" data-pub="1792398918000" data-score="58"
-    data-price="1100" data-rooms="3" data-beds="2"
-    data-surface="64" data-p="50" data-o="60"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement f3a louer chilly-mazarin 91380 vallee de la bievre / proche orsay">
+  <article class="card match" data-id="3299692552" data-pub="1793516076000" data-score="59"
+    data-price="1200" data-rooms="3" data-beds="2"
+    data-surface="65" data-p="48" data-o="41"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="à louer – bel appartement t3 de 65 m² avec parking et cave – proche gare &amp; paris longjumeau 91160 vallee de la bievre / proche orsay">
     <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="3291144789" data-url="https://www.leboncoin.fr/ad/locations/3291144789"><button class="nav prev" aria-label="photo precedente">‹</button>
+    <div class="gallery" data-gal data-id="3299692552" data-url="https://www.leboncoin.fr/ad/locations/3299692552"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/5</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/65/5c/e6/655ce635d499abdfa809b8cb7903a41ad3a02d62.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/37/29/84/372984f2fcda83d2f566f58b043d3172faec9ed8.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ea/c3/f5/eac3f551d04e44a6d837e4b0a449d37376711352.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/43/e6/de/43e6dea337f602781a1c452372f51e21e4b55218.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/79/06/45/790645d564d514c9b41c17205c8a768a62f44dcd.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
+         <span class="pos">1/3</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/c5/b7/7d/c5b77d17085af56346546c7f906277ebc66c99eb.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/81/fb/55/81fb5582d7f35f3eb9175ccd69833a19b4906e09.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/fa/5d/df/fa5ddfd4bac83a0ef02a6ec2ec4b866b8db15fb8.jpg?rule=ad-large" alt="" loading="lazy" draggable="false"></div></div>
     <div class="body">
       <header>
-        <div class="score">58<small>/100</small></div>
+        <div class="score">59<small>/100</small></div>
         <div class="head">
-          <h3><a href="https://www.leboncoin.fr/ad/locations/3291144789" target="_blank" rel="noopener">Appartement F3a louer</a></h3>
+          <h3><a href="https://www.leboncoin.fr/ad/locations/3299692552" target="_blank" rel="noopener">À louer – Bel appartement T3 de 65 m² avec parking et cave – Proche gare &amp; Paris</a></h3>
           <div class="meta">
-            <b>1 100 €</b>/mois · 64 m² · 17.2 €/m² ·
-            3 pièces · 2 ch. · Chilly-Mazarin (91380)
+            <b>1 200 €</b>/mois · 65 m² · 18.5 €/m² ·
+            3 pièces · 2 ch. · Longjumeau (91160)
           </div>
           <div class="when">
-            publiée il y a 24 j
-            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3291144789" target="_blank" rel="noopener">Leboncoin</a>
+            publiée il y a 11 j
+            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3299692552" target="_blank" rel="noopener">Leboncoin</a>
           </div>
         </div>
       </header>
       <div class="chips">
-        <span class="chip ok"><b>Pasteur</b> 50 min</span>
-        <span class="chip ok"><b>Orsay</b> 60 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
+        <span class="chip ok"><b>Pasteur</b> 48 min</span>
+        <span class="chip ok"><b>Orsay</b> 41 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 31 min</span>
         <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
       </div>
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -814,6 +792,47 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
+        <button class="act seen-btn" data-act="seen">Marquer vu</button>
+        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card match" data-id="3291144789" data-pub="1792398918000" data-score="58"
+    data-price="1100" data-rooms="3" data-beds="2"
+    data-surface="64" data-p="50" data-o="60"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement f3a louer chilly-mazarin 91380 vallee de la bievre / proche orsay">
+    <div class="ribbon">Postulé</div>
+    <div class="gallery" data-gal data-id="3291144789" data-url="https://www.leboncoin.fr/ad/locations/3291144789"><button class="nav prev" aria-label="photo precedente">‹</button>
+         <button class="nav next" aria-label="photo suivante">›</button>
+         <span class="pos">1/5</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/65/5c/e6/655ce635d499abdfa809b8cb7903a41ad3a02d62.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/37/29/84/372984f2fcda83d2f566f58b043d3172faec9ed8.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ea/c3/f5/eac3f551d04e44a6d837e4b0a449d37376711352.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/43/e6/de/43e6dea337f602781a1c452372f51e21e4b55218.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/79/06/45/790645d564d514c9b41c17205c8a768a62f44dcd.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
+    <div class="body">
+      <header>
+        <div class="score">58<small>/100</small></div>
+        <div class="head">
+          <h3><a href="https://www.leboncoin.fr/ad/locations/3291144789" target="_blank" rel="noopener">Appartement F3a louer</a></h3>
+          <div class="meta">
+            <b>1 100 €</b>/mois · 64 m² · 17.2 €/m² ·
+            3 pièces · 2 ch. · Chilly-Mazarin (91380)
+          </div>
+          <div class="when">
+            publiée il y a 24 j
+            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3291144789" target="_blank" rel="noopener">Leboncoin</a>
+          </div>
+        </div>
+      </header>
+      <div class="chips">
+        <span class="chip ok"><b>Pasteur</b> 50 min</span>
+        <span class="chip ok"><b>Orsay</b> 60 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
+      </div>
+      
+      
+      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -853,6 +872,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -892,6 +912,7 @@
       
       
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -936,6 +957,7 @@
       
       <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -975,6 +997,7 @@
       
       <ul class="flags"><li>38 m² : sous les 45 m² visés</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1014,6 +1037,7 @@
       
       <ul class="flags"><li>1278.81 € : 78.80999999999995 € au-dessus du plafond</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1053,45 +1077,7 @@
       
       <ul class="flags"><li>Pasteur 52 min (limite 50)</li></ul>
       <div class="actions">
-        <button class="act seen-btn" data-act="seen">Marquer vu</button>
-        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
-        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
-      </div>
-    </div>
-  </article>
-
-  <article class="card maybe" data-id="3275036549" data-pub="1790149211000" data-score="74"
-    data-price="1047" data-rooms="3" data-beds=""
-    data-surface="61" data-p="60" data-o="14"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="apartment palaiseau 91120 rer b sud (meilleur compromis)">
-    <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="3275036549" data-url="https://www.leboncoin.fr/ad/locations/3275036549"><button class="nav prev" aria-label="photo precedente">‹</button>
-         <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/5</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/26/f7/35/26f735668b55b89686e98bef800df5e3bb4058a8.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/27/93/b3/2793b3f3b3daec82cb8206e53a98652205d2da31.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ba/fa/a5/bafaa5a243f7e9a0ac3a731b943a5deef0b1d53b.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/f3/de/ef/f3deef09e1d2c805ed2fc4855a22f304866acacf.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/37/cf/ef/37cfefaf3d926552cb0399cc47e0b209058d69d4.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
-    <div class="body">
-      <header>
-        <div class="score">74<small>/100</small></div>
-        <div class="head">
-          <h3><a href="https://www.leboncoin.fr/ad/locations/3275036549" target="_blank" rel="noopener">Apartment</a></h3>
-          <div class="meta">
-            <b>1 047 €</b>/mois · 61 m² · 17.2 €/m² ·
-            3 pièces · ? ch. · Palaiseau (91120)
-          </div>
-          <div class="when">
-            publiée 23/09/2026
-            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3275036549" target="_blank" rel="noopener">Leboncoin</a>
-          </div>
-        </div>
-      </header>
-      <div class="chips">
-        <span class="chip bad"><b>Pasteur</b> 60 min</span>
-        <span class="chip ok"><b>Orsay</b> 14 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
-        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
-      </div>
-      
-      <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li><li>Pasteur 60 min (limite 50)</li></ul>
-      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1131,6 +1117,7 @@
       
       <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li><li>Pasteur 58 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1138,77 +1125,39 @@
     </div>
   </article>
 
-  <article class="card maybe" data-id="3300678779" data-pub="1793580443000" data-score="70"
-    data-price="1039" data-rooms="3" data-beds="2"
-    data-surface="59" data-p="51" data-o="28"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="appartement 3 pièces 59 m² gif-sur-yvette 91190 rer b sud (meilleur compromis)">
+  <article class="card maybe" data-id="3275036549" data-pub="1790149211000" data-score="74"
+    data-price="1047" data-rooms="3" data-beds=""
+    data-surface="61" data-p="60" data-o="14"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="apartment palaiseau 91120 rer b sud (meilleur compromis)">
     <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="3300678779" data-url="https://www.leboncoin.fr/ad/locations/3300678779"><button class="nav prev" aria-label="photo precedente">‹</button>
+    <div class="gallery" data-gal data-id="3275036549" data-url="https://www.leboncoin.fr/ad/locations/3275036549"><button class="nav prev" aria-label="photo precedente">‹</button>
          <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/10</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/1a/f3/38/1af338bcff835cdd8f1374f58a4bd0e16304ca15.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/7f/74/ba/7f74badaa148ce81b1b25a0ee2df77d875765725.jpg?rule=ad-large" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/17/86/4b/17864b362ef0f36a733f49a896fc30f34a7b9301.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/30/6a/15/306a152dd2a4e0b36bac8f11262192c17879fc04.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a3/f0/da/a3f0dad13d93c72031960b71d0e106f5fbd48814.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/fb/bc/0f/fbbc0f4e5cac3794cef4d2ce4489f4e43e171082.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/6a/2b/8b/6a2b8b512f32cb7938fa92f5fdc1e7bd03d72834.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/54/74/2c/54742c654adfef7b82453bc7cae0bfb3a8b48320.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/8b/e1/aa/8be1aac8ff6e3bc2cbcc87f4d907695ee2fb7f30.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/2e/aa/bb/2eaabb0b6d0c88c197e7a095e2e58c2042a23f3b.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
+         <span class="pos">1/5</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/26/f7/35/26f735668b55b89686e98bef800df5e3bb4058a8.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/27/93/b3/2793b3f3b3daec82cb8206e53a98652205d2da31.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ba/fa/a5/bafaa5a243f7e9a0ac3a731b943a5deef0b1d53b.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/f3/de/ef/f3deef09e1d2c805ed2fc4855a22f304866acacf.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/37/cf/ef/37cfefaf3d926552cb0399cc47e0b209058d69d4.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
     <div class="body">
       <header>
-        <div class="score">70<small>/100</small></div>
+        <div class="score">74<small>/100</small></div>
         <div class="head">
-          <h3><a href="https://www.leboncoin.fr/ad/locations/3300678779" target="_blank" rel="noopener">Appartement 3 pièces 59 m²</a></h3>
+          <h3><a href="https://www.leboncoin.fr/ad/locations/3275036549" target="_blank" rel="noopener">Apartment</a></h3>
           <div class="meta">
-            <b>1 039 €</b>/mois · 59 m² · 17.6 €/m² ·
-            3 pièces · 2 ch. · Gif-sur-Yvette (91190)
+            <b>1 047 €</b>/mois · 61 m² · 17.2 €/m² ·
+            3 pièces · ? ch. · Palaiseau (91120)
           </div>
           <div class="when">
-            publiée il y a 10 j
-            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3300678779" target="_blank" rel="noopener">Leboncoin</a>
+            publiée 23/09/2026
+            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3275036549" target="_blank" rel="noopener">Leboncoin</a>
           </div>
         </div>
       </header>
       <div class="chips">
-        <span class="chip bad"><b>Pasteur</b> 51 min</span>
-        <span class="chip ok"><b>Orsay</b> 28 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 40 min</span>
+        <span class="chip bad"><b>Pasteur</b> 60 min</span>
+        <span class="chip ok"><b>Orsay</b> 14 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 36 min</span>
         <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
       </div>
       
-      <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
+      <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li><li>Pasteur 60 min (limite 50)</li></ul>
       <div class="actions">
-        <button class="act seen-btn" data-act="seen">Marquer vu</button>
-        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
-        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
-      </div>
-    </div>
-  </article>
-
-  <article class="card maybe" data-id="3306343484" data-pub="1794321041000" data-score="70"
-    data-price="1050" data-rooms="3" data-beds="2"
-    data-surface="47" data-p="52" data-o="39"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement 3 pièces 47 m² longjumeau 91160 vallee de la bievre / proche orsay">
-    <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="3306343484" data-url="https://www.leboncoin.fr/ad/locations/3306343484"><button class="nav prev" aria-label="photo precedente">‹</button>
-         <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/10</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/e3/5d/0d/e35d0d0b5bef4a9bda7a7f357e56ac06e0bc4388.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/05/35/44/053544d302fc4a067e24a4a30e5e3a88dee55ffa.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/f2/54/33/f25433463415f1a16c73aa8710e12e0510ec4f06.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/d5/32/c3/d532c3a95eee11eeebf259bf57c3b94a5ce6b4dd.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/5f/4a/2d/5f4a2d7839189649d4728c0cf98a5d1b9be281b6.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a2/8e/69/a28e6999836917f1c64ae0d2e584244aa0420897.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/21/d7/f9/21d7f90a80369961e3b3683e85e5b62521544157.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/54/2a/92/542a92e0ceabd5018b9b39a15b2db1e40c75492e.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/6d/80/69/6d8069598bb0c3381cc84516b9a8fc525f8e5ee8.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/d0/23/e6/d023e6cc3bf60d25ff860a55901bfb083aa04e92.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
-    <div class="body">
-      <header>
-        <div class="score">70<small>/100</small></div>
-        <div class="head">
-          <h3><a href="https://www.leboncoin.fr/ad/locations/3306343484" target="_blank" rel="noopener">Appartement 3 pièces 47 m²</a></h3>
-          <div class="meta">
-            <b>1 050 €</b>/mois · 47 m² · 22.3 €/m² ·
-            3 pièces · 2 ch. · Longjumeau (91160)
-          </div>
-          <div class="when">
-            publiée il y a 2 j
-            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3306343484" target="_blank" rel="noopener">Leboncoin</a>
-          </div>
-        </div>
-      </header>
-      <div class="chips">
-        <span class="chip bad"><b>Pasteur</b> 52 min</span>
-        <span class="chip ok"><b>Orsay</b> 39 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
-        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
-      </div>
-      
-      <ul class="flags"><li>Pasteur 52 min (limite 50)</li></ul>
-      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1248,6 +1197,7 @@
       
       <ul class="flags"><li>Pasteur 53 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1287,6 +1237,87 @@
       
       <ul class="flags"><li>Pasteur 56 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
+        <button class="act seen-btn" data-act="seen">Marquer vu</button>
+        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card maybe" data-id="3300678779" data-pub="1793580443000" data-score="70"
+    data-price="1039" data-rooms="3" data-beds="2"
+    data-surface="59" data-p="51" data-o="28"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="appartement 3 pièces 59 m² gif-sur-yvette 91190 rer b sud (meilleur compromis)">
+    <div class="ribbon">Postulé</div>
+    <div class="gallery" data-gal data-id="3300678779" data-url="https://www.leboncoin.fr/ad/locations/3300678779"><button class="nav prev" aria-label="photo precedente">‹</button>
+         <button class="nav next" aria-label="photo suivante">›</button>
+         <span class="pos">1/10</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/1a/f3/38/1af338bcff835cdd8f1374f58a4bd0e16304ca15.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/7f/74/ba/7f74badaa148ce81b1b25a0ee2df77d875765725.jpg?rule=ad-large" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/17/86/4b/17864b362ef0f36a733f49a896fc30f34a7b9301.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/30/6a/15/306a152dd2a4e0b36bac8f11262192c17879fc04.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a3/f0/da/a3f0dad13d93c72031960b71d0e106f5fbd48814.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/fb/bc/0f/fbbc0f4e5cac3794cef4d2ce4489f4e43e171082.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/6a/2b/8b/6a2b8b512f32cb7938fa92f5fdc1e7bd03d72834.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/54/74/2c/54742c654adfef7b82453bc7cae0bfb3a8b48320.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/8b/e1/aa/8be1aac8ff6e3bc2cbcc87f4d907695ee2fb7f30.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/2e/aa/bb/2eaabb0b6d0c88c197e7a095e2e58c2042a23f3b.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
+    <div class="body">
+      <header>
+        <div class="score">70<small>/100</small></div>
+        <div class="head">
+          <h3><a href="https://www.leboncoin.fr/ad/locations/3300678779" target="_blank" rel="noopener">Appartement 3 pièces 59 m²</a></h3>
+          <div class="meta">
+            <b>1 039 €</b>/mois · 59 m² · 17.6 €/m² ·
+            3 pièces · 2 ch. · Gif-sur-Yvette (91190)
+          </div>
+          <div class="when">
+            publiée il y a 10 j
+            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3300678779" target="_blank" rel="noopener">Leboncoin</a>
+          </div>
+        </div>
+      </header>
+      <div class="chips">
+        <span class="chip bad"><b>Pasteur</b> 51 min</span>
+        <span class="chip ok"><b>Orsay</b> 28 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 40 min</span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
+      </div>
+      
+      <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
+      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
+        <button class="act seen-btn" data-act="seen">Marquer vu</button>
+        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card maybe" data-id="3306343484" data-pub="1794321041000" data-score="70"
+    data-price="1050" data-rooms="3" data-beds="2"
+    data-surface="47" data-p="52" data-o="39"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="leboncoin" data-q="appartement 3 pièces 47 m² longjumeau 91160 vallee de la bievre / proche orsay">
+    <div class="ribbon">Postulé</div>
+    <div class="gallery" data-gal data-id="3306343484" data-url="https://www.leboncoin.fr/ad/locations/3306343484"><button class="nav prev" aria-label="photo precedente">‹</button>
+         <button class="nav next" aria-label="photo suivante">›</button>
+         <span class="pos">1/10</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/e3/5d/0d/e35d0d0b5bef4a9bda7a7f357e56ac06e0bc4388.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/05/35/44/053544d302fc4a067e24a4a30e5e3a88dee55ffa.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/f2/54/33/f25433463415f1a16c73aa8710e12e0510ec4f06.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/d5/32/c3/d532c3a95eee11eeebf259bf57c3b94a5ce6b4dd.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/5f/4a/2d/5f4a2d7839189649d4728c0cf98a5d1b9be281b6.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a2/8e/69/a28e6999836917f1c64ae0d2e584244aa0420897.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/21/d7/f9/21d7f90a80369961e3b3683e85e5b62521544157.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/54/2a/92/542a92e0ceabd5018b9b39a15b2db1e40c75492e.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/6d/80/69/6d8069598bb0c3381cc84516b9a8fc525f8e5ee8.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/d0/23/e6/d023e6cc3bf60d25ff860a55901bfb083aa04e92.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
+    <div class="body">
+      <header>
+        <div class="score">70<small>/100</small></div>
+        <div class="head">
+          <h3><a href="https://www.leboncoin.fr/ad/locations/3306343484" target="_blank" rel="noopener">Appartement 3 pièces 47 m²</a></h3>
+          <div class="meta">
+            <b>1 050 €</b>/mois · 47 m² · 22.3 €/m² ·
+            3 pièces · 2 ch. · Longjumeau (91160)
+          </div>
+          <div class="when">
+            publiée il y a 2 j
+            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3306343484" target="_blank" rel="noopener">Leboncoin</a>
+          </div>
+        </div>
+      </header>
+      <div class="chips">
+        <span class="chip bad"><b>Pasteur</b> 52 min</span>
+        <span class="chip ok"><b>Orsay</b> 39 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
+      </div>
+      
+      <ul class="flags"><li>Pasteur 52 min (limite 50)</li></ul>
+      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1326,45 +1357,7 @@
       
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li></ul>
       <div class="actions">
-        <button class="act seen-btn" data-act="seen">Marquer vu</button>
-        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
-        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
-      </div>
-    </div>
-  </article>
-
-  <article class="card maybe" data-id="3306705965" data-pub="1794382456000" data-score="66"
-    data-price="1145" data-rooms="3" data-beds="2"
-    data-surface="63" data-p="51" data-o="31"
-    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="appartement 3 pièces 63 m² massy 91300 rer b sud (meilleur compromis)">
-    <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="3306705965" data-url="https://www.leboncoin.fr/ad/locations/3306705965"><button class="nav prev" aria-label="photo precedente">‹</button>
-         <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/9</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/20/f4/46/20f446ca3d99a7bfd482082f830e4c609dddaae5.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a8/0f/95/a80f954144ce085e89973571ea627eb324e3bfcb.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/58/84/24/588424f26bb9c89ae7a10b5c5c89c28bdb7f304f.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/2e/4d/fa/2e4dfae9be52006ad7dcc4dc2ccf4c76e148f904.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/61/9b/ca/619bcac100828d48f328e1abf49e36f455771e01.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ec/ca/ee/eccaeef6b225b3f192f57b392187d50136ab6eea.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/fb/ac/8a/fbac8af9142bc5a45159b9ed0d7638ea94e14365.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/5e/fd/fe/5efdfe535dfec91d54a88863c514231b240a624c.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/9e/d8/05/9ed805261da277df10fdbfcc796f3a00fafc5f5c.jpg?rule=ad-large" alt="" loading="lazy" draggable="false"></div></div>
-    <div class="body">
-      <header>
-        <div class="score">66<small>/100</small></div>
-        <div class="head">
-          <h3><a href="https://www.leboncoin.fr/ad/locations/3306705965" target="_blank" rel="noopener">Appartement 3 pièces 63 m²</a></h3>
-          <div class="meta">
-            <b>1 145 €</b>/mois · 63 m² · 18.2 €/m² ·
-            3 pièces · 2 ch. · Massy (91300)
-          </div>
-          <div class="when">
-            publiée il y a 1 j
-            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3306705965" target="_blank" rel="noopener">Leboncoin</a>
-          </div>
-        </div>
-      </header>
-      <div class="chips">
-        <span class="chip bad"><b>Pasteur</b> 51 min</span>
-        <span class="chip ok"><b>Orsay</b> 31 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
-        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
-      </div>
-      
-      <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
-      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1404,6 +1397,47 @@
       
       <ul class="flags"><li>Pasteur 53 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
+        <button class="act seen-btn" data-act="seen">Marquer vu</button>
+        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card maybe" data-id="3306705965" data-pub="1794382456000" data-score="66"
+    data-price="1145" data-rooms="3" data-beds="2"
+    data-surface="63" data-p="51" data-o="31"
+    data-zone="RER B sud (meilleur compromis)" data-src="leboncoin" data-q="appartement 3 pièces 63 m² massy 91300 rer b sud (meilleur compromis)">
+    <div class="ribbon">Postulé</div>
+    <div class="gallery" data-gal data-id="3306705965" data-url="https://www.leboncoin.fr/ad/locations/3306705965"><button class="nav prev" aria-label="photo precedente">‹</button>
+         <button class="nav next" aria-label="photo suivante">›</button>
+         <span class="pos">1/9</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/20/f4/46/20f446ca3d99a7bfd482082f830e4c609dddaae5.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a8/0f/95/a80f954144ce085e89973571ea627eb324e3bfcb.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/58/84/24/588424f26bb9c89ae7a10b5c5c89c28bdb7f304f.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/2e/4d/fa/2e4dfae9be52006ad7dcc4dc2ccf4c76e148f904.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/61/9b/ca/619bcac100828d48f328e1abf49e36f455771e01.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ec/ca/ee/eccaeef6b225b3f192f57b392187d50136ab6eea.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/fb/ac/8a/fbac8af9142bc5a45159b9ed0d7638ea94e14365.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/5e/fd/fe/5efdfe535dfec91d54a88863c514231b240a624c.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/9e/d8/05/9ed805261da277df10fdbfcc796f3a00fafc5f5c.jpg?rule=ad-large" alt="" loading="lazy" draggable="false"></div></div>
+    <div class="body">
+      <header>
+        <div class="score">66<small>/100</small></div>
+        <div class="head">
+          <h3><a href="https://www.leboncoin.fr/ad/locations/3306705965" target="_blank" rel="noopener">Appartement 3 pièces 63 m²</a></h3>
+          <div class="meta">
+            <b>1 145 €</b>/mois · 63 m² · 18.2 €/m² ·
+            3 pièces · 2 ch. · Massy (91300)
+          </div>
+          <div class="when">
+            publiée il y a 1 j
+            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3306705965" target="_blank" rel="noopener">Leboncoin</a>
+          </div>
+        </div>
+      </header>
+      <div class="chips">
+        <span class="chip bad"><b>Pasteur</b> 51 min</span>
+        <span class="chip ok"><b>Orsay</b> 31 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 34 min</span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
+      </div>
+      
+      <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
+      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1443,6 +1477,7 @@
       
       <ul class="flags"><li>1293 € : 93 € au-dessus du plafond</li><li>37 m² : sous les 45 m² visés</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1482,6 +1517,7 @@
       <div class="chbed">Chambres : <b>13 m² (1 sur 3)</b></div>
       <ul class="flags"><li>1260 € : 60 € au-dessus du plafond</li><li>Pasteur 67 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1521,6 +1557,7 @@
       
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1560,6 +1597,7 @@
       
       <ul class="flags"><li>1230 € : 30 € au-dessus du plafond</li><li>Pasteur 56 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1599,6 +1637,7 @@
       
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 51 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1638,6 +1677,7 @@
       
       <ul class="flags"><li>1320 € : 120 € au-dessus du plafond</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1677,6 +1717,7 @@
       
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li><li>Pasteur 57 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1716,6 +1757,7 @@
       
       <ul class="flags"><li>1290 € : 90 € au-dessus du plafond</li><li>Pasteur 58 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1755,6 +1797,7 @@
       
       <ul class="flags"><li>1280 € : 80 € au-dessus du plafond</li><li>Pasteur 54 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1794,6 +1837,7 @@
       
       <ul class="flags"><li>Pasteur 51 min (limite 50)</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1833,84 +1877,7 @@
       
       <ul class="flags"><li>1250 € : 50 € au-dessus du plafond</li><li>Pasteur 69 min (limite 50)</li></ul>
       <div class="actions">
-        <button class="act seen-btn" data-act="seen">Marquer vu</button>
-        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
-        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
-      </div>
-    </div>
-  </article>
-
-  <article class="card maybe" data-id="bc-laforet-immo-facile-52942677" data-pub="1793722077336" data-score="52"
-    data-price="1213" data-rooms="3" data-beds="2"
-    data-surface="58.98" data-p="58" data-o="14"
-    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement orsay 3 pièce(s) 58.98 m² orsay 91400 vallee de la bievre / proche orsay">
-    <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52942677" data-url="https://www.bienici.com/annonce/location/orsay/appartement/3pieces/laforet-immo-facile-52942677"><button class="nav prev" aria-label="photo precedente">‹</button>
-         <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/12</span><div class="track"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677a.jpg_DATEMAJ_23_09_2026-12_15_03?width=520&amp;height=390&amp;fit=cover" alt=""  draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677b.jpg_DATEMAJ_23_09_2026-12_15_03?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677c.jpg_DATEMAJ_23_09_2026-12_15_04?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677d.jpg_DATEMAJ_23_09_2026-12_15_04?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677e.jpg_DATEMAJ_23_09_2026-12_15_05?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677f.jpg_DATEMAJ_23_09_2026-12_15_05?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677g.jpg_DATEMAJ_23_09_2026-12_15_06?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677h.jpg_DATEMAJ_23_09_2026-12_15_06?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677i.jpg_DATEMAJ_23_09_2026-12_15_07?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677j.jpg_DATEMAJ_23_09_2026-12_15_07?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677k.jpg_DATEMAJ_23_09_2026-12_15_08?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677l.jpg_DATEMAJ_23_09_2026-12_15_08?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"></div></div>
-    <div class="body">
-      <header>
-        <div class="score">52<small>/100</small></div>
-        <div class="head">
-          <h3><a href="https://www.bienici.com/annonce/location/orsay/appartement/3pieces/laforet-immo-facile-52942677" target="_blank" rel="noopener">Appartement Orsay 3 pièce(s) 58.98 m²</a></h3>
-          <div class="meta">
-            <b>1 213 €</b>/mois · 58.98 m² · 20.6 €/m² ·
-            3 pièces · 2 ch. · Orsay (91400)
-          </div>
-          <div class="when">
-            publiée il y a 9 j
-            <a class="srcbadge s-bienici" href="https://www.bienici.com/annonce/location/orsay/appartement/3pieces/laforet-immo-facile-52942677" target="_blank" rel="noopener">Bien’ici</a>
-          </div>
-        </div>
-      </header>
-      <div class="chips">
-        <span class="chip bad"><b>Pasteur</b> 58 min</span>
-        <span class="chip ok"><b>Orsay</b> 14 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
-        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
-      </div>
-      
-      <ul class="flags"><li>1213 € : 13 € au-dessus du plafond</li><li>Pasteur 58 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
-      <div class="actions">
-        <button class="act seen-btn" data-act="seen">Marquer vu</button>
-        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
-        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
-      </div>
-    </div>
-  </article>
-
-  <article class="card maybe" data-id="bc-laforet-immo-facile-52931549" data-pub="1793700812999" data-score="52"
-    data-price="1300" data-rooms="3" data-beds="2"
-    data-surface="58.26" data-p="55" data-o="26"
-    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement bures sur yvette 3 pièce(s) 58.26 m² bures-sur-yvette 91440 rer b sud (meilleur compromis)">
-    <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52931549" data-url="https://www.bienici.com/annonce/location/bures-sur-yvette/appartement/3pieces/laforet-immo-facile-52931549"><button class="nav prev" aria-label="photo precedente">‹</button>
-         <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/9</span><div class="track"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549a.jpg_DATEMAJ_22_09_2026-16_02_52?width=520&amp;height=390&amp;fit=cover" alt=""  draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549b.jpg_DATEMAJ_22_09_2026-16_02_52?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549c.jpg_DATEMAJ_22_09_2026-16_02_53?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549d.jpg_DATEMAJ_22_09_2026-16_02_53?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549e.jpg_DATEMAJ_22_09_2026-16_02_53?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549f.jpg_DATEMAJ_22_09_2026-16_02_54?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549g.jpg_DATEMAJ_22_09_2026-16_02_54?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549h.jpg_DATEMAJ_22_09_2026-16_02_55?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549i.jpg_DATEMAJ_22_09_2026-16_02_33?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"></div></div>
-    <div class="body">
-      <header>
-        <div class="score">52<small>/100</small></div>
-        <div class="head">
-          <h3><a href="https://www.bienici.com/annonce/location/bures-sur-yvette/appartement/3pieces/laforet-immo-facile-52931549" target="_blank" rel="noopener">Appartement Bures Sur Yvette 3 pièce(s) 58.26 m²</a></h3>
-          <div class="meta">
-            <b>1 300 €</b>/mois · 58.26 m² · 22.3 €/m² ·
-            3 pièces · 2 ch. · Bures-sur-Yvette (91440)
-          </div>
-          <div class="when">
-            publiée il y a 9 j
-            <a class="srcbadge s-bienici" href="https://www.bienici.com/annonce/location/bures-sur-yvette/appartement/3pieces/laforet-immo-facile-52931549" target="_blank" rel="noopener">Bien’ici</a>
-          </div>
-        </div>
-      </header>
-      <div class="chips">
-        <span class="chip bad"><b>Pasteur</b> 55 min</span>
-        <span class="chip ok"><b>Orsay</b> 26 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 33 min</span>
-        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
-      </div>
-      
-      <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
-      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1950,6 +1917,87 @@
       
       <ul class="flags"><li>Pasteur 53 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
+        <button class="act seen-btn" data-act="seen">Marquer vu</button>
+        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card maybe" data-id="bc-laforet-immo-facile-52942677" data-pub="1793722077336" data-score="52"
+    data-price="1213" data-rooms="3" data-beds="2"
+    data-surface="58.98" data-p="58" data-o="14"
+    data-zone="Vallee de la Bievre / proche Orsay" data-src="bienici" data-q="appartement orsay 3 pièce(s) 58.98 m² orsay 91400 vallee de la bievre / proche orsay">
+    <div class="ribbon">Postulé</div>
+    <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52942677" data-url="https://www.bienici.com/annonce/location/orsay/appartement/3pieces/laforet-immo-facile-52942677"><button class="nav prev" aria-label="photo precedente">‹</button>
+         <button class="nav next" aria-label="photo suivante">›</button>
+         <span class="pos">1/12</span><div class="track"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677a.jpg_DATEMAJ_23_09_2026-12_15_03?width=520&amp;height=390&amp;fit=cover" alt=""  draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677b.jpg_DATEMAJ_23_09_2026-12_15_03?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677c.jpg_DATEMAJ_23_09_2026-12_15_04?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677d.jpg_DATEMAJ_23_09_2026-12_15_04?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677e.jpg_DATEMAJ_23_09_2026-12_15_05?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677f.jpg_DATEMAJ_23_09_2026-12_15_05?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677g.jpg_DATEMAJ_23_09_2026-12_15_06?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677h.jpg_DATEMAJ_23_09_2026-12_15_06?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677i.jpg_DATEMAJ_23_09_2026-12_15_07?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677j.jpg_DATEMAJ_23_09_2026-12_15_07?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677k.jpg_DATEMAJ_23_09_2026-12_15_08?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52942677_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_4_2_6_7_7_52942677l.jpg_DATEMAJ_23_09_2026-12_15_08?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"></div></div>
+    <div class="body">
+      <header>
+        <div class="score">52<small>/100</small></div>
+        <div class="head">
+          <h3><a href="https://www.bienici.com/annonce/location/orsay/appartement/3pieces/laforet-immo-facile-52942677" target="_blank" rel="noopener">Appartement Orsay 3 pièce(s) 58.98 m²</a></h3>
+          <div class="meta">
+            <b>1 213 €</b>/mois · 58.98 m² · 20.6 €/m² ·
+            3 pièces · 2 ch. · Orsay (91400)
+          </div>
+          <div class="when">
+            publiée il y a 9 j
+            <a class="srcbadge s-bienici" href="https://www.bienici.com/annonce/location/orsay/appartement/3pieces/laforet-immo-facile-52942677" target="_blank" rel="noopener">Bien’ici</a>
+          </div>
+        </div>
+      </header>
+      <div class="chips">
+        <span class="chip bad"><b>Pasteur</b> 58 min</span>
+        <span class="chip ok"><b>Orsay</b> 14 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 30 min</span>
+        <span class="chip neutral"><b>zone</b> Vallee de la Bievre / proche Orsay</span>
+      </div>
+      
+      <ul class="flags"><li>1213 € : 13 € au-dessus du plafond</li><li>Pasteur 58 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
+      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
+        <button class="act seen-btn" data-act="seen">Marquer vu</button>
+        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card maybe" data-id="bc-laforet-immo-facile-52931549" data-pub="1793700812999" data-score="52"
+    data-price="1300" data-rooms="3" data-beds="2"
+    data-surface="58.26" data-p="55" data-o="26"
+    data-zone="RER B sud (meilleur compromis)" data-src="bienici" data-q="appartement bures sur yvette 3 pièce(s) 58.26 m² bures-sur-yvette 91440 rer b sud (meilleur compromis)">
+    <div class="ribbon">Postulé</div>
+    <div class="gallery" data-gal data-id="bc-laforet-immo-facile-52931549" data-url="https://www.bienici.com/annonce/location/bures-sur-yvette/appartement/3pieces/laforet-immo-facile-52931549"><button class="nav prev" aria-label="photo precedente">‹</button>
+         <button class="nav next" aria-label="photo suivante">›</button>
+         <span class="pos">1/9</span><div class="track"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549a.jpg_DATEMAJ_22_09_2026-16_02_52?width=520&amp;height=390&amp;fit=cover" alt=""  draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549b.jpg_DATEMAJ_22_09_2026-16_02_52?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549c.jpg_DATEMAJ_22_09_2026-16_02_53?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549d.jpg_DATEMAJ_22_09_2026-16_02_53?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549e.jpg_DATEMAJ_22_09_2026-16_02_53?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549f.jpg_DATEMAJ_22_09_2026-16_02_54?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549g.jpg_DATEMAJ_22_09_2026-16_02_54?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549h.jpg_DATEMAJ_22_09_2026-16_02_55?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"><img src="https://file.bienici.com/photo/laforet-immo-facile-52931549_media.immo-facile.com_office9_laforet_orsay_catalog_images_pr_p_5_2_9_3_1_5_4_9_52931549i.jpg_DATEMAJ_22_09_2026-16_02_33?width=520&amp;height=390&amp;fit=cover" alt="" loading="lazy" draggable="false"></div></div>
+    <div class="body">
+      <header>
+        <div class="score">52<small>/100</small></div>
+        <div class="head">
+          <h3><a href="https://www.bienici.com/annonce/location/bures-sur-yvette/appartement/3pieces/laforet-immo-facile-52931549" target="_blank" rel="noopener">Appartement Bures Sur Yvette 3 pièce(s) 58.26 m²</a></h3>
+          <div class="meta">
+            <b>1 300 €</b>/mois · 58.26 m² · 22.3 €/m² ·
+            3 pièces · 2 ch. · Bures-sur-Yvette (91440)
+          </div>
+          <div class="when">
+            publiée il y a 9 j
+            <a class="srcbadge s-bienici" href="https://www.bienici.com/annonce/location/bures-sur-yvette/appartement/3pieces/laforet-immo-facile-52931549" target="_blank" rel="noopener">Bien’ici</a>
+          </div>
+        </div>
+      </header>
+      <div class="chips">
+        <span class="chip bad"><b>Pasteur</b> 55 min</span>
+        <span class="chip ok"><b>Orsay</b> 26 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 33 min</span>
+        <span class="chip neutral"><b>zone</b> RER B sud (meilleur compromis)</span>
+      </div>
+      
+      <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li><li>note 52/100 sous le seuil 55</li></ul>
+      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -1989,6 +2037,7 @@
       
       <ul class="flags"><li>1258 € : 58 € au-dessus du plafond</li><li>Pasteur 69 min (limite 50)</li><li>note 50/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2028,6 +2077,7 @@
       
       <ul class="flags"><li>1250 € : 50 € au-dessus du plafond</li><li>Pasteur 55 min (limite 50)</li><li>note 49/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2067,6 +2117,7 @@
       
       <ul class="flags"><li>1215 € : 15 € au-dessus du plafond</li><li>Pasteur 70 min (limite 50)</li><li>note 49/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2106,6 +2157,7 @@
       
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 68 min (limite 50)</li><li>note 48/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2131,7 +2183,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 52 min
+            <span class="new">nouveau</span> repérée il y a 57 min
             <a class="srcbadge s-bienici" href="https://www.bienici.com/annonce/location/antony/appartement/3pieces/citya-immobilier-01-GES02580109-584" target="_blank" rel="noopener">Bien’ici</a> <span class="also">+</span> <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES02580109-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -2145,45 +2197,7 @@
       
       <ul class="flags"><li>1280 € : 80 € au-dessus du plafond</li><li>Pasteur 53 min (limite 50)</li><li>note 47/100 sous le seuil 55</li></ul>
       <div class="actions">
-        <button class="act seen-btn" data-act="seen">Marquer vu</button>
-        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
-        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
-      </div>
-    </div>
-  </article>
-
-  <article class="card maybe" data-id="3268237195" data-pub="1794037883000" data-score="46"
-    data-price="1200" data-rooms="3" data-beds=""
-    data-surface="53" data-p="36" data-o="70"
-    data-zone="Sud parisien / proche 15e" data-src="leboncoin" data-q="apartment clamart 92140 sud parisien / proche 15e">
-    <div class="ribbon">Postulé</div>
-    <div class="gallery" data-gal data-id="3268237195" data-url="https://www.leboncoin.fr/ad/locations/3268237195"><button class="nav prev" aria-label="photo precedente">‹</button>
-         <button class="nav next" aria-label="photo suivante">›</button>
-         <span class="pos">1/8</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/db/3d/b4/db3db40258fe899fbde75da5bc9cd7e48a3bba26.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ac/af/c4/acafc41fa40d52a4d96b7d00c689a4b6da4f1824.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/90/44/e6/9044e6ac4eaf4f150ec651b1855bd721588fbc64.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/d3/7d/8b/d37d8b9740780f89b14034423a9a27de9314add7.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/9b/d7/22/9bd722c8745d01f8525735e176751c77bf24cba8.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/b6/cf/87/b6cf874c7637286bf71eb6795553e303a53f27de.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ec/db/51/ecdb51c8ccd6ffaae197a0a932074c99cc2c78b3.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/c2/07/6d/c2076d9ee428e9d1e59ddff357b88b4d2666295d.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
-    <div class="body">
-      <header>
-        <div class="score">46<small>/100</small></div>
-        <div class="head">
-          <h3><a href="https://www.leboncoin.fr/ad/locations/3268237195" target="_blank" rel="noopener">Apartment</a></h3>
-          <div class="meta">
-            <b>1 200 €</b>/mois · 53 m² · 22.6 €/m² ·
-            3 pièces · ? ch. · Clamart (92140)
-          </div>
-          <div class="when">
-            publiée il y a 5 j
-            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3268237195" target="_blank" rel="noopener">Leboncoin</a>
-          </div>
-        </div>
-      </header>
-      <div class="chips">
-        <span class="chip ok"><b>Pasteur</b> 36 min</span>
-        <span class="chip ok"><b>Orsay</b> 70 min</span>
-        <span class="chip neutral"><b>Étréchy (voiture)</b> 46 min</span>
-        <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
-      </div>
-      
-      <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li><li>note 46/100 sous le seuil 55</li></ul>
-      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2223,6 +2237,47 @@
       
       <ul class="flags"><li>trajet Orsay non calculé</li><li>note 46/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
+        <button class="act seen-btn" data-act="seen">Marquer vu</button>
+        <button class="act applied-btn" data-act="applied">J'ai postulé</button>
+        <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card maybe" data-id="3268237195" data-pub="1794037883000" data-score="46"
+    data-price="1200" data-rooms="3" data-beds=""
+    data-surface="53" data-p="36" data-o="70"
+    data-zone="Sud parisien / proche 15e" data-src="leboncoin" data-q="apartment clamart 92140 sud parisien / proche 15e">
+    <div class="ribbon">Postulé</div>
+    <div class="gallery" data-gal data-id="3268237195" data-url="https://www.leboncoin.fr/ad/locations/3268237195"><button class="nav prev" aria-label="photo precedente">‹</button>
+         <button class="nav next" aria-label="photo suivante">›</button>
+         <span class="pos">1/8</span><div class="track"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/db/3d/b4/db3db40258fe899fbde75da5bc9cd7e48a3bba26.jpg?rule=ad-small" alt=""  draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ac/af/c4/acafc41fa40d52a4d96b7d00c689a4b6da4f1824.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/90/44/e6/9044e6ac4eaf4f150ec651b1855bd721588fbc64.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/d3/7d/8b/d37d8b9740780f89b14034423a9a27de9314add7.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/9b/d7/22/9bd722c8745d01f8525735e176751c77bf24cba8.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/b6/cf/87/b6cf874c7637286bf71eb6795553e303a53f27de.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/ec/db/51/ecdb51c8ccd6ffaae197a0a932074c99cc2c78b3.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"><img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/c2/07/6d/c2076d9ee428e9d1e59ddff357b88b4d2666295d.jpg?rule=ad-small" alt="" loading="lazy" draggable="false"></div></div>
+    <div class="body">
+      <header>
+        <div class="score">46<small>/100</small></div>
+        <div class="head">
+          <h3><a href="https://www.leboncoin.fr/ad/locations/3268237195" target="_blank" rel="noopener">Apartment</a></h3>
+          <div class="meta">
+            <b>1 200 €</b>/mois · 53 m² · 22.6 €/m² ·
+            3 pièces · ? ch. · Clamart (92140)
+          </div>
+          <div class="when">
+            publiée il y a 5 j
+            <a class="srcbadge s-leboncoin" href="https://www.leboncoin.fr/ad/locations/3268237195" target="_blank" rel="noopener">Leboncoin</a>
+          </div>
+        </div>
+      </header>
+      <div class="chips">
+        <span class="chip ok"><b>Pasteur</b> 36 min</span>
+        <span class="chip ok"><b>Orsay</b> 70 min</span>
+        <span class="chip neutral"><b>Étréchy (voiture)</b> 46 min</span>
+        <span class="chip neutral"><b>zone</b> Sud parisien / proche 15e</span>
+      </div>
+      
+      <ul class="flags"><li>nombre de chambres non précisé dans l'annonce</li><li>note 46/100 sous le seuil 55</li></ul>
+      <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2262,6 +2317,7 @@
       
       <ul class="flags"><li>1269.26 € : 69.25999999999999 € au-dessus du plafond</li><li>note 44/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2301,6 +2357,7 @@
       
       <ul class="flags"><li>1320 € : 120 € au-dessus du plafond</li><li>note 41/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2340,6 +2397,7 @@
       
       <ul class="flags"><li>1300 € : 100 € au-dessus du plafond</li><li>Pasteur 70 min (limite 50)</li><li>note 40/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2379,6 +2437,7 @@
       
       <ul class="flags"><li>42 m² : sous les 45 m² visés</li><li>Pasteur 56 min (limite 50)</li><li>note 38/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2418,6 +2477,7 @@
       
       <ul class="flags"><li>trajet Orsay non calculé</li><li>note 37/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2443,7 +2503,7 @@
             3 pièces · 2 ch. · Antony (92160)
           </div>
           <div class="when">
-            <span class="new">nouveau</span> repérée il y a 52 min
+            <span class="new">nouveau</span> repérée il y a 57 min
             <a class="srcbadge s-citya" href="https://www.citya.com/annonces/location/appartement/antony-92160/GES01070007-584" target="_blank" rel="noopener">Citya</a>
           </div>
         </div>
@@ -2457,6 +2517,7 @@
       
       <ul class="flags"><li>trajet Pasteur non calculé</li><li>note 35/100 sous le seuil 55</li></ul>
       <div class="actions">
+        <button class="act like-btn" data-act="like">♥ J'aime</button>
         <button class="act seen-btn" data-act="seen">Marquer vu</button>
         <button class="act applied-btn" data-act="applied">J'ai postulé</button>
         <button class="act skip-btn" data-act="skip">Ça m'intéresse pas</button>
@@ -2643,6 +2704,12 @@ function resumeChambres(tailles, nb) {
     c.classList.toggle('seen', !!s.seen);
     c.classList.toggle('applied', !!s.applied);
     c.classList.toggle('skipped', !!s.skip);
+    c.classList.toggle('liked', !!s.like);
+    var lb = c.querySelector('.like-btn');
+    if (lb) {
+      lb.textContent = s.like ? '♥ Aimée' : "♥ J'aime";
+      lb.classList.toggle('on', !!s.like);
+    }
     var ab = c.querySelector('.applied-btn');
     if (ab) {
       ab.textContent = s.applied ? 'Postulé' : "J'ai postulé";
@@ -2661,21 +2728,24 @@ function resumeChambres(tailles, nb) {
   }
 
   function counters() {
-    var seen = 0, applied = 0, skip = 0;
+    var seen = 0, applied = 0, skip = 0, like = 0;
     refreshCards().forEach(function (c) {
       var s = state[c.dataset.id] || {};
       if (s.seen) seen++;
       if (s.applied) applied++;
       if (s.skip) skip++;
+      if (s.like) like++;
     });
     var a = document.getElementById('stat-seen');
     var b = document.getElementById('stat-applied');
     var t = document.getElementById('stat-total');
     var k = document.getElementById('stat-skip');
+    var l = document.getElementById('stat-like');
     if (a) a.textContent = seen;
     if (b) b.textContent = applied;
     if (t) t.textContent = cards.length - skip;
     if (k) k.textContent = skip;
+    if (l) l.textContent = like;
   }
 
   function markSeen(id) {
@@ -2738,6 +2808,15 @@ function resumeChambres(tailles, nb) {
       });
       var sb = c.querySelector('.seen-btn');
       var ab = c.querySelector('.applied-btn');
+      var lb = c.querySelector('.like-btn');
+      if (lb) lb.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var s = get(id);
+        s.like = s.like ? 0 : Date.now();
+        // aimer une annonce la sort du seau "sans interet" : elle reapparait dans Tout
+        if (s.like && s.skip) s.skip = 0;
+        save(); paint(c); applyFilter();
+      });
       if (sb) sb.addEventListener('click', function (e) {
         e.stopPropagation();
         var s = get(id);
@@ -2769,6 +2848,7 @@ function resumeChambres(tailles, nb) {
       var s = state[c.dataset.id] || {};
       var show = filterMode === 'all' ? !s.skip
         : filterMode === 'todo' ? !s.skip && !s.seen
+        : filterMode === 'liked' ? !!s.like
         : filterMode === 'applied' ? !!s.applied
         : filterMode === 'skipped' ? !!s.skip
         : !s.skip;
@@ -2927,7 +3007,8 @@ function resumeChambres(tailles, nb) {
       '</div>' +
       (a.ch ? '<div class="chbed">Chambres : <b>' + h(a.ch) + '</b></div>' : '') +
       flags +
-      '<div class="actions"><button class="act seen-btn" data-act="seen">Marquer vu</button>' +
+      '<div class="actions"><button class="act like-btn" data-act="like">♥ J’aime</button>' +
+      '<button class="act seen-btn" data-act="seen">Marquer vu</button>' +
       '<button class="act applied-btn" data-act="applied">J’ai postulé</button>' +
       '<button class="act skip-btn" data-act="skip">Ça m’intéresse pas</button></div>' +
       '</div></article>';
@@ -3137,6 +3218,7 @@ function resumeChambres(tailles, nb) {
         opens: Math.max(a.opens || 0, b.opens || 0),
         applied: a.applied || b.applied || 0,
         skip: a.skip || b.skip || 0,
+        like: a.like || b.like || 0,
       };
     });
     return out;
@@ -3375,5 +3457,5 @@ function resumeChambres(tailles, nb) {
 })();
 </script>
 <div style="text-align:center;color:#4d5666;font-size:11px;padding:22px 0 8px">
-       version publiee le 12/11/2026 12:03:41 · adresse fixe, lisible PC eteint
+       version publiee le 12/11/2026 12:07:10 · adresse fixe, lisible PC eteint
      </div></body></html>
