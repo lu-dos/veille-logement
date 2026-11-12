@@ -1,10 +1,44 @@
 {
-  "ranAt": "2026-11-12T14:51:09.637Z",
-  "total": 370,
+  "ranAt": "2026-11-12T15:30:10.663Z",
+  "total": 369,
   "kept": 45,
   "matches": 17,
   "maybes": 42,
   "rejected": [
+    {
+      "id": "bc-guy-hoquet-18-GT0672-92121",
+      "subject": "Studio meublé proche RER B",
+      "url": "https://www.bienici.com/annonce/location/gentilly/appartement/1piece/guy-hoquet-18-GT0672-92121",
+      "price": 526,
+      "city": "Gentilly",
+      "zip": "94250",
+      "zone": "RER B sud (meilleur compromis)",
+      "rooms": 1,
+      "bedrooms": null,
+      "surface": 14.69,
+      "publishedAt": "2026-11-12T15:04:34.602Z",
+      "image": "https://file.bienici.com/photo/guy-hoquet-18-GT0672-92121_d2m2j20yzublln.cloudfront.net_169_903200_7d36df2c-98bc-4fe9-86d4-ae8ce158e55e.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/guy-hoquet-18-GT0672-92121_d2m2j20yzublln.cloudfront.net_169_903200_7d36df2c-98bc-4fe9-86d4-ae8ce158e55e.jpg",
+      "nbImages": 5,
+      "images": [
+        "https://file.bienici.com/photo/guy-hoquet-18-GT0672-92121_d2m2j20yzublln.cloudfront.net_169_903200_7d36df2c-98bc-4fe9-86d4-ae8ce158e55e.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-18-GT0672-92121_d2m2j20yzublln.cloudfront.net_169_903200_029870bd-56e8-498b-93fe-6933ea9ffbf5.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-18-GT0672-92121_d2m2j20yzublln.cloudfront.net_169_903200_fa0fb4db-0939-4d10-8df8-fc9fddee7b88.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-18-GT0672-92121_d2m2j20yzublln.cloudfront.net_169_903200_8002bf8d-164b-40e1-9cd1-f9800ba64ea5.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-18-GT0672-92121_d2m2j20yzublln.cloudfront.net_169_903200_10926fc3-cf62-4857-9bdf-47df388ae61b.jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.812699976,
+      "lon": 2.343709966,
+      "kind": "logement-entier",
+      "description": "Votre agence GUY HOQUET de GENTILLY vous propose, en exclusivité, un charmant appartement de type F1 meublé en excellent état et plein de charme situé à 8 min à pieds du RER LAPLACE. Au sein du petit centre d'Arcueil commerces et commodités à proximité immédiate. Cet appartement propose une disposition idéale, il comprend une entrée, une pièce principale très lumineuse avec rangements, une cuisine indépendant équipée d'une plaque de cuisson, d'un réfrigérateur, d'un four et d'un lave-linge. Cette pièce comprend également une douche ainsi qu'un ensemble lavabo. ! Les WC sont sur le palier. A NOTER : PAS DE COLOCATION Les garants sont acceptés uniquement pour les dossiers étudiants. Vous pouvez nous transmettre votre dossier de candidature via DossierFacile à l’adresse gentilly@guyhoquet.com.",
+      "agency": "agence",
+      "charges": 25,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 pièces < 3",
+        "14.69 m² < 35"
+      ]
+    },
     {
       "id": "bc-laforet-immo-facile-53022496",
       "subject": "Appartement type studio de 19.30m2 - Rue de la Procession 75015 Paris",
@@ -3120,7 +3154,7 @@
     },
     {
       "id": "bc-guy-hoquet-18-GT0418-FEU",
-      "subject": "Appartement",
+      "subject": "Appartement meublé FRESNES 2 pièce(s) 48.39 m2",
       "url": "https://www.bienici.com/annonce/location/fresnes/appartement/2pieces/guy-hoquet-18-GT0418-FEU",
       "price": 1012,
       "city": "Fresnes",
@@ -6516,7 +6550,7 @@
     },
     {
       "id": "bc-guy-hoquet-18-GT0672-92125",
-      "subject": "Appartement",
+      "subject": "2 pièces meublé lumineux",
       "url": "https://www.bienici.com/annonce/location/arcueil/appartement/2pieces/guy-hoquet-18-GT0672-92125",
       "price": 1100,
       "city": "Arcueil",
@@ -6746,43 +6780,6 @@
       "source": "bienici",
       "rejectedBecause": [
         "1382 € > 1320 €",
-        "1 ch. < 2"
-      ]
-    },
-    {
-      "id": "bc-ag210198-555436382",
-      "subject": "Appartement - 3ème étage - 43 m2 - 2 pièces - meublé",
-      "url": "https://www.bienici.com/annonce/location/chatillon/appartement/2pieces/ag210198-555436382",
-      "price": 1133,
-      "city": "Châtillon",
-      "zip": "92320",
-      "zone": "Sud parisien / proche 15e",
-      "rooms": 2,
-      "bedrooms": 1,
-      "surface": 42,
-      "publishedAt": "2026-10-22T14:35:51.642Z",
-      "image": "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_1.jpg_INSOON_EB_5512801818_20261022154304?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_1.jpg_INSOON_EB_5512801818_20261022154304",
-      "nbImages": 8,
-      "images": [
-        "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_1.jpg_INSOON_EB_5512801818_20261022154304?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_2.jpg_INSOON_EB_5512801818_20261022154304?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_3.jpg_INSOON_EB_5512801818_20261022154304?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_4.jpg_INSOON_EB_5512801818_20261022154304?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_5.jpg_INSOON_EB_5512801818_20261022154304?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_6.jpg_INSOON_EB_5512801818_20261022154304?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_7.jpg_INSOON_EB_5512801818_20261022154304?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-555436382_photos.ubiflow.net_210198_555436382_photos_8.jpg_INSOON_EB_5512801818_20261022154304?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.79875473400884,
-      "lon": 2.2784546280485336,
-      "kind": "logement-entier",
-      "description": "Réf. AN003445 - IMODIRECT Vous propose à la location : un appartement 2 pièces meublé, moderne, lumineux et équipé situé au 1ème étage d'un bâtiment de haut standing, quartier très calme et sécurisé. Vous disposez d'un grand séjour, composé d'une TV, d'un table à manger avec chaises, table basse, d'un canapé lit convertible pour un couchage confortable pour 2 personnes. La cuisine américaine est ouverte sur le séjour, équipée d'un réfrigérateur et congélateur, un lave linge, un four, micro-onde, plaques induction. Il comprend une grande salle de bain avec WC, bien équipée, la chambre comprend un lit Queens size (160 cm) très confortable et d'une armoire, placards de rangement. Le bâtiment est situé au pied de l'Intermarché Châtillon, à 2 minutes à pied de Tramway T6. Situé également à proximité du bus 162. Place de parking dédiée et située au sous-sol du bâtiment. Disponible immédiatement. Chauffage et eau chaude individuel électrique. Les charges comprennent les charges communes et l'eau froide. Classe énergétique : C (de 111 à 180). Les frais d'agence sont de 648,32 € maximum. ERP : Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : https://www.georisques.gouv.fr/. Pour toute question ou visite, merci de remplir la demande de visite.",
-      "agency": "particulier",
-      "charges": 60,
-      "source": "bienici",
-      "rejectedBecause": [
-        "2 pièces < 3",
         "1 ch. < 2"
       ]
     },
@@ -7552,45 +7549,6 @@
       "description": "Centre Ville. Situé au 2ème étage, appartement T2 comprenant une cuisine non équipée et ouverte sur séjour, une chambre + placard, salle de bain aménagée avec vasque et baignoire. 1 wc. 1 loggia. 1 stationnement en sous-sol. Proximité immédiate de la rue commerçante. Honoraires de location (TTC) = visites, constitution de dossier, frais de rédaction de bail, état des lieux. Dépôt de garantie = 1 mois de loyer HC. Nous consulter pour disponibilité. Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
       "agency": "agence",
       "charges": 120,
-      "source": "bienici",
-      "rejectedBecause": [
-        "2 pièces < 3",
-        "1 ch. < 2"
-      ]
-    },
-    {
-      "id": "bc-ag210198-554862689",
-      "subject": "Appartement - 3ème étage - 41 m2 - 2 pièces - Meublé",
-      "url": "https://www.bienici.com/annonce/location/chaville/appartement/2pieces/ag210198-554862689",
-      "price": 1188,
-      "city": "Chaville",
-      "zip": "92370",
-      "zone": "Paris 15e et proche",
-      "rooms": 2,
-      "bedrooms": 1,
-      "surface": 41,
-      "publishedAt": "2026-10-19T09:58:22.486Z",
-      "image": "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_1.jpg_INSOON_EB_5512801818_20261019111848?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_1.jpg_INSOON_EB_5512801818_20261019111848",
-      "nbImages": 10,
-      "images": [
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_1.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_2.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_3.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_4.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_5.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_6.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_7.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_8.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_9.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag210198-554862689_photos.ubiflow.net_210198_554862689_photos_10.jpg_INSOON_EB_5512801818_20261019111848?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.80749034381776,
-      "lon": 2.187776578429932,
-      "kind": "logement-entier",
-      "description": "Réf. AN003477 - IMODIRECT vous propose à la location à Chaville à 5 min de la Mairie, un bel appartement 2 pièces meublé ! Disponible à partir du 1er septembre 2024, situé au 3ème étage sans ascenseur. Il se compose comme suit : - Une entrée - Une cuisine équipée et ouverte sur le séjour donnant sur un balcon - Une chambre - Une salle de douche avec WC. Logement très lumineux et proche des commerces et services ! Trains ligne N (station Chaville Rive-Gauche) à 4 min, lignes L et U (station Chaville Rive-Droite) à 10 min et ligne RER C (station Chaville-Vélizy) à 14 min. Classe énergétique : D (de 181 à 250). Les frais d'agence sont de 621,24 € maximum. ERP : Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : https://www.georisques.gouv.fr/. Pour toute question ou visite, merci de remplir la demande de visite.",
-      "agency": "particulier",
-      "charges": 110,
       "source": "bienici",
       "rejectedBecause": [
         "2 pièces < 3",
@@ -10052,7 +10010,7 @@
     },
     {
       "id": "bc-guy-hoquet-18-GT1236-7123761",
-      "subject": "Appartement",
+      "subject": "Appartement à louer de 2 pièces de 34.6 m²",
       "url": "https://www.bienici.com/annonce/location/chatillon/appartement/2pieces/guy-hoquet-18-GT1236-7123761",
       "price": 1180,
       "city": "Châtillon",
@@ -10289,7 +10247,7 @@
     },
     {
       "id": "bc-guy-hoquet-18-GT0418-DOU",
-      "subject": "Appartement",
+      "subject": "Appartement Fresnes - 3 pièce(s) - 50.94 m2",
       "url": "https://www.bienici.com/annonce/location/fresnes/appartement/3pieces/guy-hoquet-18-GT0418-DOU",
       "price": 1107,
       "city": "Fresnes",
@@ -10861,7 +10819,7 @@
     },
     {
       "id": "bc-guy-hoquet-18-GT0672-892",
-      "subject": "Appartement",
+      "subject": "Appartement à louer de 2 pièces de 28.4 m²",
       "url": "https://www.bienici.com/annonce/location/arcueil/appartement/2pieces/guy-hoquet-18-GT0672-892",
       "price": 995,
       "city": "Arcueil",
@@ -11481,6 +11439,39 @@
       ]
     },
     {
+      "id": "bc-hektor-green-city-residences31-153",
+      "subject": "À louer   Studio meublé dans résidence étudiante",
+      "url": "https://www.bienici.com/annonce/location/palaiseau/appartement/1piece/hektor-green-city-residences31-153",
+      "price": 732,
+      "city": "Palaiseau",
+      "zip": "91120",
+      "zone": "RER B sud (meilleur compromis)",
+      "rooms": 1,
+      "bedrooms": 1,
+      "surface": 21.57,
+      "publishedAt": "1970-01-01T00:00:00.000Z",
+      "image": "https://file.bienici.com/photo/hektor-green-city-residences31-153_green-city-residences.staticlbi.com_original_images_biens_1_5516adb142fcb18a017c72602abbdb6d_photo_101db8c7f64cb6fb95acaa2ee71ee94a.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/hektor-green-city-residences31-153_green-city-residences.staticlbi.com_original_images_biens_1_5516adb142fcb18a017c72602abbdb6d_photo_101db8c7f64cb6fb95acaa2ee71ee94a.jpg",
+      "nbImages": 3,
+      "images": [
+        "https://file.bienici.com/photo/hektor-green-city-residences31-153_green-city-residences.staticlbi.com_original_images_biens_1_5516adb142fcb18a017c72602abbdb6d_photo_101db8c7f64cb6fb95acaa2ee71ee94a.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-green-city-residences31-153_green-city-residences.staticlbi.com_original_images_biens_1_5516adb142fcb18a017c72602abbdb6d_photo_ed5faaa733acebbaa75050f8a5c29947.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-green-city-residences31-153_green-city-residences.staticlbi.com_original_images_biens_1_5516adb142fcb18a017c72602abbdb6d_photo_39d8e32ef7fa6dcebb163c07d4e3814a.jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.71878556617385,
+      "lon": 2.2606347471156836,
+      "kind": "logement-entier",
+      "description": "Votre agence vous propose un studio meublé dans une résidence étudiante LE CLOUD à Palaiseau : Studio meublé à deux pas des transports et des commodités, 21,57 m2 offrant un cadre de vie pratique et confortable. Le logement est entièrement équipé et prêt à vivre. Une place de parking en sous-sol est incluse. La résidence propose des services quotidien : laverie sur place, espaces communs dédiés au travail et à la détente, résidence sécurisée, gardien. Loyer charges comprises : 731,51 EUR (dont 661,51 EUR de loyer hors charges + 70,00 EUR de charges incluant communs et eau froide) Honoraires d'agences : 530 EUR Contact par téléphone uniquement pour toute information et prise de rendez-vous.",
+      "agency": "agence",
+      "charges": 70,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 pièces < 3",
+        "1 ch. < 2",
+        "21.57 m² < 35"
+      ]
+    },
+    {
       "id": "pap-442700448",
       "url": "https://www.pap.fr/annonces/appartement-chaville-92370-r442700448",
       "price": 695,
@@ -11650,38 +11641,6 @@
       "firstSeenAt": "2026-11-12T11:24:13.034Z",
       "rejectedBecause": [
         "1700 € > 1320 €"
-      ]
-    },
-    {
-      "id": "citya-GES60200081-530",
-      "url": "https://www.citya.com/annonces/location/appartement/massy-91300/GES60200081-530",
-      "subject": "Appartement à louer 2 pièces 45.49m² - Massy (91)",
-      "price": 843,
-      "surface": 45.49,
-      "rooms": 2,
-      "bedrooms": 1,
-      "city": "Massy",
-      "zip": "91300",
-      "lat": 48.72404,
-      "lon": 2.270681,
-      "realEstateType": "appartement",
-      "owner": "agence",
-      "publishedAt": null,
-      "body": "À LOUER : Découvrez ce charmant appartement récent de type T2 situé à Massy, dans le quartier dynamique et convivial de la ville. Avec une superficie de 46 m², cet espace de vie est idéal pour un couple ou une personne seule à la recherche de confort et de modernité. L'appartement se trouve au deuxième étage d'une résidence bien entretenue, accessible par un ascenseur, ce qui facilite vos déplacements au quotidien. Vous serez séduit par la luminosité qui inonde chaque pièce grâce à de grandes fenêtres. Le salon spacieux est parfait pour se détendre après une longue journée ou recevoir des amis. La cuisine, entièrement aménagée, vous offre tout l'espace nécessaire pour préparer de délicieux repas. Elle est conçue pour allier fonctionnalité et esthétisme, vous permettant de cuisiner dans un cadre agréable. L'appartement dispose d'une chambre confortable, idéale pour se reposer, ainsi qu'une salle d'eau moderne avec douche, qui vous apportera tout le confort nécessaire. De plus, vous bénéficierez d'un chauffage collectif par radiateurs, garantissant une température agréable tout au long de l'année. Pour votre commodité, un emplacement de parking est inclus, vous évitant ainsi les tracas de la recherche de stationnement. Situé dans une résidence sécurisée, cet appartement vous offre un cadre de vie paisible tout en étant proche des commodités et des transports en commun. N'attendez plus pour visiter ce bien qui allie confort, modernité et praticité. Venez découvrir votre futur ch",
-      "image": "https://www.citya.com/media/images/agences/biens/483/location/filigrane-IMG_2685-18116276655006859158.webp",
-      "imageLarge": "https://www.citya.com/media/images/agences/biens/483/location/filigrane-IMG_2685-18116276655006859158.webp",
-      "images": [
-        "https://www.citya.com/media/images/agences/biens/483/location/filigrane-IMG_2685-18116276655006859158.webp"
-      ],
-      "nbImages": 1,
-      "kind": "appartement",
-      "totalRent": 843,
-      "source": "citya",
-      "zone": "RER B sud (meilleur compromis)",
-      "firstSeenAt": "2026-11-12T11:24:13.034Z",
-      "rejectedBecause": [
-        "2 pièces < 3",
-        "1 ch. < 2"
       ]
     },
     {
