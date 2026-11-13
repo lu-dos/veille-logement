@@ -1,10 +1,79 @@
 {
-  "ranAt": "2026-11-13T09:30:11.975Z",
+  "ranAt": "2026-11-13T12:06:11.287Z",
   "total": 368,
-  "kept": 47,
+  "kept": 46,
   "matches": 17,
-  "maybes": 43,
+  "maybes": 45,
   "rejected": [
+    {
+      "id": "bc-hektor-alvimmo_91-1254",
+      "subject": "STUDIO + CAVE",
+      "url": "https://www.bienici.com/annonce/location/palaiseau/appartement/1piece/hektor-alvimmo_91-1254",
+      "price": 605,
+      "city": "Palaiseau",
+      "zip": "91120",
+      "zone": "RER B sud (meilleur compromis)",
+      "rooms": 1,
+      "bedrooms": null,
+      "surface": 29.23,
+      "publishedAt": "2026-11-13T09:46:07.277Z",
+      "image": "https://file.bienici.com/photo/hektor-alvimmo_91-1254_alvimmo.staticlbi.com_original_images_biens_1_7fb89619c7a1215bebdd9f53c27fe39e_photo_070029d9032ebadb536d3d04248b77f6.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/hektor-alvimmo_91-1254_alvimmo.staticlbi.com_original_images_biens_1_7fb89619c7a1215bebdd9f53c27fe39e_photo_070029d9032ebadb536d3d04248b77f6.jpg",
+      "nbImages": 5,
+      "images": [
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1254_alvimmo.staticlbi.com_original_images_biens_1_7fb89619c7a1215bebdd9f53c27fe39e_photo_070029d9032ebadb536d3d04248b77f6.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1254_alvimmo.staticlbi.com_original_images_biens_1_7fb89619c7a1215bebdd9f53c27fe39e_photo_85fd9baae33bbfcd212e4b485d3502a3.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1254_alvimmo.staticlbi.com_original_images_biens_1_7fb89619c7a1215bebdd9f53c27fe39e_photo_474a07f82a1cc83c88288bda3fbdd746.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1254_alvimmo.staticlbi.com_original_images_biens_1_7fb89619c7a1215bebdd9f53c27fe39e_photo_2a67f4e83984037324b13a65c3ad7d83.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1254_alvimmo.staticlbi.com_original_images_biens_1_7fb89619c7a1215bebdd9f53c27fe39e_8466-01-8447921-h.jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.71604908245106,
+      "lon": 2.2465379591155727,
+      "kind": "logement-entier",
+      "description": "3' RER, centre ville, immeuble récent, studio comprenant entrée avec placard, séjour avec coin-cuisine aménagé (plaque, hotte), salle de bains avec wc. Cave 605 EUR C.C D.G : 560 EUR / F.A : 383.50 EUR Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
+      "agency": "agence",
+      "charges": 45,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 pièces < 3",
+        "29.23 m² < 35"
+      ]
+    },
+    {
+      "id": "bc-hektor-alvimmo_91-1384",
+      "subject": "Appartement 2 / 3 pièces + cellier",
+      "url": "https://www.bienici.com/annonce/location/palaiseau/appartement/3pieces/hektor-alvimmo_91-1384",
+      "price": 839,
+      "city": "Palaiseau",
+      "zip": "91120",
+      "zone": "RER B sud (meilleur compromis)",
+      "rooms": 3,
+      "bedrooms": 1,
+      "surface": 44.17,
+      "publishedAt": "2026-11-13T09:46:07.277Z",
+      "image": "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_7ca66c969213ac9f11419c929b87a33e.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_7ca66c969213ac9f11419c929b87a33e.jpg",
+      "nbImages": 7,
+      "images": [
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_7ca66c969213ac9f11419c929b87a33e.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_d9a8fbde490b3ae2e87c49d2a2a9389e.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_a7b37f6621842dfd70e979c335abe049.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_709b056f3586c77d62b44ef4a8d3fd03.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_99523b86acb19ebe46d195d107558fe5.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_aa4bfe7f229a863142f2a339e2e6dfe8.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-alvimmo_91-1384_alvimmo.staticlbi.com_original_images_biens_1_84b184211c5d929d9435a371eb505cad_photo_f7ea9bd5953615a9bb85ddf2b572f2e3.jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.715728379786356,
+      "lon": 2.250122272241241,
+      "kind": "logement-entier",
+      "description": "7' RER, proche centre ville, petit immeuble rural, appartement 2 / 3 pièces, très bon état , il comprend: entrée, coin - cuisine équipée (plaques, hotte), séjour, chambre, bureau, salle d'eau, wc independant. Cellier. 839 EUR C.C D.G : 764 EUR / F.A :579.51 EUR Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
+      "agency": "agence",
+      "charges": 75,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 ch. < 2"
+      ]
+    },
     {
       "id": "bc-ag752485-559752977",
       "subject": "Studio / 18m² / Convention (Ligne 12)",
@@ -1466,41 +1535,6 @@
       ]
     },
     {
-      "id": "bc-hektor-asster75-58678",
-      "subject": "appartement 1 pièces Saint-Cloud",
-      "url": "https://www.bienici.com/annonce/location/saint-cloud/appartement/1piece/hektor-asster75-58678",
-      "price": 904,
-      "city": "Saint-Cloud",
-      "zip": "92210",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": null,
-      "surface": 22.52,
-      "publishedAt": "2026-11-09T07:16:29.555Z",
-      "image": "https://file.bienici.com/photo/hektor-asster75-58678_annecimmo.staticlbi.com_original_images_biens_1_3bd00d7edda541f3b622a02126b8a008_photo_4c6eaca4ee5fb1be685c426a365602fa.jpg?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/hektor-asster75-58678_annecimmo.staticlbi.com_original_images_biens_1_3bd00d7edda541f3b622a02126b8a008_photo_4c6eaca4ee5fb1be685c426a365602fa.jpg",
-      "nbImages": 6,
-      "images": [
-        "https://file.bienici.com/photo/hektor-asster75-58678_annecimmo.staticlbi.com_original_images_biens_1_3bd00d7edda541f3b622a02126b8a008_photo_4c6eaca4ee5fb1be685c426a365602fa.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-asster75-58678_annecimmo.staticlbi.com_original_images_biens_1_3bd00d7edda541f3b622a02126b8a008_photo_12d6b68cc2552096aa652e6c6f4c25bb.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-asster75-58678_annecimmo.staticlbi.com_original_images_biens_1_3bd00d7edda541f3b622a02126b8a008_photo_d196813100e5395bf1144cb9a3630c48.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-asster75-58678_annecimmo.staticlbi.com_original_images_biens_1_3bd00d7edda541f3b622a02126b8a008_b390732f256cb54e9fe79d718fcfdd3a.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-asster75-58678_annecimmo.staticlbi.com_original_images_biens_1_3bd00d7edda541f3b622a02126b8a008_photo_72139c969537dfc397457a3f08b2d7de.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/hektor-asster75-58678_annecimmo.staticlbi.com_original_images_biens_1_3bd00d7edda541f3b622a02126b8a008_photo_2e9be6a2704e99fbe5c7c228f466e63e.jpg?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.852763248385905,
-      "lon": 2.221735417632113,
-      "kind": "logement-entier",
-      "description": "a 150 m du tram , dans une petite copro 1930 studio de 22,52 m2 : un appartement d'une pièce principale avec espace cuisine semi équipée, salle d'eau + WC libre le 26/11/2026 Chauffage collectif inclus eau chaude par ballon électrique. Honoraire Agence : 340,73EUR dont état des lieux 68,24EUR Dépôt de garantie 775,21EUR Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
-      "agency": "agence",
-      "charges": 128.37,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3",
-        "22.52 m² < 35"
-      ]
-    },
-    {
       "id": "bc-mgc-ancien-SNI_0634_305535",
       "subject": "Appartement Studio",
       "url": "https://www.bienici.com/annonce/location/massy/appartement/1piece/mgc-ancien-SNI_0634_305535",
@@ -2875,40 +2909,6 @@
         "1 pièces < 3",
         "0 ch. < 2",
         "28 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-ag941161-557952098",
-      "subject": "Appartement 1 pièce(s) 38 m2",
-      "url": "https://www.bienici.com/annonce/location/boulogne-billancourt/appartement/1piece/ag941161-557952098",
-      "price": 975,
-      "city": "Boulogne-Billancourt",
-      "zip": "92100",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": null,
-      "surface": 38,
-      "publishedAt": "2026-11-04T22:53:32.149Z",
-      "image": "https://file.bienici.com/photo/ag941161-557952098_photos.ubiflow.net_941161_557952098_photos_1.jpg_INSOON_EB_5512801818_20261104233919?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/ag941161-557952098_photos.ubiflow.net_941161_557952098_photos_1.jpg_INSOON_EB_5512801818_20261104233919",
-      "nbImages": 6,
-      "images": [
-        "https://file.bienici.com/photo/ag941161-557952098_photos.ubiflow.net_941161_557952098_photos_1.jpg_INSOON_EB_5512801818_20261104233919?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag941161-557952098_photos.ubiflow.net_941161_557952098_photos_2.jpg_INSOON_EB_5512801818_20261104233919?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag941161-557952098_photos.ubiflow.net_941161_557952098_photos_3.jpg_INSOON_EB_5512801818_20261104233919?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag941161-557952098_photos.ubiflow.net_941161_557952098_photos_4.jpg_INSOON_EB_5512801818_20261104233919?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag941161-557952098_photos.ubiflow.net_941161_557952098_photos_5.jpg_INSOON_EB_5512801818_20261104233919?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag941161-557952098_photos.ubiflow.net_941161_557952098_photos_6.jpg_INSOON_EB_5512801818_20261104233919?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.825670748681155,
-      "lon": 2.242048837239757,
-      "kind": "logement-entier",
-      "description": "Quartier Billancourt - Rives de Seine. Rue de Meudon Dans une résidence de très bon standing, au 2eme étage avec ascenseur, studio 38m2 comprenant entrée, une pièce à vivre avec cuisine ouverte aménagée, 1 salle de bains avec WC. Parking. Appartement refait à neuf. Pour plus d'informations sur ce bien, n'hésitez pas à prendre contact par téléphone ou à remplir le formulaire de contact via l'annonce. Nous vous assurerons un retour dans les meilleurs délais. Contactez CFTI Agence Immobilière au 07 56 81 22 00",
-      "agency": "agence",
-      "charges": 116,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3"
       ]
     },
     {
@@ -5490,16 +5490,22 @@
       "bedrooms": null,
       "surface": 20.19,
       "publishedAt": "2026-10-29T11:44:52.478Z",
-      "image": "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-284-d-212-a-plan-amenagement-png?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-284-d-212-a-plan-amenagement-png",
-      "nbImages": 6,
+      "image": "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-1-jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-1-jpg",
+      "nbImages": 12,
       "images": [
-        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-284-d-212-a-plan-amenagement-png?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-1-jpg?width=520&height=390&fit=cover",
         "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-27-min-0-png?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-location-appartement-paris-15-dr-roux-2-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-location-appartement-paris-15-dr-roux-3-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-location-appartement-paris-15-dr-roux-4-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-location-appartement-paris-15-dr-roux-6-jpg?width=520&height=390&fit=cover"
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-5-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-6-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-7-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-8-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-10-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-2-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-4-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-3-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-11-location-meuble-1-piece-paris-15-284-d-212-a-9-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-284D212A-5704-52285_sites-default-files-2026-10-location-appartement-paris-15-dr-roux-4-jpg?width=520&height=390&fit=cover"
       ],
       "lat": 48.84142979344144,
       "lon": 2.3114209554045475,
@@ -11352,6 +11358,40 @@
         "1 pièces < 3",
         "1 ch. < 2",
         "11.61 m² < 35"
+      ]
+    },
+    {
+      "id": "bc-guy-hoquet-immo-facile-7704735",
+      "subject": "MAGNIFIQUES CHAMBRES A LOUER - COLOCATION",
+      "url": "https://www.bienici.com/annonce/location/massy/appartement/6pieces/guy-hoquet-immo-facile-7704735",
+      "price": 600,
+      "city": "Massy",
+      "zip": "91300",
+      "zone": "RER B sud (meilleur compromis)",
+      "rooms": 6,
+      "bedrooms": 5,
+      "surface": 105,
+      "publishedAt": "1970-01-01T00:00:00.000Z",
+      "image": "https://file.bienici.com/photo/guy-hoquet-immo-facile-7704735_media.immo-facile.com_office11_GUYHOQUET_MASSY_catalog_images_pr_web_7_7_0_4_7_3_5_7704735a.jpg_DATEMAJ_29_07_2026-11_26_12?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/guy-hoquet-immo-facile-7704735_media.immo-facile.com_office11_GUYHOQUET_MASSY_catalog_images_pr_web_7_7_0_4_7_3_5_7704735a.jpg_DATEMAJ_29_07_2026-11_26_12",
+      "nbImages": 6,
+      "images": [
+        "https://file.bienici.com/photo/guy-hoquet-immo-facile-7704735_media.immo-facile.com_office11_GUYHOQUET_MASSY_catalog_images_pr_web_7_7_0_4_7_3_5_7704735a.jpg_DATEMAJ_29_07_2026-11_26_12?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-immo-facile-7704735_media.immo-facile.com_office11_GUYHOQUET_MASSY_catalog_images_pr_web_7_7_0_4_7_3_5_7704735b.jpg_DATEMAJ_29_07_2026-15_07_54?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-immo-facile-7704735_media.immo-facile.com_office11_GUYHOQUET_MASSY_catalog_images_pr_web_7_7_0_4_7_3_5_7704735c.jpg_DATEMAJ_29_07_2026-15_08_42?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-immo-facile-7704735_media.immo-facile.com_office11_GUYHOQUET_MASSY_catalog_images_pr_web_7_7_0_4_7_3_5_7704735d.jpg_DATEMAJ_29_07_2026-15_09_00?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-immo-facile-7704735_media.immo-facile.com_office11_GUYHOQUET_MASSY_catalog_images_pr_web_7_7_0_4_7_3_5_7704735e.jpg_DATEMAJ_29_07_2026-15_09_23?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/guy-hoquet-immo-facile-7704735_media.immo-facile.com_office11_GUYHOQUET_MASSY_catalog_images_pr_web_7_7_0_4_7_3_5_7704735f.jpg_DATEMAJ_29_07_2026-15_09_31?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.72675076108135,
+      "lon": 2.2818302750457735,
+      "kind": "logement-entier",
+      "description": "À moins de 15 minutes à pied du RER B Massy-Verrières et à proximité immédiate de toutes les commodités. Situé dans une résidence calme et sécurisée, au 3e étage sans ascenseur, À louer : superbe chambre dans un appartement de 105m² en colocation. Ce 6 pièces entièrement rénové, lumineux et offrant des prestations de qualité, se compose de : - 5 chambres de 10 à 12 m2 équipée chacune; - Chambre standard : 600€ - Chambre avec salle d'eau indépendante 640€ - Grande chambre à 690€ - Charmant séjour de 23m2 - Cuisine ouverte entièrement équipée - 1 salle d'eau - 2 WC CHAMBRES A LOUER entre 600€ et 690€ toutes charges comprises ! Disponible de suite, contactez nous sans attendre. Retrouvez l'ensemble de nos biens sur https://massy.guy-hoquet.com/",
+      "agency": "agence",
+      "charges": 97,
+      "source": "bienici",
+      "rejectedBecause": [
+        "prix suspect (5.7 €/m² < 12) : coloc déguisée ou arnaque"
       ]
     },
     {
