@@ -1,9 +1,9 @@
 {
-  "ranAt": "2026-11-18T09:00:10.089Z",
-  "total": 368,
+  "ranAt": "2026-11-18T09:27:10.939Z",
+  "total": 370,
   "kept": 43,
-  "matches": 6,
-  "maybes": 30,
+  "matches": 9,
+  "maybes": 32,
   "rejected": [
     {
       "id": "bc-century-21-202_25_81941",
@@ -11640,6 +11640,82 @@
       "rejectedBecause": [
         "2 pièces < 3",
         "1 ch. < 2"
+      ]
+    },
+    {
+      "id": "bc-mgc-ancien-926C4153-7612-36288",
+      "subject": "appartement 1 pièces Boulogne-Billancourt",
+      "url": "https://www.bienici.com/annonce/location/boulogne-billancourt/appartement/1piece/mgc-ancien-926C4153-7612-36288",
+      "price": 900,
+      "city": "Boulogne-Billancourt",
+      "zip": "92100",
+      "zone": "Paris 15e et proche",
+      "rooms": 1,
+      "bedrooms": 5,
+      "surface": 10.7,
+      "publishedAt": "2026-09-22T09:41:56.504Z",
+      "image": "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-19-chambre-3-jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-19-chambre-3-jpg",
+      "nbImages": 12,
+      "images": [
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-19-chambre-3-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2026-09-gecina-boulogne-1-1-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2026-09-gecina-boulogne-35-1-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-16-chambre-3-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-17-chambre-3-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-11-1-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-12-1-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-13-1-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-5-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-15-1-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-coliving-5-pieces-boulogne-926-1415-23-1-jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/mgc-ancien-926C4153-7612-36288_sites-default-files-2024-12-location-appartement-boulogne-sevres-3-2-jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.831609365481754,
+      "lon": 2.230329446281016,
+      "kind": "logement-entier",
+      "description": "Une salle de sport et de coworking dans votre résidence ? C'est possible ! Chambre privative avec balcon, tout inclus dans un bel appartement en colocation refait à neuf au 101 rue de Sèvres à Boulogne Billancourt. Métro Pont de Sèvres. Dans une résidence calme et arborée, avec jardin intérieur. Emménagez dans ce bel appartement de 101m² en colocation. Totalement rénové, meublé et décoré avec goût, il comprend 5 chambres privatives avec balcon et des espaces conviviaux à partager. Votre future chambre de 10,70 m² est équipée d’un lit de 140x190 , d’un coin bureau et de rangements. L'appartement entièrement meublé comprend une pièce à vivre lumineuse, une cuisine ouverte équipée, une salle de bains, une salle de douche, deux WCs et un coin buanderie avec machine à laver et sèche-linge. Le loyer inclus internet en fibre optique par Wifi, électricité, chauffage et eau. À deux pas de la Seine et du Pont de Sèvres, ce quartier attractif face au parc de Saint Cloud, dispose de nombreux commerces permettant de répondre à vos besoins. Les infrastructures sportives tel que le stade Le Gallo et culturelles comme la Seine Musicale, font de cet environnement un cadre idéal au quotidien. La ligne 9, à proximité immédiate de la résidence vous conduit au centre de Paris. Honoraires à la charge du locataire (prix maximum) : 161,88€ TTC, dont 32,41€ pour l'état des lieux",
+      "agency": "agence",
+      "charges": 156.8,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 pièces < 3",
+        "10.7 m² < 35"
+      ]
+    },
+    {
+      "id": "bc-nestenn-1-99937651005",
+      "subject": "STUDIO MEUBLEE-QUARTIER ATLANTIS",
+      "url": "https://www.bienici.com/annonce/location/massy/appartement/1piece/nestenn-1-99937651005",
+      "price": 693,
+      "city": "Massy",
+      "zip": "91300",
+      "zone": "RER B sud (meilleur compromis)",
+      "rooms": 1,
+      "bedrooms": 1,
+      "surface": 21.1,
+      "publishedAt": "1970-01-01T00:00:00.000Z",
+      "image": "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005a.jpg_DATEMAJ_05_11_2026-15_30_11?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005a.jpg_DATEMAJ_05_11_2026-15_30_11",
+      "nbImages": 5,
+      "images": [
+        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005a.jpg_DATEMAJ_05_11_2026-15_30_11?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005b.jpg_DATEMAJ_05_11_2026-15_30_11?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005c.jpg_DATEMAJ_05_11_2026-15_30_12?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005d.jpg_DATEMAJ_05_11_2026-15_30_12?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/nestenn-1-99937651005_media.immo-facile.com_office15_solvimo-massy_catalog_images_pr_p_3_7_6_5_1_0_0_5_37651005e.jpg_DATEMAJ_05_11_2026-15_30_12?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.728231696,
+      "lon": 2.273597806,
+      "kind": "logement-entier",
+      "description": "Merci de déposer votre dossier de candidature sur le site ZELOK.fr (gratuit) afin que nous puissions l'étudier et vous rappeler si il convient. Appartement MEUBLE dans une résidence étudiante proche des commerces et à 10mn à pied de la gare Massy-Palaiseau RER comprenant une pièce principale ouverte sur une cuisine aménagée et équipée d'une plaques; micro-onde/ et réfrigérateur, salle d'eau avec WC et d'une place de parking Loyer : 693.11€/cc dont (30€ de charges comprenant eau froide ,entretiens des parties communes). Disponible le 02/10/2026",
+      "agency": "agence",
+      "charges": 30,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 pièces < 3",
+        "1 ch. < 2",
+        "21.1 m² < 35"
       ]
     },
     {
