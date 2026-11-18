@@ -1,9 +1,9 @@
 {
-  "ranAt": "2026-11-18T09:27:10.939Z",
-  "total": 370,
-  "kept": 43,
+  "ranAt": "2026-11-18T09:51:10.731Z",
+  "total": 366,
+  "kept": 41,
   "matches": 9,
-  "maybes": 32,
+  "maybes": 35,
   "rejected": [
     {
       "id": "bc-century-21-202_25_81941",
@@ -2035,40 +2035,6 @@
       "source": "bienici",
       "rejectedBecause": [
         "1 pièces < 3"
-      ]
-    },
-    {
-      "id": "bc-netty-company55012mub-appt-10364",
-      "subject": "Studio meublé avec parking – Dernier étage avec ascenseur ?",
-      "url": "https://www.bienici.com/annonce/location/le-kremlin-bicetre/appartement/1piece/netty-company55012mub-appt-10364",
-      "price": 925,
-      "city": "Le Kremlin-Bicêtre",
-      "zip": "94270",
-      "zone": "Sud parisien / proche 15e",
-      "rooms": 1,
-      "bedrooms": null,
-      "surface": 27.11,
-      "publishedAt": "2026-11-13T17:00:11.341Z",
-      "image": "https://file.bienici.com/photo/netty-company55012mub-appt-10364_img.netty.immo_productcw_company55012mub_4_LA10364_1794578109_LA10364_3_original.jpg?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/netty-company55012mub-appt-10364_img.netty.immo_productcw_company55012mub_4_LA10364_1794578109_LA10364_3_original.jpg",
-      "nbImages": 5,
-      "images": [
-        "https://file.bienici.com/photo/netty-company55012mub-appt-10364_img.netty.immo_productcw_company55012mub_4_LA10364_1794578109_LA10364_3_original.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/netty-company55012mub-appt-10364_img.netty.immo_productcw_company55012mub_4_LA10364_1794578101_LA10364_2_original.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/netty-company55012mub-appt-10364_img.netty.immo_productcw_company55012mub_4_LA10364_1794578120_LA10364_5_original.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/netty-company55012mub-appt-10364_img.netty.immo_productcw_company55012mub_4_LA10364_1794578110_LA10364_4_original.jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/netty-company55012mub-appt-10364_img.netty.immo_productcw_company55012mub_4_LA10364_1794578093_LA10364_1_original.jpg?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.80872188434091,
-      "lon": 2.3662924855887235,
-      "kind": "logement-entier",
-      "description": "Votre agence À TOI TON TOIT IMMOBILIER vous propose à la location, rue Carnot au Kremlin-Bicêtre, un appartement meublé idéalement situé, à proximité immédiate du métro Le Kremlin-Bicêtre, de plusieurs lignes de bus et de nombreux commerces. L'école EPITA se trouve également à seulement 10 minutes à pied. Situé au 6? et dernier étage avec ascenseur d'un immeuble sécurisé et parfaitement entretenu, cet appartement de 27 m², en excellent état, se compose d'une entrée, d'une pièce de vie aménagée avec un canapé-lit et des rangements, d'une cuisine indépendante aménagée et équipée (réfrigérateur, plaques de cuisson, hotte, mini-lave-vaisselle, four micro-ondes et lave-linge), ainsi que d'une salle de bains avec WC. Le chauffage et la production d'eau chaude sont individuels électriques. Un emplacement de parking en sous-sol complète ce bien. DISPONIBLE DEBUT DECEMBRE 2026 Honoraires de 410 € TTC à la charge du locataire comprenant 82 € TTC pour l'état des lieux. Loyer de base 875 €/mois. Provision sur charges 50 €/mois, régularisation annuelle. Dépôt de garantie 1 750 €. Classe énergie C, Classe climat B Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre 560.00 € et 790.00 € sur les années 2021, 2022 et 2023 (abonnements compris). Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr.",
-      "agency": "agence",
-      "charges": 50,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3",
-        "27.11 m² < 35"
       ]
     },
     {
@@ -6738,48 +6704,6 @@
         "1 pièces < 3",
         "0 ch. < 2",
         "22 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-immo-facile-51643956",
-      "subject": "COLOCATION Massy 1 pièce 30  m2",
-      "url": "https://www.bienici.com/annonce/location/massy/appartement/1piece/immo-facile-51643956",
-      "price": 470,
-      "city": "Massy",
-      "zip": "91300",
-      "zone": "RER B sud (meilleur compromis)",
-      "rooms": 1,
-      "bedrooms": 1,
-      "surface": 30,
-      "publishedAt": "2026-10-30T14:36:44.307Z",
-      "image": "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956a.jpg_DATEMAJ_04_05_2026-14_54_50?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956a.jpg_DATEMAJ_04_05_2026-14_54_50",
-      "nbImages": 13,
-      "images": [
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956a.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956b.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956c.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956d.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956e.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956f.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956g.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956h.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956i.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956j.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956k.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-51643956_media.immo-facile.com_office8_agence_richelieu_catalog_images_pr_p_5_1_6_4_3_9_5_6_51643956l.jpg_DATEMAJ_04_05_2026-14_54_50?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.7276538032921,
-      "lon": 2.286663569033613,
-      "kind": "logement-entier",
-      "description": "UNIQUEMENT EN COLOCATION ! Appartement de 6 pièces Massy centre ville en colocation composé de 5 chambres tout compris : - Electricité - Chauffage- Eau chaude + Eau froide - Internet/Wifi Très Haut Débit illimité, TV ESPACES COMMUNS : - 1 cuisine équipée (lave-vaisselle, micro-ondes, plaques à induction, four, hotte, réfrigérateur, congélateur, machine à café, bouilloire, grille-pain, ustensiles de cuisine, vaisselles, table, chaises...). - 1 séjour (canapé, fauteuils, grande TV écran plat HD, table basse, meubles...). - cuisine équipée, terrasse, en parfait état ; refait à neuf ESPACE PRIVE : Chambre à serrure individuelle avec 1 lit double (linge de lit + couette + oreillers fournis avec alèses), TV, dressing, table de chevet, bureau + chaise, lampe, miroir, étagère, corbeille, tapis...",
-      "agency": "agence",
-      "charges": 50,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3",
-        "1 ch. < 2",
-        "30 m² < 35"
       ]
     },
     {
