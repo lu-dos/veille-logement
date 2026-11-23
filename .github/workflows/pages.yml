@@ -17,7 +17,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -48,4 +48,7 @@ jobs:
 
       - name: Deployer
         id: deployment
+        # Un echec de deploiement Pages ne doit plus envoyer de mail : le rapport
+        # reste en ligne (version precedente) et surge.sh sert de secours.
+        continue-on-error: true
         uses: actions/deploy-pages@v4
