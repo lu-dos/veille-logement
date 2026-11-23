@@ -75,8 +75,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         continue-on-error: true
-        with:
-          artifact_name: artefact-absent-test
 
       - name: Attendre avant le 2e essai
         if: steps.deployment.outcome == 'failure'
