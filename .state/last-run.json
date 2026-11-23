@@ -1,10 +1,47 @@
 {
-  "ranAt": "2026-11-23T09:45:10.656Z",
-  "total": 366,
+  "ranAt": "2026-11-23T10:21:10.292Z",
+  "total": 365,
   "kept": 42,
   "matches": 3,
   "maybes": 26,
   "rejected": [
+    {
+      "id": "bc-immo-facile-61762442",
+      "subject": "Appartement Paris 2 pièce(s) 27.90 m2",
+      "url": "https://www.bienici.com/annonce/location/paris-15e/appartement/2pieces/immo-facile-61762442",
+      "price": 942,
+      "city": "Paris 15e",
+      "zip": "75015",
+      "zone": "Paris 15e et proche",
+      "rooms": 2,
+      "bedrooms": 1,
+      "surface": 27.9,
+      "publishedAt": "2026-11-23T09:39:40.703Z",
+      "image": "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442a.jpg_DATEMAJ_19_11_2026-17_20_24?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442a.jpg_DATEMAJ_19_11_2026-17_20_24",
+      "nbImages": 7,
+      "images": [
+        "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442a.jpg_DATEMAJ_19_11_2026-17_20_24?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442b.jpg_DATEMAJ_19_11_2026-17_20_31?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442c.jpg_DATEMAJ_19_11_2026-17_20_42?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442d.jpg_DATEMAJ_19_11_2026-17_20_46?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442e.jpg_DATEMAJ_19_11_2026-17_20_54?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442f.jpg_DATEMAJ_19_11_2026-17_21_01?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/immo-facile-61762442_media.immo-facile.com_office12_cabine_2109161002_catalog_images_pr_p_6_1_7_6_2_4_4_2_61762442g.jpg_DATEMAJ_19_11_2026-17_21_11?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.84544693393166,
+      "lon": 2.285429710580233,
+      "kind": "logement-entier",
+      "description": "Situé rue de l'Église, dans le 15? arrondissement de Paris, cet appartement de 2 pièces d'une superficie de 27,62 m² bénéficie d'un emplacement agréable, à proximité des commerces, des transports et des commodités du quartier. Séjour, chambre, cuisine ouverte et une salle d'eau Idéal pour une personne seule ou un jeune couple, ce logement offre une surface fonctionnelle au coeur d'un quartier parisien recherché.",
+      "agency": "agence",
+      "charges": 35,
+      "source": "bienici",
+      "rejectedBecause": [
+        "2 pièces < 3",
+        "1 ch. < 2",
+        "27.9 m² < 35"
+      ]
+    },
     {
       "id": "bc-guy-hoquet-18-GT0054-1813",
       "subject": "2 pièces 44.15 m2",
@@ -3179,46 +3216,6 @@
         "2 pièces < 3",
         "1 ch. < 2",
         "33 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-immo-facile-58223228",
-      "subject": "T3 récents Antony Sud",
-      "url": "https://www.bienici.com/annonce/location/antony/appartement/3pieces/immo-facile-58223228",
-      "price": 1360,
-      "city": "Antony",
-      "zip": "92160",
-      "zone": "RER B sud (meilleur compromis)",
-      "rooms": 3,
-      "bedrooms": 2,
-      "surface": 61.05,
-      "publishedAt": "2026-11-17T16:01:12.261Z",
-      "image": "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228a.jpg_DATEMAJ_18_11_2026-17_33_44?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228a.jpg_DATEMAJ_18_11_2026-17_33_44",
-      "nbImages": 13,
-      "images": [
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228a.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228b.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228c.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228e.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228f.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228g.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228h.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228i.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228j.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228k.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228l.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/immo-facile-58223228_media.immo-facile.com_office5_astraimmo_020425_catalog_images_pr_p_5_8_2_2_3_2_2_8_58223228n.jpg_DATEMAJ_18_11_2026-17_33_44?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.74256103088427,
-      "lon": 2.300503144081858,
-      "kind": "logement-entier",
-      "description": "Une belle terrasse prolonge ce 3 pièces construit en 2022 au dernier étage de la résidence. Astra Immobilier vous présente à la location cet appartement situé au 3 rue des Mûres, à Antony. La gare RER B Fontaine Michalon se trouve à 8 minutes à pieds. L'appartement loué vide est vaste et lumineux. La cuisine est équipée d'une plaque, d'un four et d'une hotte, et de rangements intégrés qui libèrent l'espace des pièces de vie. Le chauffage est individuel électrique. En sous-sol : une place de parking, louée avec l'appartement. Ce logement relève du dispositif Pinel. Les ressources du foyer ne doivent pas dépasser les plafonds suivants : personne seule : 44 344 € couple : 66 276 € personne seule ou couple ayant une personne à charge : 86 878 € La garantie Visale est acceptée. Disponible le 1er décembre 2026. Contactez-nous pour organiser une visite. Nous avons des possibilités de visite jeudi 19 et vendredi 20 entre 13H et 15H.",
-      "agency": "agence",
-      "charges": 75,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1360 € > 1320 €"
       ]
     },
     {
@@ -11588,49 +11585,6 @@
       "rejectedBecause": [
         "1 pièces < 3",
         "21.8 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-mgc-ancien-281C058-5487-40537",
-      "subject": "appartement 1 pièces Paris 15e",
-      "url": "https://www.bienici.com/annonce/location/paris-15e/appartement/1piece/mgc-ancien-281C058-5487-40537",
-      "price": 1340,
-      "city": "Paris 15e",
-      "zip": "75015",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": 1,
-      "surface": 28,
-      "publishedAt": "2026-10-08T15:40:11.150Z",
-      "image": "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-7-jpg?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-7-jpg",
-      "nbImages": 13,
-      "images": [
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-7-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-4-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-2-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-3-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-5-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-6-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-8-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-9-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-10-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-11-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-meuble-1-piece-paris-15-281-c-058-1-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-281C058-5487-40537_sites-default-files-2025-05-location-appartement-paris-15-blomet-4-0-jpg?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.836546737848344,
-      "lon": 2.2947442850986524,
-      "kind": "logement-entier",
-      "description": "Charmant studio meublé et refait à neuf à 2 pas du métro Convention et des meilleurs bars du 15ème. Posez vos valises dans votre nouveau chez vous au 332 rue de Vaugirard à Paris 15 : un appartement moderne et chaleureux, entièrement meublé* et équipé. A l’extérieur, un jardin tranquille. À l’intérieur : un beau studio de 28m² situé au rez-de-chaussée. Une entrée avec placard, donnant accès à la pièce de vie, moderne et lumineuse avec cuisine ouverte aménagée et équipée (réfrigérateur, micro-ondes, plaques de cuisson), avec un coin repas et un balcon. Une salle d'eau et un WC séparé complètent ce bien. Parquet, double vitrage, accès fibre. *Appartement tout équipé : table à manger, chaises, réfrigérateur, four micro-ondes, accessoires de cuisine, vaisselle, canapé-lit, table de chevet, bureau, chaise de bureau, commode, accessoire pour le ménage et l’entretien. Photographies prises dans l'appartement avec suggestion de décoration. Cet appartement est situé dans une résidence gérée, offrant des services à la carte. Dans la résidence Paris Blomet il y a : la fibre, un grand jardin arboré privatif, du calme, un local vélo (#nocarneeded) Le meilleur du 15ème arrondissement avec tout à portée de main : transports (1 min station Convention ligne 12) + commerces (Monoprix et Biocoop à 1 min) + Salle de sport à 150m + Square du Clos Feuquières à 5min + le comptoir Rugby Bar à 3 min et surtout le prisé restaurant Italien « Via del Gusto » au bout de la rue. Dossiers étudiés pour des revenus qui représentent au moins 2 fois le montant du loyer. Honoraires à la charge du locataire (prix maximum) : 423,64€ TTC, dont 84,84€ pour l'état des lieux",
-      "agency": "agence",
-      "charges": 97,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1340 € > 1320 €",
-        "1 pièces < 3",
-        "1 ch. < 2",
-        "28 m² < 35"
       ]
     },
     {
