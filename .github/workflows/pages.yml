@@ -4,13 +4,6 @@ name: pages
 # Seuls les fichiers publics sont deployes (pas le code ni l'etat de collecte).
 # Le build "legacy" de Pages echouait sans message exploitable ; ce workflow
 # deploie un dossier prepare et donne des logs lisibles en cas de probleme.
-#
-# Fiabilite : deploy-pages retrouve l'artefact en interrogeant l'API du run.
-# Juste apres l'upload, cette liste est parfois encore vide (cache de l'API) :
-# le job echouait alors que le site etait pret, et GitHub envoyait un mail
-# "Run failed: pages" a chaque fois (une dizaine par jour). On attend maintenant
-# que l'artefact soit vraiment visible, puis on reessaie jusqu'a trois fois
-# avant de declarer un echec.
 
 on:
   push:
@@ -19,7 +12,6 @@ on:
 
 permissions:
   contents: read
-  actions: read
   pages: write
   id-token: write
 
@@ -30,10 +22,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     environment:
       name: github-pages
-      url: ${{ steps.deployment_3.outputs.page_url || steps.deployment_2.outputs.page_url || steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Recuperer le site
         uses: actions/checkout@v4
@@ -51,46 +42,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Empaqueter le site
-        id: upload
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-      - name: Attendre que l'artefact soit visible
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          echo "artefact ${{ steps.upload.outputs.artifact_id }}"
-          for i in $(seq 1 12); do
-            count=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=github-pages" \
-              --jq '.total_count' 2>/dev/null) || { echo "API illisible, on tente le deploiement"; break; }
-            if [ "$count" != "0" ] && [ -n "$count" ]; then
-              echo "artefact visible apres $((i * 10 - 10))s"
-              break
-            fi
-            sleep 10
-          done
-
       - name: Deployer
         id: deployment
-        uses: actions/deploy-pages@v4
-        continue-on-error: true
-
-      - name: Attendre avant le 2e essai
-        if: steps.deployment.outcome == 'failure'
-        run: sleep 45
-
-      - name: Deployer (2e essai)
-        id: deployment_2
-        if: steps.deployment.outcome == 'failure'
-        uses: actions/deploy-pages@v4
-        continue-on-error: true
-
-      - name: Attendre avant le 3e essai
-        if: steps.deployment.outcome == 'failure' && steps.deployment_2.outcome == 'failure'
-        run: sleep 90
-
-      - name: Deployer (3e essai)
-        id: deployment_3
-        if: steps.deployment.outcome == 'failure' && steps.deployment_2.outcome == 'failure'
         uses: actions/deploy-pages@v4

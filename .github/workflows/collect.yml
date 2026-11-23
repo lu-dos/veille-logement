@@ -12,7 +12,6 @@ on:
 
 permissions:
   contents: write
-  actions: read
   pages: write
   id-token: write
 
@@ -26,7 +25,7 @@ jobs:
     timeout-minutes: 30
     environment:
       name: github-pages
-      url: ${{ steps.deployment_3.outputs.page_url || steps.deployment_2.outputs.page_url || steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -93,52 +92,12 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Empaqueter le site
-        id: upload
         if: steps.hb.outputs.skip == 'false'
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-      # Meme course que dans pages.yml : deploy-pages interroge l'API du run pour
-      # retrouver l'artefact, qui n'y est pas toujours visible immediatement.
-      # On patiente, puis on reessaie, plutot que d'echouer et d'envoyer un mail.
-      - name: Attendre que l'artefact soit visible
-        if: steps.hb.outputs.skip == 'false'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          echo "artefact ${{ steps.upload.outputs.artifact_id }}"
-          for i in $(seq 1 12); do
-            count=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=github-pages" \
-              --jq '.total_count' 2>/dev/null) || { echo "API illisible, on tente le deploiement"; break; }
-            if [ "$count" != "0" ] && [ -n "$count" ]; then
-              echo "artefact visible apres $((i * 10 - 10))s"
-              break
-            fi
-            sleep 10
-          done
-
       - name: Deployer
         id: deployment
         if: steps.hb.outputs.skip == 'false'
-        uses: actions/deploy-pages@v4
-        continue-on-error: true
-
-      - name: Attendre avant le 2e essai
-        if: steps.hb.outputs.skip == 'false' && steps.deployment.outcome == 'failure'
-        run: sleep 45
-
-      - name: Deployer (2e essai)
-        id: deployment_2
-        if: steps.hb.outputs.skip == 'false' && steps.deployment.outcome == 'failure'
-        uses: actions/deploy-pages@v4
-        continue-on-error: true
-
-      - name: Attendre avant le 3e essai
-        if: steps.hb.outputs.skip == 'false' && steps.deployment.outcome == 'failure' && steps.deployment_2.outcome == 'failure'
-        run: sleep 90
-
-      - name: Deployer (3e essai)
-        id: deployment_3
-        if: steps.hb.outputs.skip == 'false' && steps.deployment.outcome == 'failure' && steps.deployment_2.outcome == 'failure'
         uses: actions/deploy-pages@v4
