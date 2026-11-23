@@ -25,7 +25,7 @@ jobs:
     timeout-minutes: 30
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment_3.outputs.page_url || steps.deployment_2.outputs.page_url || steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -92,12 +92,42 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Empaqueter le site
+        id: upload
         if: steps.hb.outputs.skip == 'false'
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
+      # Meme course que dans pages.yml : deploy-pages interroge l'API du run pour
+      # retrouver l'artefact, qui n'y est pas toujours visible immediatement.
+      # On patiente, puis on reessaie, plutot que d'echouer et d'envoyer un mail.
+      - name: Laisser l'artefact apparaitre
+        if: steps.hb.outputs.skip == 'false'
+        run: |
+          echo "artefact ${{ steps.upload.outputs.artifact_id }} : on laisse l'API le voir"
+          sleep 25
+
       - name: Deployer
         id: deployment
         if: steps.hb.outputs.skip == 'false'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Attendre avant le 2e essai
+        if: steps.hb.outputs.skip == 'false' && steps.deployment.outcome == 'failure'
+        run: sleep 45
+
+      - name: Deployer (2e essai)
+        id: deployment_2
+        if: steps.hb.outputs.skip == 'false' && steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Attendre avant le 3e essai
+        if: steps.hb.outputs.skip == 'false' && steps.deployment.outcome == 'failure' && steps.deployment_2.outcome == 'failure'
+        run: sleep 90
+
+      - name: Deployer (3e essai)
+        id: deployment_3
+        if: steps.hb.outputs.skip == 'false' && steps.deployment.outcome == 'failure' && steps.deployment_2.outcome == 'failure'
         uses: actions/deploy-pages@v4

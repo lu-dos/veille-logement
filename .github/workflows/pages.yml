@@ -4,6 +4,12 @@ name: pages
 # Seuls les fichiers publics sont deployes (pas le code ni l'etat de collecte).
 # Le build "legacy" de Pages echouait sans message exploitable ; ce workflow
 # deploie un dossier prepare et donne des logs lisibles en cas de probleme.
+#
+# Fiabilite : deploy-pages retrouve l'artefact en interrogeant l'API du run.
+# Juste apres l'upload, cette liste est parfois encore vide (cache de l'API) et
+# le job echouait alors que le site etait pret : c'est ce qui produisait les
+# mails "Run failed: pages". On laisse l'index se remplir, puis on reessaie
+# jusqu'a trois fois avant de declarer un vrai echec.
 
 on:
   push:
@@ -22,9 +28,10 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment_3.outputs.page_url || steps.deployment_2.outputs.page_url || steps.deployment.outputs.page_url }}
     steps:
       - name: Recuperer le site
         uses: actions/checkout@v4
@@ -42,10 +49,36 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Empaqueter le site
+        id: upload
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
+      - name: Laisser l'artefact apparaitre
+        run: |
+          echo "artefact ${{ steps.upload.outputs.artifact_id }} : on laisse l'API le voir"
+          sleep 25
+
       - name: Deployer
         id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Attendre avant le 2e essai
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 45
+
+      - name: Deployer (2e essai)
+        id: deployment_2
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Attendre avant le 3e essai
+        if: steps.deployment.outcome == 'failure' && steps.deployment_2.outcome == 'failure'
+        run: sleep 90
+
+      - name: Deployer (3e essai)
+        id: deployment_3
+        if: steps.deployment.outcome == 'failure' && steps.deployment_2.outcome == 'failure'
         uses: actions/deploy-pages@v4
