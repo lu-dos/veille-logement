@@ -17,11 +17,14 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Aucun echec de ce workflow ne doit envoyer de mail : le rapport deja
+    # publie reste en ligne, et surge.sh sert de secours.
+    continue-on-error: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

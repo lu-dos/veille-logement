@@ -22,6 +22,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Aucun echec de ce workflow ne doit envoyer de mail : le rapport deja
+    # publie reste en ligne, et surge.sh sert de secours.
+    continue-on-error: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -48,7 +51,4 @@ jobs:
 
       - name: Deployer
         id: deployment
-        # Un echec de deploiement Pages ne doit plus envoyer de mail : le rapport
-        # reste en ligne (version precedente) et surge.sh sert de secours.
-        continue-on-error: true
         uses: actions/deploy-pages@v4
