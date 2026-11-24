@@ -1,10 +1,124 @@
 {
-  "ranAt": "2026-11-24T09:15:13.198Z",
-  "total": 360,
-  "kept": 38,
-  "matches": 3,
-  "maybes": 26,
+  "ranAt": "2026-11-24T11:54:11.322Z",
+  "total": 358,
+  "kept": 37,
+  "matches": 9,
+  "maybes": 27,
   "rejected": [
+    {
+      "id": "bc-ag754025-562394573",
+      "subject": "T2",
+      "url": "https://www.bienici.com/annonce/location/paris-15e/appartement/2pieces/ag754025-562394573",
+      "price": 1289,
+      "city": "Paris 15e",
+      "zip": "75015",
+      "zone": "Paris 15e et proche",
+      "rooms": 2,
+      "bedrooms": 1,
+      "surface": 28,
+      "publishedAt": "2026-11-24T11:30:37.130Z",
+      "image": "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_1.jpg_INSOON_EB_5512801818_20261124120652?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_1.jpg_INSOON_EB_5512801818_20261124120652",
+      "nbImages": 7,
+      "images": [
+        "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_1.jpg_INSOON_EB_5512801818_20261124120652?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_2.jpg_INSOON_EB_5512801818_20261124120652?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_3.jpg_INSOON_EB_5512801818_20261124120653?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_4.jpg_INSOON_EB_5512801818_20261124120653?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_5.jpg_INSOON_EB_5512801818_20261124120653?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_6.jpg_INSOON_EB_5512801818_20261124120653?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/ag754025-562394573_photos.ubiflow.net_754025_562394573_photos_7.jpg_INSOON_EB_5512801818_20261124120653?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.83268097443841,
+      "lon": 2.305320294921754,
+      "kind": "logement-entier",
+      "description": "Nous vous proposons ce T2 meublé . D'une superficie de 28,03m² dans un immeuble sécurisé Au 4ème étage , T2 composé d'un séjour, d'une salle d'eau avec wc, une cuisine et une entrée séparée. Caractéristiques du bien : - Surface : 28,03m² -Statut : Meublé - Cuisine : entièrement équipée : plaques, réfrigérateur, micro-ondes, four et lave linge . Conditions de location : - Loyer mensuel (hors charges) : 1 219,96€ - Forfait pour charges : 70€ (L'électricité et l'internet sont individuels et à la charge du locataire) - Loyer charges comprises 1 289,96€€ - Dépôt de garantie : 1 280,42€ - Encadrement des loyers – Zone soumise à réglementation : -Loyer de référence: 29,5€/m² - Loyer de référence majoré : 35,4€/m² × 28,03m² = 992,26€ - Complément de loyer appliqué : 227,7€ - Justification du complément de loyer : Calme malgré la localisation centrale Honoraires à la charge du locataire : - Constitution du dossier + rédaction 28,03m² × 12.10€ = 339,16€ - État des lieux : 28,03m² × 3.03 € = 84,93€ -Total honoraires TTC : 424,09€ - Disponibilité : Immédiatement -Chauffage électrique : individuel - Eau chaude : individuelle Transports en commun : - Bus : Les arrêts Morillons (95 et Traverse) et Labrouste (62) sont accessibles à environ 2 à 3 minutes à pied. L'arrêt Brancion – Vouillé dessert également les lignes 62, 89 et 95. - Métro : La station Plaisance (ligne 13) se situe à environ 8 à 10 minutes à pied. La station Vaugirard (ligne 12) est également accessible à pied. - Tramway : Le T3a, aux arrêts Porte de Vanves et Brancion, est accessible en environ 8 à 10 minutes à pied. À proximité : - Commerces et commodités accessibles à pied. - Quartier résidentiel et bien desservi. - Idéal pour un étudiant ou un jeune actif. Barème des honoraires de location : - Zone très tendue : 12.10 €/m² TTC - Zone tendue : 10.09 €/m² TTC - Zone non tendue : 8.07 €/m² TTC - État des lieux : 3.03 €/m² TTC Avec l'agence NOUSGERONS, agence de gestion moderne, retrouvez des centaines d'appartements disponibles avec visites virtuelles. Mentions légales agence : SARL MRZ Carte professionnelle n° : CPI75012015000000390 Délivrée par : CCI de Paris Île-de-France Organisme garant : SOCAF, 26 avenue de Suffren, 75015 PARIS Mis à jour le 24/11/2026 Updated on 24/11/2026",
+      "agency": "particulier",
+      "charges": 70,
+      "source": "bienici",
+      "rejectedBecause": [
+        "2 pièces < 3",
+        "1 ch. < 2",
+        "28 m² < 35"
+      ]
+    },
+    {
+      "id": "bc-hektor-cabinetazoulay-1162",
+      "subject": "Paris XIIIe - Olympiades - Maryse Bastié",
+      "url": "https://www.bienici.com/annonce/location/paris-13e/appartement/2pieces/hektor-cabinetazoulay-1162",
+      "price": 1337,
+      "city": "Paris 13e",
+      "zip": "75013",
+      "zone": "Paris 15e et proche",
+      "rooms": 2,
+      "bedrooms": 1,
+      "surface": 43.45,
+      "publishedAt": "2026-11-24T10:43:01.804Z",
+      "image": "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_12aa09937380ce86da31784dd0c8b753.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_12aa09937380ce86da31784dd0c8b753.jpg",
+      "nbImages": 8,
+      "images": [
+        "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_12aa09937380ce86da31784dd0c8b753.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_d85232f6edcd11055227524d3248fa25.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_c80f715abf611ed65c1d7590f91a466b.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_3d1249a9e111d0b98b01b49cedf50df5.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_23f279c7cd794f27017f1f1f6b4f194c.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_b4f00cb94984315bb09a173424153bef.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_f1beaef52aca10a2e65651bab461fee9.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/hektor-cabinetazoulay-1162_cabinetazoulay.staticlbi.com_original_images_biens_1_d46811295a328b1dc2040c64e81ebe61_photo_d40bb43d9c838547c92341c21cf51dfa.jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.825532703720604,
+      "lon": 2.3743283815032252,
+      "kind": "logement-entier",
+      "description": "Rue du Dessous des Berges. Appartement de deux pièces, d'une superficie de 43,45 m2, et situé au 4e étage avec un ascenseur dans un immeuble semi récent. Il se compose d'un séjour avec cuisine ouverte et aménagée, d'une chambre, d'une salle de douche, ainsi que d'un wc séparé. Chauffage inclus dans les charges, climatisation. Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
+      "agency": "agence",
+      "charges": 199,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1337 € > 1320 €",
+        "2 pièces < 3",
+        "1 ch. < 2"
+      ]
+    },
+    {
+      "id": "bc-apimo-87562457",
+      "subject": "VANVES PARC PIC - STUDIO MEUBLE NEUF A LOUER DE 22 M²",
+      "url": "https://www.bienici.com/annonce/location/vanves/appartement/1piece/apimo-87562457",
+      "price": 890,
+      "city": "Vanves",
+      "zip": "92170",
+      "zone": "Sud parisien / proche 15e",
+      "rooms": 1,
+      "bedrooms": 0,
+      "surface": 22.1,
+      "publishedAt": "2026-11-24T09:12:49.117Z",
+      "image": "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_d459e4b68ab35f5c1e15365b68ba63b2_97e0449a19_1920-original.jpg?width=400&height=300&fit=cover",
+      "imageLarge": "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_d459e4b68ab35f5c1e15365b68ba63b2_97e0449a19_1920-original.jpg",
+      "nbImages": 9,
+      "images": [
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_d459e4b68ab35f5c1e15365b68ba63b2_97e0449a19_1920-original.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_d27f982f777e82a12a19d06075b9d3e2_8070f44be6_1920-original.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_a2baa437753aa2e698e2140d321ec82a_7bf6231c79_1920-original.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_4dffeb59a8254464f5396e6482620e2f_2ba2c00529_1920-original.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_2ca63af7f3f70ca4c7e591a3642d5057_c6c82c4030_1920-original.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_de1c92b962da40b5c97b1102d121aed7_c0e9eeba1a_1920-original.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_4802c5323f411a47fc7102e7a18f8a50_7b7a410a03_1920-original.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_7583a2e951f2f73fcf96bd6b64197cd4_ef7e9e900c_1920-original.jpg?width=520&height=390&fit=cover",
+        "https://file.bienici.com/photo/apimo-87562457_media.apimo.pro_cache_6087f6a4d97d6f09d0d31c086d3269e5_92e130d755_1920-original.jpg?width=520&height=390&fit=cover"
+      ],
+      "lat": 48.81728538979472,
+      "lon": 2.2834916569575308,
+      "kind": "logement-entier",
+      "description": "Studio meublé de 22.10 m² en parfait état (rénové en 2026) situé au 3ème étage avec ascenseur. Appartement sans aucun vis-à-vis, pièce à vivre de 16 m² avec placards intégrés, cuisine aménagée et équipée. Situé face au parc pic, à 5 minutes à pied de la gare de Clamart et à 8 minutes à pied de la gare de Vanves.",
+      "agency": "agence",
+      "charges": 75,
+      "source": "bienici",
+      "rejectedBecause": [
+        "1 pièces < 3",
+        "0 ch. < 2",
+        "22.1 m² < 35"
+      ]
+    },
     {
       "id": "bc-ag752485-562351259",
       "subject": "T2 / 52m² / Longjumeau (RER C)",
@@ -1938,38 +2052,6 @@
         "2 pièces < 3",
         "1 ch. < 2",
         "30.96 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-ag313862-561604013",
-      "subject": "T1",
-      "url": "https://www.bienici.com/annonce/location/paris-15e/appartement/1piece/ag313862-561604013",
-      "price": 1289,
-      "city": "Paris 15e",
-      "zip": "75015",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": null,
-      "surface": 48,
-      "publishedAt": "2026-11-20T22:53:33.819Z",
-      "image": "https://file.bienici.com/photo/ag313862-561604013_photos.ubiflow.net_313862_561604013_photos_1.jpg_INSOON_EB_5512801818_20261120230232?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/ag313862-561604013_photos.ubiflow.net_313862_561604013_photos_1.jpg_INSOON_EB_5512801818_20261120230232",
-      "nbImages": 4,
-      "images": [
-        "https://file.bienici.com/photo/ag313862-561604013_photos.ubiflow.net_313862_561604013_photos_1.jpg_INSOON_EB_5512801818_20261120230232?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag313862-561604013_photos.ubiflow.net_313862_561604013_photos_2.jpg_INSOON_EB_5512801818_20261120230232?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag313862-561604013_photos.ubiflow.net_313862_561604013_photos_3.jpg_INSOON_EB_5512801818_20261120230232?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/ag313862-561604013_photos.ubiflow.net_313862_561604013_photos_4.jpg_INSOON_EB_5512801818_20261120230232?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.85299625878377,
-      "lon": 2.2893982608815584,
-      "kind": "logement-entier",
-      "description": "Crédit Agricole Immobilier vous propose à la location, à deux pas du métro Bir-Hakeim, ce beau studio lumineux de 48 m² situé au 12ème étage d'un immeuble moderne avec gardiens et ascenseur. Vous apprécierez sa configuration fonctionnelle comprenant une cuisine, une agréable pièce de vie baignée de lumière et une salle d'eau. Parfaitement adapté pour un cadre de vie confortable en plein coeur de la ville, tout proche du Champ-de-Mars. Un atout supplémentaire : une cave vient compléter ce bien, offrant un espace de rangement pratique. Une opportunité à ne pas manquer pour vivre dans un quartier recherché, très bien desservi ! Honoraires de Location (TTC) = visite, constitution du dossier, frais de rédaction de bail et état des lieux. Dépôt de garantie = 1 mois de loyer HC. Nous consulter pour disponibilités. Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
-      "agency": "agence",
-      "charges": 165,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3"
       ]
     },
     {
@@ -7000,46 +7082,6 @@
       ]
     },
     {
-      "id": "bc-mgc-ancien-015D056B-5023-97258",
-      "subject": "appartement 1 pièces Paris 15e",
-      "url": "https://www.bienici.com/annonce/location/paris-15e/appartement/1piece/mgc-ancien-015D056B-5023-97258",
-      "price": 1250,
-      "city": "Paris 15e",
-      "zip": "75015",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": null,
-      "surface": 17.64,
-      "publishedAt": "2026-11-06T10:42:27.349Z",
-      "image": "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-2-jpg?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-2-jpg",
-      "nbImages": 11,
-      "images": [
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-2-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-coming-soon-1-0-png?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-3-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-5-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-6-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-1-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-10-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-4-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-7-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-8-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-015D056B-5023-97258_sites-default-files-2026-11-location-1-piece-paris-15-015-d-056-b-10-9-jpg?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.84894573377656,
-      "lon": 2.296432713535532,
-      "kind": "logement-entier",
-      "description": "Une salle de sport et un espace de coworking dans ma résidence ? C'est possible ! Salle de sport équipée, grand espace de coworking convivial : tout est réuni pour simplifier votre quotidien et enrichir votre style de vie. Posez vos valises au 18 rue Tiphaine (Paris 15ème), dans un studio meublé et équipé et chaleureux de 18m², au 3ème étage avec ascenseur. Il se compose d'une entrée avec placard, d'une pièce de vie, d'une cuisine ouverte, aménagée et équipée, d'une salle de douche et d'un toilette. Le chauffage et l'eau chaude sont compris dans les charges. Accès à la fibre. Appartement meublé tout équipé. Ce logement est situé dans une résidence gérée, offrant des services à la carte. La résidence est équipée d'ascenseurs, d'un accès handicapés, et propose des places de parkings voitures et motos, ainsi que des locaux vélos #nocarneeded. À proximité immédiate du Champs de Mars et de la rue du Commerce, profitez de cet emplacement central dans un quartier vivant et dynamique à 8 minutes à pied de l'Université Paris 1 Panthéon Sorbonne. Les nombreux restaurants, bars et les diverses salles de sport répondent aux attentes de loisirs et de bien-être. Proche du métro la Motte Picquet Grenelle (lignes 6, 8 et 10), vous fera accéder à de nombreuses destinations dans Paris. Honoraires à la charge du locataire (prix maximum) : 266,89€ TTC, dont 53,45€ pour l'état des lieux",
-      "agency": "agence",
-      "charges": 100,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1 pièces < 3",
-        "17.64 m² < 35"
-      ]
-    },
-    {
       "id": "bc-mgc-ancien-6581715-5276-40974",
       "subject": "appartement 2 pièces Ville-d'Avray",
       "url": "https://www.bienici.com/annonce/location/ville-d-avray/appartement/2pieces/mgc-ancien-6581715-5276-40974",
@@ -7440,7 +7482,7 @@
       "id": "bc-ifsp6a-5471609",
       "subject": "Appartement Clamart 2 pièces 39.71 m2",
       "url": "https://www.bienici.com/annonce/location/clamart/appartement/2pieces/ifsp6a-5471609",
-      "price": 1350,
+      "price": 1280,
       "city": "Clamart",
       "zip": "92140",
       "zone": "Sud parisien / proche 15e",
@@ -7466,7 +7508,6 @@
       "charges": 62,
       "source": "bienici",
       "rejectedBecause": [
-        "1350 € > 1320 €",
         "2 pièces < 3",
         "1 ch. < 2"
       ]
@@ -9142,47 +9183,6 @@
       "rejectedBecause": [
         "1 pièces < 3",
         "10.38 m² < 35"
-      ]
-    },
-    {
-      "id": "bc-mgc-ancien-215S175-2982-92674",
-      "subject": "appartement 1 pièces Paris 15e",
-      "url": "https://www.bienici.com/annonce/location/paris-15e/appartement/1piece/mgc-ancien-215S175-2982-92674",
-      "price": 1330,
-      "city": "Paris 15e",
-      "zip": "75015",
-      "zone": "Paris 15e et proche",
-      "rooms": 1,
-      "bedrooms": null,
-      "surface": 29,
-      "publishedAt": "2026-10-29T16:44:52.434Z",
-      "image": "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-11-hono-offerts-0-jpg?width=400&height=300&fit=cover",
-      "imageLarge": "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-11-hono-offerts-0-jpg",
-      "nbImages": 11,
-      "images": [
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-11-hono-offerts-0-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-01-location-meuble-1-piece-paris-15-215-1175-5-0-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-01-capture-decran-2026-01-08-164101-1-png?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-01-location-meuble-1-piece-paris-15-215-1175-6-0-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-01-location-meuble-1-piece-paris-15-215-1175-8-0-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-11-215-s-175-appartement-meuble-2-1-0-png?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-11-215-s-175-appartement-meuble-3-1-0-png?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-11-215-s-175-appartement-meuble-4-png?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-01-location-meuble-1-piece-paris-15-215-1175-10-0-jpg?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-11-215-s-175-appartement-meuble-1-png?width=520&height=390&fit=cover",
-        "https://file.bienici.com/photo/mgc-ancien-215S175-2982-92674_sites-default-files-2026-11-215-s-175-appartement-meuble-5-png?width=520&height=390&fit=cover"
-      ],
-      "lat": 48.83483412110287,
-      "lon": 2.3027217834979634,
-      "kind": "logement-entier",
-      "description": "Offre exceptionnel: les honoraires sont offerts. Une salle de sport et un espace de coworking dans ma résidence ? C'est possible ! Salle de sport équipée, grand espace de coworking convivial : tout est réuni pour simplifier votre quotidien et enrichir votre style de vie. Idéal pour les actifs, étudiants ou jeunes professionnels ! Dossiers étudiés pour des revenus qui représentent au moins 2 fois le montant du loyer. Découvrez votre futur studio meublé de 29 m², entièrement rénové. Idéalement situé au 6-22 rue de Vouillé, cet appartement allie calme, confort et accessibilité dans le quartier animé de Convention. L'appartement est équipé d’un mobilier complet (lit double 140x190,canapé, table basse, table à manger, chaises) ainsi que de tous les appareils électroménagers, linge de maison et nécessaire d'entretien pour un confort immédiat. Un quartier dynamique et pratique : laissez-vous charmer par le quartier Saint Lambert avec ses commerces, son marché, ses bars et restaurants. À proximité immédiate des lignes de métro 12 et 13, cet appartement est parfaitement situé pour vous permettre de travailler à Montparnasse ou Issy-les-Moulineaux en moins de 20 minutes. Un emplacement idéal pour ceux qui cherchent à allier confort, travail et loisirs. Sécurité et tranquillité : la résidence est fermée et sécurisée, avec contrôle d'accès et gardien pour votre sérénité. Prenez rendez-vous pour visiter votre futur appartement. Ce logement se situe dans une résidence gérée, offrant des services compris dans le montant du loyer affiché. Honoraires à la charge du locataire (prix maximum) : 438,75€ TTC, dont 87,86€ pour l'état des lieux",
-      "agency": "agence",
-      "charges": 127.05,
-      "source": "bienici",
-      "rejectedBecause": [
-        "1330 € > 1320 €",
-        "1 pièces < 3",
-        "29 m² < 35"
       ]
     },
     {
@@ -11533,45 +11533,6 @@
       "rejectedBecause": [
         "1 pièces < 3",
         "18.8 m² < 35"
-      ]
-    },
-    {
-      "id": "pap-442700448",
-      "url": "https://www.pap.fr/annonces/appartement-chaville-92370-r442700448",
-      "price": 695,
-      "zip": "92370",
-      "city": "Chaville",
-      "rooms": 3,
-      "beds": "1",
-      "surf": "50",
-      "images": [
-        "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
-        "https://cdn.pap.fr/photos/pap/4b/17/4b17aaa597f8e64db52b38d54d3d230f/4-p2.webp",
-        "https://cdn.pap.fr/photos/pap/bc/7a/bc7a588c2840cc010342b4dc059378f2/b-p2.webp",
-        "https://cdn.pap.fr/photos/pap/a4/98/a4984c5e10875ed3ea11c4edaa519ed7/a-p2.webp",
-        "https://cdn.pap.fr/photos/pap/c5/1c/c51cea0439fbd4bf027edff31ea83892/c-p2.webp",
-        "https://cdn.pap.fr/photos/pap/be/c6/bec6144404368a0a9061af0d61540f77/b-p2.webp",
-        "https://cdn.pap.fr/photos/pap/89/9c/899c79efe5794c7d4ce1a271dce2f39d/8-p2.webp"
-      ],
-      "text": "695 € Chaville (92370) 3 pièces 1 chambre 50 m² Chambre disponible immédiatement dans une colocation cosy et calme de seulement 2 personnes. Appartement T3 de 50 m², récemment rénové avec prestations de qualité, situé au 2ème étage avec ascenseur...",
-      "subject": "Chambre disponible immédiatement dans une colocation cosy et calme de",
-      "surface": 50,
-      "bedrooms": 1,
-      "lat": 48.80479,
-      "lon": 2.181078,
-      "realEstateType": "appartement",
-      "owner": "particulier",
-      "publishedAt": null,
-      "body": "695 € Chaville (92370) 3 pièces 1 chambre 50 m² Chambre disponible immédiatement dans une colocation cosy et calme de seulement 2 personnes. Appartement T3 de 50 m², récemment rénové avec prestations de qualité, situé au 2ème étage avec ascenseur...",
-      "image": "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
-      "imageLarge": "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
-      "nbImages": 7,
-      "kind": "appartement",
-      "totalRent": 695,
-      "source": "pap",
-      "zone": "Paris 15e et proche",
-      "rejectedBecause": [
-        "1 ch. < 2"
       ]
     },
     {
