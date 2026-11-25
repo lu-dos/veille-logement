@@ -1,9 +1,9 @@
 {
-  "ranAt": "2026-11-25T08:12:10.942Z",
-  "total": 367,
-  "kept": 38,
+  "ranAt": "2026-11-25T08:36:10.788Z",
+  "total": 365,
+  "kept": 37,
   "matches": 10,
-  "maybes": 33,
+  "maybes": 31,
   "rejected": [
     {
       "id": "bc-ag756576-562541696",
@@ -250,8 +250,8 @@
         "https://file.bienici.com/photo/netty-estate-appt-2940_img.netty.immo_product_estate_LA2940_17954381473_LA2940_4_original.jpg?width=520&height=390&fit=cover",
         "https://file.bienici.com/photo/netty-estate-appt-2940_img.netty.immo_product_estate_LA2940_17954381533_LA2940_5_original.jpg?width=520&height=390&fit=cover"
       ],
-      "lat": 48.783643538099966,
-      "lon": 2.318402717567953,
+      "lat": 48.78592853809996,
+      "lon": 2.3151577190121357,
       "kind": "logement-entier",
       "description": "CANOPIA Immobilier –Bourg-la-Reine Laissez-vous séduire par ce magnifique appartement d'environ 26 m², idéalement situé au calme, dans un environnement recherché alliant confort et praticité. Dès l'entrée, vous serez charmé par sa luminosité et sa configuration, offrant une agréable qualité de vie au quotidien. Un intérieur pensé pour le confort : Une pièce baignée de lumière, ouvrant sur un balcon Une cuisine aménagée Une salle de de bains WC indépendant Un cadre de vie privilégié : Résidence sécurisée avec ascenseur, à proximité immédiate des commerces, écoles et espaces verts. Accessibilité idéale : À quelques minutes du RER B Bourg-La-Reine et des lignes de bus. Loyer de base 790 €/mois. Provision sur charges 120 €/mois, régularisation annuelle. Dépôt de garantie 790 €. Classe énergie E, Classe climat E Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre 620.00 € et 880.00 € sur les années 2021, 2022 et 2023 (abonnements compris). Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr. Votre conseiller Canopia Immobilier : Sami BACHA Agent commercial (Entreprise individuelle)",
       "agency": "agence",
@@ -11594,45 +11594,6 @@
       "source": "bienici",
       "rejectedBecause": [
         "2 pièces < 3",
-        "1 ch. < 2"
-      ]
-    },
-    {
-      "id": "pap-442700448",
-      "url": "https://www.pap.fr/annonces/appartement-chaville-92370-r442700448",
-      "price": 695,
-      "zip": "92370",
-      "city": "Chaville",
-      "rooms": 3,
-      "beds": "1",
-      "surf": "50",
-      "images": [
-        "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
-        "https://cdn.pap.fr/photos/pap/4b/17/4b17aaa597f8e64db52b38d54d3d230f/4-p2.webp",
-        "https://cdn.pap.fr/photos/pap/bc/7a/bc7a588c2840cc010342b4dc059378f2/b-p2.webp",
-        "https://cdn.pap.fr/photos/pap/a4/98/a4984c5e10875ed3ea11c4edaa519ed7/a-p2.webp",
-        "https://cdn.pap.fr/photos/pap/c5/1c/c51cea0439fbd4bf027edff31ea83892/c-p2.webp",
-        "https://cdn.pap.fr/photos/pap/be/c6/bec6144404368a0a9061af0d61540f77/b-p2.webp",
-        "https://cdn.pap.fr/photos/pap/89/9c/899c79efe5794c7d4ce1a271dce2f39d/8-p2.webp"
-      ],
-      "text": "695 € Chaville (92370) 3 pièces 1 chambre 50 m² Chambre disponible immédiatement dans une colocation cosy et calme de seulement 2 personnes. Appartement T3 de 50 m², récemment rénové avec prestations de qualité, situé au 2ème étage avec ascenseur...",
-      "subject": "Chambre disponible immédiatement dans une colocation cosy et calme de",
-      "surface": 50,
-      "bedrooms": 1,
-      "lat": 48.80479,
-      "lon": 2.181078,
-      "realEstateType": "appartement",
-      "owner": "particulier",
-      "publishedAt": null,
-      "body": "695 € Chaville (92370) 3 pièces 1 chambre 50 m² Chambre disponible immédiatement dans une colocation cosy et calme de seulement 2 personnes. Appartement T3 de 50 m², récemment rénové avec prestations de qualité, situé au 2ème étage avec ascenseur...",
-      "image": "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
-      "imageLarge": "https://cdn.pap.fr/photos/pap/78/d0/78d0944193ee471e2b166eab77e9cc9e/7-p2.webp",
-      "nbImages": 7,
-      "kind": "appartement",
-      "totalRent": 695,
-      "source": "pap",
-      "zone": "Paris 15e et proche",
-      "rejectedBecause": [
         "1 ch. < 2"
       ]
     },
